@@ -1,3 +1,4 @@
+//Variables
 const pointImage1 = new Image(40, 40);
 pointImage1.src = "../../assets/vector/v1.svg";
 const pointImage2 = new Image(40, 40);
@@ -16,9 +17,6 @@ const pointImage8 = new Image(40, 40);
 pointImage8.src = "../../assets/vector/v8.svg";
 const pointImage9 = new Image(40, 40);
 pointImage9.src = "../../assets/vector/v9.svg";
-
-var audio = new Audio();
-
 const pointImage = [
 	,
 	,
@@ -34,10 +32,12 @@ const pointImage = [
 	pointImage9,
 ];
 
+var audio = new Audio();
+
+//Opciones para DECIBELES-SONES
 const titleTooltip = (tooltipItems) => {
 	return "";
 };
-
 const options = {
 	data: {
 		datasets: [
@@ -265,10 +265,11 @@ const options = {
 		},
 	},
 };
-
 const ctx = document.getElementById("canvaClasRuido");
 const canvaClasRuido = new Chart(ctx, options);
 
+//Funciones
+canvaClasRuido.canvas.onclick = clickEvent;
 function clickEvent(click) {
 	//console.log(click);
 	const point = canvaClasRuido.getElementsAtEventForMode(
@@ -328,8 +329,6 @@ function clickEvent(click) {
 		}
 	}
 }
-
-canvaClasRuido.canvas.onclick = clickEvent;
 
 /*canvaClasRuido.canvas.addEventListener("mouseclick", (e) => {
 	crosshair(canvaClasRuido, e);
