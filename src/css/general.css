@@ -52,9 +52,11 @@ html {
 }
 
 .hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0.75)), url(../../assets/gif/FondoCDMX.gif);
+    background: linear-gradient(rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0.75)), url(../../assets/gif/HeroGif.gif);
     background-size: cover;
     height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
 .columna {
@@ -63,6 +65,8 @@ html {
 
 
 .logoHero {
-    margin: 0;
-    transform: translateY(50%);
+    height: 22.8vh;
+    width: 23.14vh;
+    margin-top: 38.6vh;
+    margin-left: 50vw;
 }

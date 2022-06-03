@@ -14,26 +14,14 @@
 
 <body>
     <div class="container-fluid hero">
-        <div class="row" style="padding: 0px 60px;">
-            <div class="columna col-2"> </div>
-            <div class="columna col-2">
-                <img class="logoHero" src="assets/vector/HUBBUBLogo.svg">
-            </div>
-            <div class="columna col-1">
-                <center>
-                    <img src="assets/vector/hrVertical.svg">
-                </center>
-            </div>
-            <div class="columna col-5" style="background-color: red;"> </div>
-            <div class="columna col-2" style="background-color: blue;"> </div>
+        <div class="row" style="height:100vh">
+            <img class="logoHero" src="assets/gif/HUBBUBIcon.gif">
         </div>
-        <div class="canvaClasRuido">
-            <canvas id="canvaClasRuido"></canvas>
-        </div>
+    </div>
+    <div class="canvaClasRuido">
+        <canvas id="canvaClasRuido"></canvas>
+    </div>
 </body>
-<style type="text/css">
-
-</style>
 <script src="src/js/chart.js" type="text/javascript"></script>
 
 </html>
