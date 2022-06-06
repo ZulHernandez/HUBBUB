@@ -1,0 +1,24 @@
+{
+  "name": "hubbub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZulHernandez/HUBBUB.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZulHernandez/HUBBUB/issues"
+  },
+  "homepage": "https://github.com/ZulHernandez/HUBBUB#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0-beta1",
+    "chart.js": "^3.8.0",
+    "node-sass": "^7.0.1"
+  }
+}

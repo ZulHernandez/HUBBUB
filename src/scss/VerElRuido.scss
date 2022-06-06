@@ -1,0 +1,24 @@
+.logoHero {
+    height: 249px;
+    width: auto;
+    position: relative;
+    z-index: 2;
+    margin-top: calc(50vh - 123px);
+    margin-left: calc(50vw - 125px);
+    animation-delay: 4s;
+    animation-name: logoMove;
+    animation-duration:  500ms ;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+
+}
+
+@keyframes logoMove {
+    0% {
+        right: 0px;
+
+    }
+    100% {
+        right: calc(24vw);
+    }
+}
