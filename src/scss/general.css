@@ -1,4 +1,3 @@
-/*fonts-----------------------------------------------------------------------------------------------------------*/
 @font-face {
   font-family: "Montserrat-B";
   src: url(../../assets/fonts/Montserrat-Bold.ttf);
@@ -9,10 +8,18 @@
   src: url(../../assets/fonts/Montserrat-Medium.ttf);
 }
 
-/*Variable-------------------------------------------------------------------------------------------------------*/
-/*scroll-bar-----------------------------------------------------------------------------------------------------*/
+@font-face {
+  font-family: "Montserrat-R";
+  src: url(../../assets/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Montserrat-T";
+  src: url(../../assets/fonts/Montserrat-Light.ttf);
+}
+
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 6px;
   background-color: transparent;
 }
 
@@ -23,6 +30,10 @@
 
 ::-webkit-scrollbar-thumb {
   background: rgba(51, 51, 51, 0.5);
+  border-radius: 10px;
+  width: 4px;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -33,34 +44,275 @@
   background: transparent;
 }
 
-/*canvas---------------------------------------------------------------------------------------------------------*/
-.canvaClasRuido {
-  width: 1200px;
-  height: 645px;
-  /*position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
-}
-
-/*divs-----------------------------------------------------------------------------------------------------------*/
 body,
 html {
   margin: 0;
   padding: 0;
 }
 
-.hero {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(255, 255, 255, 0.75)), to(rgba(255, 255, 255, 0.75))), url(../../assets/gif/HeroGif.gif);
-  background: linear-gradient(rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0.75)), url(../../assets/gif/HeroGif.gif);
-  background-size: cover;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
 .columna {
   padding: 0px 25px;
+}
+
+.verticalLine {
+  opacity: 0;
+  height: 46.3vh;
+  width: 0px;
+  border-width: 3px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: #333333;
+  background-color: #333333;
+  margin-top: 26.85vh;
+  margin-left: 50%;
+  -webkit-animation: appearResume 1s 4500ms forwards ease-out;
+          animation: appearResume 1s 4500ms forwards ease-out;
+}
+
+.verticalLineNos {
+  height: 100%;
+  width: 0px;
+  border-width: 1px;
+  border-radius: 1px;
+  border-style: solid;
+  border-color: #333333;
+  background-color: #333333;
+}
+
+.divResume {
+  height: auto;
+  margin-top: 37vh;
+  margin-left: 0px;
+  opacity: 0;
+  -webkit-animation-delay: 4500ms;
+          animation-delay: 4500ms;
+  -webkit-animation-name: appearResume;
+          animation-name: appearResume;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.hrSwal {
+  width: 225px;
+  border-color: #333333;
+  border-width: 1px;
+  border-style: solid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 10px;
+}
+
+.divIzqNos {
+  margin-top: 5vh;
+  position: fixed;
+  margin-left: 50px;
+}
+
+.divDerNos {
+  margin-top: 5vh;
+  margin-right: 50px;
+}
+
+.divBody {
+  padding: 0px 85px;
+}
+
+.imagenHero {
+  position: absolute;
+  z-index: 2;
+}
+
+.divHero {
+  height: 100vh;
+  position: absolute;
+  z-index: 1;
+  padding: 0px 85px;
+}
+
+.logoHero {
+  height: 23.06vh;
+  width: auto;
+  position: relative;
+  margin-top: 38.47vh;
+  margin-left: 43.49vw;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-transition: -webkit-transform 150ms;
+  transition: -webkit-transform 150ms;
+  transition: transform 150ms;
+  transition: transform 150ms, -webkit-transform 150ms;
+  cursor: pointer;
+}
+
+.logoHero:hover {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.logoHUBBUB {
+  width: 280px;
+  height: auto;
+  padding-bottom: 71px;
+}
+
+.iconNosotros {
+  padding: 0px 10px;
+  -webkit-transition: -webkit-transform 150ms;
+  transition: -webkit-transform 150ms;
+  transition: transform 150ms;
+  transition: transform 150ms, -webkit-transform 150ms;
+  cursor: pointer;
+}
+
+.iconNosotros:hover {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.imgSub {
+  width: 30px;
+  height: auto;
+  margin-right: 15px;
+}
+
+::-moz-selection {
+  color: #333333;
+  background: #fff101;
+}
+
+::selection {
+  color: #333333;
+  background: #fff101;
+}
+
+.pageTitle {
+  font-family: Montserrat-B;
+  font-size: 64px;
+  line-height: 78px;
+  color: #333333;
+  text-align: left;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+.textCorrido {
+  font-family: Montserrat-M;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  text-align: justify;
+  letter-spacing: -0.5;
+}
+
+.textHUBBUBC {
+  font-family: Montserrat-M;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+}
+
+.textAvisoN {
+  font-family: Montserrat-R;
+  font-size: 10px;
+  line-height: 1px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+}
+
+.textDerechosN {
+  font-family: Montserrat-T;
+  font-size: 10px;
+  line-height: 1px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+}
+
+.textSobreN {
+  font-family: Montserrat-R;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  text-align: justify;
+  letter-spacing: -0.5;
+}
+
+.subtitle {
+  font-family: Montserrat-B;
+  font-size: 40px;
+  line-height: 49px;
+  color: #333333;
+  text-align: left;
+  letter-spacing: normal;
+  text-transform: uppercase;
+}
+
+.subNos {
+  text-transform: none;
+}
+
+a:focus,
+.swal2-close:focus {
+  outline: none;
+}
+
+h2.linea {
+  position: relative;
+  z-index: 1;
+}
+
+h2.linea:before {
+  border-top: 5px solid rgba(51, 51, 51, 0.25);
+  content: "";
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+h2.linea titulo {
+  background: white;
+  padding: 0 50px;
+}
+
+.swal-height {
+  height: 81.48vh;
+  border-radius: 25px;
+}
+
+@-webkit-keyframes appearResume {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appearResume {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 /*# sourceMappingURL=general.css.map */

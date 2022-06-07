@@ -1,24 +1,52 @@
-.logoHero {
-    height: 249px;
-    width: auto;
-    position: relative;
-    z-index: 2;
-    margin-top: calc(50vh - 123px);
-    margin-left: calc(50vw - 125px);
-    animation-delay: 4s;
-    animation-name: logoMove;
-    animation-duration:  500ms ;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
+//Variables--------------------------------------------------------------------------------------------------------
+$blackGrey: #333333;
 
+//Mixins-----------------------------------------------------------------------------------------------------------
+@mixin posicion($y1, $y2, $x1, $x2) {
+    margin-top: $y1 - $y2;
+    margin-left: $x1 - $x2;
 }
 
+//Divs--------------------------------------------------------------------------------------------------------------
+.hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0.75)),
+        url(../../assets/gif/HeroGif.gif);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+
+/*canvas---------------------------------------------------------------------------------------------------------*/
+
+.canvaClasRuido {
+    width: 1200px;
+    height: 645px;
+    /*position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
+//Imagenes-----------------------------------------------------------------------------------------------------------
+.logoHero {
+    animation-name: logoMove;
+}
+
+//Animation---------------------------------------------------------------------------------------------------------
 @keyframes logoMove {
     0% {
         right: 0px;
-
     }
     100% {
-        right: calc(24vw);
+        right: 24vw;
+    }
+}
+
+@keyframes appearResume {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
     }
 }

@@ -5,6 +5,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="src/dist/p5.js" type="text/javascript"></script>
+    <!--<script src="src/js/chart.js" type="text/javascript"></script>-->
+    <script src="src/js/general.js"></script>
+    <link href="src/scss/general.css" rel="stylesheet">
+    <link href="src/scss/VerElRuido.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/vector/HUBBUBIcon.svg" type="image/x-icon">
+    <script type="text/javascript" src="src/js/elRuidoP5.js"></script>
     <title>
         HUBBUB | El ruido
     </title>
@@ -13,24 +21,112 @@
 
 <body>
     <div class="container-fluid hero">
-        <div class="prueba"></div>
-        <div class="imagen" style="position: absolute; z-index: 1;">
-            <img class="logoHero" src="assets/gif/HUBBUBIcon.gif">
+        <div class="imagenHero">
+            <img class="logoHero" onclick="nosotros();" src="assets/gif/HUBBUBIcon.gif">
         </div>
-        <div class="row container-fluid" class="divAnima" style="height:100vh; padding: 0px 85px; position: absolute; z-index: 2;">
-            <div class="columna col-2" style="background-color: rgba(255,255,0,0.5);"></div>
-            <div class="columna col-2" style="background-color: rgba(255,0,0,0.5);"></div>
-            <div class="columna col-1" style="background-color: rgba(255,255,0,0.5);;"></div>
-            <div class="columna col-5" style="background-color: rgba(255,0,0,0.5);;"></div>
-            <div class="columna col-2" style="background-color: rgba(255,255,0,0.5);;"></div>
+        <div class="row container-fluid divHero paddingNormal">
+            <div class="columna col-2"></div>
+            <div class="columna col-2"></div>
+            <div class="columna col-1">
+                <div class="verticalLine"></div>
+            </div>
+            <div class="columna col-5">
+                <div class="divResume">
+                    <h1 class="pageTitle">El ruido</h1>
+                    <br />
+                    <p class="textCorrido">Este es uno de los fenómenos más interesantes de la modernidad pues
+                        es producto de la cultura, el crecimiento y la evolución del ser humano y lo que lo rodea.
+                        Comprender como funciona, de qué manera se integra a nuestra vida, cuáles son sus
+                        efectos y como hemos actuado ante el mismo nos puede ayudar a tener una visión más compleja
+                        sobre este particular fenómeno invisible y perceptible.</p>
+                </div>
+            </div>
+            <div class="columna col-2"></div>
         </div>
     </div>
-    <div class="canvaClasRuido">
+    <div class="row container-fluid divBody">
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="assets/vector/subtitles/elOido.svg"></span>
+                            <span>El oído</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>El oído , como sentido, es fundamental para la orientación del individuo, mantenerlo alerta ante
+                    posibles peligros, permitir el entendimiento eficiente con otros seres, el aprendizaje del idioma
+                    (parte fundamental de la integración del humano a la sociedad) y la comunicación constante con su exterior.</p>
+                <p>El órgano al que se le atribuye este sentido posee el mismo nombre siendo un complejo sistema de
+                    tejidos, huesos y cavernas que funcionan de forma mecánica y que ayudan a la percepción de ondas
+                    acústicas que finalmente serán interpretadas por el cerebro. El oído, al igual que todos los
+                    sentidos, son canales que simplemente captan señales; pero la capacidad de interpretación de
+                    dichas señales se realiza exclusivamente en el cerebro.</p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
+    <div class="row container-fluid" style="padding-top: 100px;">
+        <center>
+            <div id="canvaOido"></div>
+        </center>
+    </div>
+    <button onclick="mueve(0)">prev</button>
+    <button onclick="mueve(1)">next</button>
+
+
+
+    <!--<div class="canvaClasRuido">
         <canvas id="canvaClasRuido"></canvas>
-    </div>
+    </div>-->
+    <!--SWAL TEMPLATE-->
+    <template id="nosotrosSwal">
+        <swal-html>
+            <div class="row" style="width: 100%;">
+                <div class="columna col-4">
+                    <div class="divIzqNos">
+                        <img class="logoHUBBUB" src="assets/vector/HUBBUBLogo.svg">
+                        <br />
+                        <a href="https://www.facebook.com/HUBBUBALERTA/" target="_blank"><img class="iconNosotros" src="assets/vector/facebook.svg"></a>
+                        <a href="https://www.facebook.com/messages/t/194832804678795" target="_blank"><img class="iconNosotros" src="assets/vector/messenger.svg"></a>
+                        <a href="https://twitter.com/AlertaRuido?fbclid=IwAR1o5xnyzozS5nXn8jPbySq0Tjvoh5iggQhPWgzvESj-PUYkhOp-7qQ-RgM" target="_blank"><img class="iconNosotros" src="assets/vector/twitter.svg"></a>
+                        <a href="mailto:hubbub@azc.uam.mx" target="_blank"><img class="iconNosotros" src="assets/vector/mail.svg"></a>
+                        <center>
+                            <hr class="hrSwal" />
+                            <p class="textHUBBUBC">HUBBUB&copy;</p>
+                            <p class="textAvisoN">Aviso de privacidad</p>
+                            <p class="textDerechosN">Todos los derechos reservados</p>
+                        </center>
+                    </div>
+                </div>
+                <div class="columna col-1">
+                    <div class="verticalLineNos"></div>
+                </div>
+                <div class="columna col-7">
+                    <div class="divDerNos">
+                        <p class="subtitle subNos">Sobre nosotros</p><br />
+                        <p class="textSobreN">HUBBUB Alerta ruido es una iniciativa de la Mtra. Verónica Arroyo Pedroza de la Universidad Autónoma Metropolitana, CyAD Azcapotzalco, a partir del trabajo conjunto con el Laboratorio de Análisis y Diseño Acústico (LADAc) de la misma Universidad. Dicho laboratorio desarrolla el primer mapa de ruido de la Ciudad de México por medio de equipamiento de medición especializado, siendo su información y uso para fines académicos y de divulgación científica.</p>
+                        <p class="textSobreN">Siendo la ciudadanía la principal afectada por el tema se planea, diseña y desarrolla una aplicación móvil que promueve la participación ciudadana en el tema de la contaminación ambiental por ruido, con el fin de mapear las áreas con más molestias y determinar las fuentes más comunes que generan dicha molestia.</p>
+                        <p class="textSobreN">El objetivo de la aplicación HUBBUB® Alerta ruido, es concientizar y promover un medio ambiente más respetuoso en zonas urbanas, monitoreando por medio de la colaboración ciudadana las zonas caóticas contaminadas por ruido.</p>
+                        <p class="textSobreN">Se plantea el análisis integral del ruido ambiental en la ciudad a partir de sistemas de colaboración abierta en las que el usuario comparta sus experiencia de molestia por ruido y consolide una base de datos.</p>
+                        <p class="textSobreN">Los datos recabados por este monitoreo se emplean para desarrollar mapas de las zonas de mayor impacto por ruido que se visualizan tanto en la aplicación como en una página web en desarrollo.</p>
+                        <p class="textSobreN">Lograr conciencia ciudadana sobre el tema del ruido y con ello impacto en las autoridades para generar legislación al respecto.</p>
+                        <p class="textSobreN">Entendemos que el problema de ruido no se detendrá por el uso de una aplicación, pero sí con los productos que esta genere. A través de Hubbub podemos intermediar a que la ciudadanía canalice sus alertas y logremos un mapeo ciudadano por molestia de ruido que ayude a promover, ante las autoridades competentes, medidas legislativas que promuevan la prevención de este contaminante que tanto afecta la salud.</p>
+                        <p class="textSobreN">En Latinoamérica México es uno de los países que cuenta con los peores niveles de participación ciudadana, por lo mismo no cuenta con una base social organizada ni una conciencia social sólida, según comenta Mauricio Merino Huerta investigador del CIDE y participante de la organización civil Nosotrxs, “La conciencia significa estar advertidos del lugar en que vivimos” cita.</p>
+                        <p class="textSobreN">Esta advertencia estimula al equipo HUBBUB para seguir promoviendo nuestra aplicación. A la fecha somos ya un gran equipo de especialistas en el tema del ruido, desarrolladores, programadores y diseñadores que trabajamos en conjunto para actualizar constantemente nuestra aplicación y cada vez brindar más elementos a la ciudadanía para entender el gran problema que el RUIDO significa.</p>
+                    </div>
+                </div>
+            </div>
+        </swal-html>
+    </template>
 </body>
-<script src="src/js/chart.js" type="text/javascript"></script>
-<link href="src/scss/general.css" rel="stylesheet">
-<link href="src/scss/VerElRuido.css" rel="stylesheet">
 
 </html>

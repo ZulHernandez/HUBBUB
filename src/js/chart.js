@@ -38,6 +38,7 @@ var audio = new Audio();
 const titleTooltip = (tooltipItems) => {
 	return "";
 };
+
 const options = {
 	data: {
 		datasets: [

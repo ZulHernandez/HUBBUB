@@ -1,4 +1,4 @@
-/*fonts-----------------------------------------------------------------------------------------------------------*/
+//fonts-----------------------------------------------------------------------------------------------------------
 @font-face {
     font-family: "Montserrat-B";
     src: url(../../assets/fonts/Montserrat-Bold.ttf);
@@ -9,13 +9,68 @@
     src: url(../../assets/fonts/Montserrat-Medium.ttf);
 }
 
-/*Variable-------------------------------------------------------------------------------------------------------*/
+@font-face {
+    font-family: "Montserrat-R";
+    src: url(../../assets/fonts/Montserrat-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Montserrat-T";
+    src: url(../../assets/fonts/Montserrat-Light.ttf);
+}
+
+//Variable-------------------------------------------------------------------------------------------------------
 $blackGrey: #333333;
+$yellow: #fff101;
 
+//Mixins-----------------------------------------------------------------------------------------------------------
+@mixin posicion($y1, $y2, $x1, $x2) {
+    margin-top: $y1 - $y2;
+    margin-left: $x1 - $x2;
+}
 
-/*scroll-bar-----------------------------------------------------------------------------------------------------*/
+@mixin text($align, $fsize, $fweight, $lineH, $letterS) {
+    @if $fweight == "B" {
+        font-family: Montserrat-B;
+    } @else {
+        @if $fweight == "R" {
+            font-family: Montserrat-R;
+        } @else {
+            @if $fweight == "T" {
+                font-family: Montserrat-T;
+            } @else {
+                font-family: Montserrat-M;
+            }
+        }
+    }
+    font-size: $fsize;
+    line-height: $lineH;
+    color: $blackGrey;
+    text-align: $align;
+    letter-spacing: $letterS;
+}
+
+@mixin hoverSize() {
+    transition: transform 150ms;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.25);
+    }
+}
+
+@mixin paddingGeneral() {
+    padding: 0px 85px;
+}
+
+@mixin superPo($index) {
+    position: absolute;
+    z-index: $index;
+}
+
+//scroll-bar-----------------------------------------------------------------------------------------------------
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 6px;
     background-color: transparent;
 }
 
@@ -26,6 +81,10 @@ $blackGrey: #333333;
 
 ::-webkit-scrollbar-thumb {
     background: rgba($blackGrey, 0.5);
+    border-radius: 10px;
+    width: 4px;
+    margin-left: 3px;
+    margin-right: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -36,33 +95,197 @@ $blackGrey: #333333;
     background: transparent;
 }
 
-/*canvas---------------------------------------------------------------------------------------------------------*/
-
-.canvaClasRuido {
-    width: 1200px;
-    height: 645px;
-    /*position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
-}
-
-/*divs-----------------------------------------------------------------------------------------------------------*/
-
-body ,
+//divs-----------------------------------------------------------------------------------------------------------
+body,
 html {
     margin: 0;
     padding: 0;
-}
-
-.hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0.75)), url(../../assets/gif/HeroGif.gif);
-    background-size: cover;
-    height: 100vh;
-    display: flex;
 }
 
 .columna {
     padding: 0px 25px;
 }
 
+.verticalLine {
+    opacity: 0;
+    height: 46.3vh;
+    width: 0px;
+    border-width: 3px;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: $blackGrey;
+    background-color: $blackGrey;
+    @include posicion(50vh, 23.15vh, 50%, 0%);
+    animation: appearResume 1s 4500ms forwards ease-out;
+}
+
+.verticalLineNos {
+    height: 100%;
+    width: 0px;
+    border-width: 1px;
+    border-radius: 1px;
+    border-style: solid;
+    border-color: $blackGrey;
+    background-color: $blackGrey;
+    //@include posicion(50vh, 42.5vh, 0, 0);
+}
+
+.divResume {
+    height: auto;
+    @include posicion(50vh, 13vh, 0px, 0px);
+    opacity: 0;
+    animation-delay: 4500ms;
+    animation-name: appearResume;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+.hrSwal {
+    width: 225px;
+    border-color: $blackGrey;
+    border-width: 1px;
+    border-style: solid;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.divIzqNos {
+    margin-top: 5vh;
+    position: fixed;
+    margin-left: 50px;
+}
+
+.divDerNos {
+    margin-top: 5vh;
+    //padding-bottom: 10vh;
+    margin-right: 50px;
+}
+
+.divBody {
+    @include paddingGeneral();
+}
+
+.imagenHero {
+    @include superPo(2);
+}
+
+.divHero {
+    height: 100vh;
+    @include superPo(1);
+    @include paddingGeneral();
+}
+
+//images----------------------------------------------------------------------------------------------------------
+.logoHero {
+    height: 23.06vh;
+    width: auto;
+    position: relative;
+    @include posicion(50vh, 11.53vh, 50vw, 6.51vw);
+    animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    @include hoverSize();
+}
+
+.logoHUBBUB {
+    width: 280px;
+    height: auto;
+    padding-bottom: 71px;
+}
+
+.iconNosotros {
+    padding: 0px 10px;
+    @include hoverSize();
+}
+
+.imgSub {
+    width: 30px;
+    height: auto;
+    margin-right: 15px;
+}
+
+//text------------------------------------------------------------------------------------------------------------
+::selection {
+    color: $blackGrey;
+    background: $yellow;
+}
+
+.pageTitle {
+    @include text(left, 64px, "B", 78px, normal);
+    text-transform: uppercase;
+}
+
+.textCorrido {
+    @include text(justify, 20px, "M", 24px, -0.5);
+}
+
+.textHUBBUBC {
+    @include text(center, 20px, "M", 24px, normal);
+}
+
+.textAvisoN {
+    @include text(center, 10px, "R", 1px, normal);
+}
+
+.textDerechosN {
+    @include text(center, 10px, "T", 1px, normal);
+}
+
+.textSobreN {
+    @include text(justify, 20px, "R", 24px, -0.5);
+}
+
+.subtitle {
+    @include text(left, 40px, "B", 49px, normal);
+    text-transform: uppercase;
+}
+
+.subNos {
+    text-transform: none;
+}
+
+a,
+.swal2-close {
+    &:focus {
+        outline: none;
+    }
+}
+
+h2.linea {
+    position: relative;
+    z-index: 1;
+}
+h2.linea:before {
+    border-top: 5px solid rgba($blackGrey, 0.25);
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+}
+h2.linea titulo {
+    background: white;
+    padding: 0 50px;
+}
+
+//Swal-------------------------------------------------------------------------------------------------------------
+.swal-height {
+    height: 81.48vh;
+    border-radius: 25px;
+}
+
+//Animation---------------------------------------------------------------------------------------------------------
+@keyframes appearResume {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

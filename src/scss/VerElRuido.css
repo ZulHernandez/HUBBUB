@@ -1,20 +1,26 @@
+.hero {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(255, 255, 255, 0.75)), to(rgba(255, 255, 255, 0.75))), url(../../assets/gif/HeroGif.gif);
+  background: linear-gradient(rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0.75)), url(../../assets/gif/HeroGif.gif);
+  background-size: cover;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/*canvas---------------------------------------------------------------------------------------------------------*/
+.canvaClasRuido {
+  width: 1200px;
+  height: 645px;
+  /*position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+}
+
 .logoHero {
-  height: 249px;
-  width: auto;
-  position: relative;
-  z-index: 2;
-  margin-top: calc(50vh - 123px);
-  margin-left: calc(50vw - 125px);
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
   -webkit-animation-name: logoMove;
           animation-name: logoMove;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
 }
 
 @-webkit-keyframes logoMove {
@@ -22,7 +28,7 @@
     right: 0px;
   }
   100% {
-    right: calc(24vw);
+    right: 24vw;
   }
 }
 
@@ -31,7 +37,25 @@
     right: 0px;
   }
   100% {
-    right: calc(24vw);
+    right: 24vw;
+  }
+}
+
+@-webkit-keyframes appearResume {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appearResume {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=VerElRuido.css.map */
