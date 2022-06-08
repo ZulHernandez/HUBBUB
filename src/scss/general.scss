@@ -19,9 +19,15 @@
     src: url(../../assets/fonts/Montserrat-Light.ttf);
 }
 
+@font-face {
+    font-family: "Montserrat-SB";
+    src: url(../../assets/fonts/Montserrat-SemiBold.ttf);
+}
+
 //Variable-------------------------------------------------------------------------------------------------------
 $blackGrey: #333333;
 $yellow: #fff101;
+$blueLink: #0075ff;
 
 //Mixins-----------------------------------------------------------------------------------------------------------
 @mixin posicion($y1, $y2, $x1, $x2) {
@@ -39,7 +45,11 @@ $yellow: #fff101;
             @if $fweight == "T" {
                 font-family: Montserrat-T;
             } @else {
-                font-family: Montserrat-M;
+                @if $fweight == "SB" {
+                    font-family: Montserrat-SB;
+                } @else {
+                    font-family: Montserrat-M;
+                }
             }
         }
     }
@@ -206,6 +216,14 @@ html {
     margin-right: 15px;
 }
 
+.flechaOido {
+    cursor: pointer;
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
+    }
+}
+
 //text------------------------------------------------------------------------------------------------------------
 ::selection {
     color: $blackGrey;
@@ -246,11 +264,41 @@ html {
     text-transform: none;
 }
 
+.subOido {
+    @include text(left, 32px, "SB", 39px, normal);
+    /*background-color: #7ce0ff;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #7ce0ff;*/
+}
+
+.textSubOido {
+    background-color: #7ce0ff;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #7ce0ff;
+    padding: 0px 5px;
+}
+
 a,
 .swal2-close {
     &:focus {
         outline: none;
     }
+}
+
+.link {
+    @include text(left, 20, "SB", 0, -0.5);
+    color: $blueLink;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.textClasf {
+    padding-top: 30px;
+    text-align-last: center;
 }
 
 h2.linea {

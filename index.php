@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="src/dist/p5.js" type="text/javascript"></script>
-    <!--<script src="src/js/chart.js" type="text/javascript"></script>-->
+    <script src="src/js/chart.js" type="text/javascript"></script>
     <script src="src/js/general.js"></script>
     <link href="src/scss/general.css" rel="stylesheet">
     <link href="src/scss/VerElRuido.css" rel="stylesheet">
@@ -79,14 +79,92 @@
             <div id="canvaOido"></div>
         </center>
     </div>
-    <button onclick="mueve(0)">prev</button>
-    <button onclick="mueve(1)">next</button>
-
-
-
-    <!--<div class="canvaClasRuido">
-        <canvas id="canvaClasRuido"></canvas>
-    </div>-->
+    <div class="row container-fluid divBody" style="padding-top: 100px;">
+        <div class="columna col-2"></div>
+        <div class="columna col-1 flechaOido" onclick="carruOido(0)">
+            <center>
+                <img src="assets/vector/flecha.svg">
+            </center>
+        </div>
+        <div class="columna col">
+            <div id="subOido" class="subOido"><text id="textSubOido" class="textSubOido">Oido externo</text></div>
+            <p id="textOido" class="textSobreN" style="padding-top:40px">Formado por el pabellón auditivo el cual, a manera de embudo, <b>permite
+                    la recolección de las ondas sonoras del ambiente</b> para, finalmente, <b>dirigirlas al canal auditivo</b>. Este
+                también <b>compensa la presión</b> existente entre el exterior y el interior del oído (la cual es mayor al ser aire
+                comprimido) y termina en el tímpano.</p>
+            <p class="link" style="text-align: right; padding-top: 40px;">
+                <a href="https://www.auralcentrosauditivos.es/perdida-auditiva/como-funciona-el-oido" target="_blank">
+                    Puedes ver más acerca del oíio en WIDEX
+                </a>
+            </p>
+        </div>
+        <div class="columna col-1 flechaOido" onclick="carruOido(1)">
+            <center>
+                <img src="assets/vector/flecha.svg" style="transform: rotate(180deg);">
+            </center>
+        </div>
+        <div class="columna col-2"></div>
+    </div>
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="assets/vector/subtitles/clasRuido.svg"></span>
+                            <span>Clasificación del ruido</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>La Organización Mundial de la Salud define al ruido como: cualquier tipo de onda acústica que se encuentre
+                    en el ambiente y establece una clasificación de “Niveles de ruido” donde, a través de la medición con instrumentos
+                    de las ondas acústicas, específicamente hablando de los decibeles (dB), se construyen 3 niveles:</p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <div style="text-align: center;">
+                    <span class="textSubOido subOido" style="background-color: #fffa7c; border-color: #fffa7c ;">
+                        Muy bajo
+                    </span>
+                </div>
+                <p class="textClasf">Se hayan todos los ruidos que se midan entre los 10 a 30 dB.</p>
+            </div>
+            <div class="columna col textCorrido">
+                <div style="text-align: center;">
+                    <span class="textSubOido subOido" style="background-color: #ffc37c; border-color: #ffc37c ;">
+                        Bajo
+                    </span>
+                </div>
+                <p class="textClasf">Se encuentran sonidos de entre 30-55 dB, sin embargo, la OMS considera los 50 dB como el límite superior deseable.</p>
+            </div>
+            <div class="columna col textCorrido" style="letter-spacing: -1">
+                <div style="text-align: center;">
+                    <span class="textSubOido subOido" style="background-color: #ff7c7c; border-color: #ff7c7c ;">
+                        Ruidoso
+                    </span>
+                </div>
+                <p class="textClasf">Todo aquel sonido con mediciones superiores a los 65 dB.</p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 50px;">
+            <div class="columna col-2"></div>
+            <div class="canvaClasRuido columna col">
+                <canvas id="canvaClasRuido"></canvas>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
     <!--SWAL TEMPLATE-->
     <template id="nosotrosSwal">
         <swal-html>

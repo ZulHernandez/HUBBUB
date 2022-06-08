@@ -266,12 +266,12 @@ const options = {
 		},
 	},
 };
-const ctx = document.getElementById("canvaClasRuido");
-const canvaClasRuido = new Chart(ctx, options);
+//const ctx = document.getElementById("canvaClasRuido");
+//const canvaClasRuido = new Chart(ctx, options);
 
 //Funciones
-canvaClasRuido.canvas.onclick = clickEvent;
-function clickEvent(click) {
+/*canvaClasRuido.canvas.onclick = ruido;
+function ruido(click) {
 	//console.log(click);
 	const point = canvaClasRuido.getElementsAtEventForMode(
 		click,
@@ -329,7 +329,7 @@ function clickEvent(click) {
 				break;
 		}
 	}
-}
+}	
 
 /*canvaClasRuido.canvas.addEventListener("mouseclick", (e) => {
 	crosshair(canvaClasRuido, e);
