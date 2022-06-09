@@ -8,7 +8,7 @@ let oidoI = "#d0e546";
 var posOido = 0;
 
 function preload() {
-	MontserratM = loadFont("assets/fonts/Montserrat-Medium.ttf");
+	MontserratM = loadFont("../../assets/fonts/Montserrat-Medium.ttf");
 }
 
 function setup() {
@@ -18,12 +18,10 @@ function setup() {
 	frameRate(60);
 	textAlign(CENTER);
 	colorMode(RGB, 255, 255, 255, 1);
-	oido = loadImage("assets/imgs/oido.png");
-	cOE = loadImage("assets/imgs/cOE.png");
-	cOM = loadImage("assets/imgs/cOM.png");
-	cOI = loadImage("assets/imgs/cOI.png");
-	const ctx = document.getElementById("canvaClasRuido");
-	const canvaClasRuido = new Chart(ctx, options);
+	oido = loadImage("../../assets/imgs/oido.png");
+	cOE = loadImage("../../assets/imgs/cOE.png");
+	cOM = loadImage("../../assets/imgs/cOM.png");
+	cOI = loadImage("../../assets/imgs/cOI.png");
 }
 
 function draw() {
@@ -155,7 +153,7 @@ function drawLabel(x, y, texto) {
 	noStroke();
 	fill(51, 51, 51, 0.9);
 	triangle(x, y, x + 10, y + 10, x - 10, y + 10);
-	rect(x - 25, y + 10, 110, 28, 5);
+	rect(x - 25, y + 9.5, 110, 28, 5);
 	fill(255, 255, 255, 1);
 	textAlign(LEFT);
 	textFont(MontserratM);

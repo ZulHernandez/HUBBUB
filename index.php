@@ -7,12 +7,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="src/dist/p5.js" type="text/javascript"></script>
-    <script src="src/js/chart.js" type="text/javascript"></script>
     <script src="src/js/general.js"></script>
     <link href="src/scss/general.css" rel="stylesheet">
     <link href="src/scss/VerElRuido.css" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/vector/HUBBUBIcon.svg" type="image/x-icon">
     <script type="text/javascript" src="src/js/elRuidoP5.js"></script>
+    <link rel="shortcut icon" href="assets/vector/HUBBUBIcon.svg" type="image/x-icon">
     <title>
         HUBBUB | El ruido
     </title>
@@ -159,10 +158,39 @@
         </div>
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
-            <div class="canvaClasRuido columna col">
-                <canvas id="canvaClasRuido"></canvas>
+            <div class="columna col">
+                <iframe src="src/pages/esquemaOido.php" style="width: 100%; height: 550px;"></iframe>
             </div>
             <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>Aún con el límite que la OMS establece para aquello que es un “ruido sano”, la institución advierte que para qué un ruido pueda ser
+                    perjudicial para el ser humano debe sumársele a la presión sonora el tiempo, la frecuencia y la sonoridad. Este punto es relevante
+                    por que el oído tiene la capacidad de adaptarse “rápidamente” cuando esta expuesto a sonidos ruidosos pero si el evento se repite
+                    o es constante, las afectaciones se notarán con el tiempo.</p>
+                <p>Por ejemplo, para ruido laboral se permite una exposición de 90 dB durante 8 hrs, pero si se aumenta la dosis a 93 dB el tiempo de
+                    exposición permitido son 4 hrs y así disminuyendo el tiempo a la mitad cada 3 dbA.</p>
+                <p>Otra situación es que se este expuesto a un sonido intenso por encima del umbral del dolor por ejemplo 120 dB y ahí la pérdida sería inmediata.</p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="assets/vector/subtitles/legRuido.svg"></span>
+                            <span>Legislación del ruido</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
         </div>
     </div>
     <!--SWAL TEMPLATE-->
