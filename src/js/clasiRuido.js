@@ -59,10 +59,10 @@ const options = {
 					[93, 106, "Motocicleta"],
 					[100, 116, "Martillo demoledor"],
 				],
-				/*backgroundColor: ["#ffffff"],
+				backgroundColor: ["#ffffff"],
 				hoverBackgroundColor: ["#ffffff"],
 				borderColor: ["#333333"],
-				borderWidth: 2,*/
+				borderWidth: 2,
 				showLine: false,
 				order: 0,
 				pointHitRadius: 40,
@@ -202,6 +202,18 @@ const options = {
 			x: {
 				max: 105,
 				min: 20,
+				title: {
+					display: true,
+					text: "NIVEL DE PRESIÓN SONORA (Decibeles)",
+					align: "center",
+					padding: {
+						top: 30,
+					},
+					font: {
+						size: 14,
+						family: "Montserrat-B",
+					},
+				},
 				grid: {
 					lineWidth: 3,
 					color: [
@@ -266,11 +278,12 @@ const options = {
 		},
 	},
 };
-//const ctx = document.getElementById("canvaClasRuido");
-//const canvaClasRuido = new Chart(ctx, options);
+
+const ctx = document.getElementById("canvaClasRuido");
+const canvaClasRuido = new Chart(ctx, options);
 
 //Funciones
-/*canvaClasRuido.canvas.onclick = ruido;
+canvaClasRuido.canvas.onclick = ruido;
 function ruido(click) {
 	//console.log(click);
 	const point = canvaClasRuido.getElementsAtEventForMode(
@@ -329,33 +342,43 @@ function ruido(click) {
 				break;
 		}
 	}
-}	
-/*canvaClasRuido.canvas.addEventListener("mouseclick", (e) => {
+}
+
+canvaClasRuido.canvas.addEventListener("mouseclick", (e) => {
 	crosshair(canvaClasRuido, e);
 });
+
 function crosshair(chart, mousemove) {
-	chart.update('none');
+	chart.update("none");
 	const x = mousemove.offsetX;
 	const y = mousemove.offsetY;
+
 	const {
 		ctx,
 		chartArea: { top, bottom, left, right, width, height },
 	} = chart;
+
 	ctx.save();
-	ctx.strokeStyle = '#333333';
+
+	ctx.strokeStyle = "#333333";
 	ctx.lineWidth = 3;
-	if(mousemove.offsetX >= left && mousemove.offsetX <= right && mousemove.offsetY >= top && mousemove.offsetY <= bottom )
-	{
+
+	if (
+		mousemove.offsetX >= left &&
+		mousemove.offsetX <= right &&
+		mousemove.offsetY >= top &&
+		mousemove.offsetY <= bottom
+	) {
 		ctx.beginPath();
-		ctx.moveTo(left,mousemove.offsetY);
-		ctx.lineTo(right,mousemove.offsetY);
+		ctx.moveTo(left, mousemove.offsetY);
+		ctx.lineTo(right, mousemove.offsetY);
 		ctx.stroke();
 		ctx.closePath();
-	
+
 		ctx.beginPath();
-		ctx.moveTo(mousemove.offsetX,top);
-		ctx.lineTo(mousemove.offsetX,bottom);
+		ctx.moveTo(mousemove.offsetX, top);
+		ctx.lineTo(mousemove.offsetX, bottom);
 		ctx.stroke();
 		ctx.closePath();
 	}
-}*/
+}

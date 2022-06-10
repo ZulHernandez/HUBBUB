@@ -159,7 +159,7 @@
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
             <div class="columna col">
-                <iframe src="src/pages/esquemaOido.php" style="width: 100%; height: 550px;"></iframe>
+                <iframe src="src/pages/clasiRuido.php" style="width: 100%; height: 550px;"></iframe>
             </div>
             <div class="columna col-2"></div>
         </div>
@@ -191,6 +191,117 @@
                 </center>
             </div>
             <div class="columna col-1"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>
+                    México en su <a class="link" target="_blank" href="http://dof.gob.mx/nota_detalle.php?codigo=4706988&fecha=22/06/1994#:~:text=DOF%3A%2022%2F06%2F1994,%2D%20Secretar%C3%ADa%20de%20Desarrollo%20Social.">
+                        NOM-081-SEMARNAT-1994</a> publicada en el Diario Oficial de la Federación el gobierno federal establece los límites
+                    máximos permisibles para emisión de ruido de fuentes fijas, además de determinar los métodos bajo los cuales se miden.
+                </p>
+                <p>
+                    El entonces Distrito Federal de México genera la
+                    <a class="link" target="_blank" href="https://paot.org.mx/centro/normas_a/2014/GODF_29_12_2014.pdf">NADF-005-AMBT-2013</a>;
+                    un documento cuyo objetivo es el de “[…] fortalecer el marco jurídico para realizar acciones de prevención, regulación y
+                    mitigación de emisiones sonoras ubicadas en el territorio del Distrito Federal.” (Administración pública del Distrito Federal, 2014).
+                </p>
+                <p>
+                    En 2017 la secretaria de Medio Ambiente y Recursos Naturales (SEMARNAT)
+                    <a class="link" target="_blank" href="https://www.gob.mx/semarnat/articulos/ssshhh-es-dia-mundial-de-la-descontaminacion-acustica?idiom=es">publica en su blog</a>
+                    oficial una entrada donde nos hablan de la posición en la que se encuentra México además de una declaración de intenciones por parte del
+                    Estado mexicano; la SEMARNAT declara que la contaminación acústica debe ser considerada un problema ambiental de alta relevancia y que
+                    últimamente ha aumentado gracias al desarrollo industrial, comerciales y servicios.
+                </p>
+                <p>
+                    Por otro lado, se hace presente los diferentes esfuerzos que México ha realizado en materia legal sobre el tema de ruido, hablando,
+                    por ejemplo, de la norma oficial mexicana
+                    <a class="link" target="_blank" href="https://paot.org.mx/centro/normas_a/2014/GODF_29_12_2014.pdf">NOM-081-SEMARNAT-1994</a>
+                    con su actualización del 29 de abril del 2013 misma que deviene, precisamente, de la posición que adquiere México como uno de los
+                    países con amplias incidencias perjudiciales en los seres humanos. Esta modificación integra los horarios y zonas recomendadas por la OMS.
+                </p>
+                <p>
+                    Otro documento relevante para el entendimiento del marco jurídico que envuelve al ruido en México son las normativas
+                    <a class="link" target="_blank" href="http://www.ordenjuridico.gob.mx/Documentos/Federal/wo69214.pdf">NOM-082-SEMARNAT-1994</a>,
+                    <a class="link" target="_blank" href="http://www.ordenjuridico.gob.mx/Documentos/Federal/wo68960.pdf">NOM-080-SEMARNAT-1994</a>
+                    y el último de estos que sería la
+                    <a class="link" target="_blank" href="http://www.ordenjuridico.gob.mx/Documentos/Federal/wo69219.pdf">NOM-079-SEMARNAT-1994</a>
+                    donde el foco de las fuentes de ruido se lleva a los móviles, es decir, vehículos automotores y sus formas de medición.
+                </p>
+                <p>
+                    Siguiendo en el marco legal institucional de México, la secretaria de Trabajo y Previsión Social dispone en la
+                    <a class="link" target="_blank" href="http://asinom.stps.gob.mx:8145/upload/noms/Nom-011.pdf">NOM-011-STPS-2001</a>
+                    donde se habla de los cuidados al personal y la responsabilidad que tienen las empresas sobre el cuidado del ruido.
+                </p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="assets/vector/subtitles/compRuido.svg"></span>
+                            <span>Componentes del ruido</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>
+                    La exposición al ruido puede perjudicar parcial o totalmente el sentido del oído. Esta exposición está determinada por tres factores principales:
+                </p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <div style="text-align: center;">
+                    <span class="subOido">
+                        Intensidad
+                    </span>
+                </div>
+                <p class="textClasf">
+                    Determinada por el nivel de presión sonora y se mide en decibeles (dB). El decibelio puede medir otras magnitudes físicas,
+                    pero coloquialmente se le dice así a una unidad más específica llamada decibelio del nivel de presión sonora (dB SPL).</p>
+            </div>
+            <div class="columna col textCorrido">
+                <div style="text-align: center;">
+                    <span class="subOido">
+                        Tono
+                    </span>
+                </div>
+                <p class="textClasf">
+                    Se mide a través de la frecuencia en hercios (Hz) determinando los <letter style="color: #EF5DA8;">agudos</letter> arriba de 
+                    5kHz, <letter style="color: #0075FF;">medios</letter> entre 250 Hz y 5kHz, y <letter style="color: #FF7C7C;">graves</letter> 
+                    debajo de 250 Hz. Sonidos entre 2-4kHz son más molestos debido al notorio cambio de nivel. La voz se encuentra en 250hz y 4kHz.</p>
+            </div>
+            <div class="columna col textCorrido" style="letter-spacing: -1">
+                <div style="text-align: center;">
+                    <span class="subOido">
+                        Tiempo
+                    </span>
+                </div>
+                <p class="textClasf">
+                    Este último elemento se mide en segundos, minutos u horas. Es importante puesto que la exposición prolongada a sonidos que no 
+                    necesariamente sean considerados peligrosos por su intensidad pueden tornarse como un problema.</p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 50px;">
+            <div class="columna col-2"></div>
+            <div class="columna col">
+                <iframe src="src/pages/ondaSlides.php" style="width: 100%; height: 550px;"></iframe>
+            </div>
+            <div class="columna col-2"></div>
         </div>
     </div>
     <!--SWAL TEMPLATE-->

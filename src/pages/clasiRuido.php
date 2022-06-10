@@ -13,6 +13,6 @@
 <body>
     <canvas id="canvaClasRuido"></canvas>
 </body>
-<script type="text/javascript" src="../js/chart.js"></script>
+<script type="text/javascript" src="../js/clasiRuido.js"></script>
 
 </html>
