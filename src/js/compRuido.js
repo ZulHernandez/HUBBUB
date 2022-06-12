@@ -10,13 +10,14 @@ let posY = 50;
 let posX = 75;
 let dibuja = 0;
 let vLabel = 0;
-let hLabel = 0;
+let hLabel = 6930;
 let rataX, rataY, mil, frecuencia;
 const translada = 30;
 const tamanio = 1000 / 300;
 var i = 50;
 var upDown = 0;
 let amplitud = 0;
+let repro = 0;
 
 function preload() {
 	MontserratM = loadFont("../../assets/fonts/Montserrat-Medium.ttf");
@@ -24,9 +25,9 @@ function preload() {
 }
 
 function setup() {
-	frecuencia = posX/65*100;
+	frecuencia = (posX / 65) * 100;
 	var myCanva;
-	myCanva = createCanvas(1200, 840);
+	myCanva = createCanvas(1140, 800);
 	myCanva.parent("canvaOnda");
 	frameRate(60);
 	textAlign(CENTER, CENTER);
@@ -47,13 +48,13 @@ function draw() {
 	fill(51, 51, 51, 0.25);
 	rect(45, 50, 10, 600, 5);
 	rect(65, 670, 1000, 10, 5);
-	vLabel = ((posY - 650) / 60) * -1;
+	/*vLabel = ((posY - 650) / 60) * -1;
 	vLabel = vLabel.toFixed();
 	hLabel = (posX - 1065) * 7 * -1;
 	if (hLabel < 1) {
 		hLabel = 1;
 	}
-	hLabel = hLabel.toFixed();
+	hLabel = hLabel.toFixed();*/
 	fill("#0075FF");
 	switch (eventoDrag) {
 		case 0:
@@ -129,21 +130,31 @@ function draw() {
 	}
 	dibujaLinea();
 	fill(black);
-	rect(1065 - tamanio * 300, 750 - 8, 3, 26);
-	escribe("7000 Hz", 1065 - tamanio * 300, 780, 1);
-	rect(1065 - tamanio * 214.3, 750 - 8, 3, 26);
-	escribe("5000 Hz", 1065 - tamanio * 214.3, 780, 1);
-	rect(1065 - tamanio * 10.7, 750 - 8, 3, 26);
-	escribe("250 Hz", 1065 - tamanio * 10.7, 780, 1);
-	rect(1065 - tamanio * 0, 750 - 8, 3, 26);
-	escribe("1 Hz", 1065 - tamanio * 0, 780, 1);
+	rect(1065 - tamanio * 300, 750 - 8, 3, 25);
+	rect(1065 - tamanio * 214.3, 750 - 8, 3, 25);
+	rect(1065 - tamanio * 10.7, 750 - 8, 3, 25);
+	rect(1065 - tamanio * 0, 750 - 8, 3, 25);
+	escribe("7000 Hz", 1065 - tamanio * 300, 730, 1);
+	escribe("5000 Hz", 1065 - tamanio * 214.3, 730, 1);
+	escribe("250 Hz", 1065 - tamanio * 10.7, 730, 1);
+	escribe("1 Hz", 1065 - tamanio * 0, 730, 1);
+	colorMode(RGB, 255, 255, 255);
+	if (hLabel<=7000 && hLabel>=5000) {
+		drawLabel(posX, 760, "h", "AGUDO");
+	}
+	if (hLabel<=5001 && hLabel>=250) {
+		drawLabel(posX, 760, "h", "MEDIO");
+	}
+	if (hLabel<=251 && hLabel>=1) {
+		drawLabel(posX, 760, "h", "GRAVE");
+	}
 	//console.log(upDown);
 	//translate(0, i);
 	amplitud = posX - 65;
 	fill(0, 0, 0, 0);
 	colorMode(HSB, 360, 100, 100);
 	stroke(hLabel / 23.3, 51, 100);
-	strokeWeight(7);
+	strokeWeight(5);
 	curveTightness(65 / posX - 0.25);
 	beginShape();
 	curveVertex(65, i);
@@ -162,6 +173,8 @@ function draw() {
 	fill(white);
 	noStroke();
 	rect(1070, 0, 200, 655);
+	
+	//playpause();
 }
 
 function cambia() {
@@ -170,7 +183,7 @@ function cambia() {
 	} else if (i <= 650) {
 		i = posY;
 	}
-	setTimeout(cambia,frecuencia);
+	setTimeout(cambia, frecuencia);
 }
 
 function dibujaLinea() {
@@ -215,6 +228,15 @@ function mouseDragged() {
 	if (posX < 75) {
 		posX = 75;
 	}
+
+	vLabel = ((posY - 650) / 60) * -1;
+	vLabel = vLabel.toFixed();
+	hLabel = (posX - 1065) * 7 * -1;
+	if (hLabel < 1) {
+		hLabel = 1;
+	}
+	hLabel = hLabel.toFixed();
+
 	//console.log("drag= " + eventoDragY);
 }
 
@@ -238,6 +260,16 @@ function mouseReleased() {
 	if (posX < 75) {
 		posX = 75;
 	}
+
+	vLabel = ((posY - 650) / 60) * -1;
+	vLabel = vLabel.toFixed();
+	hLabel = (posX - 1065) * 7 * -1;
+	if (hLabel < 1) {
+		hLabel = 1;
+	}
+	hLabel = hLabel.toFixed();
+
+	playpause()
 }
 
 function escribe(texto, x, y, tipo) {
@@ -282,4 +314,14 @@ function drawLabel(x, y, o, texto) {
 		textSize(16);
 		text(texto, x - 15, y - 2);
 	}
+}
+
+function playpause() {
+	const osc = new Tone.Oscillator().toDestination();
+	osc.frequency.value = hLabel;
+	osc.volume.value = vLabel-30;
+	//osc.stop();
+	osc.start().stop("+3");
+	console.log(hLabel);
+	console.log(vLabel);
 }

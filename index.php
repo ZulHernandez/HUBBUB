@@ -280,8 +280,8 @@
                     </span>
                 </div>
                 <p class="textClasf">
-                    Se mide a través de la frecuencia en hercios (Hz) determinando los <letter style="color: #EF5DA8;">agudos</letter> arriba de 
-                    5kHz, <letter style="color: #0075FF;">medios</letter> entre 250 Hz y 5kHz, y <letter style="color: #FF7C7C;">graves</letter> 
+                    Se mide a través de la frecuencia en hercios (Hz) determinando los <letter style="color: #EF5DA8;">agudos</letter> arriba de
+                    5kHz, <letter style="color: #0075FF;">medios</letter> entre 250 Hz y 5kHz, y <letter style="color: #FF7C7C;">graves</letter>
                     debajo de 250 Hz. Sonidos entre 2-4kHz son más molestos debido al notorio cambio de nivel. La voz se encuentra en 250hz y 4kHz.</p>
             </div>
             <div class="columna col textCorrido" style="letter-spacing: -1">
@@ -291,7 +291,7 @@
                     </span>
                 </div>
                 <p class="textClasf">
-                    Este último elemento se mide en segundos, minutos u horas. Es importante puesto que la exposición prolongada a sonidos que no 
+                    Este último elemento se mide en segundos, minutos u horas. Es importante puesto que la exposición prolongada a sonidos que no
                     necesariamente sean considerados peligrosos por su intensidad pueden tornarse como un problema.</p>
             </div>
             <div class="columna col-2"></div>
@@ -299,7 +299,53 @@
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
             <div class="columna col">
-                <iframe src="src/pages/ondaSlides.php" style="width: 100%; height: 550px;"></iframe>
+                <iframe src="src/pages/ondaSlides.php" style="width: 110%; height: 800px;"></iframe>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>
+                    Es importante tomar en cuenta que estas tres variables siempre se encuentran funcionando simultáneamente y son codependientes para
+                    determinar la peligrosidad y repercusiones que pueden tener en la salud. En
+                    <a class="link" target="_blank" href="https://apps.who.int/iris/handle/10665/66217">Guidelines for Community Noise</a>
+                    la OMS establece una serie de afectaciones a la salud a diferentes niveles en el cuerpo y actividad humana.
+                </p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="assets/vector/subtitles/efectSalud.svg"></span>
+                            <span>Efectos en la salud</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>
+                    De acuerdo al
+                    <a class="link" target="_blank" href="https://apps.who.int/iris/bitstream/handle/10665/175580/WHA45_16_eng.pdf?sequence=1">
+                        International Programme on Chemical Safety </a> publicado
+                    en 1992 por la OMS se puede advertir de un efecto negativo del ruido cuando morfológicamente y psicológicamente algún organismo
+                    queda inhabilitado en algunas de sus capacidades, es incapaz de compensar estrés adicional o si aumenta su sensibilidad a efectos
+                    nocivos de su entorno; así se toman en cuenta todos estos efectos en un corto o largo plazo lo que termina por disminuir sus capacidades
+                    físicas, psicológicas o sociales ya sea del humano o alguno de sus órganos.
+                </p>
+                <p>
+                    Esta es la clasificación de enfermedades y afecciones producidas por la contaminación acústica y el ruido:
+                </p>
             </div>
             <div class="columna col-2"></div>
         </div>
