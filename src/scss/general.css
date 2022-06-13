@@ -200,6 +200,24 @@ html {
   opacity: 1;
 }
 
+.imgCh {
+  width: 100px;
+  height: auto;
+  margin-right: 15px;
+}
+
+#img1, #img2, #img3, #img4, #img5 {
+  margin: 0px 40px;
+}
+
+#img1 {
+  margin-left: 0px;
+}
+
+#img5 {
+  margin-right: 0px;
+}
+
 ::-moz-selection {
   color: #333333;
   background: #fff101;
