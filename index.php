@@ -337,8 +337,10 @@
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
             <!--Frame de la gráfica, ondaSlides.php posee la gráfica-->
-            <div class="columna col">
-                <iframe src="src/pages/ondaSlides.php" style="width: 110%; height: 800px;"></iframe>
+            <div class="col">
+                <center>
+                    <iframe src="src/pages/ondaSlides.php" style="width: 110%; height: 800px;"></iframe>
+                </center>
             </div>
             <div class="columna col-2"></div>
         </div>
@@ -392,6 +394,33 @@
             </div>
             <div class="columna col-2"></div>
         </div>
+    </div>
+    
+    <div class="row container-fluid divBody" style="padding-top: 100px;">
+        <div class="columna col-2"></div>
+        <!--Botón de retrosceso en el carrusel-->
+        <!--Función carruSalud navega entre carrussel 0 = retrosceder-->
+        <div class="columna col-1 flechaOido" onclick="carruSalud(0)">
+            <center>
+                <img src="assets/vector/flecha.svg">
+            </center>
+        </div>
+        <!--Texto del carrusel-->
+        <div class="columna col">
+            <img id="img1" class="imgCh" src="assets/vector/salud/cardio.svg">
+            <img id="img2" class="imgCh" src="assets/vector/salud/mental.svg">
+            <img id="img3" class="imgGr" src="assets/vector/salud/discapacidad.svg">
+            <img id="img4" class="imgCh" src="assets/vector/salud/comunicacion.svg">
+            <img id="img5" class="imgCh" src="assets/vector/salud/suenio.svg">
+        </div>
+        <!--Botón de avanze en el carrusel-->
+        <!--Función carruSalud navega entre carrussel 1 = avanzar-->
+        <div class="columna col-1 flechaOido" onclick="carruSalud(1)">
+            <center>
+                <img src="assets/vector/flecha.svg" style="transform: rotate(180deg);">
+            </center>
+        </div>
+        <div class="columna col-2"></div>
     </div>
     <!--Template para el Swal de información sobre HUBBUB-->
     <template id="nosotrosSwal">
