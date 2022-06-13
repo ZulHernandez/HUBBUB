@@ -1,4 +1,4 @@
-//Variables
+//Cargamos imagenes por cada punto de la gráfica
 const pointImage1 = new Image(40, 40);
 pointImage1.src = "../../assets/vector/v1.svg";
 const pointImage2 = new Image(40, 40);
@@ -17,6 +17,7 @@ const pointImage8 = new Image(40, 40);
 pointImage8.src = "../../assets/vector/v8.svg";
 const pointImage9 = new Image(40, 40);
 pointImage9.src = "../../assets/vector/v9.svg";
+//Guardamos las imagenes en un array
 const pointImage = [
 	,
 	,
@@ -31,20 +32,24 @@ const pointImage = [
 	pointImage8,
 	pointImage9,
 ];
-
+//Variable para audio
 var audio = new Audio();
 
-//Opciones para DECIBELES-SONES
+//Quitamos el título del los tooltips
 const titleTooltip = (tooltipItems) => {
 	return "";
 };
 
+//Opciones para la gráfica
 const options = {
+	//Datos a gráficar
 	data: {
 		datasets: [
+			//Gráfica de tipo linea
 			{
 				type: "line",
 				label: "sounds",
+				//Puntos de la gráfica
 				data: [
 					[],
 					[],
@@ -59,6 +64,7 @@ const options = {
 					[93, 106, "Motocicleta"],
 					[100, 116, "Martillo demoledor"],
 				],
+				//Estilos de los puntos
 				backgroundColor: ["#ffffff"],
 				hoverBackgroundColor: ["#ffffff"],
 				borderColor: ["#333333"],
@@ -67,6 +73,7 @@ const options = {
 				order: 0,
 				pointHitRadius: 40,
 			},
+			//Gráfica de área para ruido muy bajo
 			{
 				type: "line",
 				label: "back",
@@ -80,6 +87,7 @@ const options = {
 				fill: { value: 130 },
 				radius: 0,
 			},
+			//Gráfica de área para ruido bajo
 			{
 				type: "line",
 				label: "back",
@@ -93,6 +101,7 @@ const options = {
 				fill: { value: 130 },
 				radius: 0,
 			},
+			//Gráfica de área para ruido ruidoso
 			{
 				type: "line",
 				label: "back",
@@ -110,9 +119,11 @@ const options = {
 	},
 	options: {
 		plugins: {
+			//Ocultamos leyenda
 			legend: {
 				display: false,
 			},
+			//Titulo del eje y
 			title: {
 				display: true,
 				text: "SONORIDAD (sones)",
@@ -122,30 +133,40 @@ const options = {
 					family: "Montserrat-B",
 				},
 			},
+			//Estilos del tootltip
 			tooltip: {
+				//posicion del tooltip
 				yAlign: "bottom",
 				xAlign: "right",
-
+				//Ocultamos el color del dato
 				displayColors: false,
+				//Modo de interacción
 				mode: "point",
 				position: "average",
+				//Color del tooltip
 				backgroundColor: "rgba(51,51,51,0.9)",
+				//Estructura del texto del tooltip
 				callbacks: {
-					//beforeTitle:
+					//Quitamos el título del los tooltips
 					title: titleTooltip,
+					//Nombre del objeto
 					beforeLabel: (context) => {
 						return `${context.raw[2]}`;
 					},
+					//dB promedio del objeto
 					label: (context) => {
 						return `~ ${context.raw[0]} dBA`;
 					},
+					//Sones promedio del objeto
 					afterLabel: (context) => {
 						return `~ ${context.raw[1]} sones`;
 					},
+					//Llamada a la acción
 					footer: (context) => {
 						return "¡Dame click!";
 					},
 				},
+				//Fuente del tooltip
 				bodyFont: {
 					size: 15,
 					family: "Montserrat-M",
@@ -154,27 +175,28 @@ const options = {
 			},
 		},
 		elements: {
+			//Ponemos imagenes en los puntos
 			point: {
-				//radius: 10,
-				//hoverRadius: 60,
-				//hoverBorderWidth: 4,
 				pointStyle: pointImage,
 			},
 		},
 		scales: {
+			//Eje y
 			y: {
+				//Rango del eje
 				max: 130,
 				min: -10,
+				//Estilo de las lineas del eje
 				grid: {
 					lineWidth: 3,
 					color: "rgba(51,51,51,0.15)",
-
 					drawBorder: true,
 					borderColor: "#333333",
 					borderWidth: 3,
-
+					//Dibujamos lineas de rangos
 					drawTicks: true,
 					tickLength: 15,
+					//Determinamos lineas primarias y secundarias
 					tickColor: (ctx) =>
 						ctx.index == 0
 							? "rgba(0,0,0,0)"
@@ -183,25 +205,32 @@ const options = {
 							: "#333333",
 					offset: 0,
 				},
+				//Estilo de las ticks del eje
 				ticks: {
 					display: true,
 					padding: 10,
+					//Espacio entre ticks
 					stepSize: 10,
+					//Determinamos lineas primarias y secundarias
 					color: (ctx) =>
 						ctx.index == 0
 							? "rgba(0,0,0,0)"
 							: ctx.index == 14
 							? "rgba(0,0,0,0)"
 							: "#333333",
+					//Fuente de las ticks
 					font: {
 						size: 14,
 						family: "Montserrat-M",
 					},
 				},
 			},
+			//Eje x
 			x: {
+				//Rango del eje
 				max: 105,
 				min: 20,
+				//Título del eje X
 				title: {
 					display: true,
 					text: "NIVEL DE PRESIÓN SONORA (Decibeles)",
@@ -214,8 +243,10 @@ const options = {
 						family: "Montserrat-B",
 					},
 				},
+				//Estilo de las lineas del eje
 				grid: {
 					lineWidth: 3,
+					//Definimos el color de las lineas
 					color: [
 						"rgba(51,51,51,0.15)",
 						"rgba(51,51,51,0.15)",
@@ -230,7 +261,6 @@ const options = {
 						"rgba(51,51,51,0.15)",
 						"rgba(51,51,51,0.15)",
 					],
-
 					drawBorder: true,
 					borderColor: "#333333",
 					borderWidth: 3,
@@ -239,6 +269,7 @@ const options = {
 					drawTicks: true,
 					tickLength: 15,
 					tickWidth: 3,
+					//Determinamos lineas primarias y secundarias
 					tickColor: (ctx) =>
 						ctx.index == 10
 							? "#333333"
@@ -256,6 +287,7 @@ const options = {
 					display: true,
 					padding: 10,
 					stepSize: 5,
+					//Determinamos ticks primarias y secundarias
 					color: (ctx) =>
 						ctx.index == 10
 							? "#333333"
@@ -270,6 +302,7 @@ const options = {
 						size: 14,
 						family: "Montserrat-M",
 					},
+					//Determinamos formato de las ticks
 					callback: function (value, index, ticks) {
 						return value + " dB";
 					},
@@ -279,19 +312,23 @@ const options = {
 	},
 };
 
+//Dibujamos el gráfico
 const ctx = document.getElementById("canvaClasRuido");
 const canvaClasRuido = new Chart(ctx, options);
 
-//Funciones
+//Listener para clicks
 canvaClasRuido.canvas.onclick = ruido;
+
+//Función para reproducir el audio
 function ruido(click) {
-	//console.log(click);
+	//Evaluar si se dio click en algun punto
 	const point = canvaClasRuido.getElementsAtEventForMode(
 		click,
 		"nearest",
 		{ intersect: true },
 		true
 	);
+	//Evaluamos que punto se dio click y reproducimos el audio correspondiente
 	if (point[0]) {
 		let indicador = point[0].index;
 		switch (indicador) {
@@ -341,44 +378,5 @@ function ruido(click) {
 				audio.play();
 				break;
 		}
-	}
-}
-
-canvaClasRuido.canvas.addEventListener("mouseclick", (e) => {
-	crosshair(canvaClasRuido, e);
-});
-
-function crosshair(chart, mousemove) {
-	chart.update("none");
-	const x = mousemove.offsetX;
-	const y = mousemove.offsetY;
-
-	const {
-		ctx,
-		chartArea: { top, bottom, left, right, width, height },
-	} = chart;
-
-	ctx.save();
-
-	ctx.strokeStyle = "#333333";
-	ctx.lineWidth = 3;
-
-	if (
-		mousemove.offsetX >= left &&
-		mousemove.offsetX <= right &&
-		mousemove.offsetY >= top &&
-		mousemove.offsetY <= bottom
-	) {
-		ctx.beginPath();
-		ctx.moveTo(left, mousemove.offsetY);
-		ctx.lineTo(right, mousemove.offsetY);
-		ctx.stroke();
-		ctx.closePath();
-
-		ctx.beginPath();
-		ctx.moveTo(mousemove.offsetX, top);
-		ctx.lineTo(mousemove.offsetX, bottom);
-		ctx.stroke();
-		ctx.closePath();
 	}
 }

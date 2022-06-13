@@ -1,34 +1,41 @@
 <html>
 
 <head>
+    <!--Implementación de librerias se incluyen: Chart, Bootstrap, Sweetalert y p5-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="src/dist/p5.js" type="text/javascript"></script>
-    <script src="src/js/general.js"></script>
+    <!-- Estilos aplicados al proyecto en general-->
     <link href="src/scss/general.css" rel="stylesheet">
-    <link href="src/scss/VerElRuido.css" rel="stylesheet">
-    <script type="text/javascript" src="src/js/elRuidoP5.js"></script>
+    <!-- Estilos aplicados a la pagina El ruido-->
+    <link href="src/scss/elRuido.css" rel="stylesheet">
+    <!--Js para el manejo de los swal-->
+    <script src="src/js/JSgeneral.js"></script>
+    <!--Js para el esquema del oído, 1er sección-->
+    <script type="text/javascript" src="src/js/P5esquemaOido.js"></script>
+    <!--Icono de la página-->
     <link rel="shortcut icon" href="assets/vector/HUBBUBIcon.svg" type="image/x-icon">
     <title>
         HUBBUB | El ruido
     </title>
-
 </head>
 
 <body>
+    <!--Se incluye el hero Image y resumen de la pagian-->
     <div class="container-fluid hero">
         <div class="imagenHero">
+            <!--Función nosotros dispara Swal de información sobre HUBBUB-->
             <img class="logoHero" onclick="nosotros();" src="assets/gif/HUBBUBIcon.gif">
         </div>
         <div class="row container-fluid divHero paddingNormal">
-            <div class="columna col-2"></div>
-            <div class="columna col-2"></div>
+            <div class="columna col-4"></div>
             <div class="columna col-1">
                 <div class="verticalLine"></div>
             </div>
+            <!--Resumen de la página-->
             <div class="columna col-5">
                 <div class="divResume">
                     <h1 class="pageTitle">El ruido</h1>
@@ -43,7 +50,9 @@
             <div class="columna col-2"></div>
         </div>
     </div>
+    <!--Sección de esquema del oído-->
     <div class="row container-fluid divBody">
+        <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -58,6 +67,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
+        <!--Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -73,18 +83,24 @@
             <div class="columna col-2"></div>
         </div>
     </div>
+    <!--Sección de esquema del oído-->
     <div class="row container-fluid" style="padding-top: 100px;">
         <center>
+            <!--Canva del esquema del oído (P5esquemaOido.js)-->
             <div id="canvaOido"></div>
         </center>
     </div>
+    <!--Sección texto para el esquema del oído-->
     <div class="row container-fluid divBody" style="padding-top: 100px;">
         <div class="columna col-2"></div>
+        <!--Botón de retrosceso en el carrusel-->
+        <!--Función carruOido navega entre carrussel 0 = retrosceder-->
         <div class="columna col-1 flechaOido" onclick="carruOido(0)">
             <center>
                 <img src="assets/vector/flecha.svg">
             </center>
         </div>
+        <!--Texto del carrusel-->
         <div class="columna col">
             <div id="subOido" class="subOido"><text id="textSubOido" class="textSubOido">Oido externo</text></div>
             <p id="textOido" class="textSobreN" style="padding-top:40px">Formado por el pabellón auditivo el cual, a manera de embudo, <b>permite
@@ -97,6 +113,8 @@
                 </a>
             </p>
         </div>
+        <!--Botón de avanze en el carrusel-->
+        <!--Función carruOido navega entre carrussel 1 = avanzar-->
         <div class="columna col-1 flechaOido" onclick="carruOido(1)">
             <center>
                 <img src="assets/vector/flecha.svg" style="transform: rotate(180deg);">
@@ -104,7 +122,9 @@
         </div>
         <div class="columna col-2"></div>
     </div>
+    <!--Sección de clasificación del ruido-->
     <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -119,6 +139,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
+        <!--Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -128,8 +149,10 @@
             </div>
             <div class="columna col-2"></div>
         </div>
+        <!--Tabla de clasificación del ruido-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
+            <!--Columna de ruido muy bajo-->
             <div class="columna col textCorrido">
                 <div style="text-align: center;">
                     <span class="textSubOido subOido" style="background-color: #fffa7c; border-color: #fffa7c ;">
@@ -138,6 +161,7 @@
                 </div>
                 <p class="textClasf">Se hayan todos los ruidos que se midan entre los 10 a 30 dB.</p>
             </div>
+            <!--Columna de ruido bajo-->
             <div class="columna col textCorrido">
                 <div style="text-align: center;">
                     <span class="textSubOido subOido" style="background-color: #ffc37c; border-color: #ffc37c ;">
@@ -146,6 +170,7 @@
                 </div>
                 <p class="textClasf">Se encuentran sonidos de entre 30-55 dB, sin embargo, la OMS considera los 50 dB como el límite superior deseable.</p>
             </div>
+            <!--Columna de ruido ruidoso-->
             <div class="columna col textCorrido" style="letter-spacing: -1">
                 <div style="text-align: center;">
                     <span class="textSubOido subOido" style="background-color: #ff7c7c; border-color: #ff7c7c ;">
@@ -156,13 +181,16 @@
             </div>
             <div class="columna col-2"></div>
         </div>
+        <!--Grafica de clasificación de ruidos-->
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
+            <!--Frame de la grafica,  clasiRuido.php es la página que aloja la gráfica-->
             <div class="columna col">
                 <iframe src="src/pages/clasiRuido.php" style="width: 100%; height: 550px;"></iframe>
             </div>
             <div class="columna col-2"></div>
         </div>
+        <!--Texto final de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -177,7 +205,9 @@
             <div class="columna col-2"></div>
         </div>
     </div>
+    <!--Sección de legislación del ruido-->
     <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -192,6 +222,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
+        <!--Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -237,7 +268,9 @@
             <div class="columna col-2"></div>
         </div>
     </div>
+    <!--Sección de Componentes del ruido-->
     <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -252,6 +285,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
+        <!--Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -263,6 +297,7 @@
         </div>
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
+            <!--Columna sobre la intensidad-->
             <div class="columna col textCorrido">
                 <div style="text-align: center;">
                     <span class="subOido">
@@ -273,6 +308,7 @@
                     Determinada por el nivel de presión sonora y se mide en decibeles (dB). El decibelio puede medir otras magnitudes físicas,
                     pero coloquialmente se le dice así a una unidad más específica llamada decibelio del nivel de presión sonora (dB SPL).</p>
             </div>
+            <!--Columna sobre el tono-->
             <div class="columna col textCorrido">
                 <div style="text-align: center;">
                     <span class="subOido">
@@ -284,6 +320,7 @@
                     5kHz, <letter style="color: #0075FF;">medios</letter> entre 250 Hz y 5kHz, y <letter style="color: #FF7C7C;">graves</letter>
                     debajo de 250 Hz. Sonidos entre 2-4kHz son más molestos debido al notorio cambio de nivel. La voz se encuentra en 250hz y 4kHz.</p>
             </div>
+            <!--Columna sobre el tiempo-->
             <div class="columna col textCorrido" style="letter-spacing: -1">
                 <div style="text-align: center;">
                     <span class="subOido">
@@ -296,13 +333,16 @@
             </div>
             <div class="columna col-2"></div>
         </div>
+        <!--Gráfica de onda con sliders-->
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
+            <!--Frame de la gráfica, ondaSlides.php posee la gráfica-->
             <div class="columna col">
                 <iframe src="src/pages/ondaSlides.php" style="width: 110%; height: 800px;"></iframe>
             </div>
             <div class="columna col-2"></div>
         </div>
+        <!--Texto final de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -316,7 +356,9 @@
             <div class="columna col-2"></div>
         </div>
     </div>
+    <!--Sección de efectos en la salud-->
     <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -331,6 +373,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
+        <!--Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -350,10 +393,11 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--SWAL TEMPLATE-->
+    <!--Template para el Swal de información sobre HUBBUB-->
     <template id="nosotrosSwal">
         <swal-html>
             <div class="row" style="width: 100%;">
+                <!--Imagen y legales del Swal-->
                 <div class="columna col-4">
                     <div class="divIzqNos">
                         <img class="logoHUBBUB" src="assets/vector/HUBBUBLogo.svg">
@@ -373,6 +417,7 @@
                 <div class="columna col-1">
                     <div class="verticalLineNos"></div>
                 </div>
+                <!--Texto del Swal-->
                 <div class="columna col-7">
                     <div class="divDerNos">
                         <p class="subtitle subNos">Sobre nosotros</p><br />
