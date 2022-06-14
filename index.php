@@ -395,32 +395,295 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    
+    <!--Carrusel de imagens-->
     <div class="row container-fluid divBody" style="padding-top: 100px;">
         <div class="columna col-2"></div>
         <!--Botón de retrosceso en el carrusel-->
         <!--Función carruSalud navega entre carrussel 0 = retrosceder-->
         <div class="columna col-1 flechaOido" onclick="carruSalud(0)">
             <center>
-                <img src="assets/vector/flecha.svg">
+                <img src="assets/vector/flecha.svg" style="margin-top: 100px;">
             </center>
         </div>
         <!--Texto del carrusel-->
         <div class="columna col">
-            <img id="img1" class="imgCh" src="assets/vector/salud/cardio.svg">
-            <img id="img2" class="imgCh" src="assets/vector/salud/mental.svg">
-            <img id="img3" class="imgGr" src="assets/vector/salud/discapacidad.svg">
-            <img id="img4" class="imgCh" src="assets/vector/salud/comunicacion.svg">
-            <img id="img5" class="imgCh" src="assets/vector/salud/suenio.svg">
+            <img id="img1" class="img1" class="imgCh" src="assets/vector/salud/suenio.svg">
+            <img id="img2" class="img2" class="imgCh" src="assets/vector/salud/cardio.svg">
+            <img id="img3" class="img3" class="imgGr" src="assets/vector/salud/mental.svg">
+            <img id="img4" class="img4" class="imgCh" src="assets/vector/salud/discapacidad.svg">
+            <img id="img5" class="img5" class="imgCh" src="assets/vector/salud/comunicacion.svg">
         </div>
         <!--Botón de avanze en el carrusel-->
         <!--Función carruSalud navega entre carrussel 1 = avanzar-->
         <div class="columna col-1 flechaOido" onclick="carruSalud(1)">
             <center>
-                <img src="assets/vector/flecha.svg" style="transform: rotate(180deg);">
+                <img src="assets/vector/flecha.svg" style="transform: rotate(180deg); margin-top: 100px;">
             </center>
         </div>
         <div class="columna col-2"></div>
+    </div>
+    <!--Texto del carrusel-->
+    <div class="row container-fluid divBody" style="padding-top: 150px;">
+        <div class="columna col-2"></div>
+        <!--Texto del carrusel-->
+        <div class="columna col">
+            <div id="subSalud" class="subOido">
+                <center>
+                    Discapacidad auditiva inducida por ruido
+                </center>
+            </div>
+            <div id="textoCarruSalud" class="textSobreN" style="padding-top: 40px;">
+                <p>
+                    Hace referencia al aumento en el umbral auditivo. Este es medido a través de la audiometría del umbral y
+                    provoca desventajas para llevar a cabo actividades diarias pues atiende a la dificultad, por ejemplo, de
+                    mantener conversaciones con otros sujetos a un nivel de ruido de fondo estándares
+                    <a class="link" target="_blank" href="https://www.une.org/encuentra-tu-norma/busca-tu-norma/norma?c=N0064811">
+                        (Descritos en la UNE-ISO 19962:2020)</a>.
+                </p>
+                <p>
+                    Estos efectos en el oído son realmente preocupantes puesto que son irreversibles en la mayoría de los casos y
+                    se calcula que 120 millones de personas en el mundo los padecen.
+                </p>
+                <p>
+                    Otros elementos que pueden provocarlos como químicos, medicamentos para los oídos, vientos fuertes en el área
+                    de la cabeza, accidentes como golpes o problemas hereditarios, también se considera como parte de la degradación
+                    del órgano por la edad, sin embargo, estos no son causas que interesen en el estudio del ruido, aunque pueden ser
+                    relevantes para conocer sus efectos en la salud humana.
+                </p>
+                <ul>
+                    <li>
+                        Los niños son más propensos a contraer este tipo de discapacidad que los adultos.
+                    </li>
+                    <li>
+                        A niveles de presión altos en un tiempo de exposición instantáneo provoca daño mecánico en el aparto auditivo.
+                        Comúnmente este límite se ubica en los 140 dB con exposición instantánea. Para niños, 120 dB se vuelve el tope máximo.
+                    </li>
+                    <li>
+                        Para sonidos de armas de fuego que superen los 80 dB y cuyo tiempo de exposición sea de 24 horas puede producir efectos
+                        nocivos en el oído.
+                    </li>
+                    <li>
+                        El riesgo de adquirir alguna discapacidad auditiva aumenta cuando el sujeto se expone al ruido mientras se combina con
+                        vibraciones, uso de medicina ototóxica u otros químicos.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="columna col-2"></div>
+    </div>
+    <!--Sección como se mide el ruido-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--Título de la sección-->
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="assets/vector/subtitles/comoMide.svg"></span>
+                            <span>Como se mide el ruido</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <!--Texto de la sección-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>
+                    En la República Mexicana se cuenta con la
+                    <a class="link" target="_blank" href="http://legismex.mty.itesm.mx/normas/aa/aa062.pdf">
+                        “Norma Oficial Mexicana. Acústica - Determinación de los niveles de ruido ambiental” o NOM-AA-62-1979
+                    </a>
+                    donde se establecen, entre muchas otras cosas, los procedimientos de medición de ruido que se deben llevar
+                    a cabo en pro de la realización de ejercicio de medición correctos. Este documento encuentra su origen en
+                    otra serie de normas que la complementan donde se tratan temas como la terminología para electroacústica,
+                    materiales aislantes, clasificación de ruidos, determinación de ruidos por fuente fija e instrumentos como
+                    los sonómetros.
+                </p>
+                <p>
+                    De forma muy sintética, el ruido medido de forma normalizada de acuerdo a la ley mexicana debe pasar por un
+                    proceso meticuloso que involucra destreza técnica e instrumentos de precisión. Los pasos de forma general
+                    serían los siguientes:
+                </p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
+    <!--Carrusel de imagens-->
+    <div class="row container-fluid divBody" style="padding-top: 100px;">
+        <div class="columna col-3"></div>
+        <!--Botón de retrosceso en el carrusel-->
+        <!--Función carruSalud navega entre carrussel 0 = retrosceder-->
+        <div class="columna col-1 flechaOido" onclick="carruPasos(0)" style="padding-top: 200px;">
+            <center>
+                <img src="assets/vector/flecha.svg">
+            </center>
+        </div>
+        <!--Texto del carrusel-->
+        <div class="columna col">
+            <center>
+                <img id="gifPaso" src="assets/gif/pasos/Paso1.gif">
+            </center>
+        </div>
+        <!--Botón de avanze en el carrusel-->
+        <!--Función carruSalud navega entre carrussel 1 = avanzar-->
+        <div class="columna col-1 flechaOido" onclick="carruPasos(1)"  style="padding-top: 200px;">
+            <center>
+                <img src="assets/vector/flecha.svg" style="transform: rotate(180deg);">
+            </center>
+        </div>
+        <div class="columna col-3"></div>
+    </div>
+    <!--Posición del carrusel-->
+    <div class="row container-fluid divBody" style="padding-top: 40px;">
+        <div class="columna col-4"></div>
+        <!--Barra de posición-->
+        <div class="columna col">
+            <center>
+                <div style="background-color: rgba(51,51,51,0.25); width: 532px; height: 10px; border-radius: 5px; position: absolute; z-index: 1;"></div>
+                <div id="barraCrece" class="barraCrece1" style="background-color: #FF7C7C; height: 10px; border-radius: 5px; position: absolute; z-index: 2;"></div>
+            </center>
+            <button onclick="carruPasos(2,1)" id="paso1" class="actButton" style="margin-left: -5px;"></button>
+            <button onclick="carruPasos(2,2)" id="paso2" class="inaButton" style="margin-left: 61.5px;"></button>
+            <button onclick="carruPasos(2,3)" id="paso3" class="inaButton" style="margin-left: 128px;"></button>
+            <button onclick="carruPasos(2,4)" id="paso4" class="inaButton" style="margin-left: 194.5px;"></button>
+            <button onclick="carruPasos(2,5)" id="paso5" class="inaButton" style="margin-left: 261px;"></button>
+            <button onclick="carruPasos(2,6)" id="paso6" class="inaButton" style="margin-left: 327.5px;"></button>
+            <button onclick="carruPasos(2,7)" id="paso7" class="inaButton" style="margin-left: 394px;"></button>
+            <button onclick="carruPasos(2,8)" id="paso8" class="inaButton" style="margin-left: 460.5px;"></button>
+            <button onclick="carruPasos(2,9)" id="paso9" class="inaButton" style="margin-left: 527px;"></button>
+        </div>
+        <div class="columna col-4"></div>
+    </div>
+    <!--Texto del carrusel-->
+    <div class="row container-fluid divBody" style="padding-top: 50px;">
+        <div class="columna col-3"></div>
+        <!--Texto del carrusel-->
+        <div class="columna col">
+            <div id="subMide" class="subOido">
+                <center>
+                    Paso 1: Croquis
+                </center>
+            </div>
+            <div id="textoCarruMide" class="textSobreN" style="padding-top: 30px; text-align: center;">
+                Levantar un croquis de la zona de forma tal que se pueda conocer el terreno donde se realiza la medición,
+                así como sus particularidades.
+            </div>
+        </div>
+        <div class="columna col-3"></div>
+    </div>
+    <!--Texto final de la sección-->
+    <div class="row container-fluid divBody" style="padding-top: 50px;">
+        <div class="columna col-2"></div>
+        <!--Texto del carrusel-->
+        <div class="columna col textCorrido">
+            De esta forma oficialmente la norma determina que se realiza una toma de ruido correcta, lo que seguiría serían
+            una seria de cálculos y la elaboración de un reporte que, de igual forma, se encuentran normalizados y que servirán
+            como testimonio de la realización correcta de la medición.
+        </div>
+        <div class="columna col-2"></div>
+    </div>
+    <!--Sección áreas de estudio-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--Título de la sección-->
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="assets/vector/subtitles/areaEstudio.svg"></span>
+                            <span>Áreas de estudio</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <!--Texto de la sección-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>
+                    La acústica es la rama de la ciencia (derivada de la física) que se dedica el estudio de “[…]
+                    fenómenos sonores perceptibles por el oído humano.”
+                    <a class="link" target="_blank" href="https://acustival.com/el-ruido-y-la-ergonomia/">
+                        (Acustival, 2021)
+                    </a>
+                    es decir, es la disciplina primaria que se ve interesada en el ruido y cuyo propósito como ciencia
+                    natural es la medición, descripción y explicación de fenómenos acústicos. Esta ciencia primaria que
+                    abre el conocimiento para el entendimiento del ruido después se puede ver consultada por diversas
+                    disciplinas cuyo trabajo se ve involucrado de forma directa o indirecta con la acústica. Algunas de
+                    estas disciplinas satelitales serían los siguientes.
+                </p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--Línea de imagenes-->
+        <div class="row" style="padding-top: 50px;">
+            <div class="columna col-2"></div>
+            <div id="fArea1" class="columna col-1 imagenArea" onclick="areaEstudio(1)">
+                <center>
+                    <div id="area1" class="titleAreaAct"></div>
+                </center>
+            </div>
+            <di  id="fArea2" class="columna col-1 imagenArea" onclick="areaEstudio(2)">
+                <center>
+                    <div id="area2" class="titleArea"></div>
+                </center>
+            </di>
+            <div id="fArea3" class="columna col-1 imagenArea" onclick="areaEstudio(3)">
+                <center>
+                    <div id="area3" class="titleArea"></div>
+                </center>
+            </div>
+            <div id="fArea4" class="columna col-1 imagenArea" onclick="areaEstudio(4)">
+                <center>
+                    <div id="area4" class="titleArea"></div>
+                </center>
+            </div>
+            <div id="fArea5" class="columna col-1 imagenArea" onclick="areaEstudio(5)">
+                <center>
+                    <div id="area5" class="titleArea"></div>
+                </center>
+            </div>
+            <div id="fArea6" class="columna col-1 imagenArea" onclick="areaEstudio(6)">
+                <center>
+                    <div id="area6" class="titleArea"></div>
+                </center>
+            </div>
+            <div id="fArea7" class="columna col-1 imagenArea" onclick="areaEstudio(7)">
+                <center>
+                    <div id="area7" class="titleArea"></div>
+                </center>
+            </div>
+            <div id="fArea8" class="columna col-1 imagenArea" onclick="areaEstudio(8)">
+                <center>
+                    <div id="area8" class="titleArea"></div>
+                </center>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--Texto de la sección-->
+        <div class="row" style="padding-top: 50px;">
+            <div class="columna col-2"></div>
+            <div class="columna col">
+                <div id="subArea" class="subOido">
+                    Área de la salud
+                </div>
+                <div id="textoArea" class="textSobreN" style="padding-top: 30px;">
+                    Médicos, psiquiatras y psicólogos cuyas preocupaciones van más enfocadas al entendimiento de
+                    las repercusiones que tiene el ruido en la salud fisiológica, psíquica y psiquiátrica del sujeto.
+                    Los datos sobre ruido ayudan a estas disciplinas a identificar puntos de estrés para los órganos
+                    y para la psique de las personas para, de esta forma, atenderlos de manera adecuada y en el mejor
+                    de los casos, prevenir que los sujetos interaccionen con estos ruidos nocivos para la salud.
+                </div>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
     </div>
     <!--Template para el Swal de información sobre HUBBUB-->
     <template id="nosotrosSwal">
@@ -431,10 +694,18 @@
                     <div class="divIzqNos">
                         <img class="logoHUBBUB" src="assets/vector/HUBBUBLogo.svg">
                         <br />
-                        <a href="https://www.facebook.com/HUBBUBALERTA/" target="_blank"><img class="iconNosotros" src="assets/vector/facebook.svg"></a>
-                        <a href="https://www.facebook.com/messages/t/194832804678795" target="_blank"><img class="iconNosotros" src="assets/vector/messenger.svg"></a>
-                        <a href="https://twitter.com/AlertaRuido?fbclid=IwAR1o5xnyzozS5nXn8jPbySq0Tjvoh5iggQhPWgzvESj-PUYkhOp-7qQ-RgM" target="_blank"><img class="iconNosotros" src="assets/vector/twitter.svg"></a>
-                        <a href="mailto:hubbub@azc.uam.mx" target="_blank"><img class="iconNosotros" src="assets/vector/mail.svg"></a>
+                        <a href="https://www.facebook.com/HUBBUBALERTA/" target="_blank">
+                            <img class="iconNosotros" src="assets/vector/redes/facebook.svg">
+                        </a>
+                        <a href="https://www.facebook.com/messages/t/194832804678795" target="_blank">
+                            <img class="iconNosotros" src="assets/vector/redes/messenger.svg">
+                        </a>
+                        <a href="https://twitter.com/AlertaRuido?fbclid=IwAR1o5xnyzozS5nXn8jPbySq0Tjvoh5iggQhPWgzvESj-PUYkhOp-7qQ-RgM" target="_blank">
+                            <img class="iconNosotros" src="assets/vector/redes/twitter.svg">
+                        </a>
+                        <a href="mailto:hubbub@azc.uam.mx" target="_blank">
+                            <img class="iconNosotros" src="assets/vector/redes/mail.svg">
+                        </a>
                         <center>
                             <hr class="hrSwal" />
                             <p class="textHUBBUBC">HUBBUB&copy;</p>

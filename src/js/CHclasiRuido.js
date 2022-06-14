@@ -1,22 +1,22 @@
 //Cargamos imagenes por cada punto de la gráfica
 const pointImage1 = new Image(40, 40);
-pointImage1.src = "../../assets/vector/v1.svg";
+pointImage1.src = "../../assets/vector/puntosClasi/v1.svg";
 const pointImage2 = new Image(40, 40);
-pointImage2.src = "../../assets/vector/v2.svg";
+pointImage2.src = "../../assets/vector/puntosClasi/v2.svg";
 const pointImage3 = new Image(40, 40);
-pointImage3.src = "../../assets/vector/v3.svg";
+pointImage3.src = "../../assets/vector/puntosClasi/v3.svg";
 const pointImage4 = new Image(40, 40);
-pointImage4.src = "../../assets/vector/v4.svg";
+pointImage4.src = "../../assets/vector/puntosClasi/v4.svg";
 const pointImage5 = new Image(40, 40);
-pointImage5.src = "../../assets/vector/v5.svg";
+pointImage5.src = "../../assets/vector/puntosClasi/v5.svg";
 const pointImage6 = new Image(40, 40);
-pointImage6.src = "../../assets/vector/v6.svg";
+pointImage6.src = "../../assets/vector/puntosClasi/v6.svg";
 const pointImage7 = new Image(40, 40);
-pointImage7.src = "../../assets/vector/v7.svg";
+pointImage7.src = "../../assets/vector/puntosClasi/v7.svg";
 const pointImage8 = new Image(40, 40);
-pointImage8.src = "../../assets/vector/v8.svg";
+pointImage8.src = "../../assets/vector/puntosClasi/v8.svg";
 const pointImage9 = new Image(40, 40);
-pointImage9.src = "../../assets/vector/v9.svg";
+pointImage9.src = "../../assets/vector/puntosClasi/v9.svg";
 //Guardamos las imagenes en un array
 const pointImage = [
 	,

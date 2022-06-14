@@ -1,5 +1,6 @@
 //Variables--------------------------------------------------------------------------------------------------------
 $blackGrey: #333333;
+$blueLink: #0075ff;
 
 //Mixins-----------------------------------------------------------------------------------------------------------
 @mixin posicion($y1, $y2, $x1, $x2) {
@@ -8,12 +9,48 @@ $blackGrey: #333333;
 }
 
 //Divs--------------------------------------------------------------------------------------------------------------
-.hero{
+.hero {
     background: linear-gradient(rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0.75)),
         url(../../assets/gif/HeroGif.gif);
     background-size: cover;
     height: 100vh;
     display: flex;
+}
+
+//botones----------------------------------------------------------------------------------------------------------
+.inaButton {
+    position: absolute;
+    z-index: 3;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid;
+    border-color: rgba($blackGrey, 0.25);
+    margin-top: -5px;
+    filter: drop-shadow(0px 0px 1px #000);
+
+    &:hover {
+        transform: scale(1.25);
+        border-width: 3;
+    }
+}
+
+.actButton {
+    position: absolute;
+    z-index: 3;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: rgba($blackGrey, 1);
+    margin-top: -5px;
+    filter: drop-shadow(0px 0px 1px #000);
+    transform: scale(1.25);
+    &:hover {
+        cursor: context-menu;
+    }
 }
 
 /*canvas---------------------------------------------------------------------------------------------------------*/
@@ -29,6 +66,207 @@ $blackGrey: #333333;
 //Imagenes-----------------------------------------------------------------------------------------------------------
 .logoHero {
     animation-name: logoMove;
+}
+
+.img1 {
+    margin-top: 75px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve1a5;
+}
+
+.img2 {
+    margin-top: 75px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    margin-left: 142.5px;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve2a1;
+}
+
+.img3 {
+    margin-top: 75px;
+    width: 250px;
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    margin-left: 285px;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve3a2;
+}
+
+.img4 {
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 4;
+    margin-left: 577.5px;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve4a3;
+}
+
+.img5 {
+    margin-top: 75px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 5;
+    margin-left: 720px;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve5a4;
+}
+
+.img1b {
+    margin-top: 75px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve5a1;
+}
+
+.img2b {
+    margin-top: 75px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 2;
+    margin-left: 142.5px;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve1a2;
+}
+
+.img3b {
+    height: auto;
+    position: absolute;
+    z-index: 3;
+    margin-left: 285px;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve2a3;
+}
+
+.img4b {
+    margin-top: 75px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 4;
+    margin-left: 577.5px;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve3a4;
+}
+
+.img5b {
+    margin-top: 75px;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    z-index: 5;
+    margin-left: 720px;
+    //animation-delay: 4s;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-name: mueve4a5;
+}
+
+#fArea1{
+    background-image: url(../../assets/vector/areasEstudio/salud.svg);
+
+}
+
+#fArea2{
+    background-image: url(../../assets/vector/areasEstudio/logistica.svg);
+}
+
+#fArea3{
+    background-image: url(../../assets/vector/areasEstudio/pedagogia.svg);
+}
+
+#fArea4{
+    background-image: url(../../assets/vector/areasEstudio/ingenieria.svg);
+}
+
+#fArea5{
+    background-image: url(../../assets/vector/areasEstudio/arquitectura.svg);
+
+}
+
+#fArea6{
+    background-image: url(../../assets/vector/areasEstudio/arte.svg);
+}
+
+#fArea7{
+    background-image: url(../../assets/vector/areasEstudio/sociologia.svg);
+}
+
+#fArea8{
+    background-image: url(../../assets/vector/areasEstudio/ergonomia.svg);
+}
+
+.imagenArea{
+    background-size: cover;
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-position: 56% 50%;
+}
+
+.titleArea {
+    cursor: pointer;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transition: 0.25s;
+    opacity: 0;
+    border-color: $blackGrey;
+    border-width: 5px;
+    border-style: solid;
+    &:hover {
+        opacity: 0.75;
+    }
+}
+
+.titleAreaAct {
+    cursor: context-menu;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-color: #7CE0FF;
+    border-width: 5px;
+    border-style: solid;
 }
 
 //Animation---------------------------------------------------------------------------------------------------------
@@ -47,5 +285,131 @@ $blackGrey: #333333;
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes mueve1a5 {
+    from {
+        margin-top: 75px;
+        margin-left: 0;
+    }
+    to {
+        margin-top: 75px;
+        margin-left: 720px;
+    }
+}
+
+@keyframes mueve2a1 {
+    from {
+        margin-top: 75px;
+        margin-left: 142.5px;
+    }
+    to {
+        margin-top: 75px;
+        margin-left: 0px;
+    }
+}
+
+@keyframes mueve3a2 {
+    from {
+        margin-top: 0px;
+        margin-left: 285px;
+        width: 250px;
+        height: auto;
+    }
+    to {
+        margin-top: 75px;
+        margin-left: 142.5px;
+        width: 100px;
+        height: auto;
+    }
+}
+
+@keyframes mueve4a3 {
+    from {
+        margin-top: 75px;
+        margin-left: 577.5px;
+        width: 100px;
+        height: auto;
+    }
+    to {
+        margin-top: 0px;
+        margin-left: 285px;
+        width: 250px;
+        height: auto;
+    }
+}
+
+@keyframes mueve5a4 {
+    from {
+        margin-top: 75px;
+        margin-left: 720px;
+    }
+    to {
+        margin-top: 75px;
+        margin-left: 577.5px;
+    }
+}
+
+@keyframes mueve5a1 {
+    from {
+        margin-top: 75px;
+        margin-left: 720px;
+    }
+    to {
+        margin-top: 75px;
+        margin-left: 0;
+    }
+}
+
+@keyframes mueve1a2 {
+    from {
+        margin-top: 75px;
+        margin-left: 0px;
+    }
+    to {
+        margin-top: 75px;
+        margin-left: 142.5px;
+    }
+}
+
+@keyframes mueve2a3 {
+    from {
+        margin-top: 75px;
+        margin-left: 142.5px;
+        width: 100px;
+        height: auto;
+    }
+    to {
+        margin-top: 0px;
+        margin-left: 285px;
+        width: 250px;
+        height: auto;
+    }
+}
+
+@keyframes mueve3a4 {
+    from {
+        margin-top: 0px;
+        margin-left: 285px;
+        width: 250px;
+        height: auto;
+    }
+    to {
+        margin-top: 75px;
+        margin-left: 577.5px;
+        width: 100px;
+        height: auto;
+    }
+}
+
+@keyframes mueve4a5 {
+    from {
+        margin-top: 75px;
+        margin-left: 577.5px;
+    }
+    to {
+        margin-top: 75px;
+        margin-left: 720px;
     }
 }

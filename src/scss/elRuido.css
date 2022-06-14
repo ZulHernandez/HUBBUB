@@ -8,6 +8,46 @@
   display: flex;
 }
 
+.inaButton {
+  position: absolute;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  border: 2px solid;
+  border-color: rgba(51, 51, 51, 0.25);
+  margin-top: -5px;
+  -webkit-filter: drop-shadow(0px 0px 1px #000);
+          filter: drop-shadow(0px 0px 1px #000);
+}
+
+.inaButton:hover {
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  border-width: 3;
+}
+
+.actButton {
+  position: absolute;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  border: 3px solid;
+  border-color: #333333;
+  margin-top: -5px;
+  -webkit-filter: drop-shadow(0px 0px 1px #000);
+          filter: drop-shadow(0px 0px 1px #000);
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+}
+
+.actButton:hover {
+  cursor: context-menu;
+}
+
 /*canvas---------------------------------------------------------------------------------------------------------*/
 .canvaClasRuido {
   width: 1200px;
@@ -21,6 +61,237 @@
 .logoHero {
   -webkit-animation-name: logoMove;
           animation-name: logoMove;
+}
+
+.img1 {
+  margin-top: 75px;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve1a5;
+          animation-name: mueve1a5;
+}
+
+.img2 {
+  margin-top: 75px;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  margin-left: 142.5px;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve2a1;
+          animation-name: mueve2a1;
+}
+
+.img3 {
+  margin-top: 75px;
+  width: 250px;
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  margin-left: 285px;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve3a2;
+          animation-name: mueve3a2;
+}
+
+.img4 {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  z-index: 4;
+  margin-left: 577.5px;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve4a3;
+          animation-name: mueve4a3;
+}
+
+.img5 {
+  margin-top: 75px;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  z-index: 5;
+  margin-left: 720px;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve5a4;
+          animation-name: mueve5a4;
+}
+
+.img1b {
+  margin-top: 75px;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  z-index: 1;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve5a1;
+          animation-name: mueve5a1;
+}
+
+.img2b {
+  margin-top: 75px;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  z-index: 2;
+  margin-left: 142.5px;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve1a2;
+          animation-name: mueve1a2;
+}
+
+.img3b {
+  height: auto;
+  position: absolute;
+  z-index: 3;
+  margin-left: 285px;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve2a3;
+          animation-name: mueve2a3;
+}
+
+.img4b {
+  margin-top: 75px;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  z-index: 4;
+  margin-left: 577.5px;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve3a4;
+          animation-name: mueve3a4;
+}
+
+.img5b {
+  margin-top: 75px;
+  width: 100px;
+  height: auto;
+  position: absolute;
+  z-index: 5;
+  margin-left: 720px;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+  -webkit-animation-name: mueve4a5;
+          animation-name: mueve4a5;
+}
+
+#fArea1 {
+  background-image: url(../../assets/vector/areasEstudio/salud.svg);
+}
+
+#fArea2 {
+  background-image: url(../../assets/vector/areasEstudio/logistica.svg);
+}
+
+#fArea3 {
+  background-image: url(../../assets/vector/areasEstudio/pedagogia.svg);
+}
+
+#fArea4 {
+  background-image: url(../../assets/vector/areasEstudio/ingenieria.svg);
+}
+
+#fArea5 {
+  background-image: url(../../assets/vector/areasEstudio/arquitectura.svg);
+}
+
+#fArea6 {
+  background-image: url(../../assets/vector/areasEstudio/arte.svg);
+}
+
+#fArea7 {
+  background-image: url(../../assets/vector/areasEstudio/sociologia.svg);
+}
+
+#fArea8 {
+  background-image: url(../../assets/vector/areasEstudio/ergonomia.svg);
+}
+
+.imagenArea {
+  background-size: cover;
+  background-size: 80px;
+  background-repeat: no-repeat;
+  background-position: 56% 50%;
+}
+
+.titleArea {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -webkit-transition: 0.25s;
+  transition: 0.25s;
+  opacity: 0;
+  border-color: #333333;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.titleArea:hover {
+  opacity: 0.75;
+}
+
+.titleAreaAct {
+  cursor: context-menu;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-color: #7CE0FF;
+  border-width: 5px;
+  border-style: solid;
 }
 
 @-webkit-keyframes logoMove {
@@ -56,6 +327,258 @@
   }
   100% {
     opacity: 1;
+  }
+}
+
+@-webkit-keyframes mueve1a5 {
+  from {
+    margin-top: 75px;
+    margin-left: 0;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 720px;
+  }
+}
+
+@keyframes mueve1a5 {
+  from {
+    margin-top: 75px;
+    margin-left: 0;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 720px;
+  }
+}
+
+@-webkit-keyframes mueve2a1 {
+  from {
+    margin-top: 75px;
+    margin-left: 142.5px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 0px;
+  }
+}
+
+@keyframes mueve2a1 {
+  from {
+    margin-top: 75px;
+    margin-left: 142.5px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 0px;
+  }
+}
+
+@-webkit-keyframes mueve3a2 {
+  from {
+    margin-top: 0px;
+    margin-left: 285px;
+    width: 250px;
+    height: auto;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 142.5px;
+    width: 100px;
+    height: auto;
+  }
+}
+
+@keyframes mueve3a2 {
+  from {
+    margin-top: 0px;
+    margin-left: 285px;
+    width: 250px;
+    height: auto;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 142.5px;
+    width: 100px;
+    height: auto;
+  }
+}
+
+@-webkit-keyframes mueve4a3 {
+  from {
+    margin-top: 75px;
+    margin-left: 577.5px;
+    width: 100px;
+    height: auto;
+  }
+  to {
+    margin-top: 0px;
+    margin-left: 285px;
+    width: 250px;
+    height: auto;
+  }
+}
+
+@keyframes mueve4a3 {
+  from {
+    margin-top: 75px;
+    margin-left: 577.5px;
+    width: 100px;
+    height: auto;
+  }
+  to {
+    margin-top: 0px;
+    margin-left: 285px;
+    width: 250px;
+    height: auto;
+  }
+}
+
+@-webkit-keyframes mueve5a4 {
+  from {
+    margin-top: 75px;
+    margin-left: 720px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 577.5px;
+  }
+}
+
+@keyframes mueve5a4 {
+  from {
+    margin-top: 75px;
+    margin-left: 720px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 577.5px;
+  }
+}
+
+@-webkit-keyframes mueve5a1 {
+  from {
+    margin-top: 75px;
+    margin-left: 720px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 0;
+  }
+}
+
+@keyframes mueve5a1 {
+  from {
+    margin-top: 75px;
+    margin-left: 720px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 0;
+  }
+}
+
+@-webkit-keyframes mueve1a2 {
+  from {
+    margin-top: 75px;
+    margin-left: 0px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 142.5px;
+  }
+}
+
+@keyframes mueve1a2 {
+  from {
+    margin-top: 75px;
+    margin-left: 0px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 142.5px;
+  }
+}
+
+@-webkit-keyframes mueve2a3 {
+  from {
+    margin-top: 75px;
+    margin-left: 142.5px;
+    width: 100px;
+    height: auto;
+  }
+  to {
+    margin-top: 0px;
+    margin-left: 285px;
+    width: 250px;
+    height: auto;
+  }
+}
+
+@keyframes mueve2a3 {
+  from {
+    margin-top: 75px;
+    margin-left: 142.5px;
+    width: 100px;
+    height: auto;
+  }
+  to {
+    margin-top: 0px;
+    margin-left: 285px;
+    width: 250px;
+    height: auto;
+  }
+}
+
+@-webkit-keyframes mueve3a4 {
+  from {
+    margin-top: 0px;
+    margin-left: 285px;
+    width: 250px;
+    height: auto;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 577.5px;
+    width: 100px;
+    height: auto;
+  }
+}
+
+@keyframes mueve3a4 {
+  from {
+    margin-top: 0px;
+    margin-left: 285px;
+    width: 250px;
+    height: auto;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 577.5px;
+    width: 100px;
+    height: auto;
+  }
+}
+
+@-webkit-keyframes mueve4a5 {
+  from {
+    margin-top: 75px;
+    margin-left: 577.5px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 720px;
+  }
+}
+
+@keyframes mueve4a5 {
+  from {
+    margin-top: 75px;
+    margin-left: 577.5px;
+  }
+  to {
+    margin-top: 75px;
+    margin-left: 720px;
   }
 }
 /*# sourceMappingURL=elRuido.css.map */
