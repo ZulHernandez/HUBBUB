@@ -1,11 +1,40 @@
+body {
+  background-image: url(../../assets/vector/background.svg);
+}
+
 .hero {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(100%, rgba(255, 255, 255, 0.75)), to(rgba(255, 255, 255, 0.75))), url(../../assets/gif/HeroGif.gif);
-  background: linear-gradient(rgba(255, 255, 255, 0.75) 100%, rgba(255, 255, 255, 0.75)), url(../../assets/gif/HeroGif.gif);
+  background: url(../../assets/vector/FondoCDMX.svg);
   background-size: cover;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-animation-duration: 60s;
+          animation-duration: 60s;
+  -webkit-animation-name: moveFondo;
+          animation-name: moveFondo;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@-webkit-keyframes moveFondo {
+  0% {
+    background-position: 100vw;
+  }
+  100% {
+    background-position: 0vw;
+  }
+}
+
+@keyframes moveFondo {
+  0% {
+    background-position: 100vw;
+  }
+  100% {
+    background-position: 0vw;
+  }
 }
 
 .inaButton {
@@ -274,14 +303,21 @@
   border-radius: 50%;
   -webkit-transition: 0.25s;
   transition: 0.25s;
-  opacity: 0;
-  border-color: #333333;
+  opacity: 1;
+  border-color: transparent;
   border-width: 5px;
   border-style: solid;
+  -webkit-backdrop-filter: blur(1px);
+          backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: grayscale(100%);
+          backdrop-filter: grayscale(100%);
 }
 
 .titleArea:hover {
   opacity: 0.75;
+  border-color: #333333;
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
 }
 
 .titleAreaAct {
@@ -289,7 +325,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border-color: #7CE0FF;
+  border-color: #FF7C7C;
   border-width: 5px;
   border-style: solid;
 }

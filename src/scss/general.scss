@@ -186,6 +186,22 @@ html {
     @include paddingGeneral();
 }
 
+.footer{
+    padding: 85px 0px;
+    background-color: rgba($blackGrey,0.75);
+    background-image: url(../../assets/vector/background.svg);
+    margin-top: 200px;
+    margin-left: 0px;
+}
+
+.navIzq{
+    z-index: 10;
+    position: fixed;
+    width: 340px;
+    height: 100vh;
+    background-color: red;
+}
+
 //images----------------------------------------------------------------------------------------------------------
 .logoHero {
     height: 23.06vh;
@@ -251,13 +267,13 @@ html {
     @include text(center, 10px, "T", 1px, normal);
 }
 
-.textSobreN {
-    @include text(justify, 20px, "R", 24px, -0.5);
-}
-
 .subtitle {
     @include text(left, 40px, "B", 49px, normal);
     text-transform: uppercase;
+}
+
+.refe {
+    @include text(left, 14px, "M", 17px, -0.5);
 }
 
 .subNos {
@@ -320,6 +336,32 @@ h2.linea:before {
 h2.linea titulo {
     background: white;
     padding: 0 50px;
+}
+
+.tituloFooter{
+    @include text(left, 20px, "B", 24px, normal);
+    color: white;
+    text-transform: uppercase;
+}
+
+.linkFooter{
+    @include text(left, 16px, "T", 10px, normal);
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.linkFooterAct{
+    @include text(left, 16px, "B", 10px, normal);
+    color: white;
+    text-decoration: underline;
+}
+
+.subFooterText{
+    @include text(left, 15px, "T", 5px, normal);
 }
 
 //Swal-------------------------------------------------------------------------------------------------------------

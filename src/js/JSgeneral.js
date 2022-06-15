@@ -22,7 +22,7 @@ function nosotros() {
 let contSalud = 1;
 
 //movemos el carruselSalud
-function carruSalud(a) {
+function carruSalud(a,b) {
 	//obtenemos los elementos del HTML
 	img1 = document.getElementById("img1");
 	img2 = document.getElementById("img2");
@@ -35,8 +35,12 @@ function carruSalud(a) {
 	//evaluamos si avanzamos o retrocedemos
 	if (a == 1) {
 		contSalud++;
-	} else {
+	}
+	if (a == 0) {
 		contSalud--;
+	}
+	if( a == 2){
+		contSalud = b;
 	}
 
 	//evaluamos si llegamos al final o al inicio

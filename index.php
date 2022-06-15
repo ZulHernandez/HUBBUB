@@ -24,8 +24,12 @@
 </head>
 
 <body>
+    <!--Se incluye el navegador lateral izquierdo-->
+    <!--<div class="navIzq">
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    </div>-->
     <!--Se incluye el hero Image y resumen de la pagian-->
-    <div class="container-fluid hero">
+    <div id="hero" class="container-fluid hero">
         <div class="imagenHero">
             <!--Función nosotros dispara Swal de información sobre HUBBUB-->
             <img class="logoHero" onclick="nosotros();" src="assets/gif/HUBBUBIcon.gif">
@@ -103,13 +107,13 @@
         <!--Texto del carrusel-->
         <div class="columna col">
             <div id="subOido" class="subOido"><text id="textSubOido" class="textSubOido">Oido externo</text></div>
-            <p id="textOido" class="textSobreN" style="padding-top:40px">Formado por el pabellón auditivo el cual, a manera de embudo, <b>permite
+            <p id="textOido" class="textCorrido" style="padding-top:40px">Formado por el pabellón auditivo el cual, a manera de embudo, <b>permite
                     la recolección de las ondas sonoras del ambiente</b> para, finalmente, <b>dirigirlas al canal auditivo</b>. Este
                 también <b>compensa la presión</b> existente entre el exterior y el interior del oído (la cual es mayor al ser aire
                 comprimido) y termina en el tímpano.</p>
             <p class="link" style="text-align: right; padding-top: 40px;">
                 <a href="https://www.auralcentrosauditivos.es/perdida-auditiva/como-funciona-el-oido" target="_blank">
-                    Puedes ver más acerca del oíio en WIDEX
+                    Puedes ver más acerca del oído en WIDEX
                 </a>
             </p>
         </div>
@@ -316,8 +320,8 @@
                     </span>
                 </div>
                 <p class="textClasf">
-                    Se mide a través de la frecuencia en hercios (Hz) determinando los <letter style="color: #EF5DA8;">agudos</letter> arriba de
-                    5kHz, <letter style="color: #0075FF;">medios</letter> entre 250 Hz y 5kHz, y <letter style="color: #FF7C7C;">graves</letter>
+                    Se mide a través de la frecuencia en hercios (Hz) determinando los <letter style="color: #fe7cff;">agudos</letter> arriba de
+                    5kHz, <letter style="color: #7db7ff;">medios</letter> entre 250 Hz y 5kHz, y <letter style="color: #ff937d;">graves</letter>
                     debajo de 250 Hz. Sonidos entre 2-4kHz son más molestos debido al notorio cambio de nivel. La voz se encuentra en 250hz y 4kHz.</p>
             </div>
             <!--Columna sobre el tiempo-->
@@ -407,11 +411,11 @@
         </div>
         <!--Texto del carrusel-->
         <div class="columna col">
-            <img id="img1" class="img1" class="imgCh" src="assets/vector/salud/suenio.svg">
-            <img id="img2" class="img2" class="imgCh" src="assets/vector/salud/cardio.svg">
-            <img id="img3" class="img3" class="imgGr" src="assets/vector/salud/mental.svg">
-            <img id="img4" class="img4" class="imgCh" src="assets/vector/salud/discapacidad.svg">
-            <img id="img5" class="img5" class="imgCh" src="assets/vector/salud/comunicacion.svg">
+            <img id="img1" class="img1 imgCh" src="assets/vector/salud/suenio.svg">
+            <img id="img3" class="img3 imgGr" src="assets/vector/salud/mental.svg">
+            <img id="img2" class="img2 imgCh" src="assets/vector/salud/cardio.svg">
+            <img id="img4" class="img4 imgCh" src="assets/vector/salud/discapacidad.svg">
+            <img id="img5" class="img5 imgCh" src="assets/vector/salud/comunicacion.svg">
         </div>
         <!--Botón de avanze en el carrusel-->
         <!--Función carruSalud navega entre carrussel 1 = avanzar-->
@@ -432,7 +436,7 @@
                     Discapacidad auditiva inducida por ruido
                 </center>
             </div>
-            <div id="textoCarruSalud" class="textSobreN" style="padding-top: 40px;">
+            <div id="textoCarruSalud" class="textCorrido" style="padding-top: 40px;">
                 <p>
                     Hace referencia al aumento en el umbral auditivo. Este es medido a través de la audiometría del umbral y
                     provoca desventajas para llevar a cabo actividades diarias pues atiende a la dificultad, por ejemplo, de
@@ -530,7 +534,7 @@
         </div>
         <!--Botón de avanze en el carrusel-->
         <!--Función carruSalud navega entre carrussel 1 = avanzar-->
-        <div class="columna col-1 flechaOido" onclick="carruPasos(1)"  style="padding-top: 200px;">
+        <div class="columna col-1 flechaOido" onclick="carruPasos(1)" style="padding-top: 200px;">
             <center>
                 <img src="assets/vector/flecha.svg" style="transform: rotate(180deg);">
             </center>
@@ -568,7 +572,7 @@
                     Paso 1: Croquis
                 </center>
             </div>
-            <div id="textoCarruMide" class="textSobreN" style="padding-top: 30px; text-align: center;">
+            <div id="textoCarruMide" class="textCorrido" style="padding-top: 30px; text-align: center;">
                 Levantar un croquis de la zona de forma tal que se pueda conocer el terreno donde se realiza la medición,
                 así como sus particularidades.
             </div>
@@ -630,7 +634,7 @@
                     <div id="area1" class="titleAreaAct"></div>
                 </center>
             </div>
-            <di  id="fArea2" class="columna col-1 imagenArea" onclick="areaEstudio(2)">
+            <di id="fArea2" class="columna col-1 imagenArea" onclick="areaEstudio(2)">
                 <center>
                     <div id="area2" class="titleArea"></div>
                 </center>
@@ -674,7 +678,7 @@
                 <div id="subArea" class="subOido">
                     Área de la salud
                 </div>
-                <div id="textoArea" class="textSobreN" style="padding-top: 30px;">
+                <div id="textoArea" class="textCorrido" style="padding-top: 30px;">
                     Médicos, psiquiatras y psicólogos cuyas preocupaciones van más enfocadas al entendimiento de
                     las repercusiones que tiene el ruido en la salud fisiológica, psíquica y psiquiátrica del sujeto.
                     Los datos sobre ruido ayudan a estas disciplinas a identificar puntos de estrés para los órganos
@@ -683,6 +687,321 @@
                 </div>
             </div>
             <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>
+                    Un ejemplo de una de estas áreas de estudio aplicando sus conocimientos y enfoques sobre el ruido en
+                    un objetivo concreto es el parque Paley en Central Park. Este es un pequeño espacio dentro de la ajetreada
+                    ciudad de Manhantan donde una casada artificial es utilizada para el diseño de ruido, en este caso, la
+                    cancelación o reducción del ruido del tráfico dentro de un espacio de relajación. El video abajo explica mucho mejor el fenómeno del parque Paley.
+                </p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 50px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <div class="sketchfab-embed-wrapper" style="width:100%">
+                    <iframe style="width:100%; height: 720;" title="Paley Park Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b5a78dd2523949f3be85360d82a079c5/embed?autospin=1&autostart=1&camera=0"> </iframe>
+                </div>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
+    <!--Sección artículos HUBBUB-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--Título de la sección-->
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="assets/vector/subtitles/artHubbub.svg"></span>
+                            <span>Articulos HUBBUB</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <!--Texto de la sección-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col-4 refe">
+                <p>
+                    Acustival. (28 de Enero de 2021).
+                    El ruido y la ergonomia.
+                    https://acustival.com/el-ruido-y-la-ergonomia/
+                </p>
+                <p>
+                    admin. (6 de octubre de 2018).
+                    Acústica: alcances de la ciencia del sonido.
+                    https://www.itba.edu.ar/blog/2018/10/06/acustica-alcances-de-la-ciencia-del-sonido/
+                </p>
+                <p>
+                    Administración pública del Distrito Federal. (29 de Diciembre de 2014).
+                    Gaceta oficial del Distrito Federal(2016).
+                    http://www.paot.org.mx/centro/normas_a/2014/GODF_29_12_2014.pdf
+                </p>
+                <p>
+                    Agencia de Medioambiente Europea. (2002).
+                    The NOISE Observation & Information Service for Europe.
+                    https://noise.eea.europa.eu/index.html
+                </p>
+                <p>
+                    Audifón. (s.f.).
+                    ¿Qué son las células ciliadas?
+                    https://audifon.es/que-es/c/celulas-ciliadas/
+                </p>
+                <p>
+                    Casals, C. R. (2016).
+                    El problema de la contaminación. (U. d. Zaragoza, Ed.) 2016, Zaragoza.
+                    https://zaguan.unizar.es/record/48395/files/TESIS-2016-141.pdf
+                </p>
+            </div>
+            <div class="columna col-4 refe">
+                <p>
+                    Olague Caballero, C. O., Wenglas Lara, G., & Duarte Rodríguez, J. G. (2016).
+                    Contaminación por ruido en carreteras de acceso a la ciudad de Chihuahua. CienciaUAT, 11(1), 101-115.
+                    http://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-78582016000200101&lang=es
+                </p>
+                <p>
+                    Oliva, Y. D. (2009).
+                    El ruido como problema en el aprendizaje. Santiago de Chile: Universidad de Chile.
+                    https://repositorio.uchile.cl/tesis/uchile/2009/aq-lucic_y/pdfAmont/aq-lucic_y.pdf
+                </p>
+                <p>
+                    Organización Mundial de la Salud. (1992).
+                    International Programme on Chemical Safety. Geneva.
+                    https://apps.who.int/iris/bitstream/handle/10665/175842/WHA45_R32_eng.pdf?sequence=1&isAllowed=y
+                </p>
+                <p>
+                    Organización Mundial de la Salud. (1999).
+                    Guidelines for Community Noise. Geneva.
+                </p>
+                <p>
+                    Organización Mundial de la Salud. (2015).
+                    Escuchar sin riesgos. Geneva: WHO Document Production Services.
+                    https://www.who.int/pbd/deafness/activities/MLS_Brochure_Spanish_lowres_for_web.pdf
+                </p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
+    <!--Sección referencias y articulos-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--Título de la sección-->
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="assets/vector/subtitles/artRef.svg"></span>
+                            <span>Referencias y artículos</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <!--Texto de la sección-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col-4 refe">
+                <p>
+                    Acustival. (28 de Enero de 2021).
+                    El ruido y la ergonomia.
+                    https://acustival.com/el-ruido-y-la-ergonomia/
+                </p>
+                <p>
+                    admin. (6 de octubre de 2018).
+                    Acústica: alcances de la ciencia del sonido.
+                    https://www.itba.edu.ar/blog/2018/10/06/acustica-alcances-de-la-ciencia-del-sonido/
+                </p>
+                <p>
+                    Administración pública del Distrito Federal. (29 de Diciembre de 2014).
+                    Gaceta oficial del Distrito Federal(2016).
+                    http://www.paot.org.mx/centro/normas_a/2014/GODF_29_12_2014.pdf
+                </p>
+                <p>
+                    Agencia de Medioambiente Europea. (2002).
+                    The NOISE Observation & Information Service for Europe.
+                    https://noise.eea.europa.eu/index.html
+                </p>
+                <p>
+                    Audifón. (s.f.).
+                    ¿Qué son las células ciliadas?
+                    https://audifon.es/que-es/c/celulas-ciliadas/
+                </p>
+                <p>
+                    Casals, C. R. (2016).
+                    El problema de la contaminación. (U. d. Zaragoza, Ed.) 2016, Zaragoza.
+                    https://zaguan.unizar.es/record/48395/files/TESIS-2016-141.pdf
+                </p>
+                <p>
+                    Díaz, R. E. (2007).
+                    Acondicionamiento Acústico- Temas Teóricos. Monte Video: Facultad de Arquitectura, Universidad de la República.
+                    https://www.fadu.edu.uy/acondicionamiento-acustico/wp-content/blogs.dir/27/files/2012/02/01-ACUSTICA-FISICA-1.pdf
+                </p>
+                <p>
+                    Enciclopedia de Ejemplos. (2019).
+                    Sonidos graves y sonidos agudos.
+                    https://www.ejemplos.co/ejemplos-de-sonidos-graves-y-sonidos-agudos/
+                </p>
+                <p>
+                    Gortari, J. d. (2010).
+                    La revalorización de los sonidos y la calidad sonora. Barcelona: Departamento de Construccions Arquitectòniques I ETSAB-UPC.
+                    https://www.arauacustica.com/files/publicaciones_relacionados/pdf_esp_229.pdf
+                </p>
+                <p>
+                    GreenFacts. (s.f.).
+                    Decibelio.
+                    https://www.greenfacts.org/es/glosario/def/decibelio.html
+                </p>
+                <p>
+                    Montano Rodriguez, W. A., & Pascal, M. C. (2014).
+                    El ruido hace a la modernidad, o la modernidad hace el ruido. Rosario.
+                </p>
+                <p>
+                    MX, U. (12 de septiembre de 2018).
+                    Ingeniería Acústica: la importancia del sonido en nuestra vida.
+                    https://www.universia.net/mx/actualidad/orientacion-academica/ingenieria-acustica-importancia-sonido-nuestra-vida-1161430.html
+                </p>
+                <p>
+                    National Institute on Deafness and Other Communication Disorders. (2 de julio de 2019).
+                    Pérdida de audición inducida por el ruido.
+                    https://www.nidcd.nih.gov/es/espanol/perdida-de-audicion-inducida-por-el-ruido
+                </p>
+            </div>
+            <div class="columna col-4 refe">
+                <p>
+                    Olague Caballero, C. O., Wenglas Lara, G., & Duarte Rodríguez, J. G. (2016).
+                    Contaminación por ruido en carreteras de acceso a la ciudad de Chihuahua. CienciaUAT, 11(1), 101-115.
+                    http://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S2007-78582016000200101&lang=es
+                </p>
+                <p>
+                    Oliva, Y. D. (2009).
+                    El ruido como problema en el aprendizaje. Santiago de Chile: Universidad de Chile.
+                    https://repositorio.uchile.cl/tesis/uchile/2009/aq-lucic_y/pdfAmont/aq-lucic_y.pdf
+                </p>
+                <p>
+                    Organización Mundial de la Salud. (1992).
+                    International Programme on Chemical Safety. Geneva.
+                    https://apps.who.int/iris/bitstream/handle/10665/175842/WHA45_R32_eng.pdf?sequence=1&isAllowed=y
+                </p>
+                <p>
+                    Organización Mundial de la Salud. (1999).
+                    Guidelines for Community Noise. Geneva.
+                </p>
+                <p>
+                    Organización Mundial de la Salud. (2015).
+                    Escuchar sin riesgos. Geneva: WHO Document Production Services.
+                    https://www.who.int/pbd/deafness/activities/MLS_Brochure_Spanish_lowres_for_web.pdf
+                </p>
+                <p>
+                    Ormaechea, E. (3 de Noviembre de 2016).
+                    El ruido en la salud: ¿Qué es la contaminación acústica?
+                    https://www.salud.mapfre.es/cuerpo-y-mente/habitos-saludables/ruido-y-salud/
+                </p>
+                <p>
+                    Real Academia Española. (s.f.).
+                    ruido.
+                    https://dle.rae.es/ruido
+                </p>
+                <p>
+                    Rodríguez Manzo, F. E., & Garay Vargas, E. (abril de 2012).
+                    El mapa de ruido de la ciudad de México.
+                    http://zaloamati.azc.uam.mx/handle/11191/456
+                </p>
+                <p>
+                    Secretaría de Gobernación. (2 de Agosto de 1979).
+                    NORMA Oficial Mexicana. Acústica- Determinación de los niveles de ruido ambiental.
+                    http://dof.gob.mx/nota_detalle.php?codigo=4828986&fecha=02/08/1979
+                </p>
+                <p>
+                    Secretaría de Medio Ambiente y Recursos Naturales. (11 de Junio de 2017).
+                    Es Día Mundial de la Descontaminación Acústica.
+                    https://www.gob.mx/semarnat/articulos/ssshhh-es-dia-mundial-de-la-descontaminacion-acustica?idiom=es
+                </p>
+                <p>
+                    UNE-ISO. (2020).
+                    UNE-ISO 1996-2:2020 Acústica. Descripción, medición y evaluación del ruido ambiental. Parte 2: Determinación de los niveles de presión sonora
+                </p>
+                <p>
+                    WIDEX. (s.f.).
+                    ¿Cómo funciona el oído?
+                    https://www.widex.es/perdida-auditiva/como-funciona-el-oido
+                </p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div class="row container-fluid divBody footer">
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col-1">
+                <a href="#hero"><img src="assets/vector/HUBBUBIconWhite.svg"></a>
+            </div>
+            <div class="columna col-3"></div>
+            <div class="columna col">
+                <p class="tituloFooter">Descargas</p>
+                <a href="https://play.google.com/store/apps/details?id=com.UAM.Noise&hl=es" target="_blank">
+                    <img class="iconNosotros" src="assets/vector/redes/playStoreW.svg">
+                </a>
+                <!--// TODO: Agregar aplicación para iOS //-->
+                <img class="iconNosotros" src="assets/vector/redes/appleStoreW.svg">
+            </div>
+            <div class="columna col">
+                <p class="tituloFooter">Sitio</p>
+                <p class="linkFooterAct" style="margin-top:20px">El ruido</p>
+                <p class="linkFooter">Ver el ruido</p>
+                <p class="linkFooter" onclick="nosotros();">Sobre nosotros</p>
+            </div>
+            <div class="columna col">
+                <p class="tituloFooter">Contacto</p>
+                <a href="https://www.facebook.com/HUBBUBALERTA/" target="_blank">
+                    <img class="iconNosotros" src="assets/vector/redes/facebookW.svg">
+                </a>
+                <a href="https://www.facebook.com/messages/t/194832804678795" target="_blank">
+                    <img class="iconNosotros" src="assets/vector/redes/messengerW.svg">
+                </a>
+                <a href="https://twitter.com/AlertaRuido?fbclid=IwAR1o5xnyzozS5nXn8jPbySq0Tjvoh5iggQhPWgzvESj-PUYkhOp-7qQ-RgM" target="_blank">
+                    <img class="iconNosotros" src="assets/vector/redes/twitterW.svg">
+                </a>
+                <br /><br />
+                <a href="mailto:hubbub@azc.uam.mx" target="_blank">
+                    <p class="linkFooter">hubbub@azc.uam.mx</p>
+                </a>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+    </div>
+    <!--Sub Footer-->
+    <div class="row container-fluid divBody" style="padding: 20px 0px;">
+        <!--Título de la sección-->
+        <div class="row subFooterText">
+            <div class="columna col-1"></div>
+            <div class="columna col">
+                <center>
+                    Aviso de privacidad
+                </center>
+            </div>
+            <div class="columna col">
+                <center>
+                    Todos los derechos reservados
+                </center>
+            </div>
+            <div class="columna col">
+                <center>
+                    HUBBUB (2022) ©
+                </center>
+            </div>
+            <div class="columna col-1"></div>
         </div>
     </div>
     <!--Template para el Swal de información sobre HUBBUB-->
@@ -719,7 +1038,7 @@
                 </div>
                 <!--Texto del Swal-->
                 <div class="columna col-7">
-                    <div class="divDerNos">
+                    <div class="divDerNos" style="text-align: justify;">
                         <p class="subtitle subNos">Sobre nosotros</p><br />
                         <p class="textSobreN">HUBBUB Alerta ruido es una iniciativa de la Mtra. Verónica Arroyo Pedroza de la Universidad Autónoma Metropolitana, CyAD Azcapotzalco, a partir del trabajo conjunto con el Laboratorio de Análisis y Diseño Acústico (LADAc) de la misma Universidad. Dicho laboratorio desarrolla el primer mapa de ruido de la Ciudad de México por medio de equipamiento de medición especializado, siendo su información y uso para fines académicos y de divulgación científica.</p>
                         <p class="textSobreN">Siendo la ciudadanía la principal afectada por el tema se planea, diseña y desarrolla una aplicación móvil que promueve la participación ciudadana en el tema de la contaminación ambiental por ruido, con el fin de mapear las áreas con más molestias y determinar las fuentes más comunes que generan dicha molestia.</p>
