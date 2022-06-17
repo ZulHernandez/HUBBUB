@@ -1,13 +1,14 @@
 <html>
 
-<head>
-    <!--Implementación de librerias se incluyen: Chart, Bootstrap, Sweetalert y p5-->
+<head>;
+    <!--Implementación de librerias se incluyen: Chart, Bootstrap, Sweetalert, p5 y sketchFabViewer-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="src/dist/p5.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
     <!-- Estilos aplicados al proyecto en general-->
     <link href="src/scss/general.css" rel="stylesheet">
     <!-- Estilos aplicados a la pagina El ruido-->
@@ -23,11 +24,88 @@
     </title>
 </head>
 
-<body>
+<body onload="skfbStart();">
     <!--Se incluye el navegador lateral izquierdo-->
-    <!--<div class="navIzq">
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-    </div>-->
+    <div class="navIzq" onmouseout="navIzq(0)" onmouseover="navIzq(1)">
+        <div class="row container-fluid" style="margin: 0; padding: 25px 0px;">
+            <div class="columnaCh col-1"></div>
+            <div class="columnaCh col-1">
+                <div id="divScroll" style="background-color: #FF7C7C; height: 15px; width: 15px; margin-top:25px; border-radius: 50%;"></div>
+            </div>
+            <div class="columnaCh col-10">
+                <!--Home-->
+                <a href="#hero">
+                    <div id="opcionCero" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/home.svg"></span>
+                        <span class="textNavIzq">Inicio</span>
+                    </div>
+                </a>
+                <!--El oido-->
+                <a href="#elOido">
+                    <div id="opcionUno" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/elOido.svg"></span>
+                        <span class="textNavIzq">El oído</span>
+                    </div>
+                </a>
+                <!--Clasificacion del ruido-->
+                <a href="#clasi">
+                    <div id="opcionDos" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/clasRuido.svg"></span>
+                        <span class="textNavIzq">Clasificación</span>
+                    </div>
+                </a>
+                <!--Legislación del ruido-->
+                <a href="#legal">
+                    <div id="opcionTres" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/legRuido.svg"></span>
+                        <span class="textNavIzq">Legislación</span>
+                    </div>
+                </a>
+                <!--Componentes del ruido-->
+                <a href="#compo">
+                    <div id="opcionCuatro" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/compRuido.svg"></span>
+                        <span class="textNavIzq">Componentes</span>
+                    </div>
+                </a>
+                <!--Efectos en la salud-->
+                <a href="#salud">
+                    <div id="opcionCinco" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/efectSalud.svg"></span>
+                        <span class="textNavIzq">Salud</span>
+                    </div>
+                </a>
+                <!--Como se mide el ruido-->
+                <a href="#mide">
+                    <div id="opcionSeis" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/comoMide.svg"></span>
+                        <span class="textNavIzq">Medir</span>
+                    </div>
+                </a>
+                <!--Áreas de estudio-->
+                <a href="#estudio">
+                    <div id="opcionSiete" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/areaEstudio.svg"></span>
+                        <span class="textNavIzq">Estudio</span>
+                    </div>
+                </a>
+                <!--Artículos de HUBBUB-->
+                <a href="#artH">
+                    <div id="opcionOcho" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/artHubbub.svg"></span>
+                        <span class="textNavIzq">Art. HUBBUB</span>
+                    </div>
+                </a>
+                <!--Referencias y artículos-->
+                <a href="#artRef">
+                    <div id="opcionNueve" class="textoDivNavIna">
+                        <span><img class="navIzqIcon" src="assets/vector/subtitles/artRef.svg"></span>
+                        <span class="textNavIzq">Referencias</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
     <!--Se incluye el hero Image y resumen de la pagian-->
     <div id="hero" class="container-fluid hero">
         <div class="imagenHero">
@@ -38,6 +116,7 @@
             <div class="columna col-4"></div>
             <div class="columna col-1">
                 <div class="verticalLine"></div>
+                <div id="elOido"></div>
             </div>
             <!--Resumen de la página-->
             <div class="columna col-5">
@@ -127,7 +206,7 @@
         <div class="columna col-2"></div>
     </div>
     <!--Sección de clasificación del ruido-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div id="clasi" class="row container-fluid divBody" style="padding-top: 200px;">
         <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
@@ -210,7 +289,7 @@
         </div>
     </div>
     <!--Sección de legislación del ruido-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div id="legal" class="row container-fluid divBody" style="padding-top: 200px;">
         <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
@@ -273,7 +352,7 @@
         </div>
     </div>
     <!--Sección de Componentes del ruido-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div id="compo" class="row container-fluid divBody" style="padding-top: 200px;">
         <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
@@ -363,7 +442,7 @@
         </div>
     </div>
     <!--Sección de efectos en la salud-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div id="salud" class="row container-fluid divBody" style="padding-top: 200px;">
         <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
@@ -476,7 +555,7 @@
         <div class="columna col-2"></div>
     </div>
     <!--Sección como se mide el ruido-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div id="mide" class="row container-fluid divBody" style="padding-top: 200px;">
         <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
@@ -591,7 +670,7 @@
         <div class="columna col-2"></div>
     </div>
     <!--Sección áreas de estudio-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div id="estudio" class="row container-fluid divBody" style="padding-top: 200px;">
         <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
@@ -703,15 +782,26 @@
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
-                <div class="sketchfab-embed-wrapper" style="width:100%">
-                    <iframe style="width:100%; height: 720;" title="Paley Park Model" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b5a78dd2523949f3be85360d82a079c5/embed?autospin=1&autostart=1&camera=0"> </iframe>
+                <!--Modelo 3D-->
+                <div class="container">
+                    <div onmouseover="playSound(1);" onmouseout="playSound(0)">
+                        <iframe src="" id="modelOver"></iframe>
+                    </div>
                 </div>
+                <audio id="audio1" loop=true preload>
+                    <source src="assets/audio/PaleyParkFuera.mp3" id="srcMP3" type="audio/mp3">
+                    <div>Your Browser will not support this audio</div>
+                </audio>
+                <audio id="audio2" loop=true preload>
+                    <source src="assets/audio/PaleyParkDentro.mp3" id="srcMP3" type="audio/mp3">
+                    <div>Your Browser will not support this audio</div>
+                </audio>
             </div>
             <div class="columna col-2"></div>
         </div>
     </div>
     <!--Sección artículos HUBBUB-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div id="artH" class="row container-fluid divBody" style="padding-top: 200px;">
         <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
@@ -792,7 +882,7 @@
         </div>
     </div>
     <!--Sección referencias y articulos-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div  id="artRef" class="row container-fluid divBody" style="padding-top: 200px;">
         <!--Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
@@ -940,68 +1030,71 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Footer-->
-    <div class="row container-fluid divBody footer">
-        <div class="row">
-            <div class="columna col-1"></div>
-            <div class="columna col-1">
-                <a href="#hero"><img src="assets/vector/HUBBUBIconWhite.svg"></a>
+    <!--Secci[on completa de foot-->
+    <div style="z-index: 11; position: absolute; width: 100%;">
+        <!--Footer-->
+        <div class="row container-fluid divBody footer">
+            <div class="row">
+                <div class="columna col-1"></div>
+                <div class="columna col-1">
+                    <a href="#hero"><img src="assets/vector/HUBBUBIconWhite.svg"></a>
+                </div>
+                <div class="columna col-3"></div>
+                <div class="columna col">
+                    <p class="tituloFooter">Descargas</p>
+                    <a href="https://play.google.com/store/apps/details?id=com.UAM.Noise&hl=es" target="_blank">
+                        <img class="iconNosotros" src="assets/vector/redes/playStoreW.svg">
+                    </a>
+                    <!--// TODO: Agregar aplicación para iOS //-->
+                    <img class="iconNosotros" src="assets/vector/redes/appleStoreW.svg">
+                </div>
+                <div class="columna col">
+                    <p class="tituloFooter">Sitio</p>
+                    <p class="linkFooterAct" style="margin-top:20px">El ruido</p>
+                    <p class="linkFooter">Ver el ruido</p>
+                    <p class="linkFooter" onclick="nosotros();">Sobre nosotros</p>
+                </div>
+                <div class="columna col">
+                    <p class="tituloFooter">Contacto</p>
+                    <a href="https://www.facebook.com/HUBBUBALERTA/" target="_blank">
+                        <img class="iconNosotros" src="assets/vector/redes/facebookW.svg">
+                    </a>
+                    <a href="https://www.facebook.com/messages/t/194832804678795" target="_blank">
+                        <img class="iconNosotros" src="assets/vector/redes/messengerW.svg">
+                    </a>
+                    <a href="https://twitter.com/AlertaRuido?fbclid=IwAR1o5xnyzozS5nXn8jPbySq0Tjvoh5iggQhPWgzvESj-PUYkhOp-7qQ-RgM" target="_blank">
+                        <img class="iconNosotros" src="assets/vector/redes/twitterW.svg">
+                    </a>
+                    <br /><br />
+                    <a href="mailto:hubbub@azc.uam.mx" target="_blank">
+                        <p class="linkFooter">hubbub@azc.uam.mx</p>
+                    </a>
+                </div>
+                <div class="columna col-1"></div>
             </div>
-            <div class="columna col-3"></div>
-            <div class="columna col">
-                <p class="tituloFooter">Descargas</p>
-                <a href="https://play.google.com/store/apps/details?id=com.UAM.Noise&hl=es" target="_blank">
-                    <img class="iconNosotros" src="assets/vector/redes/playStoreW.svg">
-                </a>
-                <!--// TODO: Agregar aplicación para iOS //-->
-                <img class="iconNosotros" src="assets/vector/redes/appleStoreW.svg">
-            </div>
-            <div class="columna col">
-                <p class="tituloFooter">Sitio</p>
-                <p class="linkFooterAct" style="margin-top:20px">El ruido</p>
-                <p class="linkFooter">Ver el ruido</p>
-                <p class="linkFooter" onclick="nosotros();">Sobre nosotros</p>
-            </div>
-            <div class="columna col">
-                <p class="tituloFooter">Contacto</p>
-                <a href="https://www.facebook.com/HUBBUBALERTA/" target="_blank">
-                    <img class="iconNosotros" src="assets/vector/redes/facebookW.svg">
-                </a>
-                <a href="https://www.facebook.com/messages/t/194832804678795" target="_blank">
-                    <img class="iconNosotros" src="assets/vector/redes/messengerW.svg">
-                </a>
-                <a href="https://twitter.com/AlertaRuido?fbclid=IwAR1o5xnyzozS5nXn8jPbySq0Tjvoh5iggQhPWgzvESj-PUYkhOp-7qQ-RgM" target="_blank">
-                    <img class="iconNosotros" src="assets/vector/redes/twitterW.svg">
-                </a>
-                <br /><br />
-                <a href="mailto:hubbub@azc.uam.mx" target="_blank">
-                    <p class="linkFooter">hubbub@azc.uam.mx</p>
-                </a>
-            </div>
-            <div class="columna col-1"></div>
         </div>
-    </div>
-    <!--Sub Footer-->
-    <div class="row container-fluid divBody" style="padding: 20px 0px;">
-        <!--Título de la sección-->
-        <div class="row subFooterText">
-            <div class="columna col-1"></div>
-            <div class="columna col">
-                <center>
-                    Aviso de privacidad
-                </center>
+        <!--Sub Footer-->
+        <div class="row container-fluid divBody" style="padding: 20px 0px;">
+            <!--Título de la sección-->
+            <div class="row subFooterText">
+                <div class="columna col-1"></div>
+                <div class="columna col">
+                    <center>
+                        Aviso de privacidad
+                    </center>
+                </div>
+                <div class="columna col">
+                    <center>
+                        Todos los derechos reservados
+                    </center>
+                </div>
+                <div class="columna col">
+                    <center>
+                        HUBBUB (2022) ©
+                    </center>
+                </div>
+                <div class="columna col-1"></div>
             </div>
-            <div class="columna col">
-                <center>
-                    Todos los derechos reservados
-                </center>
-            </div>
-            <div class="columna col">
-                <center>
-                    HUBBUB (2022) ©
-                </center>
-            </div>
-            <div class="columna col-1"></div>
         </div>
     </div>
     <!--Template para el Swal de información sobre HUBBUB-->
@@ -1055,5 +1148,7 @@
         </swal-html>
     </template>
 </body>
+<!--Js para el embed de Sketchfab-->
+<script type="text/javascript" src="src/js/sketch.js"></script>
 
 </html>

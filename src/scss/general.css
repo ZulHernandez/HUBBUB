@@ -59,6 +59,10 @@ html {
   padding: 0px 25px;
 }
 
+.columnaCh {
+  padding: 0px 2px;
+}
+
 .verticalLine {
   opacity: 0;
   height: 46.3vh;
@@ -150,9 +154,35 @@ html {
 .navIzq {
   z-index: 10;
   position: fixed;
-  width: 340px;
+  width: 280px;
   height: 100vh;
-  background-color: red;
+  -webkit-backdrop-filter: blur(0px);
+          backdrop-filter: blur(0px);
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+}
+
+.navIzq:hover {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+.textoDivNavAct {
+  padding-top: 20px;
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.textoDivNavAct:hover {
+  opacity: 100%;
+  text-decoration: underline;
+  outline: none;
+}
+
+.textoDivNavIna {
+  padding-top: 20px;
+  opacity: 100%;
+  cursor: pointer;
 }
 
 .logoHero {
@@ -216,6 +246,12 @@ html {
   opacity: 1;
 }
 
+.navIzqIcon {
+  width: 20px;
+  height: 20px;
+  margin: -6px 15px 0px 10px;
+}
+
 ::-moz-selection {
   color: #333333;
   background: #fff101;
@@ -252,6 +288,16 @@ html {
   color: #333333;
   text-align: center;
   letter-spacing: normal;
+}
+
+.textNavIzq {
+  font-family: Montserrat-M;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  opacity: 0;
 }
 
 .textAvisoN {

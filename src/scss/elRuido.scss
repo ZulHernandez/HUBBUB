@@ -18,8 +18,8 @@ body {
     background-size: cover;
     height: 100vh;
     display: flex;
-    animation-duration: 60s;
-    animation-name: moveFondo;
+    animation-duration: 30s;
+    //animation-name: moveFondo;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -31,6 +31,13 @@ body {
     100% {
         background-position: 0vw;
     }
+}
+
+#modelOver, #modelOut{
+    width: 100%;
+    height: 720px;
+    border: none;
+    overflow: hidden;
 }
 
 //botones----------------------------------------------------------------------------------------------------------

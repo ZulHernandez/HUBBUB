@@ -22,7 +22,7 @@ function nosotros() {
 let contSalud = 1;
 
 //movemos el carruselSalud
-function carruSalud(a,b) {
+function carruSalud(a, b) {
 	//obtenemos los elementos del HTML
 	img1 = document.getElementById("img1");
 	img2 = document.getElementById("img2");
@@ -39,7 +39,7 @@ function carruSalud(a,b) {
 	if (a == 0) {
 		contSalud--;
 	}
-	if( a == 2){
+	if (a == 2) {
 		contSalud = b;
 	}
 
@@ -447,147 +447,246 @@ function carruPasos(a, b) {
 
 //información del área de estudio
 function areaEstudio(a) {
-    //Obtenemos los elementos del HTML
-    let area1 = document.getElementById("area1");
-    let area2 = document.getElementById("area2");
-    let area3 = document.getElementById("area3");
-    let area4 = document.getElementById("area4");
-    let area5 = document.getElementById("area5");
-    let area6 = document.getElementById("area6");
-    let area7 = document.getElementById("area7");
-    let area8 = document.getElementById("area8");
-    let subArea = document.getElementById("subArea");
-    let textoArea = document.getElementById("textoArea");
-    //Evaluamos el área seleccionada
+	//Obtenemos los elementos del HTML
+	let area1 = document.getElementById("area1");
+	let area2 = document.getElementById("area2");
+	let area3 = document.getElementById("area3");
+	let area4 = document.getElementById("area4");
+	let area5 = document.getElementById("area5");
+	let area6 = document.getElementById("area6");
+	let area7 = document.getElementById("area7");
+	let area8 = document.getElementById("area8");
+	let subArea = document.getElementById("subArea");
+	let textoArea = document.getElementById("textoArea");
+	//Evaluamos el área seleccionada
 	switch (a) {
 		case 1:
-            area1.className = "titleAreaAct";
-            area2.className = "titleArea";
-            area3.className = "titleArea";
-            area4.className = "titleArea";
-            area5.className = "titleArea";
-            area6.className = "titleArea";
-            area7.className = "titleArea";
-            area8.className = "titleArea";
-            subArea.innerHTML = "Salud";
-            textoArea.innerHTML = 'Médicos, psiquiatras y psicólogos cuyas preocupaciones van más enfocadas'+
-            ' al entendimiento de las repercusiones que tiene el ruido en la salud fisiológica, psíquica y '+
-            'psiquiátrica del sujeto. Los datos sobre ruido ayudan a estas disciplinasa identificar puntos '+
-            'de estrés para los órganos y para la psique de las personas para, de esta forma, atenderlos de'+
-            ' manera adecuada y en el mejor de los casos, prevenir que los sujetos interaccionen con estos '+
-            'ruidos nocivos para la salud.';
-            break;
-        case 2:
-            area1.className = "titleArea";
-            area2.className = "titleAreaAct";
-            area3.className = "titleArea";
-            area4.className = "titleArea";
-            area5.className = "titleArea";
-            area6.className = "titleArea";
-            area7.className = "titleArea";
-            area8.className = "titleArea";
-            subArea.innerHTML = "Logística";
-            textoArea.innerHTML = 'Administradores, ingenieros industriales, recursos humanos y otras áreas'+
-            ' dedicadas a la logística pueden estar interesadas en la identificación de puntos de ruido que'+
-            ' puedan afectar el rendimientode sus trabajadores con el fin de mejorar la productividad de es'+
-            'tos y que se vea reflejada en la mejora de procesos y producción de la misma empresa por tanto'+
-            ' puede ser un tema de interés para las empresas el identificar donde sus trabajadores no se ve'+
-            'rán expuestos a este estrés.';
-            break;
-        case 3:
-            area1.className = "titleArea";
-            area2.className = "titleArea";
-            area3.className = "titleAreaAct";
-            area4.className = "titleArea";
-            area5.className = "titleArea";
-            area6.className = "titleArea";
-            area7.className = "titleArea";
-            area8.className = "titleArea";
-            subArea.innerHTML = "Pedagogía";
-            textoArea.innerHTML = 'Ciencias como la pedagogía también pueden verse interesadas en el entend'+
-            'imiento del ruido como factor de distracción o impedidor del proceso educativo en una població'+
-            'n determinada como se puede ver en el trabajo de Yerko Damián donde, además de buscar una solu'+
-            'ción a través de la implementación de fractales en los muros, nos habla de las consecuencias d'+
-            'el ruido en la educación.';
-            break;
-        case 4:
-            area1.className = "titleArea";
-            area2.className = "titleArea";
-            area3.className = "titleArea";
-            area4.className = "titleAreaAct";
-            area5.className = "titleArea";
-            area6.className = "titleArea";
-            area7.className = "titleArea";
-            area8.className = "titleArea";
-            subArea.innerHTML = "Acústica";
-            textoArea.innerHTML = 'La ingeniería acústica está íntimamente relacionada con su hermana cientí'+
-            'fica la acústica, sin embargo, sus objetivos están más orientados a la aplicación de dichos con'+
-            'ocimientos para el “[…] desarrollo y control de todos los procesos que emiten, transmiten o rec'+
-            'iben ondas sonoras” (MX, 2018) por lo que los estudios de ruido a nivel cuantitativo o cualitat'+
-            'ivo son de suma importancia para identificar los problemas y posteriormente contenerlos.';
-            break;
-        case 5:
-            area1.className = "titleArea";
-            area2.className = "titleArea";
-            area3.className = "titleArea";
-            area4.className = "titleArea";
-            area5.className = "titleAreaAct";
-            area6.className = "titleArea";
-            area7.className = "titleArea";
-            area8.className = "titleArea";
-            subArea.innerHTML = "Arquitectura";
-            textoArea.innerHTML = 'En la arquitectura y el diseño de interiores existe una clara correlación'+
-            ' entre la manipulación y el diseño del espacio como respuesta no solo a las necesidades del hab'+
-            'itante sino, también, como adaptación al entorno en el que se hayan. Así, gracias a los mapas d'+
-            'e ruido, se puede seleccionar una gama de materiales y herramientas que puedan ser útiles para '+
-            'dar respuesta a esto, desde aspecto como la supresión del ruido, así como el aprovechamiento de este.';
-            break;
-        case 6:
-            area1.className = "titleArea";
-            area2.className = "titleArea";
-            area3.className = "titleArea";
-            area4.className = "titleArea";
-            area5.className = "titleArea";
-            area6.className = "titleAreaAct";
-            area7.className = "titleArea";
-            area8.className = "titleArea";
-            subArea.innerHTML = "Arte";
-            textoArea.innerHTML = 'Las artes encuentran en los “espacios ruidosos” lugares prometedores para '+
-            'su expansión o, en otros casos, zonas donde propuestas artísticas relacionadas con el silencio p'+
-            'ueden ser formas espectaculares de protesta e intervención. El ruido también puede ser interesan'+
-            'te para el silencio y trabajos artísticos se vuelven clave para su demostración.';
-            break;
-        case 7:
-            area1.className = "titleArea";
-            area2.className = "titleArea";
-            area3.className = "titleArea";
-            area4.className = "titleArea";
-            area5.className = "titleArea";
-            area6.className = "titleArea";
-            area7.className = "titleAreaAct";
-            area8.className = "titleArea";
-            subArea.innerHTML = "Sociología";
-            textoArea.innerHTML = 'La sociología muestra un interés particular en el ruido como agente de cam'+
-            'bio dentro de una sociedad además de dejar impreso el avance tecnológico humano. El trabajo real'+
-            'izado en la Semana del Sonido (Montano Rodríguez & Pascal, 2014) nos habla de la relación existe'+
-            'nte entre el ruido y el proceso de modernidad aplicando como ejemplo la expansión de la mancha d'+
-            'e ruido que ya no solo se contiene dentro de la ciudad, sino que, ahora, se ve amplificada a los'+
-            ' espacios periurbanos.';
-            break;
-        case 8:
-            area1.className = "titleArea";
-            area2.className = "titleArea";
-            area3.className = "titleArea";
-            area4.className = "titleArea";
-            area5.className = "titleArea";
-            area6.className = "titleArea";
-            area7.className = "titleArea";
-            area8.className = "titleAreaAct";
-            subArea.innerHTML = "Ergonomía";
-            textoArea.innerHTML = 'Se encarga de analizar la forma en que las personas se adaptan en los entor'+
-            'nos en los que está dispuesto. Esta trabaja en conjunto con las áreas medicas pues su fin último '+
-            'es evitar daños a la salud y la incomodidad de los sujetos. El ruido es uno de estos recursos que'+
-            ' puede ser diseñado y dispuesto de diferentes formas y la ergonomía se encarga de disponerlo.';
-            break;
+			area1.className = "titleAreaAct";
+			area2.className = "titleArea";
+			area3.className = "titleArea";
+			area4.className = "titleArea";
+			area5.className = "titleArea";
+			area6.className = "titleArea";
+			area7.className = "titleArea";
+			area8.className = "titleArea";
+			subArea.innerHTML = "Salud";
+			textoArea.innerHTML =
+				"Médicos, psiquiatras y psicólogos cuyas preocupaciones van más enfocadas" +
+				" al entendimiento de las repercusiones que tiene el ruido en la salud fisiológica, psíquica y " +
+				"psiquiátrica del sujeto. Los datos sobre ruido ayudan a estas disciplinasa identificar puntos " +
+				"de estrés para los órganos y para la psique de las personas para, de esta forma, atenderlos de" +
+				" manera adecuada y en el mejor de los casos, prevenir que los sujetos interaccionen con estos " +
+				"ruidos nocivos para la salud.";
+			break;
+		case 2:
+			area1.className = "titleArea";
+			area2.className = "titleAreaAct";
+			area3.className = "titleArea";
+			area4.className = "titleArea";
+			area5.className = "titleArea";
+			area6.className = "titleArea";
+			area7.className = "titleArea";
+			area8.className = "titleArea";
+			subArea.innerHTML = "Logística";
+			textoArea.innerHTML =
+				"Administradores, ingenieros industriales, recursos humanos y otras áreas" +
+				" dedicadas a la logística pueden estar interesadas en la identificación de puntos de ruido que" +
+				" puedan afectar el rendimientode sus trabajadores con el fin de mejorar la productividad de es" +
+				"tos y que se vea reflejada en la mejora de procesos y producción de la misma empresa por tanto" +
+				" puede ser un tema de interés para las empresas el identificar donde sus trabajadores no se ve" +
+				"rán expuestos a este estrés.";
+			break;
+		case 3:
+			area1.className = "titleArea";
+			area2.className = "titleArea";
+			area3.className = "titleAreaAct";
+			area4.className = "titleArea";
+			area5.className = "titleArea";
+			area6.className = "titleArea";
+			area7.className = "titleArea";
+			area8.className = "titleArea";
+			subArea.innerHTML = "Pedagogía";
+			textoArea.innerHTML =
+				"Ciencias como la pedagogía también pueden verse interesadas en el entend" +
+				"imiento del ruido como factor de distracción o impedidor del proceso educativo en una població" +
+				"n determinada como se puede ver en el trabajo de Yerko Damián donde, además de buscar una solu" +
+				"ción a través de la implementación de fractales en los muros, nos habla de las consecuencias d" +
+				"el ruido en la educación.";
+			break;
+		case 4:
+			area1.className = "titleArea";
+			area2.className = "titleArea";
+			area3.className = "titleArea";
+			area4.className = "titleAreaAct";
+			area5.className = "titleArea";
+			area6.className = "titleArea";
+			area7.className = "titleArea";
+			area8.className = "titleArea";
+			subArea.innerHTML = "Acústica";
+			textoArea.innerHTML =
+				"La ingeniería acústica está íntimamente relacionada con su hermana cientí" +
+				"fica la acústica, sin embargo, sus objetivos están más orientados a la aplicación de dichos con" +
+				"ocimientos para el “[…] desarrollo y control de todos los procesos que emiten, transmiten o rec" +
+				"iben ondas sonoras” (MX, 2018) por lo que los estudios de ruido a nivel cuantitativo o cualitat" +
+				"ivo son de suma importancia para identificar los problemas y posteriormente contenerlos.";
+			break;
+		case 5:
+			area1.className = "titleArea";
+			area2.className = "titleArea";
+			area3.className = "titleArea";
+			area4.className = "titleArea";
+			area5.className = "titleAreaAct";
+			area6.className = "titleArea";
+			area7.className = "titleArea";
+			area8.className = "titleArea";
+			subArea.innerHTML = "Arquitectura";
+			textoArea.innerHTML =
+				"En la arquitectura y el diseño de interiores existe una clara correlación" +
+				" entre la manipulación y el diseño del espacio como respuesta no solo a las necesidades del hab" +
+				"itante sino, también, como adaptación al entorno en el que se hayan. Así, gracias a los mapas d" +
+				"e ruido, se puede seleccionar una gama de materiales y herramientas que puedan ser útiles para " +
+				"dar respuesta a esto, desde aspecto como la supresión del ruido, así como el aprovechamiento de este.";
+			break;
+		case 6:
+			area1.className = "titleArea";
+			area2.className = "titleArea";
+			area3.className = "titleArea";
+			area4.className = "titleArea";
+			area5.className = "titleArea";
+			area6.className = "titleAreaAct";
+			area7.className = "titleArea";
+			area8.className = "titleArea";
+			subArea.innerHTML = "Arte";
+			textoArea.innerHTML =
+				"Las artes encuentran en los “espacios ruidosos” lugares prometedores para " +
+				"su expansión o, en otros casos, zonas donde propuestas artísticas relacionadas con el silencio p" +
+				"ueden ser formas espectaculares de protesta e intervención. El ruido también puede ser interesan" +
+				"te para el silencio y trabajos artísticos se vuelven clave para su demostración.";
+			break;
+		case 7:
+			area1.className = "titleArea";
+			area2.className = "titleArea";
+			area3.className = "titleArea";
+			area4.className = "titleArea";
+			area5.className = "titleArea";
+			area6.className = "titleArea";
+			area7.className = "titleAreaAct";
+			area8.className = "titleArea";
+			subArea.innerHTML = "Sociología";
+			textoArea.innerHTML =
+				"La sociología muestra un interés particular en el ruido como agente de cam" +
+				"bio dentro de una sociedad además de dejar impreso el avance tecnológico humano. El trabajo real" +
+				"izado en la Semana del Sonido (Montano Rodríguez & Pascal, 2014) nos habla de la relación existe" +
+				"nte entre el ruido y el proceso de modernidad aplicando como ejemplo la expansión de la mancha d" +
+				"e ruido que ya no solo se contiene dentro de la ciudad, sino que, ahora, se ve amplificada a los" +
+				" espacios periurbanos.";
+			break;
+		case 8:
+			area1.className = "titleArea";
+			area2.className = "titleArea";
+			area3.className = "titleArea";
+			area4.className = "titleArea";
+			area5.className = "titleArea";
+			area6.className = "titleArea";
+			area7.className = "titleArea";
+			area8.className = "titleAreaAct";
+			subArea.innerHTML = "Ergonomía";
+			textoArea.innerHTML =
+				"Se encarga de analizar la forma en que las personas se adaptan en los entor" +
+				"nos en los que está dispuesto. Esta trabaja en conjunto con las áreas medicas pues su fin último " +
+				"es evitar daños a la salud y la incomodidad de los sujetos. El ruido es uno de estos recursos que" +
+				" puede ser diseñado y dispuesto de diferentes formas y la ergonomía se encarga de disponerlo.";
+			break;
 	}
+}
+
+//activar o desactivar navegador izquierdo
+function navIzq(a) {
+	//Obtenemos elementos del HTML
+	let textNavIzq = document.getElementsByClassName("textNavIzq");
+	let opcionCero = document.getElementById("opcionCero");
+	let opcionUno = document.getElementById("opcionUno");
+	let opcionDos = document.getElementById("opcionDos");
+	let opcionTres = document.getElementById("opcionTres");
+	let opcionCuatro = document.getElementById("opcionCuatro");
+	let opcionCinco = document.getElementById("opcionCinco");
+	let opcionSeis = document.getElementById("opcionSeis");
+	let opcionSiete = document.getElementById("opcionSiete");
+	let opcionOcho = document.getElementById("opcionOcho");
+	let opcionNueve = document.getElementById("opcionNueve");
+
+	//Ponemos el estado desactivado del nav on mouse out
+	if (a == 0) {
+		for (let i = 0; i < textNavIzq.length; i++) {
+			textNavIzq[i].style.opacity = "0";
+			opcionCero.className = "textoDivNavIna";
+			opcionUno.className = "textoDivNavIna";
+			opcionDos.className = "textoDivNavIna";
+			opcionTres.className = "textoDivNavIna";
+			opcionCuatro.className = "textoDivNavIna";
+			opcionCinco.className = "textoDivNavIna";
+			opcionSeis.className = "textoDivNavIna";
+			opcionSiete.className = "textoDivNavIna";
+			opcionOcho.className = "textoDivNavIna";
+			opcionNueve.className = "textoDivNavIna";
+		}
+	}
+
+	//Ponemos el estado activado del nav on mouse over
+	if (a == 1) {
+		for (let i = 0; i < textNavIzq.length; i++) {
+			textNavIzq[i].style.opacity = "1";
+			opcionCero.className = "textoDivNavAct";
+			opcionUno.className = "textoDivNavAct";
+			opcionDos.className = "textoDivNavAct";
+			opcionTres.className = "textoDivNavAct";
+			opcionCuatro.className = "textoDivNavAct";
+			opcionCinco.className = "textoDivNavAct";
+			opcionSeis.className = "textoDivNavAct";
+			opcionSiete.className = "textoDivNavAct";
+			opcionOcho.className = "textoDivNavAct";
+			opcionNueve.className = "textoDivNavAct";
+		}
+	}
+}
+
+window.onscroll = function () {
+	myFunction();
+};
+
+function myFunction() {
+	let divScroll = document.getElementById("divScroll");
+
+	if (document.body.scrollTop < 760) {
+		divScroll.style.marginTop = 25 + "px";
+	}
+	if (document.body.scrollTop > 759 && document.body.scrollTop < 2288) {
+		divScroll.style.marginTop = 68 + "px";
+	}
+	if (document.body.scrollTop >= 2288 && document.body.scrollTop < 3943) {
+		divScroll.style.marginTop = 112 + "px";
+	}
+	if (document.body.scrollTop >= 3943 && document.body.scrollTop < 4938) {
+		divScroll.style.marginTop = 156 + "px";
+	}
+	if (document.body.scrollTop >= 4938 && document.body.scrollTop < 6787) {
+		divScroll.style.marginTop = 200 + "px";
+	}
+	if (document.body.scrollTop >= 6787 && document.body.scrollTop < 8254) {
+		divScroll.style.marginTop = 244 + "px";
+	}
+	if (document.body.scrollTop >= 8254 && document.body.scrollTop < 9678) {
+		divScroll.style.marginTop = 288 + "px";
+	}
+	if (document.body.scrollTop >= 9678 && document.body.scrollTop < 11579) {
+		divScroll.style.marginTop = 332 + "px";
+	}
+	if (document.body.scrollTop >= 11579 && document.body.scrollTop < 12278) {
+		divScroll.style.marginTop = 376 + "px";
+	}
+	if (document.body.scrollTop >= 12278){
+		divScroll.style.marginTop = 420 + "px";
+	}
+
+	//console.log(document.body.scrollTop);
 }

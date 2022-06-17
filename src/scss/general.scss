@@ -116,6 +116,10 @@ html {
     padding: 0px 25px;
 }
 
+.columnaCh {
+    padding: 0px 2px;
+}
+
 .verticalLine {
     opacity: 0;
     height: 46.3vh;
@@ -197,9 +201,30 @@ html {
 .navIzq{
     z-index: 10;
     position: fixed;
-    width: 340px;
+    width: 280px;
     height: 100vh;
-    background-color: red;
+    backdrop-filter: blur(0px);
+    transition-duration: 250ms;
+    &:hover{
+        backdrop-filter: blur(10px);
+    }
+}
+
+.textoDivNavAct{
+    padding-top: 20px;
+    opacity: 50%;
+    cursor: pointer;
+    &:hover{
+        opacity: 100%;
+        text-decoration: underline;
+        outline: none;
+    }
+}
+
+.textoDivNavIna{
+    padding-top: 20px;
+    opacity: 100%;
+    cursor: pointer;
 }
 
 //images----------------------------------------------------------------------------------------------------------
@@ -240,6 +265,12 @@ html {
     }
 }
 
+.navIzqIcon{
+    width: 20px;
+    height: 20px;
+    margin: -6px 15px 0px 10px;
+}
+
 //text------------------------------------------------------------------------------------------------------------
 ::selection {
     color: $blackGrey;
@@ -255,8 +286,13 @@ html {
     @include text(justify, 20px, "M", 24px, -0.5);
 }
 
-.textHUBBUBC {
+.textHUBBUBC{
     @include text(center, 20px, "M", 24px, normal);
+}
+
+.textNavIzq {
+    @include text(center, 14px, "M", 16px, normal);
+    opacity: 0;
 }
 
 .textAvisoN {
