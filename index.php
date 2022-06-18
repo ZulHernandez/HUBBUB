@@ -1,7 +1,7 @@
 <html>
 
 <head>;
-    <!--Implementación de librerias se incluyen: Chart, Bootstrap, Sweetalert, p5 y sketchFabViewer-->
+    <!--//import Implementación de librerias se incluyen: Chart, Bootstrap, Sweetalert, p5 y sketchFabViewer-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -9,107 +9,98 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="src/dist/p5.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://static.sketchfab.com/api/sketchfab-viewer-1.12.1.js"></script>
-    <!-- Estilos aplicados al proyecto en general-->
+    <!--//import  Estilos aplicados al sitio en general-->
     <link href="src/scss/general.css" rel="stylesheet">
-    <!-- Estilos aplicados a la pagina El ruido-->
+    <!--//import  Estilos aplicados a la página El ruido-->
     <link href="src/scss/elRuido.css" rel="stylesheet">
-    <!--Js para el manejo de los swal-->
+    <!--//import  Js para el manejo del sitio en general-->
     <script src="src/js/JSgeneral.js"></script>
-    <!--Js para el esquema del oído, 1er sección-->
+    <!--//import  Js para el manejo del sitio en general-->
+    <script src="src/js/JSelRuido.js"></script>
+    <!--//import  Js para el esquema del oído-->
     <script type="text/javascript" src="src/js/P5esquemaOido.js"></script>
-    <!--Icono de la página-->
-    <link rel="shortcut icon" href="assets/vector/HUBBUBIcon.svg" type="image/x-icon">
+    <!--//main Icono de la página-->
+    <link rel="icon" href="assets/vector/HUBBUByellow.svg" type="image/x-icon">
     <title>
         HUBBUB | El ruido
     </title>
 </head>
 
+<!--//funcion Inicia el visualizador de sketchfab al cargar-->
+
 <body onload="skfbStart();">
-    <!--Se incluye el navegador lateral izquierdo-->
+    <!--//main Se incluye el navegador lateral izquierdo-->
+    <!--//funcion navIzq() Colapasa o expande el navegador lateral izquierdo-->
+    <!--//param 0 = navegador colapsado-->
+    <!--//param 1 = navegador expandido-->
     <div class="navIzq" onmouseout="navIzq(0)" onmouseover="navIzq(1)">
         <div class="row container-fluid" style="margin: 0; padding: 25px 0px;">
             <div class="columnaCh col-1"></div>
+            <!--//* Indicador de sección-->
             <div class="columnaCh col-1">
                 <div id="divScroll" style="background-color: #FF7C7C; height: 15px; width: 15px; margin-top:25px; border-radius: 50%;"></div>
             </div>
             <div class="columnaCh col-10">
-                <!--Home-->
-                <a href="#hero">
-                    <div id="opcionCero" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/home.svg"></span>
-                        <span class="textNavIzq">Inicio</span>
-                    </div>
-                </a>
-                <!--El oido-->
-                <a href="#elOido">
-                    <div id="opcionUno" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/elOido.svg"></span>
-                        <span class="textNavIzq">El oído</span>
-                    </div>
-                </a>
-                <!--Clasificacion del ruido-->
-                <a href="#clasi">
-                    <div id="opcionDos" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/clasRuido.svg"></span>
-                        <span class="textNavIzq">Clasificación</span>
-                    </div>
-                </a>
-                <!--Legislación del ruido-->
-                <a href="#legal">
-                    <div id="opcionTres" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/legRuido.svg"></span>
-                        <span class="textNavIzq">Legislación</span>
-                    </div>
-                </a>
-                <!--Componentes del ruido-->
-                <a href="#compo">
-                    <div id="opcionCuatro" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/compRuido.svg"></span>
-                        <span class="textNavIzq">Componentes</span>
-                    </div>
-                </a>
-                <!--Efectos en la salud-->
-                <a href="#salud">
-                    <div id="opcionCinco" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/efectSalud.svg"></span>
-                        <span class="textNavIzq">Salud</span>
-                    </div>
-                </a>
-                <!--Como se mide el ruido-->
-                <a href="#mide">
-                    <div id="opcionSeis" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/comoMide.svg"></span>
-                        <span class="textNavIzq">Medir</span>
-                    </div>
-                </a>
-                <!--Áreas de estudio-->
-                <a href="#estudio">
-                    <div id="opcionSiete" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/areaEstudio.svg"></span>
-                        <span class="textNavIzq">Estudio</span>
-                    </div>
-                </a>
-                <!--Artículos de HUBBUB-->
-                <a href="#artH">
-                    <div id="opcionOcho" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/artHubbub.svg"></span>
-                        <span class="textNavIzq">Art. HUBBUB</span>
-                    </div>
-                </a>
-                <!--Referencias y artículos-->
-                <a href="#artRef">
-                    <div id="opcionNueve" class="textoDivNavIna">
-                        <span><img class="navIzqIcon" src="assets/vector/subtitles/artRef.svg"></span>
-                        <span class="textNavIzq">Referencias</span>
-                    </div>
-                </a>
+                <!--//* Icono y texto de Home-->
+                <!--//funcion scrollMe(a) scrollea la página a una posición determinada-->
+                <!--//param a = posiciópn a la cual scrollear-->
+                <div id="opcionCero" class="textoDivNavIna" onclick="scrollMe(0);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/home.svg"></span>
+                    <span class="textNavIzq">Inicio</span>
+                </div>
+                <!--//* Icono y texto de El oido-->
+                <div id="opcionUno" class="textoDivNavIna" onclick="scrollMe(1);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/elOido.svg"></span>
+                    <span class="textNavIzq">El oído</span>
+                </div>
+                <!--//* Icono y texto de Clasificacion del ruido-->
+                <div id="opcionDos" class="textoDivNavIna" onclick="scrollMe(2);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/clasRuido.svg"></span>
+                    <span class="textNavIzq">Clasificación</span>
+                </div>
+                <!--//* Icono y texto de Legislación del ruido-->
+                <div id="opcionTres" class="textoDivNavIna" onclick="scrollMe(3);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/legRuido.svg"></span>
+                    <span class="textNavIzq">Legislación</span>
+                </div>
+                <!--//* Icono y texto de Componentes del ruido-->
+                <div id="opcionCuatro" class="textoDivNavIna" onclick="scrollMe(4);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/compRuido.svg"></span>
+                    <span class="textNavIzq">Componentes</span>
+                </div>
+                <!--//* Icono y texto de Efectos en la salud-->
+                <div id="opcionCinco" class="textoDivNavIna" onclick="scrollMe(5);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/efectSalud.svg"></span>
+                    <span class="textNavIzq">Salud</span>
+                </div>
+                <!--//* Icono y texto de Como se mide el ruido-->
+                <div id="opcionSeis" class="textoDivNavIna" onclick="scrollMe(6);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/comoMide.svg"></span>
+                    <span class="textNavIzq">Medir</span>
+                </div>
+                <!--//* Icono y texto de Áreas de estudio-->
+                <div id="opcionSiete" class="textoDivNavIna" onclick="scrollMe(7);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/areaEstudio.svg"></span>
+                    <span class="textNavIzq">Estudio</span>
+                </div>
+                <!--//* Icono y texto de Artículos de HUBBUB-->
+                <div id="opcionOcho" class="textoDivNavIna" onclick="scrollMe(8);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/artHubbub.svg"></span>
+                    <span class="textNavIzq">Art. HUBBUB</span>
+                </div>
+                <!--//* Icono y texto de Referencias y artículos-->
+                <div id="opcionNueve" class="textoDivNavIna" onclick="scrollMe(9);">
+                    <span><img class="navIzqIcon" src="assets/vector/subtitles/artRef.svg"></span>
+                    <span class="textNavIzq">Referencias</span>
+                </div>
             </div>
         </div>
     </div>
-    <!--Se incluye el hero Image y resumen de la pagian-->
-    <div id="hero" class="container-fluid hero">
+    <!--//main Se incluye el hero Image y resumen de la página-->
+    <div class="container-fluid hero">
         <div class="imagenHero">
-            <!--Función nosotros dispara Swal de información sobre HUBBUB-->
+            <!--//* Función nosotros dispara Swal de información sobre HUBBUB-->
+            <!--//funcion nosotros() dispara el swal sobre la información de HUBBUB-->
             <img class="logoHero" onclick="nosotros();" src="assets/gif/HUBBUBIcon.gif">
         </div>
         <div class="row container-fluid divHero paddingNormal">
@@ -118,7 +109,7 @@
                 <div class="verticalLine"></div>
                 <div id="elOido"></div>
             </div>
-            <!--Resumen de la página-->
+            <!--//* Resumen de la página-->
             <div class="columna col-5">
                 <div class="divResume">
                     <h1 class="pageTitle">El ruido</h1>
@@ -133,9 +124,9 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Sección de esquema del oído-->
+    <!--//main Sección de esquema del oído-->
     <div class="row container-fluid divBody">
-        <!--Título de la sección-->
+        <!--//*Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -150,7 +141,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//*Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -166,24 +157,25 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Sección de esquema del oído-->
+    <!--//* Esquema del oído-->
     <div class="row container-fluid" style="padding-top: 100px;">
         <center>
-            <!--Canva del esquema del oído (P5esquemaOido.js)-->
+            <!--//*Canva del esquema del oído (P5esquemaOido.js)-->
             <div id="canvaOido"></div>
         </center>
     </div>
-    <!--Sección texto para el esquema del oído-->
+    <!--//* Sección texto para el esquema del oído-->
     <div class="row container-fluid divBody" style="padding-top: 100px;">
         <div class="columna col-2"></div>
-        <!--Botón de retrosceso en el carrusel-->
-        <!--Función carruOido navega entre carrussel 0 = retrosceder-->
+        <!--//*Botón de retrosceso en el carrusel-->
+        <!--//funcion carruOido() navega entre carrussel-->
+        <!--//param 0 = retrocede-->
         <div class="columna col-1 flechaOido" onclick="carruOido(0)">
             <center>
                 <img src="assets/vector/flecha.svg">
             </center>
         </div>
-        <!--Texto del carrusel-->
+        <!--//*Texto del carrusel-->
         <div class="columna col">
             <div id="subOido" class="subOido"><text id="textSubOido" class="textSubOido">Oido externo</text></div>
             <p id="textOido" class="textCorrido" style="padding-top:40px">Formado por el pabellón auditivo el cual, a manera de embudo, <b>permite
@@ -196,8 +188,9 @@
                 </a>
             </p>
         </div>
-        <!--Botón de avanze en el carrusel-->
-        <!--Función carruOido navega entre carrussel 1 = avanzar-->
+        <!--//*Botón de retrosceso en el carrusel-->
+        <!--//funcion carruOido() navega entre carrussel-->
+        <!--//param 1 = avanza-->
         <div class="columna col-1 flechaOido" onclick="carruOido(1)">
             <center>
                 <img src="assets/vector/flecha.svg" style="transform: rotate(180deg);">
@@ -205,9 +198,9 @@
         </div>
         <div class="columna col-2"></div>
     </div>
-    <!--Sección de clasificación del ruido-->
-    <div id="clasi" class="row container-fluid divBody" style="padding-top: 200px;">
-        <!--Título de la sección-->
+    <!--//main Sección de clasificación del ruido-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//*Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -222,7 +215,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//*Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -232,10 +225,10 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <!--Tabla de clasificación del ruido-->
+        <!--//*Tabla de clasificación del ruido-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
-            <!--Columna de ruido muy bajo-->
+            <!--//*Columna de ruido muy bajo-->
             <div class="columna col textCorrido">
                 <div style="text-align: center;">
                     <span class="textSubOido subOido" style="background-color: #fffa7c; border-color: #fffa7c ;">
@@ -244,7 +237,7 @@
                 </div>
                 <p class="textClasf">Se hayan todos los ruidos que se midan entre los 10 a 30 dB.</p>
             </div>
-            <!--Columna de ruido bajo-->
+            <!--//*Columna de ruido bajo-->
             <div class="columna col textCorrido">
                 <div style="text-align: center;">
                     <span class="textSubOido subOido" style="background-color: #ffc37c; border-color: #ffc37c ;">
@@ -253,7 +246,7 @@
                 </div>
                 <p class="textClasf">Se encuentran sonidos de entre 30-55 dB, sin embargo, la OMS considera los 50 dB como el límite superior deseable.</p>
             </div>
-            <!--Columna de ruido ruidoso-->
+            <!--//*Columna de ruido ruidoso-->
             <div class="columna col textCorrido" style="letter-spacing: -1">
                 <div style="text-align: center;">
                     <span class="textSubOido subOido" style="background-color: #ff7c7c; border-color: #ff7c7c ;">
@@ -264,16 +257,16 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <!--Grafica de clasificación de ruidos-->
+        <!--//*Grafica de clasificación de ruidos-->
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
-            <!--Frame de la grafica,  clasiRuido.php es la página que aloja la gráfica-->
+            <!--//*Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
             <div class="columna col">
                 <iframe src="src/pages/clasiRuido.php" style="width: 100%; height: 550px;"></iframe>
             </div>
             <div class="columna col-2"></div>
         </div>
-        <!--Texto final de la sección-->
+        <!--//*Texto final de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -288,9 +281,9 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Sección de legislación del ruido-->
-    <div id="legal" class="row container-fluid divBody" style="padding-top: 200px;">
-        <!--Título de la sección-->
+    <!--//main Sección de legislación del ruido-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//* Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -305,7 +298,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//* Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -351,9 +344,9 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Sección de Componentes del ruido-->
-    <div id="compo" class="row container-fluid divBody" style="padding-top: 200px;">
-        <!--Título de la sección-->
+    <!--//main Sección de Componentes del ruido-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//*Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -368,7 +361,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//*Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -380,7 +373,7 @@
         </div>
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
-            <!--Columna sobre la intensidad-->
+            <!--//*Columna sobre la intensidad-->
             <div class="columna col textCorrido">
                 <div style="text-align: center;">
                     <span class="subOido">
@@ -391,7 +384,7 @@
                     Determinada por el nivel de presión sonora y se mide en decibeles (dB). El decibelio puede medir otras magnitudes físicas,
                     pero coloquialmente se le dice así a una unidad más específica llamada decibelio del nivel de presión sonora (dB SPL).</p>
             </div>
-            <!--Columna sobre el tono-->
+            <!--//*Columna sobre el tono-->
             <div class="columna col textCorrido">
                 <div style="text-align: center;">
                     <span class="subOido">
@@ -403,7 +396,7 @@
                     5kHz, <letter style="color: #7db7ff;">medios</letter> entre 250 Hz y 5kHz, y <letter style="color: #ff937d;">graves</letter>
                     debajo de 250 Hz. Sonidos entre 2-4kHz son más molestos debido al notorio cambio de nivel. La voz se encuentra en 250hz y 4kHz.</p>
             </div>
-            <!--Columna sobre el tiempo-->
+            <!--//*Columna sobre el tiempo-->
             <div class="columna col textCorrido" style="letter-spacing: -1">
                 <div style="text-align: center;">
                     <span class="subOido">
@@ -416,10 +409,10 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <!--Gráfica de onda con sliders-->
+        <!--//*Gráfica de onda con sliders-->
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
-            <!--Frame de la gráfica, ondaSlides.php posee la gráfica-->
+            <!--//*Frame de la gráfica, ondaSlides.php posee la gráfica-->
             <div class="col">
                 <center>
                     <iframe src="src/pages/ondaSlides.php" style="width: 110%; height: 800px;"></iframe>
@@ -427,7 +420,7 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <!--Texto final de la sección-->
+        <!--//*Texto final de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -441,9 +434,9 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Sección de efectos en la salud-->
-    <div id="salud" class="row container-fluid divBody" style="padding-top: 200px;">
-        <!--Título de la sección-->
+    <!--//main Sección de efectos en la salud-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//*Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -458,7 +451,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//*Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -478,17 +471,18 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Carrusel de imagens-->
+    <!--//* Carrusel de imagenes-->
     <div class="row container-fluid divBody" style="padding-top: 100px;">
         <div class="columna col-2"></div>
-        <!--Botón de retrosceso en el carrusel-->
-        <!--Función carruSalud navega entre carrussel 0 = retrosceder-->
+        <!--//*Botón de retrosceso en el carrusel-->
+        <!--//funcion carruSalud() navega entre carrussel-->
+        <!--//param 0 = retrocede-->
         <div class="columna col-1 flechaOido" onclick="carruSalud(0)">
             <center>
                 <img src="assets/vector/flecha.svg" style="margin-top: 100px;">
             </center>
         </div>
-        <!--Texto del carrusel-->
+        <!--//*Texto del carrusel-->
         <div class="columna col">
             <img id="img1" class="img1 imgCh" src="assets/vector/salud/suenio.svg">
             <img id="img3" class="img3 imgGr" src="assets/vector/salud/mental.svg">
@@ -496,8 +490,9 @@
             <img id="img4" class="img4 imgCh" src="assets/vector/salud/discapacidad.svg">
             <img id="img5" class="img5 imgCh" src="assets/vector/salud/comunicacion.svg">
         </div>
-        <!--Botón de avanze en el carrusel-->
-        <!--Función carruSalud navega entre carrussel 1 = avanzar-->
+        <!--//*Botón de retrosceso en el carrusel-->
+        <!--//funcion carruSalud() navega entre carrussel-->
+        <!--//param 1 = avanza-->
         <div class="columna col-1 flechaOido" onclick="carruSalud(1)">
             <center>
                 <img src="assets/vector/flecha.svg" style="transform: rotate(180deg); margin-top: 100px;">
@@ -505,10 +500,10 @@
         </div>
         <div class="columna col-2"></div>
     </div>
-    <!--Texto del carrusel-->
+    <!--//* Texto del carrusel-->
     <div class="row container-fluid divBody" style="padding-top: 150px;">
         <div class="columna col-2"></div>
-        <!--Texto del carrusel-->
+        <!--//*Texto del carrusel-->
         <div class="columna col">
             <div id="subSalud" class="subOido">
                 <center>
@@ -554,9 +549,9 @@
         </div>
         <div class="columna col-2"></div>
     </div>
-    <!--Sección como se mide el ruido-->
-    <div id="mide" class="row container-fluid divBody" style="padding-top: 200px;">
-        <!--Título de la sección-->
+    <!--//main Sección como se mide el ruido-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//* Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -571,7 +566,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//* Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -595,24 +590,26 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Carrusel de imagens-->
+    <!--//* Carrusel de imagenes-->
     <div class="row container-fluid divBody" style="padding-top: 100px;">
         <div class="columna col-3"></div>
-        <!--Botón de retrosceso en el carrusel-->
-        <!--Función carruSalud navega entre carrussel 0 = retrosceder-->
+        <!--//* Botón de retrosceso en el carrusel-->
+        <!--//funcion carruPasos(a,b) navega entre carrussel-->
+        <!--//param a = 0 = retrocede-->
         <div class="columna col-1 flechaOido" onclick="carruPasos(0)" style="padding-top: 200px;">
             <center>
                 <img src="assets/vector/flecha.svg">
             </center>
         </div>
-        <!--Texto del carrusel-->
+        <!--//* Texto del carrusel-->
         <div class="columna col">
             <center>
                 <img id="gifPaso" src="assets/gif/pasos/Paso1.gif">
             </center>
         </div>
-        <!--Botón de avanze en el carrusel-->
-        <!--Función carruSalud navega entre carrussel 1 = avanzar-->
+        <!--//* Botón de retrosceso en el carrusel-->
+        <!--//funcion carruPasos navega entre carrussel-->
+        <!--//param a = 1 = avanza-->
         <div class="columna col-1 flechaOido" onclick="carruPasos(1)" style="padding-top: 200px;">
             <center>
                 <img src="assets/vector/flecha.svg" style="transform: rotate(180deg);">
@@ -620,15 +617,18 @@
         </div>
         <div class="columna col-3"></div>
     </div>
-    <!--Posición del carrusel-->
+    <!--//* Posición del carrusel-->
     <div class="row container-fluid divBody" style="padding-top: 40px;">
         <div class="columna col-4"></div>
-        <!--Barra de posición-->
+        <!--//* Barra de posición-->
         <div class="columna col">
             <center>
                 <div style="background-color: rgba(51,51,51,0.25); width: 532px; height: 10px; border-radius: 5px; position: absolute; z-index: 1;"></div>
                 <div id="barraCrece" class="barraCrece1" style="background-color: #FF7C7C; height: 10px; border-radius: 5px; position: absolute; z-index: 2;"></div>
             </center>
+            <!--//funcion carruPasos(a,b) pinta el avance entre los pasos de medición-->
+            <!--//param a = 2 = indica el avance en la barra-->
+            <!--//param b = pinta el avance en la barra-->
             <button onclick="carruPasos(2,1)" id="paso1" class="actButton" style="margin-left: -5px;"></button>
             <button onclick="carruPasos(2,2)" id="paso2" class="inaButton" style="margin-left: 61.5px;"></button>
             <button onclick="carruPasos(2,3)" id="paso3" class="inaButton" style="margin-left: 128px;"></button>
@@ -641,10 +641,10 @@
         </div>
         <div class="columna col-4"></div>
     </div>
-    <!--Texto del carrusel-->
+    <!--//* Texto del carrusel-->
     <div class="row container-fluid divBody" style="padding-top: 50px;">
         <div class="columna col-3"></div>
-        <!--Texto del carrusel-->
+        <!--//* Título del carrusel-->
         <div class="columna col">
             <div id="subMide" class="subOido">
                 <center>
@@ -658,7 +658,7 @@
         </div>
         <div class="columna col-3"></div>
     </div>
-    <!--Texto final de la sección-->
+    <!--//* Texto final de la sección-->
     <div class="row container-fluid divBody" style="padding-top: 50px;">
         <div class="columna col-2"></div>
         <!--Texto del carrusel-->
@@ -669,9 +669,9 @@
         </div>
         <div class="columna col-2"></div>
     </div>
-    <!--Sección áreas de estudio-->
-    <div id="estudio" class="row container-fluid divBody" style="padding-top: 200px;">
-        <!--Título de la sección-->
+    <!--//main Sección áreas de estudio-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//* Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -686,7 +686,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//* Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
@@ -705,9 +705,11 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <!--Línea de imagenes-->
+        <!--//* Línea de imagenes-->
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
+            <!--//funcion areaEstudio(a) pinta la información del área-->
+            <!--//param a indica que información pintar-->
             <div id="fArea1" class="columna col-1 imagenArea" onclick="areaEstudio(1)">
                 <center>
                     <div id="area1" class="titleAreaAct"></div>
@@ -750,7 +752,7 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//* Texto de la sección-->
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
             <div class="columna col">
@@ -782,27 +784,29 @@
         <div class="row" style="padding-top: 50px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
-                <!--Modelo 3D-->
+                <!--//* Modelo 3D-->
                 <div class="container">
+                    <!--//funcion playSound(a) reproduce o para el sonido-->
+                    <!--//param a = 1 permite reproducir sonidos-->
+                    <!--//param a = 0 para todos los sonidos-->
                     <div onmouseover="playSound(1);" onmouseout="playSound(0)">
-                        <iframe src="" id="modelOver"></iframe>
+                        <iframe id="modelPark"></iframe>
                     </div>
                 </div>
+                <!--//* Audios para el modelo-->
                 <audio id="audio1" loop=true preload>
                     <source src="assets/audio/PaleyParkFuera.mp3" id="srcMP3" type="audio/mp3">
-                    <div>Your Browser will not support this audio</div>
                 </audio>
                 <audio id="audio2" loop=true preload>
                     <source src="assets/audio/PaleyParkDentro.mp3" id="srcMP3" type="audio/mp3">
-                    <div>Your Browser will not support this audio</div>
                 </audio>
             </div>
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Sección artículos HUBBUB-->
-    <div id="artH" class="row container-fluid divBody" style="padding-top: 200px;">
-        <!--Título de la sección-->
+    <!--//main Sección artículos HUBBUB-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//* Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -817,7 +821,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//* Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col-4 refe">
@@ -881,9 +885,9 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Sección referencias y articulos-->
-    <div  id="artRef" class="row container-fluid divBody" style="padding-top: 200px;">
-        <!--Título de la sección-->
+    <!--//main Sección referencias y articulos-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//* Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
@@ -898,7 +902,7 @@
             </div>
             <div class="columna col-1"></div>
         </div>
-        <!--Texto de la sección-->
+        <!--//* Texto de la sección-->
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col-4 refe">
@@ -1030,30 +1034,37 @@
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--Secci[on completa de foot-->
+    <!--//main Sección completa de foot-->
     <div style="z-index: 11; position: absolute; width: 100%;">
-        <!--Footer-->
+        <!--//main Footer-->
         <div class="row container-fluid divBody footer">
             <div class="row">
                 <div class="columna col-1"></div>
-                <div class="columna col-1">
-                    <a href="#hero"><img src="assets/vector/HUBBUBIconWhite.svg"></a>
+                <!--//* Icono para regresar al hero-->
+                <!--//funcion scrollMe(a) scrollea a cierta posición-->
+                <!--//param 0 = scrollea al hero-->
+                <div onclick="scrollMe(0)" class="columna col-1">
+                    <img src="assets/vector/HUBBUBIconWhite.svg">
                 </div>
                 <div class="columna col-3"></div>
+                <!--//* Columna de descargas-->
                 <div class="columna col">
                     <p class="tituloFooter">Descargas</p>
                     <a href="https://play.google.com/store/apps/details?id=com.UAM.Noise&hl=es" target="_blank">
                         <img class="iconNosotros" src="assets/vector/redes/playStoreW.svg">
                     </a>
-                    <!--// TODO: Agregar aplicación para iOS //-->
+                    <!--//todo Agregar aplicación para iOS //-->
                     <img class="iconNosotros" src="assets/vector/redes/appleStoreW.svg">
                 </div>
+                <!--//* Columna de mapa del sitio-->
                 <div class="columna col">
                     <p class="tituloFooter">Sitio</p>
                     <p class="linkFooterAct" style="margin-top:20px">El ruido</p>
                     <p class="linkFooter">Ver el ruido</p>
+                    <!--//funcion nosotros() abre una ventana con la información de nosotros-->
                     <p class="linkFooter" onclick="nosotros();">Sobre nosotros</p>
                 </div>
+                <!--//* Columna de contacto-->
                 <div class="columna col">
                     <p class="tituloFooter">Contacto</p>
                     <a href="https://www.facebook.com/HUBBUBALERTA/" target="_blank">
@@ -1073,9 +1084,9 @@
                 <div class="columna col-1"></div>
             </div>
         </div>
-        <!--Sub Footer-->
+        <!--//main Sub Footer-->
         <div class="row container-fluid divBody" style="padding: 20px 0px;">
-            <!--Título de la sección-->
+            <!--//*Textos de la sección-->
             <div class="row subFooterText">
                 <div class="columna col-1"></div>
                 <div class="columna col">
@@ -1097,11 +1108,11 @@
             </div>
         </div>
     </div>
-    <!--Template para el Swal de información sobre HUBBUB-->
+    <!--//main Template para el Swal de información sobre HUBBUB-->
     <template id="nosotrosSwal">
         <swal-html>
             <div class="row" style="width: 100%;">
-                <!--Imagen y legales del Swal-->
+                <!--//* Imagen y legales del Swal-->
                 <div class="columna col-4">
                     <div class="divIzqNos">
                         <img class="logoHUBBUB" src="assets/vector/HUBBUBLogo.svg">
@@ -1120,7 +1131,7 @@
                         </a>
                         <center>
                             <hr class="hrSwal" />
-                            <p class="textHUBBUBC">HUBBUB&copy;</p>
+                            <p class="textCorrido" style="text-align: center;">HUBBUB&copy;</p>
                             <p class="textAvisoN">Aviso de privacidad</p>
                             <p class="textDerechosN">Todos los derechos reservados</p>
                         </center>
@@ -1129,10 +1140,10 @@
                 <div class="columna col-1">
                     <div class="verticalLineNos"></div>
                 </div>
-                <!--Texto del Swal-->
+                <!--//* Texto del Swal-->
                 <div class="columna col-7">
                     <div class="divDerNos" style="text-align: justify;">
-                        <p class="subtitle subNos">Sobre nosotros</p><br />
+                        <p class="subtitle" style="text-transform: none">Sobre nosotros</p><br />
                         <p class="textSobreN">HUBBUB Alerta ruido es una iniciativa de la Mtra. Verónica Arroyo Pedroza de la Universidad Autónoma Metropolitana, CyAD Azcapotzalco, a partir del trabajo conjunto con el Laboratorio de Análisis y Diseño Acústico (LADAc) de la misma Universidad. Dicho laboratorio desarrolla el primer mapa de ruido de la Ciudad de México por medio de equipamiento de medición especializado, siendo su información y uso para fines académicos y de divulgación científica.</p>
                         <p class="textSobreN">Siendo la ciudadanía la principal afectada por el tema se planea, diseña y desarrolla una aplicación móvil que promueve la participación ciudadana en el tema de la contaminación ambiental por ruido, con el fin de mapear las áreas con más molestias y determinar las fuentes más comunes que generan dicha molestia.</p>
                         <p class="textSobreN">El objetivo de la aplicación HUBBUB® Alerta ruido, es concientizar y promover un medio ambiente más respetuoso en zonas urbanas, monitoreando por medio de la colaboración ciudadana las zonas caóticas contaminadas por ruido.</p>
@@ -1148,7 +1159,7 @@
         </swal-html>
     </template>
 </body>
-<!--Js para el embed de Sketchfab-->
-<script type="text/javascript" src="src/js/sketch.js"></script>
+<!--//import Js para el embed de Sketchfab-->
+<script type="text/javascript" src="src/js/JSsketch.js"></script>
 
 </html>

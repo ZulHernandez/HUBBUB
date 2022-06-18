@@ -2,44 +2,43 @@ body {
   background-image: url(../../assets/vector/background.svg);
 }
 
-.hero {
-  background: url(../../assets/vector/FondoCDMX.svg);
-  background-size: cover;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-animation-duration: 30s;
-          animation-duration: 30s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-
-@-webkit-keyframes moveFondo {
-  0% {
-    background-position: 100vw;
-  }
-  100% {
-    background-position: 0vw;
-  }
-}
-
-@keyframes moveFondo {
-  0% {
-    background-position: 100vw;
-  }
-  100% {
-    background-position: 0vw;
-  }
-}
-
-#modelOver, #modelOut {
+#modelPark {
   width: 100%;
   height: 720px;
   border: none;
   overflow: hidden;
+}
+
+.verticalLine {
+  height: 46.3vh;
+  width: 0px;
+  border-width: 3px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: #333333;
+  background-color: #333333;
+  opacity: 0;
+  margin-top: 26.85vh;
+  margin-left: 50%;
+  -webkit-animation: appearResume 1s 4500ms forwards ease-out;
+          animation: appearResume 1s 4500ms forwards ease-out;
+}
+
+.divResume {
+  height: auto;
+  margin-top: 37vh;
+  margin-left: 0px;
+  opacity: 0;
+  -webkit-animation-delay: 4500ms;
+          animation-delay: 4500ms;
+  -webkit-animation-name: appearResume;
+          animation-name: appearResume;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
 }
 
 .inaButton {
@@ -52,13 +51,21 @@ body {
   border: 2px solid;
   border-color: rgba(51, 51, 51, 0.25);
   margin-top: -5px;
-  -webkit-filter: drop-shadow(0px 0px 1px #000);
-          filter: drop-shadow(0px 0px 1px #000);
+  -webkit-filter: drop-shadow(0px 0px 1px #333333);
+          filter: drop-shadow(0px 0px 1px #333333);
+  -webkit-transition: -webkit-transform 150ms;
+  transition: -webkit-transform 150ms;
+  transition: transform 150ms;
+  transition: transform 150ms, -webkit-transform 150ms;
+  cursor: pointer;
 }
 
 .inaButton:hover {
   -webkit-transform: scale(1.25);
           transform: scale(1.25);
+}
+
+.inaButton:hover {
   border-width: 3;
 }
 
@@ -82,14 +89,9 @@ body {
   cursor: context-menu;
 }
 
-/*canvas---------------------------------------------------------------------------------------------------------*/
 .canvaClasRuido {
   width: 1200px;
   height: 645px;
-  /*position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
 }
 
 .logoHero {
@@ -98,11 +100,11 @@ body {
 }
 
 .img1 {
-  margin-top: 75px;
   width: 100px;
   height: auto;
-  position: absolute;
+  margin-top: 75px;
   z-index: 1;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
@@ -114,35 +116,35 @@ body {
 }
 
 .img2 {
-  margin-top: 75px;
   width: 100px;
   height: auto;
-  position: absolute;
+  margin-top: 75px;
   z-index: 2;
-  margin-left: 142.5px;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+  margin-left: 142.5px;
   -webkit-animation-name: mueve2a1;
           animation-name: mueve2a1;
 }
 
 .img3 {
-  margin-top: 75px;
   width: 250px;
   height: auto;
-  position: absolute;
+  margin-top: 75px;
   z-index: 3;
-  margin-left: 285px;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+  margin-left: 285px;
   -webkit-animation-name: mueve3a2;
           animation-name: mueve3a2;
 }
@@ -150,42 +152,43 @@ body {
 .img4 {
   width: 100px;
   height: auto;
-  position: absolute;
+  margin-top: 0px;
   z-index: 4;
-  margin-left: 577.5px;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+  margin-left: 577.5px;
   -webkit-animation-name: mueve4a3;
           animation-name: mueve4a3;
 }
 
 .img5 {
-  margin-top: 75px;
   width: 100px;
   height: auto;
-  position: absolute;
+  margin-top: 0px;
   z-index: 5;
-  margin-left: 720px;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+  margin-left: 720px;
   -webkit-animation-name: mueve5a4;
           animation-name: mueve5a4;
 }
 
 .img1b {
-  margin-top: 75px;
   width: 100px;
   height: auto;
-  position: absolute;
+  margin-top: 75px;
   z-index: 1;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
@@ -197,67 +200,69 @@ body {
 }
 
 .img2b {
-  margin-top: 75px;
   width: 100px;
   height: auto;
-  position: absolute;
+  margin-top: 75px;
   z-index: 2;
-  margin-left: 142.5px;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+  margin-left: 142.5px;
   -webkit-animation-name: mueve1a2;
           animation-name: mueve1a2;
 }
 
 .img3b {
+  width: 250px;
   height: auto;
-  position: absolute;
+  margin-top: 0px;
   z-index: 3;
-  margin-left: 285px;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+  margin-left: 285px;
   -webkit-animation-name: mueve2a3;
           animation-name: mueve2a3;
 }
 
 .img4b {
-  margin-top: 75px;
   width: 100px;
   height: auto;
-  position: absolute;
+  margin-top: 0px;
   z-index: 4;
-  margin-left: 577.5px;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+  margin-left: 577.5px;
   -webkit-animation-name: mueve3a4;
           animation-name: mueve3a4;
 }
 
 .img5b {
-  margin-top: 75px;
   width: 100px;
   height: auto;
-  position: absolute;
+  margin-top: 75px;
   z-index: 5;
-  margin-left: 720px;
+  position: absolute;
   -webkit-animation-duration: 500ms;
           animation-duration: 500ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
+  margin-left: 720px;
   -webkit-animation-name: mueve4a5;
           animation-name: mueve4a5;
 }
@@ -302,16 +307,16 @@ body {
 }
 
 .titleArea {
-  cursor: pointer;
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  border-width: 5px;
+  border-style: solid;
+  cursor: pointer;
   -webkit-transition: 0.25s;
   transition: 0.25s;
   opacity: 1;
   border-color: transparent;
-  border-width: 5px;
-  border-style: solid;
   -webkit-backdrop-filter: blur(1px);
           backdrop-filter: blur(1px);
   -webkit-backdrop-filter: grayscale(100%);
@@ -326,13 +331,13 @@ body {
 }
 
 .titleAreaAct {
-  cursor: context-menu;
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border-color: #FF7C7C;
   border-width: 5px;
   border-style: solid;
+  cursor: context-menu;
+  border-color: #ff7c7c;
 }
 
 @-webkit-keyframes logoMove {
@@ -374,7 +379,7 @@ body {
 @-webkit-keyframes mueve1a5 {
   from {
     margin-top: 75px;
-    margin-left: 0;
+    margin-left: 0px;
   }
   to {
     margin-top: 75px;
@@ -385,7 +390,7 @@ body {
 @keyframes mueve1a5 {
   from {
     margin-top: 75px;
-    margin-left: 0;
+    margin-left: 0px;
   }
   to {
     margin-top: 75px;
@@ -504,7 +509,7 @@ body {
   }
   to {
     margin-top: 75px;
-    margin-left: 0;
+    margin-left: 0px;
   }
 }
 
@@ -515,7 +520,7 @@ body {
   }
   to {
     margin-top: 75px;
-    margin-left: 0;
+    margin-left: 0px;
   }
 }
 

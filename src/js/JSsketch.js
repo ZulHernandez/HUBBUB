@@ -1,50 +1,68 @@
+//main Variables
+//*  Versión del visualizador
 const version = "1.10.1";
+//*  UID del modelo
 const uid = "de7a7fbca06140319776930b19a0ddbf";
-const modelOver = document.getElementById("modelOver");
-//const modelOut = document.getElementById("modelOut");
+//*  Lugar dentro del HTML donde se va a insertar el sketchfab
+const modelOver = document.getElementById("modelPark");
+//* Seteamos el modelo
 const client = new window.Sketchfab(version, modelOver);
+//* Objeto de la clase Sketchfab
 let api;
 
+//* Función que se ejecuta cuando el modelo no se puede cargar
 const error = (err) => console.error("Sketchfab API error:", err);
 
+//* Variables para el audio 1
 var audioSample1;
 var audioPlaying1;
 
+//funcion Reproduce o pausa el audio 1
+//param doPause: boolean
+//param doPlay: boolean
 function toggleAudio1(doPause, doPlay) {
 	if (!audioSample1) return;
 	if (doPause) audioSample1.pause();
 	else if (doPlay) audioSample1.play();
 }
 
+//* Variables para el audio 2
 var audioSample2;
 var audioPlaying2;
 
+//funcion Reproduce o pausa el audio 2
+//param doPause: boolean
+//param doPlay: boolean
 function toggleAudio2(doPause, doPlay) {
 	if (!audioSample2) return;
 	if (doPause) audioSample2.pause();
 	else if (doPlay) audioSample2.play();
 }
 
+//funcion Inicia el modelo
 function skfbStart() {
+	//* Empezamos a cargar el modelo
 	const success = (apiClient) => {
 		api = apiClient;
+		//* Reproducimos el modelo
 		api.start();
+		//* Escuchamos si el modelo esta listo
 		api.addEventListener("viewerready", () => {
 			window.console.log("viewer ready");
-
+			//* Escuchamos si el se clicka dentro de las anotaciones del modelo
 			api.addEventListener("annotationSelect", function (index) {
 				window.console.log("Selected annotation", index);
 				console.log("select " + index);
+				//* Si se clicka afuera se pausan los audios
 				if (index == -1) {
-					// pause sounds
 					toggleAudio1(true, false);
 					toggleAudio2(true, false);
+				//* Si se clicka en la anotacion 1 se reproduce el audio 1
 				} else if (index == 1) {
-					// play sound 1
 					toggleAudio1(true, false);
 					toggleAudio2(false, true);
+				//* Si se clicka en la anotacion 2 se reproduce el audio 2
 				} else {
-					// play sound 2
 					toggleAudio1(false, true);
 					toggleAudio2(true, false);
 				}
@@ -52,6 +70,7 @@ function skfbStart() {
 		});
 	};
 
+	//* Seteamos opociones del modelo (obtenidos de la API)
 	client.init(uid, {
 		annotation: 0, // Usage: Setting to [1 – 100] will automatically load that annotation when the viewer starts.
 		annotations_visible: 1, // Usage: Setting to 0 will hide annotations by default.
@@ -84,7 +103,10 @@ function skfbStart() {
 	});
 }
 
+//funcion Determian si el modelo esta siento hovereado por el mouse y determina la reproducción de cada audio
+//param a = mouse over o mouse out
 function playSound(a) {
+	//* Recogemos los audios del HTML y controlamos su reproducción
 	audioSample1 = document.getElementById("audio1");
 	audioSample1.addEventListener("playing", function (event) {
 		audioPlaying1 = true;
@@ -100,15 +122,14 @@ function playSound(a) {
 	audioSample2.addEventListener("pause", function (event) {
 		audioPlaying2 = false;
 	});
+
+	//* Evaluamos si el mouse esta sobre el modelo
 	if (a == 1) {
-		//modelOver.style.display = "block";
-		//modelOut.style.display = "none";
 		api.start();
 	}
 
+	//* Evaluamos si el mouse esta fuera del modelo
 	if (a == 0) {
-		//modelOver.style.display = "none";
-		//modelOut.style.display = "block";
 		toggleAudio1(true, false);
 		toggleAudio2(true, false);
 	}

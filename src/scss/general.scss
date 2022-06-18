@@ -1,41 +1,66 @@
-//fonts-----------------------------------------------------------------------------------------------------------
-@font-face {
-    font-family: "Montserrat-B";
-    src: url(../../assets/fonts/Montserrat-Bold.ttf);
-}
+//main Variable----------------------------------------------------------------
+//* Variable de color
+$blackGrey: #333333;
+$yellow: #fff101;
+$blueLink: #0075ff;
 
-@font-face {
-    font-family: "Montserrat-M";
-    src: url(../../assets/fonts/Montserrat-Medium.ttf);
-}
-
-@font-face {
-    font-family: "Montserrat-R";
-    src: url(../../assets/fonts/Montserrat-Regular.ttf);
-}
-
-@font-face {
-    font-family: "Montserrat-T";
-    src: url(../../assets/fonts/Montserrat-Light.ttf);
-}
-
+//main fonts-------------------------------------------------------------------
+//* Fuente Semi-bold
 @font-face {
     font-family: "Montserrat-SB";
     src: url(../../assets/fonts/Montserrat-SemiBold.ttf);
 }
 
-//Variable-------------------------------------------------------------------------------------------------------
-$blackGrey: #333333;
-$yellow: #fff101;
-$blueLink: #0075ff;
+//* Fuente bold
+@font-face {
+    font-family: "Montserrat-B";
+    src: url(../../assets/fonts/Montserrat-Bold.ttf);
+}
 
-//Mixins-----------------------------------------------------------------------------------------------------------
+//* Fuente medium
+@font-face {
+    font-family: "Montserrat-M";
+    src: url(../../assets/fonts/Montserrat-Medium.ttf);
+}
+
+//* Fuente regular
+@font-face {
+    font-family: "Montserrat-R";
+    src: url(../../assets/fonts/Montserrat-Regular.ttf);
+}
+
+//* Fuente thin
+@font-face {
+    font-family: "Montserrat-T";
+    src: url(../../assets/fonts/Montserrat-Light.ttf);
+}
+
+//* Formato de la selección
+::selection {
+    color: $blackGrey;
+    background: $yellow;
+}
+
+//main Funciones para el CSS---------------------------------------------------
+
+//funcion Determina la posicion de un elemento
+//param $y1: posicion vertical inicial
+//param $y2: posicion vertical menos altura del elemento sobre dos
+//param $x1: posicion horizontal inicial
+//param $x2: posicion horizontal menos ancho del elemento sobre dos
 @mixin posicion($y1, $y2, $x1, $x2) {
     margin-top: $y1 - $y2;
     margin-left: $x1 - $x2;
 }
 
+//funcion Determina el formato del texto
+//param $align: alineacion del texto
+//param $fsize: tamaño del texto
+//param $fweight: peso del texto
+//param $lineH: altura de la linea
+//param $letterS: espaciado de letras
 @mixin text($align, $fsize, $fweight, $lineH, $letterS) {
+    //* Evaluamos $fweight y determinamos el peso del texto
     @if $fweight == "B" {
         font-family: Montserrat-B;
     } @else {
@@ -53,6 +78,7 @@ $blueLink: #0075ff;
             }
         }
     }
+    //* Determinamos el resto del formato
     font-size: $fsize;
     line-height: $lineH;
     color: $blackGrey;
@@ -60,6 +86,7 @@ $blueLink: #0075ff;
     letter-spacing: $letterS;
 }
 
+//funcion Determina el formato para elementos hover
 @mixin hoverSize() {
     transition: transform 150ms;
     cursor: pointer;
@@ -69,26 +96,52 @@ $blueLink: #0075ff;
     }
 }
 
+//funcion Determina el padding de elementos a 12 columnas abiertas
 @mixin paddingGeneral() {
     padding: 0px 85px;
 }
 
-@mixin superPo($index) {
+//funcion Estilo para elemento en profundidad z
+//param $z: profundidad z
+@mixin capa ($z) {
     position: absolute;
-    z-index: $index;
+    z-index: $z;
 }
 
-//scroll-bar-----------------------------------------------------------------------------------------------------
+//funcion Dibujamos lineas
+//param $h: altura de la linea
+//param $w: ancho de la linea
+//param $b: ancho y radio del borde
+@mixin dibujaLinea($h, $w, $b) {
+    height: $h;
+    width: $w;
+    border-width: $b;
+    border-radius: $b;
+    border-style: solid;
+    border-color: $blackGrey;
+    background-color: $blackGrey;
+}
+
+@mixin divIzq($opa){
+    padding-top: 20px;
+    opacity: $opa;
+    cursor: pointer;
+}
+
+//main Scroll-bar--------------------------------------------------------------
+
+//* Barra total de desplazamiento
 ::-webkit-scrollbar {
     width: 6px;
     background-color: transparent;
 }
 
+//* Riel del scroll
 ::-webkit-scrollbar-track {
-    background-color: rgba(0, 0, 0, 0);
-    /*color: #999999*/
+    background-color: transparent;
 }
 
+//*Barrita de desplazamiento
 ::-webkit-scrollbar-thumb {
     background: rgba($blackGrey, 0.5);
     border-radius: 10px;
@@ -97,107 +150,84 @@ $blueLink: #0075ff;
     margin-right: 3px;
 }
 
+//*Barrita de desplazamiento en hover
 ::-webkit-scrollbar-thumb:hover {
     background: $blackGrey;
 }
 
+//*Estado fuera de la página del scroll
 ::-webkit-scrollbar-thumb:window-inactive {
     background: transparent;
 }
 
-//divs-----------------------------------------------------------------------------------------------------------
+//main Divs--------------------------------------------------------------------
+//* Cuerpo el documento y el propio documento
 body,
 html {
     margin: 0;
     padding: 0;
 }
 
+//* Formato de medianil estandar
 .columna {
     padding: 0px 25px;
 }
 
+//* Formato de medianil para columnas angostas
 .columnaCh {
     padding: 0px 2px;
 }
 
-.verticalLine {
-    opacity: 0;
-    height: 46.3vh;
-    width: 0px;
-    border-width: 3px;
-    border-radius: 3px;
-    border-style: solid;
-    border-color: $blackGrey;
-    background-color: $blackGrey;
-    @include posicion(50vh, 23.15vh, 50%, 0%);
-    animation: appearResume 1s 4500ms forwards ease-out;
-}
-
+//* Línea vertical del swal
 .verticalLineNos {
-    height: 100%;
-    width: 0px;
-    border-width: 1px;
-    border-radius: 1px;
-    border-style: solid;
-    border-color: $blackGrey;
-    background-color: $blackGrey;
-    //@include posicion(50vh, 42.5vh, 0, 0);
+    @include dibujaLinea(100%, 0px, 1px);
 }
 
-.divResume {
-    height: auto;
-    @include posicion(50vh, 13vh, 0px, 0px);
-    opacity: 0;
-    animation-delay: 4500ms;
-    animation-name: appearResume;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
-}
-
+//* Línea horizontal del swal para legales
 .hrSwal {
-    width: 225px;
-    border-color: $blackGrey;
-    border-width: 1px;
-    border-style: solid;
+    @include dibujaLinea(1px, 225px, 1px);
     align-items: center;
     margin-bottom: 10px;
 }
 
+//* Sección izquierda del swal nosotros
 .divIzqNos {
     margin-top: 5vh;
     position: fixed;
     margin-left: 50px;
 }
 
+//* Sección derecha del swal nosotros
 .divDerNos {
-    margin-top: 5vh;
-    //padding-bottom: 10vh;
-    margin-right: 50px;
+    @include posicion(5vh, 0vh, 0px, 10px);
 }
 
+//* Padding para el cuerpo
 .divBody {
     @include paddingGeneral();
 }
 
+//* Posicionamiento en z del logo en hero
 .imagenHero {
-    @include superPo(2);
+    @include capa(2);
 }
 
+//* Tamaño, posición en z y padding del hero
 .divHero {
     height: 100vh;
-    @include superPo(1);
+    @include capa(1);
     @include paddingGeneral();
 }
 
+//* Formato del footer
 .footer{
     padding: 85px 0px;
     background-color: rgba($blackGrey,0.75);
     background-image: url(../../assets/vector/background.svg);
-    margin-top: 200px;
-    margin-left: 0px;
+    @include posicion(200px, 0px, 0px, 0px);
 }
 
+//* Formato del navegador izquierdo
 .navIzq{
     z-index: 10;
     position: fixed;
@@ -210,10 +240,9 @@ html {
     }
 }
 
+//* Formato para el navegador izquierdo abierto
 .textoDivNavAct{
-    padding-top: 20px;
-    opacity: 50%;
-    cursor: pointer;
+    @include divIzq(50%);
     &:hover{
         opacity: 100%;
         text-decoration: underline;
@@ -221,13 +250,23 @@ html {
     }
 }
 
+//* Formato para el navegador izquierdo colapsado
 .textoDivNavIna{
-    padding-top: 20px;
-    opacity: 100%;
-    cursor: pointer;
+    @include divIzq(100%);
 }
 
-//images----------------------------------------------------------------------------------------------------------
+//main Images------------------------------------------------------------------
+
+//* Primer sección de una página
+.hero {
+    //* Imagen de la ciudad de México
+    background: url(../../assets/vector/FondoCDMX.svg);
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+}
+
+//* Imagen del logo en el hero
 .logoHero {
     height: 23.06vh;
     width: auto;
@@ -240,23 +279,27 @@ html {
     @include hoverSize();
 }
 
+//* Imagen del logo en el swal
 .logoHUBBUB {
     width: 280px;
     height: auto;
     padding-bottom: 71px;
 }
 
+//* Iconos de redes dentro del swal
 .iconNosotros {
     padding: 0px 10px;
     @include hoverSize();
 }
 
+//* Iconos de los subtitulos
 .imgSub {
     width: 30px;
     height: auto;
     margin-right: 15px;
 }
 
+//* Flechas para los carruseles
 .flechaOido {
     cursor: pointer;
     opacity: 0.5;
@@ -265,82 +308,40 @@ html {
     }
 }
 
+//* Iconos para el navegardor izquierdo
 .navIzqIcon{
     width: 20px;
     height: 20px;
     margin: -6px 15px 0px 10px;
 }
 
-//text------------------------------------------------------------------------------------------------------------
-::selection {
-    color: $blackGrey;
-    background: $yellow;
-}
+//main Text--------------------------------------------------------------------
 
+//* Titulo que aparece en el hero
 .pageTitle {
     @include text(left, 64px, "B", 78px, normal);
     text-transform: uppercase;
 }
 
-.textCorrido {
-    @include text(justify, 20px, "M", 24px, -0.5);
-}
-
-.textHUBBUBC{
-    @include text(center, 20px, "M", 24px, normal);
-}
-
-.textNavIzq {
-    @include text(center, 14px, "M", 16px, normal);
-    opacity: 0;
-}
-
-.textAvisoN {
-    @include text(center, 10px, "R", 1px, normal);
-}
-
-.textDerechosN {
-    @include text(center, 10px, "T", 1px, normal);
-}
-
+//* Subtitulo en el swal
 .subtitle {
     @include text(left, 40px, "B", 49px, normal);
     text-transform: uppercase;
 }
 
-.refe {
-    @include text(left, 14px, "M", 17px, -0.5);
-}
-
-.subNos {
-    text-transform: none;
-}
-
+//* Subtitulos dentro de las secciones
 .subOido {
     @include text(left, 32px, "SB", 39px, normal);
-    /*background-color: #7ce0ff;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #7ce0ff;*/
 }
 
-.textSubOido {
-    background-color: #7ce0ff;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #7ce0ff;
-    padding: 0px 5px;
+//* Parrafos normales
+.textCorrido {
+    @include text(justify, 20px, "M", 24px, -0.5);
 }
 
-a {
-    text-decoration: none;
-    &:focus {
-        outline: none;
-    }
-}
-
+//* Links dentro de parrafos
 .link {
-    @include text(left, 20, "SB", 0, -0.5);
+    @include text(left, 20px, "SB", 0, -0.5);
     color: $blueLink;
     cursor: pointer;
     &:hover {
@@ -348,38 +349,14 @@ a {
     }
 }
 
-.textClasf {
-    padding-top: 30px;
-    text-align-last: center;
-}
-
-h2.linea {
-    position: relative;
-    z-index: 1;
-}
-h2.linea:before {
-    border-top: 5px solid rgba($blackGrey, 0.25);
-    content: "";
-    margin: 0 auto;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    z-index: -1;
-}
-h2.linea titulo {
-    background: white;
-    padding: 0 50px;
-}
-
+//* Titulo de las secciones del footer
 .tituloFooter{
     @include text(left, 20px, "B", 24px, normal);
     color: white;
     text-transform: uppercase;
 }
 
+//* Links dentro del footer
 .linkFooter{
     @include text(left, 16px, "T", 10px, normal);
     color: white;
@@ -390,23 +367,92 @@ h2.linea titulo {
     }
 }
 
+//* Links para secciones en las que ya nos encontramos
 .linkFooterAct{
     @include text(left, 16px, "B", 10px, normal);
     color: white;
     text-decoration: underline;
 }
 
+//* Textos del subfooter
 .subFooterText{
     @include text(left, 15px, "T", 5px, normal);
 }
 
-//Swal-------------------------------------------------------------------------------------------------------------
+//* Textos del nav izquierdo
+.textNavIzq {
+    @include text(center, 14px, "M", 16px, normal);
+    opacity: 0;
+}
+
+//* Texto de referencias
+.refe {
+    @include text(left, 14px, "M", 17px, -0.5);
+}
+
+//* Aviso de privacidad en el Swal
+.textAvisoN {
+    @include text(center, 10px, "R", 1px, normal);
+}
+
+//* Todos los derechos en el Swal
+.textDerechosN {
+    @include text(center, 10px, "T", 1px, normal);
+}
+
+//* Subrayado de los subtitulos
+.textSubOido {
+    background-color: #7ce0ff;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #7ce0ff;
+    padding: 0px 5px;
+}
+
+//* Formato para links
+a {
+    text-decoration: none;
+    &:focus {
+        outline: none;
+    }
+}
+
+//* Texto para las columnas en clasificación del ruido
+.textClasf {
+    padding-top: 30px;
+    text-align-last: center;
+}
+
+//* Líneas del titulo
+h2.linea {
+    z-index: 1;
+    position: relative;
+}
+h2.linea:before {
+    border-top: 5px solid rgba($blackGrey, 0.25);
+    content: "";
+    margin: 0 auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    @include capa(-1);
+}
+h2.linea titulo {
+    background: white;
+    padding: 0 50px;
+}
+
+//main Swal--------------------------------------------------------------------
 .swal-height {
     height: 81.48vh;
     border-radius: 25px;
 }
 
-//Animation---------------------------------------------------------------------------------------------------------
+//main Animation---------------------------------------------------------------
+
+//*Animación para la aparición del resumen de la página
 @keyframes appearResume {
     0% {
         opacity: 0;

@@ -1,4 +1,9 @@
 @font-face {
+  font-family: "Montserrat-SB";
+  src: url(../../assets/fonts/Montserrat-SemiBold.ttf);
+}
+
+@font-face {
   font-family: "Montserrat-B";
   src: url(../../assets/fonts/Montserrat-Bold.ttf);
 }
@@ -18,9 +23,14 @@
   src: url(../../assets/fonts/Montserrat-Light.ttf);
 }
 
-@font-face {
-  font-family: "Montserrat-SB";
-  src: url(../../assets/fonts/Montserrat-SemiBold.ttf);
+::-moz-selection {
+  color: #333333;
+  background: #fff101;
+}
+
+::selection {
+  color: #333333;
+  background: #fff101;
 }
 
 ::-webkit-scrollbar {
@@ -29,8 +39,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: rgba(0, 0, 0, 0);
-  /*color: #999999*/
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -63,21 +72,6 @@ html {
   padding: 0px 2px;
 }
 
-.verticalLine {
-  opacity: 0;
-  height: 46.3vh;
-  width: 0px;
-  border-width: 3px;
-  border-radius: 3px;
-  border-style: solid;
-  border-color: #333333;
-  background-color: #333333;
-  margin-top: 26.85vh;
-  margin-left: 50%;
-  -webkit-animation: appearResume 1s 4500ms forwards ease-out;
-          animation: appearResume 1s 4500ms forwards ease-out;
-}
-
 .verticalLineNos {
   height: 100%;
   width: 0px;
@@ -88,28 +82,14 @@ html {
   background-color: #333333;
 }
 
-.divResume {
-  height: auto;
-  margin-top: 37vh;
-  margin-left: 0px;
-  opacity: 0;
-  -webkit-animation-delay: 4500ms;
-          animation-delay: 4500ms;
-  -webkit-animation-name: appearResume;
-          animation-name: appearResume;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
-}
-
 .hrSwal {
+  height: 1px;
   width: 225px;
-  border-color: #333333;
   border-width: 1px;
+  border-radius: 1px;
   border-style: solid;
+  border-color: #333333;
+  background-color: #333333;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -124,7 +104,7 @@ html {
 
 .divDerNos {
   margin-top: 5vh;
-  margin-right: 50px;
+  margin-left: -10px;
 }
 
 .divBody {
@@ -183,6 +163,15 @@ html {
   padding-top: 20px;
   opacity: 100%;
   cursor: pointer;
+}
+
+.hero {
+  background: url(../../assets/vector/FondoCDMX.svg);
+  background-size: cover;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .logoHero {
@@ -252,16 +241,6 @@ html {
   margin: -6px 15px 0px 10px;
 }
 
-::-moz-selection {
-  color: #333333;
-  background: #fff101;
-}
-
-::selection {
-  color: #333333;
-  background: #fff101;
-}
-
 .pageTitle {
   font-family: Montserrat-B;
   font-size: 64px;
@@ -270,52 +249,6 @@ html {
   text-align: left;
   letter-spacing: normal;
   text-transform: uppercase;
-}
-
-.textCorrido {
-  font-family: Montserrat-M;
-  font-size: 20px;
-  line-height: 24px;
-  color: #333333;
-  text-align: justify;
-  letter-spacing: -0.5;
-}
-
-.textHUBBUBC {
-  font-family: Montserrat-M;
-  font-size: 20px;
-  line-height: 24px;
-  color: #333333;
-  text-align: center;
-  letter-spacing: normal;
-}
-
-.textNavIzq {
-  font-family: Montserrat-M;
-  font-size: 14px;
-  line-height: 16px;
-  color: #333333;
-  text-align: center;
-  letter-spacing: normal;
-  opacity: 0;
-}
-
-.textAvisoN {
-  font-family: Montserrat-R;
-  font-size: 10px;
-  line-height: 1px;
-  color: #333333;
-  text-align: center;
-  letter-spacing: normal;
-}
-
-.textDerechosN {
-  font-family: Montserrat-T;
-  font-size: 10px;
-  line-height: 1px;
-  color: #333333;
-  text-align: center;
-  letter-spacing: normal;
 }
 
 .subtitle {
@@ -328,19 +261,6 @@ html {
   text-transform: uppercase;
 }
 
-.refe {
-  font-family: Montserrat-M;
-  font-size: 14px;
-  line-height: 17px;
-  color: #333333;
-  text-align: left;
-  letter-spacing: -0.5;
-}
-
-.subNos {
-  text-transform: none;
-}
-
 .subOido {
   font-family: Montserrat-SB;
   font-size: 32px;
@@ -348,31 +268,20 @@ html {
   color: #333333;
   text-align: left;
   letter-spacing: normal;
-  /*background-color: #7ce0ff;
-    border-width: 3px;
-    border-style: solid;
-    border-color: #7ce0ff;*/
 }
 
-.textSubOido {
-  background-color: #7ce0ff;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #7ce0ff;
-  padding: 0px 5px;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:focus {
-  outline: none;
+.textCorrido {
+  font-family: Montserrat-M;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  text-align: justify;
+  letter-spacing: -0.5;
 }
 
 .link {
   font-family: Montserrat-SB;
-  font-size: 20;
+  font-size: 20px;
   line-height: 0;
   color: #333333;
   text-align: left;
@@ -383,34 +292,6 @@ a:focus {
 
 .link:hover {
   text-decoration: underline;
-}
-
-.textClasf {
-  padding-top: 30px;
-  text-align-last: center;
-}
-
-h2.linea {
-  position: relative;
-  z-index: 1;
-}
-
-h2.linea:before {
-  border-top: 5px solid rgba(51, 51, 51, 0.25);
-  content: "";
-  margin: 0 auto;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: -1;
-}
-
-h2.linea titulo {
-  background: white;
-  padding: 0 50px;
 }
 
 .tituloFooter {
@@ -458,6 +339,87 @@ h2.linea titulo {
   color: #333333;
   text-align: left;
   letter-spacing: normal;
+}
+
+.textNavIzq {
+  font-family: Montserrat-M;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  opacity: 0;
+}
+
+.refe {
+  font-family: Montserrat-M;
+  font-size: 14px;
+  line-height: 17px;
+  color: #333333;
+  text-align: left;
+  letter-spacing: -0.5;
+}
+
+.textAvisoN {
+  font-family: Montserrat-R;
+  font-size: 10px;
+  line-height: 1px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+}
+
+.textDerechosN {
+  font-family: Montserrat-T;
+  font-size: 10px;
+  line-height: 1px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+}
+
+.textSubOido {
+  background-color: #7ce0ff;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #7ce0ff;
+  padding: 0px 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
+}
+
+.textClasf {
+  padding-top: 30px;
+  text-align-last: center;
+}
+
+h2.linea {
+  z-index: 1;
+  position: relative;
+}
+
+h2.linea:before {
+  border-top: 5px solid rgba(51, 51, 51, 0.25);
+  content: "";
+  margin: 0 auto;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+h2.linea titulo {
+  background: white;
+  padding: 0 50px;
 }
 
 .swal-height {

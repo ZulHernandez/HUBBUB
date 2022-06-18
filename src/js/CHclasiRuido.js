@@ -1,4 +1,5 @@
-//Cargamos imagenes por cada punto de la gráfica
+//main Variables
+//* Cargamos imagenes por cada punto de la gráfica
 const pointImage1 = new Image(40, 40);
 pointImage1.src = "../../assets/vector/puntosClasi/v1.svg";
 const pointImage2 = new Image(40, 40);
@@ -17,7 +18,7 @@ const pointImage8 = new Image(40, 40);
 pointImage8.src = "../../assets/vector/puntosClasi/v8.svg";
 const pointImage9 = new Image(40, 40);
 pointImage9.src = "../../assets/vector/puntosClasi/v9.svg";
-//Guardamos las imagenes en un array
+//* Guardamos las imagenes en un array
 const pointImage = [
 	,
 	,
@@ -32,24 +33,23 @@ const pointImage = [
 	pointImage8,
 	pointImage9,
 ];
-//Variable para audio
+//* Variable para audio
 var audio = new Audio();
-
-//Quitamos el título del los tooltips
+//* Quitamos el título del los tooltips
 const titleTooltip = (tooltipItems) => {
 	return "";
 };
 
-//Opciones para la gráfica
+//* Opciones para la gráfica
 const options = {
-	//Datos a gráficar
+	//* Datos a gráficar
 	data: {
 		datasets: [
-			//Gráfica de tipo linea
+			//* Gráfica de tipo linea
 			{
 				type: "line",
 				label: "sounds",
-				//Puntos de la gráfica
+				//* Puntos de la gráfica
 				data: [
 					[],
 					[],
@@ -64,7 +64,7 @@ const options = {
 					[93, 106, "Motocicleta"],
 					[100, 116, "Martillo demoledor"],
 				],
-				//Estilos de los puntos
+				//* Estilos de los puntos
 				backgroundColor: ["#ffffff"],
 				hoverBackgroundColor: ["#ffffff"],
 				borderColor: ["#333333"],
@@ -73,7 +73,7 @@ const options = {
 				order: 0,
 				pointHitRadius: 40,
 			},
-			//Gráfica de área para ruido muy bajo
+			//* Gráfica de área para ruido muy bajo
 			{
 				type: "line",
 				label: "back",
@@ -87,7 +87,7 @@ const options = {
 				fill: { value: 130 },
 				radius: 0,
 			},
-			//Gráfica de área para ruido bajo
+			//* Gráfica de área para ruido bajo
 			{
 				type: "line",
 				label: "back",
@@ -101,7 +101,7 @@ const options = {
 				fill: { value: 130 },
 				radius: 0,
 			},
-			//Gráfica de área para ruido ruidoso
+			//* Gráfica de área para ruido ruidoso
 			{
 				type: "line",
 				label: "back",
@@ -119,11 +119,11 @@ const options = {
 	},
 	options: {
 		plugins: {
-			//Ocultamos leyenda
+			//* Ocultamos leyenda
 			legend: {
 				display: false,
 			},
-			//Titulo del eje y
+			//* Titulo del eje y
 			title: {
 				display: true,
 				text: "SONORIDAD (sones)",
@@ -133,40 +133,40 @@ const options = {
 					family: "Montserrat-B",
 				},
 			},
-			//Estilos del tootltip
+			//* Estilos del tootltip
 			tooltip: {
-				//posicion del tooltip
+				//* posicion del tooltip
 				yAlign: "bottom",
 				xAlign: "right",
-				//Ocultamos el color del dato
+				//* Ocultamos el color del dato
 				displayColors: false,
-				//Modo de interacción
+				//* Modo de interacción
 				mode: "point",
 				position: "average",
-				//Color del tooltip
+				//* Color del tooltip
 				backgroundColor: "rgba(51,51,51,0.9)",
-				//Estructura del texto del tooltip
+				//* Estructura del texto del tooltip
 				callbacks: {
-					//Quitamos el título del los tooltips
+					//* Quitamos el título del los tooltips
 					title: titleTooltip,
-					//Nombre del objeto
+					//* Nombre del objeto
 					beforeLabel: (context) => {
 						return `${context.raw[2]}`;
 					},
-					//dB promedio del objeto
+					//* dB promedio del objeto
 					label: (context) => {
 						return `~ ${context.raw[0]} dBA`;
 					},
-					//Sones promedio del objeto
+					//* Sones promedio del objeto
 					afterLabel: (context) => {
 						return `~ ${context.raw[1]} sones`;
 					},
-					//Llamada a la acción
+					//* Llamada a la acción
 					footer: (context) => {
 						return "¡Dame click!";
 					},
 				},
-				//Fuente del tooltip
+				//* Fuente del tooltip
 				bodyFont: {
 					size: 15,
 					family: "Montserrat-M",
@@ -175,18 +175,18 @@ const options = {
 			},
 		},
 		elements: {
-			//Ponemos imagenes en los puntos
+			//* Ponemos imagenes en los puntos
 			point: {
 				pointStyle: pointImage,
 			},
 		},
 		scales: {
-			//Eje y
+			//* Eje y
 			y: {
-				//Rango del eje
+				//* Rango del eje
 				max: 130,
 				min: -10,
-				//Estilo de las lineas del eje
+				//* Estilo de las lineas del eje
 				grid: {
 					lineWidth: 3,
 					color: "rgba(51,51,51,0.15)",
@@ -205,32 +205,32 @@ const options = {
 							: "#333333",
 					offset: 0,
 				},
-				//Estilo de las ticks del eje
+				//* Estilo de las ticks del eje
 				ticks: {
 					display: true,
 					padding: 10,
-					//Espacio entre ticks
+					//* Espacio entre ticks
 					stepSize: 10,
-					//Determinamos lineas primarias y secundarias
+					//* Determinamos lineas primarias y secundarias
 					color: (ctx) =>
 						ctx.index == 0
 							? "rgba(0,0,0,0)"
 							: ctx.index == 14
 							? "rgba(0,0,0,0)"
 							: "#333333",
-					//Fuente de las ticks
+					//* Fuente de las ticks
 					font: {
 						size: 14,
 						family: "Montserrat-M",
 					},
 				},
 			},
-			//Eje x
+			//* Eje x
 			x: {
-				//Rango del eje
+				//* Rango del eje
 				max: 105,
 				min: 20,
-				//Título del eje X
+				//* Título del eje X
 				title: {
 					display: true,
 					text: "NIVEL DE PRESIÓN SONORA (Decibeles)",
@@ -243,10 +243,10 @@ const options = {
 						family: "Montserrat-B",
 					},
 				},
-				//Estilo de las lineas del eje
+				//* Estilo de las lineas del eje
 				grid: {
 					lineWidth: 3,
-					//Definimos el color de las lineas
+					//* Definimos el color de las lineas
 					color: [
 						"rgba(51,51,51,0.15)",
 						"rgba(51,51,51,0.15)",
@@ -269,7 +269,7 @@ const options = {
 					drawTicks: true,
 					tickLength: 15,
 					tickWidth: 3,
-					//Determinamos lineas primarias y secundarias
+					//* Determinamos lineas primarias y secundarias
 					tickColor: (ctx) =>
 						ctx.index == 10
 							? "#333333"
@@ -287,7 +287,7 @@ const options = {
 					display: true,
 					padding: 10,
 					stepSize: 5,
-					//Determinamos ticks primarias y secundarias
+					//* Determinamos ticks primarias y secundarias
 					color: (ctx) =>
 						ctx.index == 10
 							? "#333333"
@@ -302,7 +302,7 @@ const options = {
 						size: 14,
 						family: "Montserrat-M",
 					},
-					//Determinamos formato de las ticks
+					//* Determinamos formato de las ticks
 					callback: function (value, index, ticks) {
 						return value + " dB";
 					},
@@ -312,23 +312,23 @@ const options = {
 	},
 };
 
-//Dibujamos el gráfico
+//* Dibujamos el gráfico
 const ctx = document.getElementById("canvaClasRuido");
 const canvaClasRuido = new Chart(ctx, options);
 
-//Listener para clicks
+//* Listener para clicks
 canvaClasRuido.canvas.onclick = ruido;
 
-//Función para reproducir el audio
+//funcion Reproducimos el audio
 function ruido(click) {
-	//Evaluar si se dio click en algun punto
+	//* Evaluamos si se dio click en algun punto
 	const point = canvaClasRuido.getElementsAtEventForMode(
 		click,
 		"nearest",
 		{ intersect: true },
 		true
 	);
-	//Evaluamos que punto se dio click y reproducimos el audio correspondiente
+	//* Evaluamos que punto se dio click y reproducimos el audio correspondiente
 	if (point[0]) {
 		let indicador = point[0].index;
 		switch (indicador) {

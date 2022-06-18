@@ -1,49 +1,122 @@
-//Variables--------------------------------------------------------------------------------------------------------
+//main Variable----------------------------------------------------------------
+//* Variable de color
 $blackGrey: #333333;
 $blueLink: #0075ff;
+$redWater: #ff7c7c;
 
-//Mixins-----------------------------------------------------------------------------------------------------------
+//main Funciones para el CSS --------------------------------------------------
+
+//funcion Determina la posicion de un elemento
+//param $y1: posicion vertical inicial
+//param $y2: posicion vertical menos altura del elemento sobre dos
+//param $x1: posicion horizontal inicial
+//param $x2: posicion horizontal menos ancho del elemento sobre dos
 @mixin posicion($y1, $y2, $x1, $x2) {
     margin-top: $y1 - $y2;
     margin-left: $x1 - $x2;
 }
 
-//Divs--------------------------------------------------------------------------------------------------------------
-body {
-    background-image: url(../../assets/vector/background.svg);
+//*Estilo para elemento en profundidad z
+//param $z: profundidad z
+@mixin capa($z) {
+    position: absolute;
+    z-index: $z;
 }
 
-.hero {
-    background: url(../../assets/vector/FondoCDMX.svg);
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    animation-duration: 30s;
-    //animation-name: moveFondo;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-}
-
-@keyframes moveFondo {
-    0% {
-        background-position: 100vw;
-    }
-    100% {
-        background-position: 0vw;
-    }
-}
-
-#modelOver, #modelOut{
-    width: 100%;
-    height: 720px;
+//*Formato para frames
+//param $W: ancho
+//param $H: alto
+@mixin recuadro($w, $h) {
+    width: $w;
+    height: $h;
     border: none;
     overflow: hidden;
 }
 
-//botones----------------------------------------------------------------------------------------------------------
-.inaButton {
+//*Estilo para imagenes de salud
+//param $W: ancho
+//param $mt: margen superior
+//param $zi: profundidad z
+@mixin imagenSalud($w, $mt, $zi) {
+    width: $w;
+    height: auto;
+    margin-top: $mt;
+    z-index: $zi;
     position: absolute;
-    z-index: 3;
+    animation-duration: 500ms;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+//*Estilo para imagenes de areas de estudio activas e inactivas
+@mixin imagenArea() {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+}
+
+//funcion Determina el formato para elementos hover
+@mixin hoverSize() {
+    transition: transform 150ms;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.25);
+    }
+}
+
+//funcion Dibujamos lineas
+//param $h: altura de la linea
+//param $w: ancho de la linea
+//param $b: ancho y radio del borde
+@mixin dibujaLinea($h, $w, $b) {
+    height: $h;
+    width: $w;
+    border-width: $b;
+    border-radius: $b;
+    border-style: solid;
+    border-color: $blackGrey;
+    background-color: $blackGrey;
+}
+
+//main Divs -------------------------------------------------------------------
+//*Cuerpo del documento
+body {
+    //Imagen de ondas
+    background-image: url(../../assets/vector/background.svg);
+}
+
+//*Iframe para sketchfab
+#modelPark {
+    @include recuadro(100%, 720px);
+}
+
+//* Dibujar línea vertical
+.verticalLine {
+    @include dibujaLinea(46.3vh, 0px, 3px);
+    opacity: 0;
+    @include posicion(50vh, 23.15vh, 50%, 0%);
+    animation: appearResume 1s 4500ms forwards ease-out;
+}
+
+//* Resumen de la página
+.divResume {
+    height: auto;
+    @include posicion(50vh, 13vh, 0px, 0px);
+    opacity: 0;
+    animation-delay: 4500ms;
+    animation-name: appearResume;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+//main Botones-----------------------------------------------------------------
+//*Botones en la línea de pasos inactivos
+.inaButton {
+    @include capa(3);
     width: 20px;
     height: 20px;
     background-color: white;
@@ -51,17 +124,17 @@ body {
     border: 2px solid;
     border-color: rgba($blackGrey, 0.25);
     margin-top: -5px;
-    filter: drop-shadow(0px 0px 1px #000);
+    filter: drop-shadow(0px 0px 1px $blackGrey);
+    @include hoverSize();
 
     &:hover {
-        transform: scale(1.25);
         border-width: 3;
     }
 }
 
+//*Botones en la línea de pasos activos
 .actButton {
-    position: absolute;
-    z-index: 3;
+    @include capa(3);
     width: 20px;
     height: 20px;
     background-color: white;
@@ -76,227 +149,145 @@ body {
     }
 }
 
-/*canvas---------------------------------------------------------------------------------------------------------*/
+//main Canvas------------------------------------------------------------------
+//*Canva para la gráfica de clasificación
 .canvaClasRuido {
     width: 1200px;
     height: 645px;
-    /*position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
 }
 
-//Imagenes-----------------------------------------------------------------------------------------------------------
+//main Imagenes----------------------------------------------------------------
+//*Imagen que se mueve en el hero
 .logoHero {
     animation-name: logoMove;
 }
 
+//*Imagenes sobre los efectos en la salud en avance
 .img1 {
-    margin-top: 75px;
-    width: 100px;
-    height: auto;
-    position: absolute;
-    z-index: 1;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
+    @include imagenSalud(100px, 75px, 1);
     animation-name: mueve1a5;
 }
 
 .img2 {
-    margin-top: 75px;
-    width: 100px;
-    height: auto;
-    position: absolute;
-    z-index: 2;
+    @include imagenSalud(100px, 75px, 2);
     margin-left: 142.5px;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     animation-name: mueve2a1;
 }
 
 .img3 {
-    margin-top: 75px;
-    width: 250px;
-    height: auto;
-    position: absolute;
-    z-index: 3;
+    @include imagenSalud(250px, 75px, 3);
     margin-left: 285px;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     animation-name: mueve3a2;
 }
 
 .img4 {
-    width: 100px;
-    height: auto;
-    position: absolute;
-    z-index: 4;
+    @include imagenSalud(100px, 0px, 4);
     margin-left: 577.5px;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     animation-name: mueve4a3;
 }
 
 .img5 {
-    margin-top: 75px;
-    width: 100px;
-    height: auto;
-    position: absolute;
-    z-index: 5;
+    @include imagenSalud(100px, 0px, 5);
     margin-left: 720px;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     animation-name: mueve5a4;
 }
 
+//*Imagenes sobre los efectos en la salud en retroceso
 .img1b {
-    margin-top: 75px;
-    width: 100px;
-    height: auto;
-    position: absolute;
-    z-index: 1;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
+    @include imagenSalud(100px, 75px, 1);
     animation-name: mueve5a1;
 }
 
 .img2b {
-    margin-top: 75px;
-    width: 100px;
-    height: auto;
-    position: absolute;
-    z-index: 2;
+    @include imagenSalud(100px, 75px, 2);
     margin-left: 142.5px;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     animation-name: mueve1a2;
 }
 
 .img3b {
-    height: auto;
-    position: absolute;
-    z-index: 3;
+    @include imagenSalud(250px, 0px, 3);
     margin-left: 285px;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     animation-name: mueve2a3;
 }
 
 .img4b {
-    margin-top: 75px;
-    width: 100px;
-    height: auto;
-    position: absolute;
-    z-index: 4;
+    @include imagenSalud(100px, 0px, 4);
     margin-left: 577.5px;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     animation-name: mueve3a4;
 }
 
 .img5b {
-    margin-top: 75px;
-    width: 100px;
-    height: auto;
-    position: absolute;
-    z-index: 5;
+    @include imagenSalud(100px, 75px, 5);
     margin-left: 720px;
-    //animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     animation-name: mueve4a5;
 }
 
-#fArea1{
+//*Imagenes sobre areas de estudio
+#fArea1 {
     background-image: url(../../assets/vector/areasEstudio/salud.svg);
-
 }
 
-#fArea2{
+#fArea2 {
     background-image: url(../../assets/vector/areasEstudio/logistica.svg);
 }
 
-#fArea3{
+#fArea3 {
     background-image: url(../../assets/vector/areasEstudio/pedagogia.svg);
 }
 
-#fArea4{
+#fArea4 {
     background-image: url(../../assets/vector/areasEstudio/ingenieria.svg);
 }
 
-#fArea5{
+#fArea5 {
     background-image: url(../../assets/vector/areasEstudio/arquitectura.svg);
-
 }
 
-#fArea6{
+#fArea6 {
     background-image: url(../../assets/vector/areasEstudio/arte.svg);
 }
 
-#fArea7{
+#fArea7 {
     background-image: url(../../assets/vector/areasEstudio/sociologia.svg);
 }
 
-#fArea8{
+#fArea8 {
     background-image: url(../../assets/vector/areasEstudio/ergonomia.svg);
 }
 
-.imagenArea{
+//*Estilo de todas la imagenes de areas de estudio
+.imagenArea {
     background-size: cover;
     background-size: 80px;
     background-repeat: no-repeat;
     background-position: 56% 50%;
 }
 
+//*Estilo para imagenes de areas de estudio activas
 .titleArea {
+    @include imagenArea();
     cursor: pointer;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
     transition: 0.25s;
     opacity: 1;
     border-color: transparent;
-    border-width: 5px;
-    border-style: solid;
     backdrop-filter: blur(1px);
-    backdrop-filter: grayscale(100%); 
+    backdrop-filter: grayscale(100%);
     &:hover {
         opacity: 0.75;
         border-color: $blackGrey;
-        backdrop-filter: blur(0px); 
+        backdrop-filter: blur(0px);
     }
 }
 
+//*Estilo para imagenes de areas de estudio inactivas
 .titleAreaAct {
+    @include imagenArea();
     cursor: context-menu;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border-color: #FF7C7C;
-    border-width: 5px;
-    border-style: solid;
+    border-color: $redWater;
 }
 
-//Animation---------------------------------------------------------------------------------------------------------
+//main Animation---------------------------------------------------------------
+//*Animación para el logo
 @keyframes logoMove {
     0% {
         right: 0px;
@@ -306,47 +297,33 @@ body {
     }
 }
 
-@keyframes appearResume {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
+//*Animaciones para las imagenes de la salud en avance
 @keyframes mueve1a5 {
     from {
-        margin-top: 75px;
-        margin-left: 0;
+        @include posicion(75px, 0px, 0px, 0px);
     }
     to {
-        margin-top: 75px;
-        margin-left: 720px;
+        @include posicion(75px, 0px, 720px, 0px);
     }
 }
 
 @keyframes mueve2a1 {
     from {
-        margin-top: 75px;
-        margin-left: 142.5px;
+        @include posicion(75px, 0px, 142.5px, 0px);
     }
     to {
-        margin-top: 75px;
-        margin-left: 0px;
+        @include posicion(75px, 0px, 0px, 0px);
     }
 }
 
 @keyframes mueve3a2 {
     from {
-        margin-top: 0px;
-        margin-left: 285px;
+        @include posicion(0px, 0px, 285px, 0px);
         width: 250px;
         height: auto;
     }
     to {
-        margin-top: 75px;
-        margin-left: 142.5px;
+        @include posicion(75px, 0px, 142.5px, 0px);
         width: 100px;
         height: auto;
     }
@@ -354,14 +331,12 @@ body {
 
 @keyframes mueve4a3 {
     from {
-        margin-top: 75px;
-        margin-left: 577.5px;
+        @include posicion(75px, 0px, 577.5px, 0px);
         width: 100px;
         height: auto;
     }
     to {
-        margin-top: 0px;
-        margin-left: 285px;
+        @include posicion(0px, 0px, 285px, 0px);
         width: 250px;
         height: auto;
     }
@@ -369,47 +344,40 @@ body {
 
 @keyframes mueve5a4 {
     from {
-        margin-top: 75px;
-        margin-left: 720px;
+        @include posicion(75px, 0px, 720px, 0px);
     }
     to {
-        margin-top: 75px;
-        margin-left: 577.5px;
+        @include posicion(75px, 0px, 577.5px, 0px);
     }
 }
 
+//*Animaciones para las imagenes de la salud en retroceso
 @keyframes mueve5a1 {
     from {
-        margin-top: 75px;
-        margin-left: 720px;
+        @include posicion(75px, 0px, 720px, 0px);
     }
     to {
-        margin-top: 75px;
-        margin-left: 0;
+        @include posicion(75px, 0px, 0px, 0px);
     }
 }
 
 @keyframes mueve1a2 {
     from {
-        margin-top: 75px;
-        margin-left: 0px;
+        @include posicion(75px, 0px, 0px, 0px);
     }
     to {
-        margin-top: 75px;
-        margin-left: 142.5px;
+        @include posicion(75px, 0px, 142.5px, 0px);
     }
 }
 
 @keyframes mueve2a3 {
     from {
-        margin-top: 75px;
-        margin-left: 142.5px;
+        @include posicion(75px, 0px, 142.5px, 0px);
         width: 100px;
         height: auto;
     }
     to {
-        margin-top: 0px;
-        margin-left: 285px;
+        @include posicion(0px, 0px, 285px, 0px);
         width: 250px;
         height: auto;
     }
@@ -417,14 +385,12 @@ body {
 
 @keyframes mueve3a4 {
     from {
-        margin-top: 0px;
-        margin-left: 285px;
+        @include posicion(0px, 0px, 285px, 0px);
         width: 250px;
         height: auto;
     }
     to {
-        margin-top: 75px;
-        margin-left: 577.5px;
+        @include posicion(75px, 0px, 577.5px, 0px);
         width: 100px;
         height: auto;
     }
@@ -432,11 +398,9 @@ body {
 
 @keyframes mueve4a5 {
     from {
-        margin-top: 75px;
-        margin-left: 577.5px;
+        @include posicion(75px, 0px, 577.5px, 0px);
     }
     to {
-        margin-top: 75px;
-        margin-left: 720px;
+        @include posicion(75px, 0px, 720px, 0px);
     }
 }
