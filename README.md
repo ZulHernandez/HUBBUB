@@ -118,12 +118,12 @@ Y configurar el json de configuración de la siguiente manera:
 		}
 	]
 ```
+
 ## Autores ✒️
 
 Este proyecto fue desarrollador por:
 
-* **Verónica Arroyo Pedroza** - *Directora del proyecto* - [LinkedIn](https://www.linkedin.com/in/ver%C3%B3nica-arroyo-b253bb21/?originalSubdomain=mx)
-* **Dulce Rosario Ponce Patrón** - *Codirectora del proyecto* - [LinkedIn](https://www.linkedin.com/in/dulce-ponce-patr%C3%B3n-10984685/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=mx)
-* **Hector Reyes Aguilar** - *Back-End*
-* **Saúl Ulises Hernández Cruz** - *Front-End*
-````
+- **Verónica Arroyo Pedroza** - _Directora del proyecto_ - [LinkedIn](https://www.linkedin.com/in/ver%C3%B3nica-arroyo-b253bb21/?originalSubdomain=mx)
+- **Dulce Rosario Ponce Patrón** - _Codirectora del proyecto_ - [LinkedIn](https://www.linkedin.com/in/dulce-ponce-patr%C3%B3n-10984685/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=mx)
+- **Hector Reyes Aguilar** - _Back-End_
+- **Saúl Ulises Hernández Cruz** - _Front-End_
