@@ -29,7 +29,7 @@ Se recomiendo descargar la extensión Better Comentspara poder visualizar los co
 [better-comments](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
 Y configurar el json de configuración de la siguiente manera:
 
-```
+```json
 "workbench.iconTheme": "vscode-icons",
 	"workbench.productIconTheme": "el-vsc-v1-icons",
 	"better-comments.highlightPlainText": true,
@@ -123,7 +123,7 @@ Y configurar el json de configuración de la siguiente manera:
 Este proyecto fue desarrollador por:
 
 * **Verónica Arroyo Pedroza** - *Directora del proyecto* - [LinkedIn](https://www.linkedin.com/in/ver%C3%B3nica-arroyo-b253bb21/?originalSubdomain=mx)
-* **Dulce Rosario Ponce Patrón** - *Codirectora del proyecto* - [villanuevand](https://www.linkedin.com/in/dulce-ponce-patr%C3%B3n-10984685/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=mx)
+* **Dulce Rosario Ponce Patrón** - *Codirectora del proyecto* - [LinkedIn](https://www.linkedin.com/in/dulce-ponce-patr%C3%B3n-10984685/?original_referer=https%3A%2F%2Fwww%2Egoogle%2Ecom%2F&originalSubdomain=mx)
 * **Hector Reyes Aguilar** - *Back-End*
 * **Saúl Ulises Hernández Cruz** - *Front-End*
 ````
