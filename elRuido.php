@@ -116,7 +116,9 @@
                 <!--//* Links del nav derecho-->
                 <div id="linksNav" style="padding-top: 50px; display: none;">
                     <p class="linkNavDerAct">El ruido</p>
-                    <p class="linkNavDerIna">Ver el ruido</p>
+                    <a href="src/pages/verElRuido.php">
+                        <p class="linkNavDerIna">Ver el ruido</p>
+                    </a>
                     <p class="linkNavDerIna" onclick="nosotros()">Sobre nosotros</p>
                     <p class="linkNavDerIna" onclick="scrollMe(10)">Descarga la app</p>
                 </div>
@@ -1110,7 +1112,9 @@
                 <div class="columna col">
                     <p class="tituloFooter">Sitio</p>
                     <p class="linkFooterAct" style="margin-top:20px">El ruido</p>
-                    <p class="linkFooter">Ver el ruido</p>
+                    <a href="src/pages/verElRuido.php">
+                        <p class="linkFooter">Ver el ruido</p>
+                    </a>
                     <!--//funcion nosotros() abre una ventana con la información de nosotros-->
                     <p class="linkFooter" onclick="nosotros();">Sobre nosotros</p>
                 </div>
