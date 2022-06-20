@@ -36,8 +36,8 @@ let amplitud = 0;
 
 //funcion Precargamos fuentes
 function preload() {
-	MontserratM = loadFont("../../assets/fonts/Montserrat-Medium.ttf");
-	MontserratB = loadFont("../../assets/fonts/Montserrat-Bold.ttf");
+	MontserratM = loadFont("../../../../assets/fonts/Montserrat-Medium.ttf");
+	MontserratB = loadFont("../../../../assets/fonts/Montserrat-Bold.ttf");
 }
 
 //funcion Seteamos el canvas

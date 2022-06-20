@@ -203,11 +203,11 @@ function drawLabel(x, y, texto) {
 	//* Dibujamos la etiqueta
 	noStroke();
 	fill(51, 51, 51, 0.9);
-	triangle(x, y, x + 10, y + 10, x - 10, y + 10);
-	rect(x - 25, y + 9.5, 110, 28, 5);
+	triangle(x, y, x + 10, y - 10, x - 10, y - 10);
+	rect(x - 25, y - 37, 110, 28, 5);
 	fill(255, 255, 255, 1);
 	textAlign(LEFT);
 	textFont(MontserratM);
 	textSize(15);
-	text(texto, x - 20, y + 30);
+	text(texto, x - 20, y - 17);
 }

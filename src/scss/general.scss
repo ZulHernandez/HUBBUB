@@ -1,8 +1,10 @@
 //main Variable----------------------------------------------------------------
 //* Variable de color
 $blackGrey: #333333;
+$grey: #666666;
 $yellow: #fff101;
 $blueLink: #0075ff;
+$white: #ffffff;
 
 //main fonts-------------------------------------------------------------------
 //* Fuente Semi-bold
@@ -103,7 +105,7 @@ $blueLink: #0075ff;
 
 //funcion Estilo para elemento en profundidad z
 //param $z: profundidad z
-@mixin capa ($z) {
+@mixin capa($z) {
     position: absolute;
     z-index: $z;
 }
@@ -122,10 +124,38 @@ $blueLink: #0075ff;
     background-color: $blackGrey;
 }
 
-@mixin divIzq($opa){
+//funcion Mostramos u ocultamos el nav izquierdo
+//param $opa: opacidad del nav
+@mixin divIzq($opa) {
     padding-top: 20px;
     opacity: $opa;
     cursor: pointer;
+}
+
+//funcion Elegimos la animación de las lineas
+//param $line: nombre de la animación
+@mixin iconDivDer($line) {
+    @if ($line == 1) {
+        animation-name: primerDiagonal;
+    }
+    @if ($line == 2) {
+        animation-name: segundaDiagonal;
+    }
+    @if ($line == 3) {
+        animation-name: terceraDiagonal;
+    }
+    @if ($line == 4) {
+        animation-name: primerDiagonalB;
+    }
+    @if ($line == 5) {
+        animation-name: segundaDiagonalB;
+    }
+    @if ($line == 6) {
+        animation-name: terceraDiagonalB;
+    }
+    animation-duration: 0.25s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
 }
 
 //main Scroll-bar--------------------------------------------------------------
@@ -133,7 +163,7 @@ $blueLink: #0075ff;
 //* Barra total de desplazamiento
 ::-webkit-scrollbar {
     width: 6px;
-    background-color: transparent;
+    background-color: $grey;
 }
 
 //* Riel del scroll
@@ -143,7 +173,7 @@ $blueLink: #0075ff;
 
 //*Barrita de desplazamiento
 ::-webkit-scrollbar-thumb {
-    background: rgba($blackGrey, 0.5);
+    background: rgba($white, 0.5);
     border-radius: 10px;
     width: 4px;
     margin-left: 3px;
@@ -152,7 +182,7 @@ $blueLink: #0075ff;
 
 //*Barrita de desplazamiento en hover
 ::-webkit-scrollbar-thumb:hover {
-    background: $blackGrey;
+    background: $white;
 }
 
 //*Estado fuera de la página del scroll
@@ -190,6 +220,15 @@ html {
     margin-bottom: 10px;
 }
 
+//* Línea horizontal del nav derecho
+.hrNavDer {
+    @include dibujaLinea(1px, 100%, 1px);
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: white;
+    border-color: white;
+}
+
 //* Sección izquierda del swal nosotros
 .divIzqNos {
     margin-top: 5vh;
@@ -220,30 +259,39 @@ html {
 }
 
 //* Formato del footer
-.footer{
+.footer {
     padding: 85px 0px;
-    background-color: rgba($blackGrey,0.75);
+    background-color: $grey;
     background-image: url(../../assets/vector/background.svg);
     @include posicion(200px, 0px, 0px, 0px);
+    position: absolute;
+    z-index: 9;
+}
+
+.subFooter {
+    margin-top: 480px;
+    margin-left: 0px;
+    position: absolute;
+    z-index: 9;
 }
 
 //* Formato del navegador izquierdo
-.navIzq{
+.navIzq {
     z-index: 10;
     position: fixed;
     width: 280px;
     height: 100vh;
     backdrop-filter: blur(0px);
     transition-duration: 250ms;
-    &:hover{
+    &:hover {
         backdrop-filter: blur(10px);
     }
 }
 
 //* Formato para el navegador izquierdo abierto
-.textoDivNavAct{
+.textoDivNavAct {
     @include divIzq(50%);
-    &:hover{
+    &:hover {
         opacity: 100%;
         text-decoration: underline;
         outline: none;
@@ -251,8 +299,20 @@ html {
 }
 
 //* Formato para el navegador izquierdo colapsado
-.textoDivNavIna{
+.textoDivNavIna {
     @include divIzq(100%);
+}
+
+//* Formato del navegador derecho
+.navDer {
+    z-index: 10;
+    position: fixed;
+    margin-left: calc(100vw - 250px);
+    width: 250px;
+    height: 100vh;
+    background-color: transparent;
+    background-image: url(../);
+    background-position: center top;
 }
 
 //main Images------------------------------------------------------------------
@@ -309,10 +369,42 @@ html {
 }
 
 //* Iconos para el navegardor izquierdo
-.navIzqIcon{
+.navIzqIcon {
     width: 20px;
     height: 20px;
     margin: -6px 15px 0px 10px;
+}
+
+//* Icono del navegador derecho
+.topLineAct {
+    @include iconDivDer(1);
+}
+
+.midLineAct {
+    @include iconDivDer(2);
+}
+
+.botLineAct {
+    @include iconDivDer(3);
+}
+
+.topLineIna {
+    @include iconDivDer(4);
+}
+
+.midLineIna {
+    @include iconDivDer(5);
+}
+
+.botLineIna {
+    @include iconDivDer(6);
+}
+
+.iconNavDer {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    @include hoverSize();
 }
 
 //main Text--------------------------------------------------------------------
@@ -334,6 +426,24 @@ html {
     @include text(left, 32px, "SB", 39px, normal);
 }
 
+//* Links del nav derecho activos
+.linkNavDerAct {
+    @include text(center, 32px, "SB", 39px, normal);
+    text-decoration: underline;
+    color: white;
+}
+
+//* Links del nav derecho inactivos
+.linkNavDerIna {
+    @include text(center, 20px, "R", 24px, normal);
+    text-decoration: none;
+    color: white;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
 //* Parrafos normales
 .textCorrido {
     @include text(justify, 20px, "M", 24px, -0.5);
@@ -350,32 +460,32 @@ html {
 }
 
 //* Titulo de las secciones del footer
-.tituloFooter{
+.tituloFooter {
     @include text(left, 20px, "B", 24px, normal);
     color: white;
     text-transform: uppercase;
 }
 
 //* Links dentro del footer
-.linkFooter{
+.linkFooter {
     @include text(left, 16px, "T", 10px, normal);
     color: white;
     text-decoration: none;
     cursor: pointer;
-    &:hover{
+    &:hover {
         text-decoration: underline;
     }
 }
 
 //* Links para secciones en las que ya nos encontramos
-.linkFooterAct{
+.linkFooterAct {
     @include text(left, 16px, "B", 10px, normal);
     color: white;
     text-decoration: underline;
 }
 
 //* Textos del subfooter
-.subFooterText{
+.subFooterText {
     @include text(left, 15px, "T", 5px, normal);
 }
 
@@ -459,5 +569,68 @@ h2.linea titulo {
     }
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes primerDiagonal {
+    from {
+        transform: rotate(0deg) translateX(0px) translateY(0px);
+    }
+    to {
+        transform: rotate(45deg) translateX(10px) translateY(-10px);
+        stroke: white;
+    }
+}
+
+@keyframes segundaDiagonal {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        stroke: white;
+    }
+}
+
+@keyframes terceraDiagonal {
+    from {
+        transform: rotate(0deg) translateX(0px) translateY(0px);
+    }
+    to {
+        transform: rotate(-45deg) translateX(-20px) translateY(0px);
+        stroke: white;
+    }
+}
+
+@keyframes primerDiagonalB {
+    from {
+        transform: rotate(45deg) translateX(10px) translateY(-10px);
+        stroke: white;
+    }
+    to {
+        transform: rotate(0deg) translateX(0px) translateY(0px);
+        stroke: $blackGrey;
+    }
+}
+
+@keyframes segundaDiagonalB {
+    from {
+        opacity: 0;
+        stroke: white;
+    }
+    to {
+        opacity: 1;
+        stroke: $blackGrey;
+    }
+}
+
+@keyframes terceraDiagonalB {
+    from {
+        transform: rotate(-45deg) translateX(-20px) translateY(0px);
+        stroke: white;
+    }
+    to {
+        transform: rotate(0deg) translateX(0px) translateY(0px);
+        stroke: $blackGrey;
     }
 }

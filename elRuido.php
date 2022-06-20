@@ -1,6 +1,6 @@
 <html>
 
-<head>;
+<head>
     <!--//import Implementación de librerias se incluyen: Chart, Bootstrap, Sweetalert, p5 y sketchFabViewer-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
@@ -34,7 +34,7 @@
     <!--//param 0 = navegador colapsado-->
     <!--//param 1 = navegador expandido-->
     <div class="navIzq" onmouseout="navIzq(0)" onmouseover="navIzq(1)">
-        <div class="row container-fluid" style="margin: 0; padding: 25px 0px;">
+        <div class="row container-fluid" style="margin: 0; padding: 70px 0px;">
             <div class="columnaCh col-1"></div>
             <!--//* Indicador de sección-->
             <div class="columnaCh col-1">
@@ -95,6 +95,56 @@
                 </div>
             </div>
         </div>
+    </div>
+    <!--//main Se incluye el navegador lateral derecho-->
+    <div class="navDer" id="navDer">
+        <div class="row container-fluid" style="margin: 0; padding: 85px 0px;">
+            <div class="columnaCh col-1">
+            </div>
+            <div class="columnaCh col-10">
+                <!--//* Boton disparador del navDer-->
+                <center>
+                    <!--//funcion navDer() Colapsa o expande el navegador lateral derecho-->
+                    <div onclick="navDer()" style="cursor: pointer; background-blend-mode: screen;">
+                        <svg version="1.1" width="40" height="40" viewBox="0 0 40 40" fill="transparent" xmlns="http://www.w3.org/2000/svg">
+                            <path id="topLine" d="M6.625 9.95801H33.2917" stroke="#333333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path id="midLine" d="M6.625 19.958H33.2917" stroke="#333333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path id="botLine" d="M6.625 29.958H33.2917" stroke="#333333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </center>
+                <!--//* Links del nav derecho-->
+                <div id="linksNav" style="padding-top: 50px; display: none;">
+                    <p class="linkNavDerAct">El ruido</p>
+                    <p class="linkNavDerIna">Ver el ruido</p>
+                    <p class="linkNavDerIna" onclick="nosotros()">Sobre nosotros</p>
+                    <p class="linkNavDerIna" onclick="scrollMe(10)">Descarga la app</p>
+                </div>
+                <!--//* Legales del nav derecho-->
+                <div id="legNav" style="padding-top: 500; display: none;">
+                    <center>
+                        <a href="https://www.facebook.com/HUBBUBALERTA/" target="_blank">
+                            <img class="iconNavDer" src="assets/vector/redes/facebookW.svg" style="margin-left: 0px;">
+                        </a>
+                        <a href="https://www.facebook.com/messages/t/194832804678795" target="_blank">
+                            <img class="iconNavDer" src="assets/vector/redes/messengerW.svg">
+                        </a>
+                        <a href="https://twitter.com/AlertaRuido?fbclid=IwAR1o5xnyzozS5nXn8jPbySq0Tjvoh5iggQhPWgzvESj-PUYkhOp-7qQ-RgM" target="_blank">
+                            <img class="iconNavDer" src="assets/vector/redes/twitterW.svg">
+                        </a>
+                        <a href="mailto:hubbub@azc.uam.mx" target="_blank">
+                            <img class="iconNavDer" src="assets/vector/redes/mailW.svg">
+                        </a>
+                        <hr class="hrNavDer">
+                        <p class="textCorrido" style="text-align: center; color: white;">HUBBUB<sup style="font-size: 12px;">&copy;</sup></p>
+                        <p class="textAvisoN" style="color: white;">Aviso de privacidad</p>
+                        <p class="textDerechosN" style="color: white;">Todos los derechos reservados</p>
+                    </center>
+                </div>
+            </div>
+            <div class="columnaCh col-1"></div>
+        </div>
+    </div>
     </div>
     <!--//main Se incluye el hero Image y resumen de la página-->
     <div class="container-fluid hero">
@@ -262,7 +312,7 @@
             <div class="columna col-2"></div>
             <!--//*Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
             <div class="columna col">
-                <iframe src="src/pages/clasiRuido.php" style="width: 100%; height: 550px;"></iframe>
+                <iframe src="src/pages/frames/elRuido/clasiRuido.php" style="width: 100%; height: 550px;"></iframe>
             </div>
             <div class="columna col-2"></div>
         </div>
@@ -415,7 +465,7 @@
             <!--//*Frame de la gráfica, ondaSlides.php posee la gráfica-->
             <div class="col">
                 <center>
-                    <iframe src="src/pages/ondaSlides.php" style="width: 110%; height: 800px;"></iframe>
+                    <iframe src="src/pages/frames/elRuido/ondaSlides.php" style="width: 110%; height: 800px;"></iframe>
                 </center>
             </div>
             <div class="columna col-2"></div>
@@ -1085,7 +1135,7 @@
             </div>
         </div>
         <!--//main Sub Footer-->
-        <div class="row container-fluid divBody" style="padding: 20px 0px;">
+        <div class="row container-fluid divBody subFooter" style="padding: 20px 0px; background-color: white; width: 100%;">
             <!--//*Textos de la sección-->
             <div class="row subFooterText">
                 <div class="columna col-1"></div>

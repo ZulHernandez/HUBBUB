@@ -1,23 +1,23 @@
 //main Variables
 //* Cargamos imagenes por cada punto de la gráfica
 const pointImage1 = new Image(40, 40);
-pointImage1.src = "../../assets/vector/puntosClasi/v1.svg";
+pointImage1.src = "../../../../assets/vector/puntosClasi/v1.svg";
 const pointImage2 = new Image(40, 40);
-pointImage2.src = "../../assets/vector/puntosClasi/v2.svg";
+pointImage2.src = "../../../../assets/vector/puntosClasi/v2.svg";
 const pointImage3 = new Image(40, 40);
-pointImage3.src = "../../assets/vector/puntosClasi/v3.svg";
+pointImage3.src = "../../../../assets/vector/puntosClasi/v3.svg";
 const pointImage4 = new Image(40, 40);
-pointImage4.src = "../../assets/vector/puntosClasi/v4.svg";
+pointImage4.src = "../../../../assets/vector/puntosClasi/v4.svg";
 const pointImage5 = new Image(40, 40);
-pointImage5.src = "../../assets/vector/puntosClasi/v5.svg";
+pointImage5.src = "../../../../assets/vector/puntosClasi/v5.svg";
 const pointImage6 = new Image(40, 40);
-pointImage6.src = "../../assets/vector/puntosClasi/v6.svg";
+pointImage6.src = "../../../../assets/vector/puntosClasi/v6.svg";
 const pointImage7 = new Image(40, 40);
-pointImage7.src = "../../assets/vector/puntosClasi/v7.svg";
+pointImage7.src = "../../../../assets/vector/puntosClasi/v7.svg";
 const pointImage8 = new Image(40, 40);
-pointImage8.src = "../../assets/vector/puntosClasi/v8.svg";
+pointImage8.src = "../../../../assets/vector/puntosClasi/v8.svg";
 const pointImage9 = new Image(40, 40);
-pointImage9.src = "../../assets/vector/puntosClasi/v9.svg";
+pointImage9.src = "../../../../assets/vector/puntosClasi/v9.svg";
 //* Guardamos las imagenes en un array
 const pointImage = [
 	,
@@ -334,47 +334,47 @@ function ruido(click) {
 		switch (indicador) {
 			case 3:
 				audio.pause();
-				audio.src = "../../assets/audio/grifo.mp3";
+				audio.src = "../../../../assets/audio/grifo.mp3";
 				audio.play();
 				break;
 			case 4:
 				audio.pause();
-				audio.src = "../../assets/audio/alarma.mp3";
+				audio.src = "../../../../assets/audio/alarma.mp3";
 				audio.play();
 				break;
 			case 5:
 				audio.pause();
-				audio.src = "../../assets/audio/rio.mp3";
+				audio.src = "../../../../assets/audio/rio.mp3";
 				audio.play();
 				break;
 			case 6:
 				audio.pause();
-				audio.src = "../../assets/audio/pajaro.mp3";
+				audio.src = "../../../../assets/audio/pajaro.mp3";
 				audio.play();
 				break;
 			case 7:
 				audio.pause();
-				audio.src = "../../assets/audio/chat.mp3";
+				audio.src = "../../../../assets/audio/chat.mp3";
 				audio.play();
 				break;
 			case 8:
 				audio.pause();
-				audio.src = "../../assets/audio/tren.mp3";
+				audio.src = "../../../../assets/audio/tren.mp3";
 				audio.play();
 				break;
 			case 9:
 				audio.pause();
-				audio.src = "../../assets/audio/taladro.mp3";
+				audio.src = "../../../../assets/audio/taladro.mp3";
 				audio.play();
 				break;
 			case 10:
 				audio.pause();
-				audio.src = "../../assets/audio/moto.mp3";
+				audio.src = "../../../../assets/audio/moto.mp3";
 				audio.play();
 				break;
 			case 11:
 				audio.pause();
-				audio.src = "../../assets/audio/martillo.mp3";
+				audio.src = "../../../../assets/audio/martillo.mp3";
 				audio.play();
 				break;
 		}

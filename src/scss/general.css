@@ -2,32 +2,26 @@
   font-family: "Montserrat-SB";
   src: url(../../assets/fonts/Montserrat-SemiBold.ttf);
 }
-
 @font-face {
   font-family: "Montserrat-B";
   src: url(../../assets/fonts/Montserrat-Bold.ttf);
 }
-
 @font-face {
   font-family: "Montserrat-M";
   src: url(../../assets/fonts/Montserrat-Medium.ttf);
 }
-
 @font-face {
   font-family: "Montserrat-R";
   src: url(../../assets/fonts/Montserrat-Regular.ttf);
 }
-
 @font-face {
   font-family: "Montserrat-T";
   src: url(../../assets/fonts/Montserrat-Light.ttf);
 }
-
 ::-moz-selection {
   color: #333333;
   background: #fff101;
 }
-
 ::selection {
   color: #333333;
   background: #fff101;
@@ -35,7 +29,7 @@
 
 ::-webkit-scrollbar {
   width: 6px;
-  background-color: transparent;
+  background-color: #666666;
 }
 
 ::-webkit-scrollbar-track {
@@ -43,7 +37,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(51, 51, 51, 0.5);
+  background: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   width: 4px;
   margin-left: 3px;
@@ -51,7 +45,7 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
@@ -90,10 +84,22 @@ html {
   border-style: solid;
   border-color: #333333;
   background-color: #333333;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   margin-bottom: 10px;
+}
+
+.hrNavDer {
+  height: 1px;
+  width: 100%;
+  border-width: 1px;
+  border-radius: 1px;
+  border-style: solid;
+  border-color: #333333;
+  background-color: #333333;
+  align-items: center;
+  margin-bottom: 10px;
+  background-color: white;
+  border-color: white;
 }
 
 .divIzqNos {
@@ -125,10 +131,19 @@ html {
 
 .footer {
   padding: 85px 0px;
-  background-color: rgba(51, 51, 51, 0.75);
+  background-color: #666666;
   background-image: url(../../assets/vector/background.svg);
   margin-top: 200px;
   margin-left: 0px;
+  position: absolute;
+  z-index: 9;
+}
+
+.subFooter {
+  margin-top: 480px;
+  margin-left: 0px;
+  position: absolute;
+  z-index: 9;
 }
 
 .navIzq {
@@ -138,10 +153,8 @@ html {
   height: 100vh;
   -webkit-backdrop-filter: blur(0px);
           backdrop-filter: blur(0px);
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
+  transition-duration: 250ms;
 }
-
 .navIzq:hover {
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -152,7 +165,6 @@ html {
   opacity: 50%;
   cursor: pointer;
 }
-
 .textoDivNavAct:hover {
   opacity: 100%;
   text-decoration: underline;
@@ -165,12 +177,21 @@ html {
   cursor: pointer;
 }
 
+.navDer {
+  z-index: 10;
+  position: fixed;
+  margin-left: calc(100vw - 250px);
+  width: 250px;
+  height: 100vh;
+  background-color: transparent;
+  background-image: url(../);
+  background-position: center top;
+}
+
 .hero {
   background: url(../../assets/vector/FondoCDMX.svg);
   background-size: cover;
   height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
 }
 
@@ -188,16 +209,11 @@ html {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  -webkit-transition: -webkit-transform 150ms;
-  transition: -webkit-transform 150ms;
   transition: transform 150ms;
-  transition: transform 150ms, -webkit-transform 150ms;
   cursor: pointer;
 }
-
 .logoHero:hover {
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .logoHUBBUB {
@@ -208,16 +224,11 @@ html {
 
 .iconNosotros {
   padding: 0px 10px;
-  -webkit-transition: -webkit-transform 150ms;
-  transition: -webkit-transform 150ms;
   transition: transform 150ms;
-  transition: transform 150ms, -webkit-transform 150ms;
   cursor: pointer;
 }
-
 .iconNosotros:hover {
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .imgSub {
@@ -230,7 +241,6 @@ html {
   cursor: pointer;
   opacity: 0.5;
 }
-
 .flechaOido:hover {
   opacity: 1;
 }
@@ -239,6 +249,83 @@ html {
   width: 20px;
   height: 20px;
   margin: -6px 15px 0px 10px;
+}
+
+.topLineAct {
+  -webkit-animation-name: primerDiagonal;
+          animation-name: primerDiagonal;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.midLineAct {
+  -webkit-animation-name: segundaDiagonal;
+          animation-name: segundaDiagonal;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.botLineAct {
+  -webkit-animation-name: terceraDiagonal;
+          animation-name: terceraDiagonal;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.topLineIna {
+  -webkit-animation-name: primerDiagonalB;
+          animation-name: primerDiagonalB;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.midLineIna {
+  -webkit-animation-name: segundaDiagonalB;
+          animation-name: segundaDiagonalB;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.botLineIna {
+  -webkit-animation-name: terceraDiagonalB;
+          animation-name: terceraDiagonalB;
+  -webkit-animation-duration: 0.25s;
+          animation-duration: 0.25s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+.iconNavDer {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  transition: transform 150ms;
+  cursor: pointer;
+}
+.iconNavDer:hover {
+  transform: scale(1.25);
 }
 
 .pageTitle {
@@ -270,6 +357,32 @@ html {
   letter-spacing: normal;
 }
 
+.linkNavDerAct {
+  font-family: Montserrat-SB;
+  font-size: 32px;
+  line-height: 39px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  text-decoration: underline;
+  color: white;
+}
+
+.linkNavDerIna {
+  font-family: Montserrat-R;
+  font-size: 20px;
+  line-height: 24px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  text-decoration: none;
+  color: white;
+}
+.linkNavDerIna:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .textCorrido {
   font-family: Montserrat-M;
   font-size: 20px;
@@ -289,7 +402,6 @@ html {
   color: #0075ff;
   cursor: pointer;
 }
-
 .link:hover {
   text-decoration: underline;
 }
@@ -316,7 +428,6 @@ html {
   text-decoration: none;
   cursor: pointer;
 }
-
 .linkFooter:hover {
   text-decoration: underline;
 }
@@ -389,14 +500,14 @@ html {
 a {
   text-decoration: none;
 }
-
 a:focus {
   outline: none;
 }
 
 .textClasf {
   padding-top: 30px;
-  text-align-last: center;
+  -moz-text-align-last: center;
+       text-align-last: center;
 }
 
 h2.linea {
@@ -444,4 +555,117 @@ h2.linea titulo {
     opacity: 1;
   }
 }
-/*# sourceMappingURL=general.css.map */
+@-webkit-keyframes primerDiagonal {
+  from {
+    transform: rotate(0deg) translateX(0px) translateY(0px);
+  }
+  to {
+    transform: rotate(45deg) translateX(10px) translateY(-10px);
+    stroke: white;
+  }
+}
+@keyframes primerDiagonal {
+  from {
+    transform: rotate(0deg) translateX(0px) translateY(0px);
+  }
+  to {
+    transform: rotate(45deg) translateX(10px) translateY(-10px);
+    stroke: white;
+  }
+}
+@-webkit-keyframes segundaDiagonal {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    stroke: white;
+  }
+}
+@keyframes segundaDiagonal {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    stroke: white;
+  }
+}
+@-webkit-keyframes terceraDiagonal {
+  from {
+    transform: rotate(0deg) translateX(0px) translateY(0px);
+  }
+  to {
+    transform: rotate(-45deg) translateX(-20px) translateY(0px);
+    stroke: white;
+  }
+}
+@keyframes terceraDiagonal {
+  from {
+    transform: rotate(0deg) translateX(0px) translateY(0px);
+  }
+  to {
+    transform: rotate(-45deg) translateX(-20px) translateY(0px);
+    stroke: white;
+  }
+}
+@-webkit-keyframes primerDiagonalB {
+  from {
+    transform: rotate(45deg) translateX(10px) translateY(-10px);
+    stroke: white;
+  }
+  to {
+    transform: rotate(0deg) translateX(0px) translateY(0px);
+    stroke: #333333;
+  }
+}
+@keyframes primerDiagonalB {
+  from {
+    transform: rotate(45deg) translateX(10px) translateY(-10px);
+    stroke: white;
+  }
+  to {
+    transform: rotate(0deg) translateX(0px) translateY(0px);
+    stroke: #333333;
+  }
+}
+@-webkit-keyframes segundaDiagonalB {
+  from {
+    opacity: 0;
+    stroke: white;
+  }
+  to {
+    opacity: 1;
+    stroke: #333333;
+  }
+}
+@keyframes segundaDiagonalB {
+  from {
+    opacity: 0;
+    stroke: white;
+  }
+  to {
+    opacity: 1;
+    stroke: #333333;
+  }
+}
+@-webkit-keyframes terceraDiagonalB {
+  from {
+    transform: rotate(-45deg) translateX(-20px) translateY(0px);
+    stroke: white;
+  }
+  to {
+    transform: rotate(0deg) translateX(0px) translateY(0px);
+    stroke: #333333;
+  }
+}
+@keyframes terceraDiagonalB {
+  from {
+    transform: rotate(-45deg) translateX(-20px) translateY(0px);
+    stroke: white;
+  }
+  to {
+    transform: rotate(0deg) translateX(0px) translateY(0px);
+    stroke: #333333;
+  }
+}/*# sourceMappingURL=general.css.map */

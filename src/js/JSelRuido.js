@@ -724,5 +724,8 @@ function scrollMe(a) {
 		case 9:
 			document.body.scrollTop = 12428;
 			break;
+		case 10:
+			document.body.scrollTop = 12905;
+			break;
 		}
 }
