@@ -28,7 +28,7 @@
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 12px;
   background-color: #666666;
 }
 
@@ -37,11 +37,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  width: 4px;
-  margin-left: 3px;
-  margin-right: 3px;
+  background: #ffffff;
+  border-style: solid;
+  border-width: 0px 4px 0px 0px;
+  border-color: #666666;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -49,7 +48,7 @@
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-  background: transparent;
+  background: #ffffff;
 }
 
 body,
@@ -389,7 +388,7 @@ html {
   line-height: 24px;
   color: #333333;
   text-align: justify;
-  letter-spacing: -0.5;
+  letter-spacing: normal;
 }
 
 .link {

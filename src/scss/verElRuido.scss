@@ -1,0 +1,78 @@
+//main Variable----------------------------------------------------------------
+//* Variable de color
+$blackGrey: #333333;
+$blueLink: #0075ff;
+$redWater: #ff7c7c;
+
+//main Funciones para el CSS --------------------------------------------------
+
+//funcion Determina la posicion de un elemento
+//param $y1: posicion vertical inicial
+//param $y2: posicion vertical menos altura del elemento sobre dos
+//param $x1: posicion horizontal inicial
+//param $x2: posicion horizontal menos ancho del elemento sobre dos
+@mixin posicion($y1, $y2, $x1, $x2) {
+    margin-top: $y1 - $y2;
+    margin-left: $x1 - $x2;
+}
+
+//funcion Dibujamos lineas
+//param $h: altura de la linea
+//param $w: ancho de la linea
+//param $b: ancho y radio del borde
+@mixin dibujaLinea($h, $w, $b) {
+    height: $h;
+    width: $w;
+    border-width: $b;
+    border-radius: $b;
+    border-style: solid;
+    border-color: $blackGrey;
+    background-color: $blackGrey;
+}
+
+//main Imagenes----------------------------------------------------------------
+//*Imagen que se mueve en el hero
+.logoHero {
+    animation-name: logoMove;
+}
+
+//* Dibujar línea vertical
+.verticalLine {
+    @include dibujaLinea(46.3vh, 0px, 3px);
+    opacity: 0;
+    @include posicion(50vh, 23.15vh, 50%, 0%);
+    animation: appearResume 1s 4500ms forwards ease-out;
+}
+
+//* Resumen de la página
+.divResume {
+    height: auto;
+    @include posicion(50vh, 13vh, 0px, 0px);
+    opacity: 0;
+    animation-delay: 4500ms;
+    animation-name: appearResume;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+}
+
+
+//main Animation---------------------------------------------------------------
+//*Animación para el logo
+@keyframes logoMove {
+    0% {
+        right: 0px;
+    }
+    100% {
+        right: -24vw;
+    }
+}
+
+@keyframes appearResume {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

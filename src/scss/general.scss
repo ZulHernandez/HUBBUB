@@ -162,7 +162,7 @@ $white: #ffffff;
 
 //* Barra total de desplazamiento
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 12px;
     background-color: $grey;
 }
 
@@ -173,11 +173,10 @@ $white: #ffffff;
 
 //*Barrita de desplazamiento
 ::-webkit-scrollbar-thumb {
-    background: rgba($white, 0.5);
-    border-radius: 10px;
-    width: 4px;
-    margin-left: 3px;
-    margin-right: 3px;
+    background: $white;
+    border-style: solid;
+    border-width: 0px 4px 0px 0px;
+    border-color: $grey;
 }
 
 //*Barrita de desplazamiento en hover
@@ -187,7 +186,7 @@ $white: #ffffff;
 
 //*Estado fuera de la página del scroll
 ::-webkit-scrollbar-thumb:window-inactive {
-    background: transparent;
+    background: $white;
 }
 
 //main Divs--------------------------------------------------------------------
@@ -446,7 +445,7 @@ html {
 
 //* Parrafos normales
 .textCorrido {
-    @include text(justify, 20px, "M", 24px, -0.5);
+    @include text(justify, 20px, "M", 24px, normal);
 }
 
 //* Links dentro de parrafos

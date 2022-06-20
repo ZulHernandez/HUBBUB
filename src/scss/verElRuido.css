@@ -1,0 +1,70 @@
+.logoHero {
+  -webkit-animation-name: logoMove;
+          animation-name: logoMove;
+}
+
+.verticalLine {
+  height: 46.3vh;
+  width: 0px;
+  border-width: 3px;
+  border-radius: 3px;
+  border-style: solid;
+  border-color: #333333;
+  background-color: #333333;
+  opacity: 0;
+  margin-top: 26.85vh;
+  margin-left: 50%;
+  -webkit-animation: appearResume 1s 4500ms forwards ease-out;
+          animation: appearResume 1s 4500ms forwards ease-out;
+}
+
+.divResume {
+  height: auto;
+  margin-top: 37vh;
+  margin-left: 0px;
+  opacity: 0;
+  -webkit-animation-delay: 4500ms;
+          animation-delay: 4500ms;
+  -webkit-animation-name: appearResume;
+          animation-name: appearResume;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes logoMove {
+  0% {
+    right: 0px;
+  }
+  100% {
+    right: -24vw;
+  }
+}
+
+@keyframes logoMove {
+  0% {
+    right: 0px;
+  }
+  100% {
+    right: -24vw;
+  }
+}
+@-webkit-keyframes appearResume {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes appearResume {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=verElRuido.css.map */
