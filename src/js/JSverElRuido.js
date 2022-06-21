@@ -42,3 +42,55 @@ function navIzq(a) {
 		}
 	}
 }
+
+//funcion Recogemos la fecha del día de hoy y la pintamos en el HTML
+function getDate() {
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, "0");
+	var mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+	var yyyy = today.getFullYear();
+	let fechaActual = document.getElementById("fechaActual");
+
+	switch(mm){
+		case "01":
+			mm = "Enero";
+			break;
+		case "02":
+			mm = "Febrero";
+			break;
+		case "03":
+			mm = "Marzo";
+			break;
+		case "04":
+			mm = "Abril";
+			break;
+		case "05":
+			mm = "Mayo";
+			break;
+		case "06":
+			mm = "Junio";
+			break;
+		case "07":
+			mm = "Julio";
+			break;
+		case "08":
+			mm = "Agosto";
+			break;
+		case "09":
+			mm = "Septiembre";
+			break;
+		case "10":
+			mm = "Octubre";
+			break;
+		case "11":
+			mm = "Noviembre";
+			break;
+		case "12":
+			mm = "Diciembre";
+			break;
+	}
+
+
+	today = dd + " de " + mm + " del " + yyyy;
+	fechaActual.innerHTML = today;
+}

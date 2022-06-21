@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "Montserrat-SB";
+  src: url(../../assets/fonts/Montserrat-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Montserrat-B";
+  src: url(../../assets/fonts/Montserrat-Bold.ttf);
+}
+@font-face {
+  font-family: "Montserrat-M";
+  src: url(../../assets/fonts/Montserrat-Medium.ttf);
+}
+@font-face {
+  font-family: "Montserrat-R";
+  src: url(../../assets/fonts/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: "Montserrat-T";
+  src: url(../../assets/fonts/Montserrat-Light.ttf);
+}
 .logoHero {
   -webkit-animation-name: logoMove;
           animation-name: logoMove;
@@ -35,6 +55,17 @@
           animation-timing-function: ease-out;
 }
 
+.introIcon {
+  height: 40px;
+  width: auto;
+  margin-left: 50px;
+  transition: transform 150ms;
+  cursor: pointer;
+}
+.introIcon:hover {
+  transform: scale(1.25);
+}
+
 @-webkit-keyframes logoMove {
   0% {
     right: 0px;
@@ -67,4 +98,139 @@
   100% {
     opacity: 1;
   }
+}
+.btnAnualAct {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #ef5da8;
+  background-color: black;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+}
+
+.btnAnualIna {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #ef5da8;
+  background-color: black;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+  border-style: none;
+  opacity: 0.5;
+}
+
+.btnMensualAct {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #0075ff;
+  background-color: black;
+  border-color: #0075ff;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+}
+
+.btnMensualIna {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #0075ff;
+  background-color: black;
+  border-color: #0075ff;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+  border-style: none;
+  opacity: 0.5;
+}
+
+.btnSemanalAct {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #ff7c7c;
+  background-color: black;
+  border-color: #ff7c7c;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+}
+
+.btnSemanalIna {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #ff7c7c;
+  background-color: black;
+  border-color: #ff7c7c;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+  border-style: none;
+  opacity: 0.5;
+}
+
+#bracketParti {
+  margin: 0px;
+  border-style: solid;
+  border-color: #ff7c7c;
+  border-width: 3px;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom: none;
+  height: 20px;
 }/*# sourceMappingURL=verElRuido.css.map */

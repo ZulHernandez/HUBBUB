@@ -3,8 +3,73 @@
 $blackGrey: #333333;
 $blueLink: #0075ff;
 $redWater: #ff7c7c;
+$rose: #ef5da8;
+
+//main fonts-------------------------------------------------------------------
+//* Fuente Semi-bold
+@font-face {
+    font-family: "Montserrat-SB";
+    src: url(../../assets/fonts/Montserrat-SemiBold.ttf);
+}
+
+//* Fuente bold
+@font-face {
+    font-family: "Montserrat-B";
+    src: url(../../assets/fonts/Montserrat-Bold.ttf);
+}
+
+//* Fuente medium
+@font-face {
+    font-family: "Montserrat-M";
+    src: url(../../assets/fonts/Montserrat-Medium.ttf);
+}
+
+//* Fuente regular
+@font-face {
+    font-family: "Montserrat-R";
+    src: url(../../assets/fonts/Montserrat-Regular.ttf);
+}
+
+//* Fuente thin
+@font-face {
+    font-family: "Montserrat-T";
+    src: url(../../assets/fonts/Montserrat-Light.ttf);
+}
 
 //main Funciones para el CSS --------------------------------------------------
+
+//funcion Determina el formato del texto
+//param $align: alineacion del texto
+//param $fsize: tamaño del texto
+//param $fweight: peso del texto
+//param $lineH: altura de la linea
+//param $letterS: espaciado de letras
+@mixin text($align, $fsize, $fweight, $lineH, $letterS) {
+    //* Evaluamos $fweight y determinamos el peso del texto
+    @if $fweight == "B" {
+        font-family: Montserrat-B;
+    } @else {
+        @if $fweight == "R" {
+            font-family: Montserrat-R;
+        } @else {
+            @if $fweight == "T" {
+                font-family: Montserrat-T;
+            } @else {
+                @if $fweight == "SB" {
+                    font-family: Montserrat-SB;
+                } @else {
+                    font-family: Montserrat-M;
+                }
+            }
+        }
+    }
+    //* Determinamos el resto del formato
+    font-size: $fsize;
+    line-height: $lineH;
+    color: $blackGrey;
+    text-align: $align;
+    letter-spacing: $letterS;
+}
 
 //funcion Determina la posicion de un elemento
 //param $y1: posicion vertical inicial
@@ -28,6 +93,35 @@ $redWater: #ff7c7c;
     border-style: solid;
     border-color: $blackGrey;
     background-color: $blackGrey;
+}
+
+//funcion Determina el formato para elementos hover
+@mixin hoverSize() {
+    transition: transform 150ms;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.25);
+    }
+}
+
+@mixin btnTopGrafica($activo, $color) {
+    width: 100%;
+    height: 40px;
+    @include text(center, 24px, "M", 29px, normal);
+    color: $color;
+    background-color: black;
+    border-color: $color;
+    border-width: 3px;
+    border-style: solid;
+    border-bottom: none;
+    border-radius: 5px 5px 0px 0px;
+    padding-top: 5px;
+    cursor: context-menu;
+    @if ($activo==1) {
+        border-style: none;
+        opacity: 0.5;
+    }
 }
 
 //main Imagenes----------------------------------------------------------------
@@ -56,6 +150,13 @@ $redWater: #ff7c7c;
     animation-timing-function: ease-out;
 }
 
+//* Imagenes de la sección de introducción
+.introIcon {
+    height: 40px;
+    width: auto;
+    margin-left: 50px;
+    @include hoverSize();
+}
 
 //main Animation---------------------------------------------------------------
 //*Animación para el logo
@@ -75,4 +176,41 @@ $redWater: #ff7c7c;
     100% {
         opacity: 1;
     }
+}
+
+//main Botones-----------------------------------------------------------------
+
+.btnAnualAct {
+    @include btnTopGrafica(0, $rose);
+}
+
+.btnAnualIna {
+    @include btnTopGrafica(1, $rose);
+}
+
+.btnMensualAct {
+    @include btnTopGrafica(0, $blueLink);
+}
+
+.btnMensualIna {
+    @include btnTopGrafica(1, $blueLink);
+}
+.btnSemanalAct {
+    @include btnTopGrafica(0, $redWater);
+}
+
+.btnSemanalIna {
+    @include btnTopGrafica(1, $redWater);
+}
+
+//main Divs--------------------------------------------------------------------
+
+#bracketParti {
+    margin: 0px;
+    border-style: solid;
+    border-color: #ff7c7c;
+    border-width: 3px;
+    border-radius: 5px 5px 0px 0px;
+    border-bottom: none;
+    height: 20px;
 }
