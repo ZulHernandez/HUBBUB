@@ -367,6 +367,15 @@ html {
   color: white;
 }
 
+.fechaMain {
+  font-family: Montserrat-SB;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: right;
+  letter-spacing: normal;
+}
+
 .linkNavDerIna {
   font-family: Montserrat-R;
   font-size: 20px;

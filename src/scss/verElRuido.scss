@@ -110,8 +110,8 @@ $rose: #ef5da8;
     height: 40px;
     @include text(center, 24px, "M", 29px, normal);
     color: $color;
-    background-color: black;
-    border-color: $color;
+    background-color: transparent;
+    border-color: $rose;
     border-width: 3px;
     border-style: solid;
     border-bottom: none;
@@ -204,11 +204,17 @@ $rose: #ef5da8;
 }
 
 //main Divs--------------------------------------------------------------------
+//*Cuerpo del documento
+body {
+    //Imagen de ondas
+    background-image: url(../../assets/vector/background.svg);
+}
 
+//* Braket de la sección de participación
 #bracketParti {
     margin: 0px;
     border-style: solid;
-    border-color: #ff7c7c;
+    border-color: $rose;
     border-width: 3px;
     border-radius: 5px 5px 0px 0px;
     border-bottom: none;

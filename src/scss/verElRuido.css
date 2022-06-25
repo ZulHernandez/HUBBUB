@@ -109,7 +109,7 @@
   text-align: center;
   letter-spacing: normal;
   color: #ef5da8;
-  background-color: black;
+  background-color: transparent;
   border-color: #ef5da8;
   border-width: 3px;
   border-style: solid;
@@ -129,7 +129,7 @@
   text-align: center;
   letter-spacing: normal;
   color: #ef5da8;
-  background-color: black;
+  background-color: transparent;
   border-color: #ef5da8;
   border-width: 3px;
   border-style: solid;
@@ -151,8 +151,8 @@
   text-align: center;
   letter-spacing: normal;
   color: #0075ff;
-  background-color: black;
-  border-color: #0075ff;
+  background-color: transparent;
+  border-color: #ef5da8;
   border-width: 3px;
   border-style: solid;
   border-bottom: none;
@@ -171,8 +171,8 @@
   text-align: center;
   letter-spacing: normal;
   color: #0075ff;
-  background-color: black;
-  border-color: #0075ff;
+  background-color: transparent;
+  border-color: #ef5da8;
   border-width: 3px;
   border-style: solid;
   border-bottom: none;
@@ -193,8 +193,8 @@
   text-align: center;
   letter-spacing: normal;
   color: #ff7c7c;
-  background-color: black;
-  border-color: #ff7c7c;
+  background-color: transparent;
+  border-color: #ef5da8;
   border-width: 3px;
   border-style: solid;
   border-bottom: none;
@@ -213,8 +213,8 @@
   text-align: center;
   letter-spacing: normal;
   color: #ff7c7c;
-  background-color: black;
-  border-color: #ff7c7c;
+  background-color: transparent;
+  border-color: #ef5da8;
   border-width: 3px;
   border-style: solid;
   border-bottom: none;
@@ -225,10 +225,14 @@
   opacity: 0.5;
 }
 
+body {
+  background-image: url(../../assets/vector/background.svg);
+}
+
 #bracketParti {
   margin: 0px;
   border-style: solid;
-  border-color: #ff7c7c;
+  border-color: #ef5da8;
   border-width: 3px;
   border-radius: 5px 5px 0px 0px;
   border-bottom: none;

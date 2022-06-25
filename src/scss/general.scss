@@ -432,6 +432,12 @@ html {
     color: white;
 }
 
+//* Fecha main en la gráfica de partcipación
+.fechaMain {
+    @include text(right, 24px, "SB", 29px, normal);
+}
+
+
 //* Links del nav derecho inactivos
 .linkNavDerIna {
     @include text(center, 20px, "R", 24px, normal);

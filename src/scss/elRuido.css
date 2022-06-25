@@ -51,20 +51,13 @@ body {
   border: 2px solid;
   border-color: rgba(51, 51, 51, 0.25);
   margin-top: -5px;
-  -webkit-filter: drop-shadow(0px 0px 1px #333333);
-          filter: drop-shadow(0px 0px 1px #333333);
-  -webkit-transition: -webkit-transform 150ms;
-  transition: -webkit-transform 150ms;
+  filter: drop-shadow(0px 0px 1px #333333);
   transition: transform 150ms;
-  transition: transform 150ms, -webkit-transform 150ms;
   cursor: pointer;
 }
-
 .inaButton:hover {
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  transform: scale(1.25);
 }
-
 .inaButton:hover {
   border-width: 3;
 }
@@ -79,12 +72,9 @@ body {
   border: 3px solid;
   border-color: #333333;
   margin-top: -5px;
-  -webkit-filter: drop-shadow(0px 0px 1px #000);
-          filter: drop-shadow(0px 0px 1px #000);
-  -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  filter: drop-shadow(0px 0px 1px #000);
+  transform: scale(1.25);
 }
-
 .actButton:hover {
   cursor: context-menu;
 }
@@ -313,7 +303,6 @@ body {
   border-width: 5px;
   border-style: solid;
   cursor: pointer;
-  -webkit-transition: 0.25s;
   transition: 0.25s;
   opacity: 1;
   border-color: transparent;
@@ -322,7 +311,6 @@ body {
   -webkit-backdrop-filter: grayscale(100%);
           backdrop-filter: grayscale(100%);
 }
-
 .titleArea:hover {
   opacity: 0.75;
   border-color: #333333;
@@ -357,7 +345,6 @@ body {
     right: 24vw;
   }
 }
-
 @-webkit-keyframes mueve1a5 {
   from {
     margin-top: 75px;
@@ -368,7 +355,6 @@ body {
     margin-left: 720px;
   }
 }
-
 @keyframes mueve1a5 {
   from {
     margin-top: 75px;
@@ -379,7 +365,6 @@ body {
     margin-left: 720px;
   }
 }
-
 @-webkit-keyframes mueve2a1 {
   from {
     margin-top: 75px;
@@ -390,7 +375,6 @@ body {
     margin-left: 0px;
   }
 }
-
 @keyframes mueve2a1 {
   from {
     margin-top: 75px;
@@ -401,7 +385,6 @@ body {
     margin-left: 0px;
   }
 }
-
 @-webkit-keyframes mueve3a2 {
   from {
     margin-top: 0px;
@@ -416,7 +399,6 @@ body {
     height: auto;
   }
 }
-
 @keyframes mueve3a2 {
   from {
     margin-top: 0px;
@@ -431,7 +413,6 @@ body {
     height: auto;
   }
 }
-
 @-webkit-keyframes mueve4a3 {
   from {
     margin-top: 75px;
@@ -446,7 +427,6 @@ body {
     height: auto;
   }
 }
-
 @keyframes mueve4a3 {
   from {
     margin-top: 75px;
@@ -461,7 +441,6 @@ body {
     height: auto;
   }
 }
-
 @-webkit-keyframes mueve5a4 {
   from {
     margin-top: 75px;
@@ -472,7 +451,6 @@ body {
     margin-left: 577.5px;
   }
 }
-
 @keyframes mueve5a4 {
   from {
     margin-top: 75px;
@@ -483,7 +461,6 @@ body {
     margin-left: 577.5px;
   }
 }
-
 @-webkit-keyframes mueve5a1 {
   from {
     margin-top: 75px;
@@ -494,7 +471,6 @@ body {
     margin-left: 0px;
   }
 }
-
 @keyframes mueve5a1 {
   from {
     margin-top: 75px;
@@ -505,7 +481,6 @@ body {
     margin-left: 0px;
   }
 }
-
 @-webkit-keyframes mueve1a2 {
   from {
     margin-top: 75px;
@@ -516,7 +491,6 @@ body {
     margin-left: 142.5px;
   }
 }
-
 @keyframes mueve1a2 {
   from {
     margin-top: 75px;
@@ -527,7 +501,6 @@ body {
     margin-left: 142.5px;
   }
 }
-
 @-webkit-keyframes mueve2a3 {
   from {
     margin-top: 75px;
@@ -542,7 +515,6 @@ body {
     height: auto;
   }
 }
-
 @keyframes mueve2a3 {
   from {
     margin-top: 75px;
@@ -557,7 +529,6 @@ body {
     height: auto;
   }
 }
-
 @-webkit-keyframes mueve3a4 {
   from {
     margin-top: 0px;
@@ -572,7 +543,6 @@ body {
     height: auto;
   }
 }
-
 @keyframes mueve3a4 {
   from {
     margin-top: 0px;
@@ -587,7 +557,6 @@ body {
     height: auto;
   }
 }
-
 @-webkit-keyframes mueve4a5 {
   from {
     margin-top: 75px;
@@ -598,7 +567,6 @@ body {
     margin-left: 720px;
   }
 }
-
 @keyframes mueve4a5 {
   from {
     margin-top: 75px;
@@ -608,5 +576,4 @@ body {
     margin-top: 75px;
     margin-left: 720px;
   }
-}
-/*# sourceMappingURL=elRuido.css.map */
+}/*# sourceMappingURL=elRuido.css.map */

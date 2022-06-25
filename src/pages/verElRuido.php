@@ -259,7 +259,7 @@
         </div>
         <!--//*Tabla de clasificación del ruido-->
         <div class="row" style="padding-top: 100px;">
-            <div class="columna col-2" style="background-color: red;"><br /></div>
+            <div class="columna col-2"><br /></div>
             <div class="columna col">
                 <div class="btnAnualAct" id="btnAnual">Anual</div>
             </div>
@@ -269,10 +269,23 @@
             <div class="columna col">
                 <div class="btnSemanalIna" id="btnSemanal">Semanal</div>
             </div>
-            <div class="columna col-4" style="background-color: red;"></div>
-            <div class="columna col-2" style="background-color: blue;"></div>
+            <div class="columna col-4"></div>
+            <div class="columna col-2"></div>
         </div>
-        <div class="row" id="bracketParti"></div>
+        <div class="row">
+            <div class="columna col-2"></div>
+            <div class="col" id="bracketParti"></div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//*Grafica de clasificación de ruidos-->
+        <div class="row" style="padding-top: 30px;">
+            <div class="columna col-2"></div>
+            <!--//*Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
+            <div class="columna col">
+                <iframe src="../pages/frames/verElRuido/participacion.php" style="width: 100%; height: 800px;"></iframe>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
     </div>
     <!--//main Sección completa de foot-->
     <div style="z-index: 11; position: absolute; width: 100%;">
@@ -401,7 +414,5 @@
         </swal-html>
     </template>
 </body>
-<!--//import Js para el embed de Sketchfab-->
-<script type="text/javascript" src="src/js/JSsketch.js"></script>
 
 </html>
