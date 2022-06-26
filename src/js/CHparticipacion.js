@@ -1,26 +1,56 @@
 //main Variables
 //* Color
 const rose = "#ef5da8BF";
-var anio = "2022";
+const blue = "#0075ffBF";
+
+var fechaMainText = "2022";
 var tipoGraph = 1;
 var contAnual = 1;
-var dataAnual = anual[0].dosdos;
+var datos, arraySelect, lastPos, keysAnual, valuesAnual, keysMensual, valuesMensual, maxY, colorFill;
 
-function setChart() {
+function setChart(a) {
 	let fechaMain = document.getElementById("fechaMain");
 	let totalReportes = document.getElementById("totalReportes");
-
+	let suma = 0;
+	tipoGraph = a;
 	switch (tipoGraph) {
 		case 1:
-			anio = "2022";
-			fechaMain.innerHTML = anio;
-			let suma = 0;
-			for (let i = 0; i < anual[0].dosdos.length; i++) {
-				suma += anual[0].dosdos[i];
+			keysAnual = Object.keys(anual);
+			valuesAnual = Object.values(anual);
+			maxY = Math.max(...[].concat.apply([], valuesAnual));
+			colorFill = rose;
+
+			lastPos = keysAnual.length;
+			fechaMainText = keysAnual[lastPos - 1];
+			fechaMain.innerHTML = fechaMainText;
+			suma = 0;
+			for (let i = 0; i < valuesAnual[lastPos - 1].length; i++) {
+				suma += valuesAnual[lastPos - 1][i];
 			}
 			totalReportes.innerHTML = "Total de " + suma + " reportes";
+			datos = valuesAnual[lastPos - 1];
+			break;
+		case 2:
+			keysMensual = Object.keys(mensual);
+			valuesMensual = Object.values(mensual);
+			maxY = Math.max(...[].concat.apply([], valuesMensual));
+			colorFill = blue;
+
+			lastPos = keysMensual.length;
+			fechaMainText = keysMensual[0].replace("_", " ");
+			fechaMain.innerHTML = fechaMainText;
+			suma = 0;
+			for (let i = 0; i < valuesMensual[0].length; i++) {
+				suma += valuesMensual[0][i];
+			}
+			totalReportes.innerHTML = "Total de " + suma + " reportes";
+			datos = valuesMensual[0];
 			break;
 	}
+	canvaClasRuido.data.datasets[0].data = datos;
+	canvaClasRuido.options.scales.y.max =  maxY;
+	canvaClasRuido.data.datasets[0].fill.above = colorFill;
+	canvaClasRuido.update();
 }
 
 function mueveChart(a) {
@@ -28,40 +58,40 @@ function mueveChart(a) {
 	if (tipoGraph == 1) {
 		if (a == 1) {
 			contAnual++;
-			if (contAnual > 1) {
+			if (contAnual > keysAnual.length) {
 				contAnual = 0;
 			}
 		}
 		if (a == 0) {
 			contAnual--;
 			if (contAnual < 0) {
-				contAnual = 1;
+				contAnual = keysAnual.length;
 			}
 		}
-		switch (contAnual) {
-			case 0:
-				anio = "2021";
-				fechaMain.innerHTML = anio;
-				suma = 0;
-				for (let i = 0; i < anual[0].dosuno.length; i++) {
-					suma += anual[0].dosuno[i];
-				}
-				totalReportes.innerHTML = "Total de " + suma + " reportes";
-				dataAnual = anual[0].dosuno;
-				break;
-			case 1:
-				anio = "2022";
-				fechaMain.innerHTML = anio;
-				suma = 0;
-				for (let i = 0; i < anual[0].dosdos.length; i++) {
-					suma += anual[0].dosdos[i];
-				}
-				totalReportes.innerHTML = "Total de " + suma + " reportes";
-				dataAnual = anual[0].dosdos;
-				break;
-				
-		}
-		canvaClasRuido.data.datasets[0].data = dataAnual;
+		// switch (contAnual) {
+		// 	case 0:
+		// 		fechaMainText = "2021";
+		// 		fechaMain.innerHTML = fechaMainText;
+		// 		suma = 0;
+		// 		for (let i = 0; i < anual[0].dosuno.length; i++) {
+		// 			suma += anual[0].dosuno[i];
+		// 		}
+		// 		totalReportes.innerHTML = "Total de " + suma + " reportes";
+		// 		datos = anual[0].dosuno;
+		// 		break;
+		// 	case 1:
+		// 		fechaMainText = "2022";
+		// 		fechaMain.innerHTML = fechaMainText;
+		// 		suma = 0;
+		// 		for (let i = 0; i < anual[0].dosdos.length; i++) {
+		// 			suma += anual[0].dosdos[i];
+		// 		}
+		// 		totalReportes.innerHTML = "Total de " + suma + " reportes";
+		// 		datos = anual[0].dosdos;
+		// 		break;
+
+		// }
+		canvaClasRuido.data.datasets[0].data = datos;
 		canvaClasRuido.update();
 	}
 }
@@ -81,7 +111,7 @@ const options = {
 			{
 				type: "line",
 				label: "Reportes",
-				data: dataAnual,
+				data: datos,
 				fill: {
 					target: "origin",
 					above: rose,
@@ -134,7 +164,7 @@ const options = {
 					},
 					//* dB promedio del objeto
 					label: (context) => {
-						return `${context.label}` + " " + anio;
+						return `${context.label}` + " " + fechaMainText;
 					},
 				},
 				//* Fuente del tooltip
@@ -171,12 +201,7 @@ const options = {
 					drawTicks: true,
 					tickLength: 15,
 					//Determinamos lineas primarias y secundarias
-					tickColor: (ctx) =>
-						ctx.index == 0
-							? "rgba(0,0,0,0)"
-							: ctx.index == 14
-							? "rgba(0,0,0,0)"
-							: "#333333",
+					tickColor: "#333333",
 					offset: 0,
 				},
 				//* Estilo de las ticks del eje

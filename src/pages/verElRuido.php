@@ -257,26 +257,6 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <!--//*Tabla de clasificación del ruido-->
-        <div class="row" style="padding-top: 100px;">
-            <div class="columna col-2"><br /></div>
-            <div class="columna col">
-                <div class="btnAnualAct" id="btnAnual">Anual</div>
-            </div>
-            <div class="columna col">
-                <div class="btnMensualIna" id="btnMensual">Mensual</div>
-            </div>
-            <div class="columna col">
-                <div class="btnSemanalIna" id="btnSemanal">Semanal</div>
-            </div>
-            <div class="columna col-4"></div>
-            <div class="columna col-2"></div>
-        </div>
-        <div class="row">
-            <div class="columna col-2"></div>
-            <div class="col" id="bracketParti"></div>
-            <div class="columna col-2"></div>
-        </div>
         <!--//*Grafica de clasificación de ruidos-->
         <div class="row" style="padding-top: 30px;">
             <div class="columna col-2"></div>

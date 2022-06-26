@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!--//import  Estilos aplicados al proyecto en general-->
     <link href="../../../scss/general.css" rel="stylesheet">
+    <link href="../../../scss/verElRuido.css" rel="stylesheet">
     <!--//import JSon para el chart-->
     <script type="text/javascript" src="../../../json/VARparticipacion.js"></script>
     <title>
@@ -15,27 +16,43 @@
     </title>
 </head>
 
-<body onload="setChart()">
+<body onload="setChart(2)" style="background-image: url(''); background-color: rgba(0,0,0,0);">
+    <!--//*Tabla de clasificación del ruido-->
+    <div class="row container-fluid" style="padding-top: 40px;">
+        <div class="columna col-2">
+            <div class="btnAnualAct" id="btnAnual">Anual</div>
+        </div>
+        <div class="columna col-2">
+            <div class="btnMensualIna" id="btnMensual">Mensual</div>
+        </div>
+        <div class="columna col-2">
+            <div class="btnSemanalIna" id="btnSemanal">Semanal</div>
+        </div>
+        <div class="columna col-6"></div>
+    </div>
+    <div class="row container-fluid" style="padding: 0px;">
+        <div class="col-12" id="bracketParti"></div>
+    </div>
     <!--//* Canva para la gráfica de clasificación de ruidos-->
     <canvas id="canvaParticipacion"></canvas>
     <!--//*Control de fechas-->
     <div class="row container-fluid" style="padding-top: 40px;">
-            <div class="columna col-7"></div>
-            <div class="columna col-1 flechaOido" onclick="mueveChart(0)">
-                <center>
-                    <img src="../../../../assets/vector/flecha.svg">
-                </center>
-            </div>
-            <div class="columna col-3">
-                <p id="fechaMain" class="fechaMain">2020</p>
-                <p id="totalReportes" class="textCorrido" style="text-align: right;">Total de 0 reportes</p>
-            </div>
-            <div class="columna col-1 flechaOido" onclick="mueveChart(1)">
-                <center>
-                    <img src="../../../../assets/vector/flecha.svg" style="transform: rotate(180deg);">
-                </center>
-            </div>
+        <div class="columna col-7"></div>
+        <div class="columna col-1 flechaOido" onclick="mueveChart(0)">
+            <center>
+                <img src="../../../../assets/vector/flecha.svg">
+            </center>
         </div>
+        <div class="columna col-3">
+            <p id="fechaMain" class="fechaMain">2020</p>
+            <p id="totalReportes" class="textCorrido" style="text-align: right;">Total de 0 reportes</p>
+        </div>
+        <div class="columna col-1 flechaOido" onclick="mueveChart(1)">
+            <center>
+                <img src="../../../../assets/vector/flecha.svg" style="transform: rotate(180deg);">
+            </center>
+        </div>
+    </div>
     </div>
 </body>
 <!--//import CHART para la gráfica de clasificación-->
