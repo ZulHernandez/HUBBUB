@@ -8,8 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../dist/p5.js" type="text/javascript"></script>
+    <script src="../../node_modules/dom-to-image/src/dom-to-image.js" type="text/javascript"></script>
+
     <!--//import  Estilos aplicados al sitio en general-->
-    <link href="../scss/general.css" rel="stylesheet">
+    <link type="text/css" href="../scss/general.css" rel="stylesheet">
     <!--//import  Estilos aplicados a la página El ruido-->
     <link href="../scss/verElRuido.css" rel="stylesheet">
     <!--//import  Js para el manejo del sitio en general-->
@@ -135,7 +137,7 @@
     </div>
     </div>
     <!--//main Se incluye el hero Image y resumen de la página-->
-    <div class="container-fluid hero">
+    <div id="screenParticiapcion" class="container-fluid hero">
         <div class="imagenHero">
             <!--//* Función nosotros dispara Swal de información sobre HUBBUB-->
             <!--//funcion nosotros() dispara el swal sobre la información de HUBBUB-->
@@ -262,7 +264,21 @@
             <div class="columna col-2"></div>
             <!--//*Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
             <div class="columna col">
-                <iframe src="../pages/frames/verElRuido/participacion.php" style="width: 100%; height: 800px;"></iframe>
+                <iframe id="frameParti" src="../pages/frames/verElRuido/participacion.php" style="width: 100%; height: 1000px;"></iframe>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 30px;">
+            <div class="columna col-9"></div>
+            <div id="CHparticipacion" class="columna col-1">
+                <button onclick="llamaShot()">SCREEN SHOT</button>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <div class="row" style="padding-top: 30px;">
+            <div class="columna col-2"></div>
+            <div class="columna col">
+                <img id="imgOut" src="">
             </div>
             <div class="columna col-2"></div>
         </div>
@@ -394,5 +410,17 @@
         </swal-html>
     </template>
 </body>
+<script>
+    function llamaShot() {
+        let url = document.getElementById('frameParti').contentWindow.takeShot();
+        
+        setTimeout(function() {
+            console.log(url.src);
+            let urls = url.src;
+            document.getElementById('imgOut').src = urls;
+        }, 1000);
+        
+    }
+</script>
 
 </html>

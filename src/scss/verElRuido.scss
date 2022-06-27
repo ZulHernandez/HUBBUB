@@ -121,6 +121,7 @@ $rose: #ef5da8;
     @if ($activo==1) {
         border-style: none;
         opacity: 0.5;
+        cursor: pointer;
     }
 }
 

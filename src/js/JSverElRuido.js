@@ -51,7 +51,7 @@ function getDate() {
 	var yyyy = today.getFullYear();
 	let fechaActual = document.getElementById("fechaActual");
 
-	switch(mm){
+	switch (mm) {
 		case "01":
 			mm = "Enero";
 			break;
@@ -89,7 +89,6 @@ function getDate() {
 			mm = "Diciembre";
 			break;
 	}
-
 
 	today = dd + " de " + mm + " del " + yyyy;
 	fechaActual.innerHTML = today;

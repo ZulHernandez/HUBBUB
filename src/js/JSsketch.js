@@ -48,11 +48,8 @@ function skfbStart() {
 		api.start();
 		//* Escuchamos si el modelo esta listo
 		api.addEventListener("viewerready", () => {
-			window.console.log("viewer ready");
 			//* Escuchamos si el se clicka dentro de las anotaciones del modelo
 			api.addEventListener("annotationSelect", function (index) {
-				window.console.log("Selected annotation", index);
-				console.log("select " + index);
 				//* Si se clicka afuera se pausan los audios
 				if (index == -1) {
 					toggleAudio1(true, false);

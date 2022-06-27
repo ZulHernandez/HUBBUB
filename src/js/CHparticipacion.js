@@ -2,98 +2,255 @@
 //* Color
 const rose = "#ef5da8BF";
 const blue = "#0075ffBF";
+//* Variables de seteo de los gráficos
+var contaPasos, fechaMainText, datos, labels, tipoGraph, lastPos, maxY, colorFill, keysArray, valuesArray;
+//* Obtenemos objetos del HTML
+let btnAnual = document.getElementById("btnAnual");
+let btnMensual = document.getElementById("btnMensual");
+let bracketParti = document.getElementById("bracketParti");
+let fechaMain = document.getElementById("fechaMain");
+let totalReportes = document.getElementById("totalReportes");
 
-var fechaMainText = "2022";
-var tipoGraph = 1;
-var contAnual = 1;
-var datos, arraySelect, lastPos, keysAnual, valuesAnual, keysMensual, valuesMensual, maxY, colorFill;
-
-function setChart(a) {
-	let fechaMain = document.getElementById("fechaMain");
-	let totalReportes = document.getElementById("totalReportes");
-	let suma = 0;
+//funcion Seteamos el tipo de visualización del gráfico
+//param a = 1 para anual, 2 para mensual
+function setChart(a) {	
+	//* Declaramso sumador para el total de reportes
+	let suma;
+	//* Declaramos el tipo de visualización del gráfico que esta en pantalla
 	tipoGraph = a;
+	//* Evaluamos el tipo de visualización del gráfico que esta en pantalla
 	switch (tipoGraph) {
+		//* Anual
 		case 1:
-			keysAnual = Object.keys(anual);
-			valuesAnual = Object.values(anual);
-			maxY = Math.max(...[].concat.apply([], valuesAnual));
+			//* Obtenemos un array con los Key dentro del array anual
+			keysArray = Object.keys(anual);
+			//* Obtenemos un array con los valores dentro del array anual
+			valuesArray = Object.values(anual);
+			//* Seteamos el color del gráfico
 			colorFill = rose;
-
-			lastPos = keysAnual.length;
-			fechaMainText = keysAnual[lastPos - 1];
-			fechaMain.innerHTML = fechaMainText;
+			//* Seteamos las etiquetas en x del gráfico
+			labels = anualLabel;
+			//* Obtenemos el lugar donde se encuentra el último elemento del array
+			lastPos = keysArray.length - 1;
+			//* Setemos el nombre del último key del array
+			fechaMainText = keysArray[lastPos];
+			//* Reiniciamos sumador
 			suma = 0;
-			for (let i = 0; i < valuesAnual[lastPos - 1].length; i++) {
-				suma += valuesAnual[lastPos - 1][i];
+			//* Sumamos todos los valores del array en la ultima posición
+			for (let i = 0; i < valuesArray[lastPos].length; i++) {
+				suma += valuesArray[lastPos][i];
 			}
-			totalReportes.innerHTML = "Total de " + suma + " reportes";
-			datos = valuesAnual[lastPos - 1];
+			//* Determinamos la vista de los botoes de visualización
+			btnAnual.className = "btnAnualAct";
+			btnAnual.style.borderColor = colorFill;
+			bracketParti.style.borderColor = colorFill;
+			btnMensual.className = "btnMensualIna";
+			//* Indicamos posición inicial del carrusel
+			contaPasos = lastPos;
 			break;
 		case 2:
-			keysMensual = Object.keys(mensual);
-			valuesMensual = Object.values(mensual);
-			maxY = Math.max(...[].concat.apply([], valuesMensual));
+			//* Obtenemos un array con los Key dentro del array mensual
+			keysArray = Object.keys(mensual);
+			//* Obtenemos un array con los valores dentro del array mensual
+			valuesArray = Object.values(mensual);
+			//* Seteamos el color del gráfico
 			colorFill = blue;
-
-			lastPos = keysMensual.length;
-			fechaMainText = keysMensual[0].replace("_", " ");
-			fechaMain.innerHTML = fechaMainText;
-			suma = 0;
-			for (let i = 0; i < valuesMensual[0].length; i++) {
-				suma += valuesMensual[0][i];
+			//* Obtenemos el lugar donde se encuentra el último elemento del array
+			lastPos = keysArray.length - 1;
+			//* Setemos el nombre del último key del array y remplazamos caracteres
+			fechaMainText = keysArray[lastPos].replace("_", " ");
+			//* Obtenemos el largo del string de la fecha
+			let stringFL = fechaMainText.length;
+			//* Evaluamos el año de la fecha
+			//* Determinamos las labels de los meses de acuerdo al numero de su ultimo día
+			switch (fechaMainText.substring(0, 3)) {
+				case "Ene":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Feb":
+					//* Evaluamos si el año es bisiesto
+					if (fechaMainText.substring(stringFL - 2, stringFL) == "00") {
+						if (fechaMainText.substring(stringFL - 4, stringFL) % 400 == 0) {
+							labels = mensualLabel[0].dosnueve;
+						} else {
+							labels = mensualLabel[0].dosocho;
+						}
+					} else if (fechaMainText.substring(stringFL - 4, stringFL) % 4 == 0) {
+						labels = mensualLabel[0].dosnueve;
+					} else {
+						labels = mensualLabel[0].dosocho;
+					}
+					break;
+				case "Mar":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Abr":
+					labels = mensualLabel[0].trescero;
+					break;
+				case "May":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Jun":
+					labels = mensualLabel[0].trescero;
+					break;
+				case "Jul":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Ago":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Sep":
+					labels = mensualLabel[0].trescero;
+					break;
+				case "Oct":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Nov":
+					labels = mensualLabel[0].trescero;
+					break;
+				case "Dic":
+					labels = mensualLabel[0].tresuno;
+					break;
 			}
-			totalReportes.innerHTML = "Total de " + suma + " reportes";
-			datos = valuesMensual[0];
+			//* Reiniciamos sumador
+			suma = 0;
+			//* Sumamos todos los valores del array en la ultima posición
+			for (let i = 0; i < valuesArray[lastPos].length; i++) {
+				suma += valuesArray[lastPos][i];
+			}
+			//* Determinamos la vista de los botoes de visualización
+			btnAnual.className = "btnAnualIna";
+			btnMensual.className = "btnMensualAct";
+			btnMensual.style.borderColor = colorFill;
+			bracketParti.style.borderColor = colorFill;
+			//* Indicamos posición inicial del carrusel
+			contaPasos = 0;
 			break;
 	}
+	//* Seteamos la data a mostrar en el gráfico
+	datos = valuesArray[lastPos];
+	//* Seteamos el valor máximo del eje y deacuerdo al mayor valor del array
+	maxY = Math.max(...[].concat.apply([], valuesArray));
+	//* Pintamos los reportes totales de la fecha
+	totalReportes.innerHTML = "Total de " + suma + " reportes";
+	//* Pintamos la fecha
+	fechaMain.innerHTML = fechaMainText;
+	//* Cargamos la data a mostrar en el gráfico
 	canvaClasRuido.data.datasets[0].data = datos;
-	canvaClasRuido.options.scales.y.max =  maxY;
+	//* Cargamos el valor máximo del eje y
+	canvaClasRuido.options.scales.y.max = maxY;
+	//* Cargamos el color del gráfico
 	canvaClasRuido.data.datasets[0].fill.above = colorFill;
+	//* Cargamos las labels del eje x
+	canvaClasRuido.data.labels = labels;
+	//* Actualizamos el gráfico
 	canvaClasRuido.update();
 }
 
+//funcion Mueve el carrusel del gráfico
+//param a = 1 para mover hacia adelante y 0 para mover hacia atras
 function mueveChart(a) {
+	//* Iniciamos el sumador
 	let suma;
-	if (tipoGraph == 1) {
-		if (a == 1) {
-			contAnual++;
-			if (contAnual > keysAnual.length) {
-				contAnual = 0;
-			}
+	//* Evaluamos si avanzamos
+	if (a == 1) {
+		contaPasos++;
+		//* Si el contador de pasos es mayor a la cantidad de pasos que se pueden hacer en el carrusel entonces se reinicia
+		if (contaPasos > lastPos) {
+			contaPasos = 0;
 		}
-		if (a == 0) {
-			contAnual--;
-			if (contAnual < 0) {
-				contAnual = keysAnual.length;
-			}
-		}
-		// switch (contAnual) {
-		// 	case 0:
-		// 		fechaMainText = "2021";
-		// 		fechaMain.innerHTML = fechaMainText;
-		// 		suma = 0;
-		// 		for (let i = 0; i < anual[0].dosuno.length; i++) {
-		// 			suma += anual[0].dosuno[i];
-		// 		}
-		// 		totalReportes.innerHTML = "Total de " + suma + " reportes";
-		// 		datos = anual[0].dosuno;
-		// 		break;
-		// 	case 1:
-		// 		fechaMainText = "2022";
-		// 		fechaMain.innerHTML = fechaMainText;
-		// 		suma = 0;
-		// 		for (let i = 0; i < anual[0].dosdos.length; i++) {
-		// 			suma += anual[0].dosdos[i];
-		// 		}
-		// 		totalReportes.innerHTML = "Total de " + suma + " reportes";
-		// 		datos = anual[0].dosdos;
-		// 		break;
-
-		// }
-		canvaClasRuido.data.datasets[0].data = datos;
-		canvaClasRuido.update();
 	}
+	//* Evaluamos si retrocedemos
+	if (a == 0) {
+		contaPasos--;
+		//* Si el contador de pasos es menor a 0 entonces pintamos la ultima posición
+		if (contaPasos < 0) {
+			contaPasos = lastPos;
+		}
+	}
+
+	//* Seteamos el formato de la fecha
+	fechaMainText = keysArray[contaPasos].replace("_", " ");
+	//* Obtenemos la longitud de la fecha
+	let stringFL = fechaMainText.length;
+	//* Evaluamos el tipo de visualización
+	switch (tipoGraph) {
+		//* Visualización anual
+		case 1:
+			labels = anualLabel;
+			break;
+		//* Visualización mensual
+		case 2:
+			//* Evaluamos el año de la fecha
+			switch (fechaMainText.substring(0, 3)) {
+				case "Ene":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Feb":
+					//* Evaluamos si el año es bisiesto
+					if (fechaMainText.substring(stringFL - 2, stringFL) == "00") {
+						if (fechaMainText.substring(stringFL - 4, stringFL) % 400 == 0) {
+							labels = mensualLabel[0].dosnueve;
+						} else {
+							labels = mensualLabel[0].dosocho;
+						}
+					} else if (fechaMainText.substring(stringFL - 4, stringFL) % 4 == 0) {
+						labels = mensualLabel[0].dosnueve;
+					} else {
+						labels = mensualLabel[0].dosocho;
+					}
+					break;
+				case "Mar":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Abr":
+					labels = mensualLabel[0].trescero;
+					break;
+				case "May":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Jun":
+					labels = mensualLabel[0].trescero;
+					break;
+				case "Jul":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Ago":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Sep":
+					labels = mensualLabel[0].trescero;
+					break;
+				case "Oct":
+					labels = mensualLabel[0].tresuno;
+					break;
+				case "Nov":
+					labels = mensualLabel[0].trescero;
+					break;
+				case "Dic":
+					labels = mensualLabel[0].tresuno;
+					break;
+			}
+			break;
+	}
+	//* Reiniciamos el sumador
+	suma = 0;
+	//* Sumamos loa valores dentro del array en la posición correspondiente
+	for (let i = 0; i < valuesArray[contaPasos].length; i++) {
+		suma += valuesArray[contaPasos][i];
+	}
+	//* Seteamos la data a mostrar en el gráfico
+	datos = valuesArray[contaPasos];
+	//* Pintamos los reportes totales de la fecha
+	totalReportes.innerHTML = "Total de " + suma + " reportes";
+	//* Pintamos la fecha
+	fechaMain.innerHTML = fechaMainText;
+	//* Cargamos la data a mostrar en el gráfico
+	canvaClasRuido.data.datasets[0].data = datos;
+	//* Cargamos las labels del eje x
+	canvaClasRuido.data.labels = labels;
+	//* Actualizamos el gráfico
+	canvaClasRuido.update();
 }
 
 //* Quitamos el título del los tooltips
@@ -105,7 +262,7 @@ const titleTooltip = (tooltipItems) => {
 const options = {
 	//* Datos a gráficar
 	data: {
-		labels: anualLabel,
+		labels: labels,
 		datasets: [
 			//* Gráfica de área para ruido muy bajo
 			{
@@ -185,6 +342,7 @@ const options = {
 				pointHoverBorderWidth: 3,
 				pointHoverBackgroundColor: "white",
 				pointRadius: 5,
+				
 			},
 		},
 		scales: {
