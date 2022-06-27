@@ -84,7 +84,6 @@
                 //var img = new Image();
                 img.src = dataUrl;
                 console.log(img);
-                document.getElementById("here-appear-theimages").appendChild(img);
             })
             .catch(function(error) {
                 console.error('oops, something went wrong!', error);

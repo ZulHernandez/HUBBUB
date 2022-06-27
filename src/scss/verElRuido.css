@@ -66,6 +66,17 @@
   transform: scale(1.25);
 }
 
+.iconoAcce {
+  height: 20px;
+  width: auto;
+  margin-left: 15px;
+  transition: transform 150ms;
+  cursor: pointer;
+}
+.iconoAcce:hover {
+  transform: scale(1.25);
+}
+
 @-webkit-keyframes logoMove {
   0% {
     right: 0px;
@@ -172,49 +183,6 @@
   text-align: center;
   letter-spacing: normal;
   color: #0075ff;
-  background-color: transparent;
-  border-color: #ef5da8;
-  border-width: 3px;
-  border-style: solid;
-  border-bottom: none;
-  border-radius: 5px 5px 0px 0px;
-  padding-top: 5px;
-  cursor: context-menu;
-  border-style: none;
-  opacity: 0.5;
-  cursor: pointer;
-}
-
-.btnSemanalAct {
-  width: 100%;
-  height: 40px;
-  font-family: Montserrat-M;
-  font-size: 24px;
-  line-height: 29px;
-  color: #333333;
-  text-align: center;
-  letter-spacing: normal;
-  color: #ff7c7c;
-  background-color: transparent;
-  border-color: #ef5da8;
-  border-width: 3px;
-  border-style: solid;
-  border-bottom: none;
-  border-radius: 5px 5px 0px 0px;
-  padding-top: 5px;
-  cursor: context-menu;
-}
-
-.btnSemanalIna {
-  width: 100%;
-  height: 40px;
-  font-family: Montserrat-M;
-  font-size: 24px;
-  line-height: 29px;
-  color: #333333;
-  text-align: center;
-  letter-spacing: normal;
-  color: #ff7c7c;
   background-color: transparent;
   border-color: #ef5da8;
   border-width: 3px;

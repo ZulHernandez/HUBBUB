@@ -25,7 +25,7 @@
     </title>
 </head>
 
-<body onload="getDate()">
+<body onload="getDate();">
     <!--//main Se incluye el navegador lateral izquierdo-->
     <!--//funcion navIzq() Colapasa o expande el navegador lateral izquierdo-->
     <!--//param 0 = navegador colapsado-->
@@ -264,21 +264,16 @@
             <div class="columna col-2"></div>
             <!--//*Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
             <div class="columna col">
-                <iframe id="frameParti" src="../pages/frames/verElRuido/participacion.php" style="width: 100%; height: 1000px;"></iframe>
+                <iframe id="frameParti" src="../pages/frames/verElRuido/participacion.php" style="width: 100%; height: 800px;"></iframe>
             </div>
             <div class="columna col-2"></div>
         </div>
         <div class="row" style="padding-top: 30px;">
-            <div class="columna col-9"></div>
-            <div id="CHparticipacion" class="columna col-1">
-                <button onclick="llamaShot()">SCREEN SHOT</button>
-            </div>
-            <div class="columna col-2"></div>
-        </div>
-        <div class="row" style="padding-top: 30px;">
-            <div class="columna col-2"></div>
-            <div class="columna col">
-                <img id="imgOut" src="">
+            <div class="columna col-8"></div>
+            <div id="CHparticipacion" class="columna col-2">
+                <img class="iconoAcce" src="../../assets/vector/accesibilidad/descargar.svg" style="margin-right: 15px;">
+                <img class="iconoAcce" onclick="llamaShot()" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
+                <img class="iconoAcce" src="../../assets/vector/accesibilidad/compartir.svg">
             </div>
             <div class="columna col-2"></div>
         </div>
@@ -409,17 +404,50 @@
             </div>
         </swal-html>
     </template>
+    <!--//main Template para el Swal de captura de pantalla-->
+    <template id="shootSwal">
+        <swal-html>
+            <div class="row container-fluid">
+                <!--//* Imagen y legales del Swal-->
+                <div class="columna col-12">
+                    <p class="subOido">Descargar imagen</p>
+                </div>
+            </div>
+            <div class="row container-fluid">
+                <!--//* Imagen y legales del Swal-->
+                <div class="columna col-9">
+                    <img style="height: 500px;" id="imgOut" src="">
+                </div>
+                <div class="columna col-1" style="background-color: blue;">
+                    <div class="verticalLineNos"></div>
+                </div>
+                <!--//* Texto del Swal-->
+                <div class="columna col-2" style="background-color: red;">
+                </div>
+            </div>
+        </swal-html>
+    </template>
 </body>
 <script>
     function llamaShot() {
         let url = document.getElementById('frameParti').contentWindow.takeShot();
-        
         setTimeout(function() {
+            //* Disparamos Swal
+            Swal.fire({
+                //* Determinamos template
+                template: "#shootSwal",
+                //* Seteamos estilo del Swal
+                width: "81.46vw",
+                customClass: "swal-height",
+                padding: "50px 50px",
+                showConfirmButton: false,
+                showCloseButton: false,
+                backdrop: "rgba(51,51,51,0.5)",
+            });
             console.log(url.src);
             let urls = url.src;
             document.getElementById('imgOut').src = urls;
         }, 1000);
-        
     }
 </script>
 

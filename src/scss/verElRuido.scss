@@ -105,6 +105,9 @@ $rose: #ef5da8;
     }
 }
 
+//funcion Determina el formato para elementos click
+//param $activo : estado del elemento
+//param $color : color del elemento
 @mixin btnTopGrafica($activo, $color) {
     width: 100%;
     height: 40px;
@@ -118,6 +121,7 @@ $rose: #ef5da8;
     border-radius: 5px 5px 0px 0px;
     padding-top: 5px;
     cursor: context-menu;
+    //* Estilo si esta inactivo
     @if ($activo==1) {
         border-style: none;
         opacity: 0.5;
@@ -159,6 +163,15 @@ $rose: #ef5da8;
     @include hoverSize();
 }
 
+//* Imagenes de accesibilidad
+.iconoAcce{
+    height:20px;
+    width:auto;
+    margin-left: 15px;
+    @include hoverSize();
+}
+
+
 //main Animation---------------------------------------------------------------
 //*Animación para el logo
 @keyframes logoMove {
@@ -170,6 +183,7 @@ $rose: #ef5da8;
     }
 }
 
+//* Aparece el resumen de la página
 @keyframes appearResume {
     0% {
         opacity: 0;
@@ -180,28 +194,21 @@ $rose: #ef5da8;
 }
 
 //main Botones-----------------------------------------------------------------
-
+//* Botón Anual activo
 .btnAnualAct {
     @include btnTopGrafica(0, $rose);
 }
-
+//* Botón Anual inactivo
 .btnAnualIna {
     @include btnTopGrafica(1, $rose);
 }
-
+//* Botón Mensual activo
 .btnMensualAct {
     @include btnTopGrafica(0, $blueLink);
 }
-
+//* Botón Mensual inactivo
 .btnMensualIna {
     @include btnTopGrafica(1, $blueLink);
-}
-.btnSemanalAct {
-    @include btnTopGrafica(0, $redWater);
-}
-
-.btnSemanalIna {
-    @include btnTopGrafica(1, $redWater);
 }
 
 //main Divs--------------------------------------------------------------------
