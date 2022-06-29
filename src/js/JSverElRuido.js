@@ -93,3 +93,210 @@ function getDate() {
 	today = dd + " de " + mm + " del " + yyyy;
 	fechaActual.innerHTML = today;
 }
+
+var nodo;
+var imagen = new Image();
+
+function createImagen(a) {
+	nodo = document.getElementById("imgDown");
+	console.log(nodo);
+
+	switch (a) {
+		case 0:
+			domtoimage.toPng(nodo).then(function (dataUrl) {
+				//console.log(dataUrl);
+				//var img = new Image();
+				imagen.src = dataUrl;
+				downloadImage(imagen.src, 0);
+			});
+			break;
+		case 1:
+			nodo.style.backgroundColor = "white";
+			domtoimage.toJpeg(nodo).then(function (dataUrl) {
+				//console.log(dataUrl);
+				//var img = new Image();
+				imagen.src = dataUrl;
+				downloadImage(imagen.src, 1);
+			});
+			break;
+		case 2:
+			nodo.style.backgroundColor = "white";
+			domtoimage.toSvg(nodo).then(function (dataUrl) {
+				//console.log(dataUrl);
+				//var img = new Image();
+				imagen.src = dataUrl;
+				downloadImage(imagen.src, 2);
+			});
+			break;
+	}
+}
+
+async function downloadImage(imageSrc, a) {
+	const image = await fetch(imageSrc);
+	const imageBlog = await image.blob();
+	const imageURL = URL.createObjectURL(imageBlog);
+	const link = document.createElement("a");
+	link.href = imageURL;
+
+	switch (a) {
+		case 1:
+			link.download = "grafico.jpg";
+			break;
+		default:
+			link.download = "grafico";
+			break;
+	}
+	document.body.appendChild(link);
+	link.click();
+	document.body.removeChild(link);
+	nodo.style.backgroundColor = "transparent";
+}
+
+function llamaShot(a,b) {
+	let url = document.getElementById(a).contentWindow.takeShot(b);
+	setTimeout(function () {
+		//* Disparamos Swal
+		Swal.fire({
+			//* Determinamos template
+			template: "#shootSwal",
+			//* Seteamos estilo del Swal
+			width: "81.46vw",
+			customClass: "swal-height",
+			showCloseButton: true,
+			padding: "50px 50px",
+			showConfirmButton: false,
+			backdrop: "rgba(51,51,51,0.5)",
+		});
+		let urls = url.src;
+		document.getElementById("imgOut").src = urls;
+	}, 1000);
+}
+
+
+function appearLabel(a,b) {
+	var descargar = document.getElementById("descargar" + b);
+	var imagen = document.getElementById("imagen" + b);
+	var embedar = document.getElementById("embedar" + b);
+	var embedarMenu = document.getElementById("embedarMenu" + b);
+	var citaInfo = document.getElementById("citaInfo");
+	var embedInfo = document.getElementById("embedInfo");
+	switch (a) {
+		case 0:
+			descargar.style.display = "block";
+			break;
+		case 1:
+			imagen.style.display = "block";
+			break;
+		case 2:
+			embedar.style.display = "block";
+			break;
+		case 3:
+			embedar.style.display = "none";
+			embedarMenu.style.display = "block";
+			break;
+		case 4:
+			citaInfo.style.display = "block";
+			break;
+		case 5:
+			embedInfo.style.display = "block";
+			break;
+	}
+}
+
+function hideLabel(a,b) {
+	var descargar = document.getElementById("descargar"+b);
+	var imagen = document.getElementById("imagen"+b);
+	var embedar = document.getElementById("embedar"+b);
+	switch (a) {
+		case 0:
+			var citaInfo = document.getElementById("citaInfo");
+			citaInfo.style.display = "none";
+			break;
+		case 1:
+			var embedInfo = document.getElementById("embedInfo");
+			embedInfo.style.display = "none";
+			break;
+	}
+	descargar.style.display = "none";
+	imagen.style.display = "none";
+	embedar.style.display = "none";
+}
+
+let contadorMenu = 0;
+
+function appearMenu(a) {
+	var embedar = document.getElementById("embedar"+a);
+	var embedarMenu = document.getElementById("embedarMenu"+a);
+	contadorMenu++;
+	if (contadorMenu % 2 == 0) {
+		embedar.style.display = "none";
+		embedarMenu.style.display = "none";
+	} else {
+		embedar.style.display = "none";
+		embedarMenu.style.display = "block";
+	}
+}
+
+function hideMenu(a) {
+	var embedarMenu = document.getElementById("embedarMenu"+a);
+	embedarMenu.style.display = "none";
+}
+
+function citaSwal(a) {
+	//* Disparamos Swal
+	Swal.fire({
+		//* Determinamos template
+		template: "#citaSwal",
+		//* Seteamos estilo del Swal
+		width: "50vw",
+		customClass: "citaSwal-height",
+		showCloseButton: true,
+		padding: "10px 10px",
+		showConfirmButton: false,
+		backdrop: "rgba(51,51,51,0.5)",
+	});
+
+	hideMenu(a);
+}
+
+function embedSwal(a) {
+	//* Disparamos Swal
+	Swal.fire({
+		//* Determinamos template
+		template: "#embedSwal",
+		//* Seteamos estilo del Swal
+		width: "50vw",
+		customClass: "citaSwal-height",
+		showCloseButton: true,
+		padding: "10px 10px",
+		showConfirmButton: false,
+		backdrop: "rgba(51,51,51,0.5)",
+	});
+
+	let textEmbed = document.getElementById("textEmbed");
+	textEmbed.innerHTML =
+		'<iframe src="../pages/frames/verElRuido/participacion.php" style="width: 100%; height: 800px;"></iframe>';
+	hideMenu(a);
+}
+
+function copyToClipBoard(a) {
+	let imgCopy = document.getElementById("imgCopy");
+
+	switch (a) {
+		case 0:
+			var textCita = document.getElementById("textCita");
+			textCita.select();
+			document.execCommand("copy");
+			break;
+		case 1:
+			var textEmbed = document.getElementById("textEmbed");
+			textEmbed.select();
+			document.execCommand("copy");
+			break;
+	}
+	window.getSelection().removeAllRanges();
+	imgCopy.src = "../../assets/vector/accesibilidad/copiarPortaAct.svg";
+	setTimeout(function () {
+		imgCopy.src = "../../assets/vector/accesibilidad/copiarPortaIna.svg";
+	}, 2000);
+}

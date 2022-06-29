@@ -1096,7 +1096,7 @@
                 <!--//funcion scrollMe(a) scrollea a cierta posición-->
                 <!--//param 0 = scrollea al hero-->
                 <div onclick="scrollMe(0)" class="columna col-1">
-                    <img src="assets/vector/HUBBUBIconWhite.svg">
+                    <img class="logoFoot" src="assets/vector/HUBBUBIconWhite.svg">
                 </div>
                 <div class="columna col-3"></div>
                 <!--//* Columna de descargas-->

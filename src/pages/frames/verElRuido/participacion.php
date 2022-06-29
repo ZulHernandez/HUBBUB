@@ -73,23 +73,4 @@
 </body>
 <!--//import CHART para la gráfica de clasificación-->
 <script type="text/javascript" src="../../../js/CHparticipacion.js"></script>
-<script>
-    var node = document.getElementById('CHparticipacion');
-    var img = new Image();
-
-    function takeShot() {
-        domtoimage.toPng(node)
-            .then(function(dataUrl) {
-                //console.log(dataUrl);
-                //var img = new Image();
-                img.src = dataUrl;
-                console.log(img);
-            })
-            .catch(function(error) {
-                console.error('oops, something went wrong!', error);
-            });
-            return img;
-    }
-</script>
-
 </html>

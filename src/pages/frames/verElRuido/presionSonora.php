@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <!--//import Implementación de librerias se incluyen: Tone, p5, Sweetalert y p5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="../../../../node_modules/dom-to-image/src/dom-to-image.js" type="text/javascript"></script>
+    <script src="../../../../src/dist/p5.js" type="text/javascript"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../../../../node_modules/dom-to-image/src/dom-to-image.js" type="text/javascript"></script>
+    <!--//import  Estilos aplicados al proyecto en general-->
+    <link href="../../../scss/general.css" rel="stylesheet">
+    <!--//import  Estilos aplicados a la p[agina de ver el ruido-->
+    <link href="../../../scss/verElRuido.css" rel="stylesheet">
+    <!--//import JSon para el chart-->
+    <script type="text/javascript" src="../../../json/VARpresionSonora.js"></script>
+    <script type="text/javascript" src="../../../js/JSverElRuido.js"></script>
+
+    <title>
+        HUBBUB | Esquema Oido
+    </title>
+</head>
+
+<!--//funcion muestra la primer vista del chart-->
+<!--//param 1 = vista anual-->
+
+<body style="background-image: url(''); background-color: rgba(0,0,0,0);">
+    <div id="presionSon">
+        <div id="canvaPresionSonora">
+        </div>
+    </div>
+</body>
+<!--//import CHART para la gráfica de clasificación-->
+<script type="text/javascript" src="../../../js/P5presionSonora.js"></script>
+
+</html>

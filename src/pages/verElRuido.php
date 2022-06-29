@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <!--//import Implementación de librerias se incluyen: Chart, Bootstrap, Sweetalert, p5 y sketchFabViewer-->
+    <!--//import Implementación de librerias se incluyen: Chart, Bootstrap, Sweetalert, p5 y dom-to-image-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.css" integrity="sha512-/zs32ZEJh+/EO2N1b0PEdoA10JkdC3zJ8L5FTiQu82LR9S/rOQNfQN7U59U9BC12swNeRAz3HSzIL2vpp4fv3w==" crossorigin="anonymous" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -9,21 +9,23 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../dist/p5.js" type="text/javascript"></script>
     <script src="../../node_modules/dom-to-image/src/dom-to-image.js" type="text/javascript"></script>
-
     <!--//import  Estilos aplicados al sitio en general-->
     <link type="text/css" href="../scss/general.css" rel="stylesheet">
-    <!--//import  Estilos aplicados a la página El ruido-->
+    <!--//import  Estilos aplicados a la página Ver el ruido-->
     <link href="../scss/verElRuido.css" rel="stylesheet">
     <!--//import  Js para el manejo del sitio en general-->
     <script src="../js/JSgeneral.js"></script>
-    <!--//import  Js para el manejo del sitio en general-->
+    <!--//import  Js para el manejo de la página Ver el ruido-->
     <script src="../js/JSverElRuido.js"></script>
+
     <!--//main Icono de la página-->
     <link rel="icon" href="../../assets/vector/HUBBUByellow.svg" type="image/x-icon">
     <title>
         HUBBUB | Ver el ruido
     </title>
 </head>
+
+<!--//funcion getDate() para obtener la fecha actual-->
 
 <body onload="getDate();">
     <!--//main Se incluye el navegador lateral izquierdo-->
@@ -259,21 +261,153 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <!--//*Grafica de clasificación de ruidos-->
+        <!--//* Grafica de clasificación de ruidos-->
         <div class="row" style="padding-top: 30px;">
             <div class="columna col-2"></div>
-            <!--//*Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
+            <!--//* Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
             <div class="columna col">
                 <iframe id="frameParti" src="../pages/frames/verElRuido/participacion.php" style="width: 100%; height: 800px;"></iframe>
             </div>
             <div class="columna col-2"></div>
         </div>
+        <!--//* Herramientas de accesibilidad-->
+        <div class="row">
+            <div class="columna col-8"></div>
+            <div id="CHparticipacion" class="columna col-2">
+                <!--//* Botón para descargar informacion-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 0 = pinta label de descarga de información-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <img class="iconoAcce" onmouseover="appearLabel(0,1)" onmouseout="hideLabel(2,1)" src="../../assets/vector/accesibilidad/descargar.svg" style="margin-right: 15px; margin-left: 100px;">
+                <span id="descargar1" class="descargar subFooterText hoverLabel">
+                    Descargar<br />informacion
+                </span>
+                <!--//* Botón para descargar imagen de la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 1 = pinta label de guardar la imagen-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion llamaShot(a) Comienza la captura de pantalla de la gráfica-->
+                <!--//param 'CHparticipación' = indica a que objetoDOM tomara captura-->
+                <img class="iconoAcce" onmouseover="appearLabel(1,1)" onmouseout="hideLabel(2,1)" onclick="llamaShot('frameParti','CHparticipacion')" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
+                <span id="imagen1" class="imagen subFooterText hoverLabel">
+                    Guardar<br />imagen
+                </span>
+                <!--//* Botón para citar o embear la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 2 = pinta label para el embed y cita-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion appearMenu() Aparece el submenu de la opción de embed y cita-->
+                <img class="iconoAcce" onmouseover="appearLabel(2,1)" onmouseout="hideLabel(2,1)" onclick="appearMenu(1)" src="../../assets/vector/accesibilidad/compartir.svg">
+                <span id="embedar1" class="embedar subFooterText hoverLabel">
+                    Embedar o<br />referenciar
+                </span>
+                <!--//*Submenu de opciones de embed y cita-->
+                <span id="embedarMenu1" class="subFooterText hoverLabel embedarMenu">
+                    <!--//* Opción para embedar la gráfica-->
+                    <!--//funcion embedSwal() dispara Swal para embedar-->
+                    <text class="menuEmbed" onclick="embedSwal(1)">Embedar &#60;&#47;&#62;</text>
+                    <br />
+                    <!--//* Opción para citar la gráfica-->
+                    <!--//funcion citaSwal() dispara Swal para citar-->
+                    <text class="menuEmbed" onclick="citaSwal(1)">Citar ""</text>
+                </span>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
+    <!--//main Sección de Presión sonora-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//*Título de la sección-->
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="../../assets/vector/subtitles/presion.svg"></span>
+                            <span>Presión sonora</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <!--//*Texto de la sección-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>La presión sonora es medida en decibelios, estos posteriormente son ponderados con el objetivo de
+                    compensar los posibbles errores deribados del hardware del celular y que pueda representar de
+                    mejor forma la intesisdad de sonido de algún ruido, que es de lo que podría decirse que se engloba en esta unidad.</p>
+                <p>A continuación se encuentra un gráfico que recoge todos los reportes hechos hasta el momento y los
+                    divide de acuerdo a los rangos de dBA que han sido capturados. En un afán de mantener el orden se
+                    adjunta una barra en la zona inferior que explica el orden creciente de la unidad mientras que, en
+                    los recuadros, se pude observar el porcentaje en tamaño que representan respecto al total de reportes.</p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//* Grafica de presión sonora-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <!--//* Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
+            <div class="columna col">
+                <iframe id="framePresion" src="../pages/frames/verElRuido/presionSonora.php" style="width: 100%; height: 700px;"></iframe>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//* Herramientas de accesibilidad-->
         <div class="row" style="padding-top: 30px;">
             <div class="columna col-8"></div>
             <div id="CHparticipacion" class="columna col-2">
-                <img class="iconoAcce" src="../../assets/vector/accesibilidad/descargar.svg" style="margin-right: 15px;">
-                <img class="iconoAcce" onclick="llamaShot()" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
-                <img class="iconoAcce" src="../../assets/vector/accesibilidad/compartir.svg">
+                <!--//* Botón para descargar informacion-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 0 = pinta label de descarga de información-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <img class="iconoAcce" onmouseover="appearLabel(0,2)" onmouseout="hideLabel(2,2)" src="../../assets/vector/accesibilidad/descargar.svg" style="margin-right: 15px; margin-left: 100px;">
+                <span id="descargar2" class="descargar subFooterText hoverLabel">
+                    Descargar<br />informacion
+                </span>
+                <!--//* Botón para descargar imagen de la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 1 = pinta label de guardar la imagen-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion llamaShot(a) Comienza la captura de pantalla de la gráfica-->
+                <!--//param 'CHparticipación' = indica a que objetoDOM tomara captura-->
+                <img class="iconoAcce" onmouseover="appearLabel(1,2)" onmouseout="hideLabel(2,2)" onclick="llamaShot('framePresion','presionSon')" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
+                <span id="imagen2" class="imagen subFooterText hoverLabel">
+                    Guardar<br />imagen
+                </span>
+                <!--//* Botón para citar o embear la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 2 = pinta label para el embed y cita-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion appearMenu() Aparece el submenu de la opción de embed y cita-->
+                <img class="iconoAcce" onmouseover="appearLabel(2,2)" onmouseout="hideLabel(2,2)" onclick="appearMenu(2)" src="../../assets/vector/accesibilidad/compartir.svg">
+                <span id="embedar2" class="embedar subFooterText hoverLabel">
+                    Embedar o<br />referenciar
+                </span>
+                <!--//*Submenu de opciones de embed y cita-->
+                <span id="embedarMenu2" class="embedarMenu subFooterText hoverLabel">
+                    <!--//* Opción para embedar la gráfica-->
+                    <!--//funcion embedSwal() dispara Swal para embedar-->
+                    <text class="menuEmbed" onclick="embedSwal(2)">Embedar &#60;&#47;&#62;</text>
+                    <br />
+                    <!--//* Opción para citar la gráfica-->
+                    <!--//funcion citaSwal() dispara Swal para citar-->
+                    <text class="menuEmbed" onclick="citaSwal(2)">Citar ""</text>
+                </span>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//*Texto de la sección-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>El siguiene streamgrpah visualiza con mayor prescición la cantidad de reportes, en este caso, se 
+                    prioriza ver la cantidad de reportes y el comportamiento de estos olvidando rangos y tomando en 
+                    cuenta las unidades entre las decenas.</p>
+                <p>De igual forma puedes resaltar aquellos reportes que se encuentran por debajo el promedio de 
+                    reportes y también aquellos que se encuentran por debajo del promedio de dBAs.</p>
             </div>
             <div class="columna col-2"></div>
         </div>
@@ -288,7 +422,7 @@
                 <!--//funcion scrollMe(a) scrollea a cierta posición-->
                 <!--//param 0 = scrollea al hero-->
                 <div onclick="scrollMe(0)" class="columna col-1">
-                    <img src="../../assets/vector/HUBBUBIconWhite.svg">
+                    <img class="logoFoot" src="../../assets/vector/HUBBUBIconWhite.svg">
                 </div>
                 <div class="columna col-3"></div>
                 <!--//* Columna de descargas-->
@@ -408,47 +542,111 @@
     <template id="shootSwal">
         <swal-html>
             <div class="row container-fluid">
-                <!--//* Imagen y legales del Swal-->
+                <!--//* Título del Swal-->
                 <div class="columna col-12">
                     <p class="subOido">Descargar imagen</p>
                 </div>
             </div>
             <div class="row container-fluid">
-                <!--//* Imagen y legales del Swal-->
-                <div class="columna col-9">
-                    <img style="height: 500px;" id="imgOut" src="">
+                <!--//* Imagen capturada y marcas de agua-->
+                <div id="imgDown" class="columna col-9">
+                    <img id="imgOut" src=""><br />
+                    <span><img style="height: 10px;" src="../../assets/vector/accesibilidad/marcaUAM.svg"></span>
+                    <span style="text-align: left;" class="textAvisoN"><i>Nota.</i> Tomada de "Veamos el ruido", por HUBBUB Alerta Ruido, 2022, https://hubbub.com/p/veamos-el-ruido. Derecho de autor 2022.</span>
                 </div>
-                <div class="columna col-1" style="background-color: blue;">
-                    <div class="verticalLineNos"></div>
+                <div class="columna col-2">
+                    <center>
+                        <div class="verticalLineNos"></div>
+                    </center>
                 </div>
+                <!--//* Opciones de descarga de imagen-->
+                <!--//funcion crearImg() genera una imagen de la previsualizaci[on y la descarga-->
+                <!--//param 0 = imagen de tipo png-->
+                <!--//param 1 = imagen de tipo jpg-->
+                <!--//param 2 = imagen de tipo svg-->
+                <div class="columna col-1">
+                    <img onclick="createImagen(0)" class="descargaImg" src="../../assets/vector/descargaImg/png.svg">
+                    <img onclick="createImagen(1)" class="descargaImg" src="../../assets/vector/descargaImg/jpg.svg">
+                    <img onclick="createImagen(2)" class="descargaImg" src="../../assets/vector/descargaImg/svg.svg">
+                </div>
+            </div>
+        </swal-html>
+    </template>
+    <!--//main Template para el Swal de cita-->
+    <template id="citaSwal">
+        <swal-html>
+            <div class="row container-fluid">
+                <!--//* Título del Swal-->
+                <div class="columna col-12">
+                    <p class="subOido">Citar ""</p>
+                </div>
+            </div>
+            <div class="row container-fluid">
+                <!--//* Texto de cita del Swal-->
+                <div class="columna col-12">
+                    <textarea id="textCita" class="textoSwal textCita">Nota. Tomada de "Veamos el ruido", por HUBBUB Alerta Ruido, 2022, https://hubbub.com/p/veamos-el-ruido. Derecho de autor 2022.</textarea>
+                </div>
+            </div>
+            <div class="row container-fluid" style="padding-top: 20px;">
+                <!--//* Botón para copiar al portapapeles-->
+                <!--//funcion copyToClipBoard(a) indica que texto copiar directo al portapapeles-->
+                <!--//param 0 = copia el texto de cita-->
+                <div class="columna col-2 copiaPorta" onclick="copyToClipBoard(0)">
+                    <img id="imgCopy" class="imgCopiaPorta" src="../../assets/vector/accesibilidad/copiarPortaIna.svg">
+                </div>
+                <div class="columna col-8">
+                </div>
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 4 = pinta label de cita-->
+                <!--//funcion hideLabel(a) indica que label ocultar-->
+                <!--//param 0 = oculta label de cita-->
+                <div class="columna col-2">
+                    <img class="imgCopiaPorta copiaPorta" onmouseover="appearLabel(4)" onmouseout="hideLabel(0)" src="../../assets/vector/accesibilidad/info.svg" style="padding-left: 50px;">
+                    <span id="citaInfo" class="citaInfo subFooterText hoverLabel">
+                        Copia la cita de arriba y<br />referencía esta gráfica
+                    </span>
+                </div>
+            </div>
+        </swal-html>
+    </template>
+    <!--//main Template para el Swal de embed-->
+    <template id="embedSwal">
+        <swal-html>
+            <div class="row container-fluid">
+                <!--//* Título del Swal-->
+                <div class="columna col-12">
+                    <p class="subOido">Embedar &#60;&#47;&#62;</p>
+                </div>
+            </div>
+            <div class="row container-fluid">
                 <!--//* Texto del Swal-->
-                <div class="columna col-2" style="background-color: red;">
+                <div class="columna col-12">
+                    <!--//todo Obtener embedCode correcto-->
+                    <textarea id="textEmbed" class="textoSwal textCita"></textarea>
+                </div>
+            </div>
+            <div class="row container-fluid" style="padding-top: 20px;">
+                <!--//* Botón para copiar al portapapeles-->
+                <!--//funcion copyToClipBoard(a) indica que texto copiar directo al portapapeles-->
+                <!--//param 1 = copia el texto de embed-->
+                <div class="columna col-2 copiaPorta" onclick="copyToClipBoard(1)">
+                    <img id="imgCopy" class="imgCopiaPorta" src="../../assets/vector/accesibilidad/copiarPortaIna.svg">
+                </div>
+                <div class="columna col-8">
+                </div>
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 5 = pinta label de embed-->
+                <!--//funcion hideLabel(a) indica que label ocultar-->
+                <!--//param 1 = oculta label de embed-->
+                <div class="columna col-2">
+                    <img class="imgCopiaPorta copiaPorta" onmouseover="appearLabel(5)" onmouseout="hideLabel(1)" src="../../assets/vector/accesibilidad/info.svg" style="padding-left: 50px;">
+                    <span id="embedInfo" class="embedInfo subFooterText hoverLabel">
+                        Copia el código de embed<br />y pegalo en tu página
+                    </span>
                 </div>
             </div>
         </swal-html>
     </template>
 </body>
-<script>
-    function llamaShot() {
-        let url = document.getElementById('frameParti').contentWindow.takeShot();
-        setTimeout(function() {
-            //* Disparamos Swal
-            Swal.fire({
-                //* Determinamos template
-                template: "#shootSwal",
-                //* Seteamos estilo del Swal
-                width: "81.46vw",
-                customClass: "swal-height",
-                padding: "50px 50px",
-                showConfirmButton: false,
-                showCloseButton: false,
-                backdrop: "rgba(51,51,51,0.5)",
-            });
-            console.log(url.src);
-            let urls = url.src;
-            document.getElementById('imgOut').src = urls;
-        }, 1000);
-    }
-</script>
 
 </html>

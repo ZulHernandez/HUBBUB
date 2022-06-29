@@ -3,7 +3,16 @@
 const rose = "#ef5da8BF";
 const blue = "#0075ffBF";
 //* Variables de seteo de los gráficos
-var contaPasos, fechaMainText, datos, labels, tipoGraph, lastPos, maxY, colorFill, keysArray, valuesArray;
+var contaPasos,
+	fechaMainText,
+	datos,
+	labels,
+	tipoGraph,
+	lastPos,
+	maxY,
+	colorFill,
+	keysArray,
+	valuesArray;
 //* Obtenemos objetos del HTML
 let btnAnual = document.getElementById("btnAnual");
 let btnMensual = document.getElementById("btnMensual");
@@ -13,7 +22,7 @@ let totalReportes = document.getElementById("totalReportes");
 
 //funcion Seteamos el tipo de visualización del gráfico
 //param a = 1 para anual, 2 para mensual
-function setChart(a) {	
+function setChart(a) {
 	//* Declaramso sumador para el total de reportes
 	let suma;
 	//* Declaramos el tipo de visualización del gráfico que esta en pantalla
@@ -342,7 +351,6 @@ const options = {
 				pointHoverBorderWidth: 3,
 				pointHoverBackgroundColor: "white",
 				pointRadius: 5,
-				
 			},
 		},
 		scales: {
@@ -408,3 +416,16 @@ const options = {
 //* Dibujamos el gráfico
 const ctx = document.getElementById("canvaParticipacion");
 const canvaClasRuido = new Chart(ctx, options);
+
+var node;
+var img = new Image();
+
+function takeShot(a) {
+	node = document.getElementById(a);
+	domtoimage.toSvg(node).then(function (dataUrl) {
+		//console.log(dataUrl);
+		//var img = new Image();
+		img.src = dataUrl;
+	});
+	return img;
+}

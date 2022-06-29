@@ -77,6 +77,39 @@
   transform: scale(1.25);
 }
 
+.descargaImg {
+  width: 50px;
+  height: auto;
+  margin-top: 80px;
+  opacity: 0.5;
+  transition: transform 150ms;
+  cursor: pointer;
+}
+.descargaImg:hover {
+  transform: scale(1.25);
+}
+.descargaImg:hover {
+  opacity: 1;
+}
+
+#imgOut {
+  height: 600px;
+  pointer-events: none;
+}
+
+.copiaPorta {
+  height: 40px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.copiaPorta:hover {
+  opacity: 1;
+}
+
+.imgCopiaPorta {
+  height: 40px;
+}
+
 @-webkit-keyframes logoMove {
   0% {
     right: 0px;
@@ -208,4 +241,61 @@ body {
   border-radius: 5px 5px 0px 0px;
   border-bottom: none;
   height: 20px;
+}
+
+.hoverLabel {
+  color: white;
+  background-color: rgba(51, 51, 51, 0.8);
+  padding: 6px 10px 8px 10px;
+  border-radius: 10px 0px 10px 10px;
+  position: absolute;
+  z-index: 1;
+  filter: drop-shadow(0px 0px 1px #333333);
+  line-height: 20px;
+  display: none;
+}
+
+.descargar {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.imagen {
+  margin-top: 5px;
+  margin-left: 90px;
+}
+
+.embedar,
+.embedarMenu {
+  margin-top: 5px;
+  margin-left: 120px;
+}
+
+.citaInfo {
+  margin-top: -40px;
+  margin-left: -150px;
+}
+
+.embedInfo {
+  margin-top: -40px;
+  margin-left: -170px;
+}
+
+.citaSwal-height {
+  height: 30vh;
+}
+
+.menuEmbed:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.textoSwal {
+  width: 100%;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgba(51, 51, 51, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+  resize: none;
 }/*# sourceMappingURL=verElRuido.css.map */

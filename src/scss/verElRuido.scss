@@ -129,6 +129,13 @@ $rose: #ef5da8;
     }
 }
 
+//funcion Estilo para elemento en profundidad z
+//param $z: profundidad z
+@mixin capa($z) {
+    position: absolute;
+    z-index: $z;
+}
+
 //main Imagenes----------------------------------------------------------------
 //*Imagen que se mueve en el hero
 .logoHero {
@@ -164,13 +171,43 @@ $rose: #ef5da8;
 }
 
 //* Imagenes de accesibilidad
-.iconoAcce{
-    height:20px;
-    width:auto;
+.iconoAcce {
+    height: 20px;
+    width: auto;
     margin-left: 15px;
     @include hoverSize();
 }
 
+.descargaImg {
+    width: 50px;
+    height: auto;
+    margin-top: 80px;
+    opacity: 0.5;
+    @include hoverSize();
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+#imgOut {
+    height: 600px;
+    pointer-events: none;
+}
+
+.copiaPorta {
+    height: 40px;
+    opacity: 0.5;
+    
+    cursor: pointer;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.imgCopiaPorta {
+    height: 40px;
+}
 
 //main Animation---------------------------------------------------------------
 //*Animación para el logo
@@ -227,4 +264,57 @@ body {
     border-radius: 5px 5px 0px 0px;
     border-bottom: none;
     height: 20px;
+}
+
+.hoverLabel {
+    color: white;
+    background-color: rgba($blackGrey, 0.8);
+    padding: 6px 10px 8px 10px;
+    border-radius: 10px 0px 10px 10px;
+    @include capa(1);
+    filter: drop-shadow(0px 0px 1px $blackGrey);
+    line-height: 20px;
+    display: none;
+}
+
+.descargar {
+    @include posicion(5px, 0px, 5px, 0px);
+}
+
+.imagen {
+    @include posicion(5px, 0px, 90px, 0px);
+}
+
+.embedar,
+.embedarMenu {
+    @include posicion(5px, 0px, 120px, 0px);
+}
+
+.citaInfo {
+    @include posicion(0px, 40px, 0px, 150px);
+}
+
+.embedInfo{
+    @include posicion(0px, 40px, 0px, 170px);
+}
+
+.citaSwal-height {
+    height: 30vh;
+}
+
+//main Text
+
+.menuEmbed:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.textoSwal {
+    width: 100%;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba($blackGrey, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+    resize: none;
 }

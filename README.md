@@ -16,12 +16,13 @@ Esta advertencia estimula al equipo HUBBUB para seguir promoviendo nuestra aplic
 
 Para el proyecto fueron utilizadas las siguientes tecnologías:
 
-- [sweetAlert 2](https://sweetalert2.github.io/) - Libreria para alertas y swals de la página
-- [p5](https://p5js.org/es/) - Librería para animaciones y algunos visualizadores
-- [charts](https://www.chartjs.org/docs/latest/) - Librería para gráficas
-- [sketchfab](https://sketchfab.com/developers) - API para visualizar modelos 3D
-- [tone](https://tonejs.github.io/) - Librería para generar sonidos
-- [bootstrap](https://getbootstrap.com/) - Librería para generar elementos de interfaz
+- [🍩 sweetAlert 2](https://sweetalert2.github.io/) - Libreria para alertas y swals de la página
+- [🎨 p5](https://p5js.org/es/) - Librería para animaciones y algunos visualizadores
+- [📊 charts](https://www.chartjs.org/docs/latest/) - Librería para gráficas
+- [🎲 sketchfab](https://sketchfab.com/developers) - API para visualizar modelos 3D
+- [🎵 tone](https://tonejs.github.io/) - Librería para generar sonidos
+- [🖌 bootstrap](https://getbootstrap.com/) - Librería para generar elementos de interfaz
+- [🖼 dom-to-image](https://www.npmjs.com/package/dom-to-image) - Librería para generar imagenes de elementos DOM
 
 ### Para ver mejor la documentación
 

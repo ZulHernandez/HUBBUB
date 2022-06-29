@@ -406,6 +406,10 @@ html {
     @include hoverSize();
 }
 
+.logoFoot {
+    @include hoverSize();
+}
+
 //main Text--------------------------------------------------------------------
 
 //* Titulo que aparece en el hero
@@ -487,6 +491,11 @@ html {
     @include text(left, 16px, "B", 10px, normal);
     color: white;
     text-decoration: underline;
+}
+
+//* Texto de la cita y embed
+.textCita {
+    @include text(left, 15px, "M", 25px, normal);
 }
 
 //* Textos del subfooter

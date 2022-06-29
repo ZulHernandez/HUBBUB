@@ -327,6 +327,14 @@ html {
   transform: scale(1.25);
 }
 
+.logoFoot {
+  transition: transform 150ms;
+  cursor: pointer;
+}
+.logoFoot:hover {
+  transform: scale(1.25);
+}
+
 .pageTitle {
   font-family: Montserrat-B;
   font-size: 64px;
@@ -449,6 +457,15 @@ html {
   letter-spacing: normal;
   color: white;
   text-decoration: underline;
+}
+
+.textCita {
+  font-family: Montserrat-M;
+  font-size: 15px;
+  line-height: 25px;
+  color: #333333;
+  text-align: left;
+  letter-spacing: normal;
 }
 
 .subFooterText {
