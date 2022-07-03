@@ -170,7 +170,7 @@ $rose: #ef5da8;
     @include hoverSize();
 }
 
-//* Imagenes de accesibilidad
+//* Iconos de accesibilidad
 .iconoAcce {
     height: 20px;
     width: auto;
@@ -178,6 +178,7 @@ $rose: #ef5da8;
     @include hoverSize();
 }
 
+//* Iconos de tipos de descarga para imagen
 .descargaImg {
     width: 50px;
     height: auto;
@@ -190,11 +191,13 @@ $rose: #ef5da8;
     }
 }
 
+//* Previsualización de la imagen a descargar
 #imgOut {
     height: 600px;
     pointer-events: none;
 }
 
+//* Icono para copiar al portapapeles
 .copiaPorta {
     height: 40px;
     opacity: 0.5;
@@ -266,6 +269,7 @@ body {
     height: 20px;
 }
 
+//* Labels que aparecen como avisos a lo largo del sitio
 .hoverLabel {
     color: white;
     background-color: rgba($blackGrey, 0.8);
@@ -277,38 +281,45 @@ body {
     display: none;
 }
 
+//* Posición del label de descarga
 .descargar {
     @include posicion(5px, 0px, 5px, 0px);
 }
 
+//* Posición del label de imagen
 .imagen {
     @include posicion(5px, 0px, 90px, 0px);
 }
 
+//* Posición del menu y label de la opción de embedar
 .embedar,
 .embedarMenu {
     @include posicion(5px, 0px, 120px, 0px);
 }
 
+//* Posición del label para el icono de info en el swal cita
 .citaInfo {
     @include posicion(0px, 40px, 0px, 150px);
 }
 
+//* Posición del lael para el icono de info en el swal embed
 .embedInfo{
     @include posicion(0px, 40px, 0px, 170px);
 }
 
+//* Tamaño del swal de cita y embed
 .citaSwal-height {
     height: 30vh;
 }
 
 //main Text
-
+//* Opciones del menu de embed
 .menuEmbed:hover {
     cursor: pointer;
     text-decoration: underline;
 }
 
+//* Formato del text área de los swal para cita y embed
 .textoSwal {
     width: 100%;
     border-width: 3px;

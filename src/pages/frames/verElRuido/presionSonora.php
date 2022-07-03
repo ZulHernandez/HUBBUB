@@ -1,13 +1,15 @@
 <html>
 
 <head>
-    <!--//import Implementación de librerias se incluyen: Tone, p5, Sweetalert y p5-->
+        <!--//import Bootstrap como framework de diseño-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--//import Dom2Image para generar imagenes de objetos DOM-->
     <script src="../../../../node_modules/dom-to-image/src/dom-to-image.js" type="text/javascript"></script>
+    <!--//import P5.js para animaciones base canva-->
     <script src="../../../../src/dist/p5.js" type="text/javascript"></script>
+    <!--//import SweetAlert para alerts estilizadas-->
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../../../../node_modules/dom-to-image/src/dom-to-image.js" type="text/javascript"></script>
     <!--//import  Estilos aplicados al proyecto en general-->
     <link href="../../../scss/general.css" rel="stylesheet">
     <!--//import  Estilos aplicados a la p[agina de ver el ruido-->

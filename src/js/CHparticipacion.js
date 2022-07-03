@@ -417,15 +417,23 @@ const options = {
 const ctx = document.getElementById("canvaParticipacion");
 const canvaClasRuido = new Chart(ctx, options);
 
+//main Variables
+//* nodo de la imagen
 var node;
+//* Nuevo objeto imagen
 var img = new Image();
 
+//funcion Tomamos captura de la imagen
+//param a = objeto DOM que se capturara
 function takeShot(a) {
+	//* Tomamos el nodo de la imagen
 	node = document.getElementById(a);
+	//* Creamos imagen tipo SVG
 	domtoimage.toSvg(node).then(function (dataUrl) {
 		//console.log(dataUrl);
 		//var img = new Image();
 		img.src = dataUrl;
 	});
+	//param regresamos la url de la imagen
 	return img;
 }

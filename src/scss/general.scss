@@ -374,7 +374,7 @@ html {
     margin: -6px 15px 0px 10px;
 }
 
-//* Icono del navegador derecho
+//* Iconos del navegador derecho
 .topLineAct {
     @include iconDivDer(1);
 }
@@ -406,6 +406,7 @@ html {
     @include hoverSize();
 }
 
+//* Logo de HUBBUB en el footer
 .logoFoot {
     @include hoverSize();
 }
@@ -569,6 +570,7 @@ h2.linea titulo {
 }
 
 //main Swal--------------------------------------------------------------------
+//* Formato general de los swal
 .swal-height {
     height: 81.48vh;
     border-radius: 25px;
@@ -586,6 +588,7 @@ h2.linea titulo {
     }
 }
 
+//* Animación de movimiento para el icono del lateral derecho hamb-tache
 @keyframes primerDiagonal {
     from {
         transform: rotate(0deg) translateX(0px) translateY(0px);
@@ -595,7 +598,6 @@ h2.linea titulo {
         stroke: white;
     }
 }
-
 @keyframes segundaDiagonal {
     from {
         opacity: 1;
@@ -605,7 +607,6 @@ h2.linea titulo {
         stroke: white;
     }
 }
-
 @keyframes terceraDiagonal {
     from {
         transform: rotate(0deg) translateX(0px) translateY(0px);
@@ -616,6 +617,7 @@ h2.linea titulo {
     }
 }
 
+//* Animación de movimiento para el icono del lateral derecho tache-hamb
 @keyframes primerDiagonalB {
     from {
         transform: rotate(45deg) translateX(10px) translateY(-10px);
@@ -626,7 +628,6 @@ h2.linea titulo {
         stroke: $blackGrey;
     }
 }
-
 @keyframes segundaDiagonalB {
     from {
         opacity: 0;
@@ -637,7 +638,6 @@ h2.linea titulo {
         stroke: $blackGrey;
     }
 }
-
 @keyframes terceraDiagonalB {
     from {
         transform: rotate(-45deg) translateX(-20px) translateY(0px);
