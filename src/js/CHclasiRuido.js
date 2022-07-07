@@ -73,6 +73,20 @@ const options = {
 				order: 0,
 				pointHitRadius: 40,
 			},
+			//* Promedio
+			{
+				type: "line",
+				label: "back",
+				data: [
+					[50, 140],
+					[50, -10],
+				],
+				borderColor: "#333333",
+				borderWidth: 3,
+				showLine: true,
+				radius: 0,
+				borderDash: [10, 10],
+			},
 			//* Gráfica de área para ruido muy bajo
 			{
 				type: "line",
@@ -81,7 +95,7 @@ const options = {
 					[0, -10],
 					[30, -10],
 				],
-				backgroundColor: ["rgba(255,250,124,0.5)"],
+				backgroundColor: "rgba(255,250,124,0.5)",
 				borderWidth: 0,
 				showLine: false,
 				fill: { value: 130 },
@@ -247,20 +261,7 @@ const options = {
 				grid: {
 					lineWidth: 3,
 					//* Definimos el color de las lineas
-					color: [
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,1)",
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,0.15)",
-						"rgba(51,51,51,0.15)",
-					],
+					color: "rgba(51,51,51,0.15)",
 					drawBorder: true,
 					borderColor: "#333333",
 					borderWidth: 3,

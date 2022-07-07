@@ -13,12 +13,14 @@ var contaPasos,
 	colorFill,
 	keysArray,
 	valuesArray;
+let promedio = [];
 //* Obtenemos objetos del HTML
 let btnAnual = document.getElementById("btnAnual");
 let btnMensual = document.getElementById("btnMensual");
 let bracketParti = document.getElementById("bracketParti");
 let fechaMain = document.getElementById("fechaMain");
 let totalReportes = document.getElementById("totalReportes");
+let promRep = document.getElementById("promRep");
 
 //funcion Seteamos el tipo de visualización del gráfico
 //param a = 1 para anual, 2 para mensual
@@ -145,13 +147,21 @@ function setChart(a) {
 	//* Pintamos la fecha
 	fechaMain.innerHTML = fechaMainText;
 	//* Cargamos la data a mostrar en el gráfico
-	canvaClasRuido.data.datasets[0].data = datos;
+	canvaClasRuido.data.datasets[1].data = datos;
 	//* Cargamos el valor máximo del eje y
-	canvaClasRuido.options.scales.y.max = maxY;
+	canvaClasRuido.options.scales.y.max = maxY + 1;
 	//* Cargamos el color del gráfico
-	canvaClasRuido.data.datasets[0].fill.above = colorFill;
+	canvaClasRuido.data.datasets[1].fill.above = colorFill;
 	//* Cargamos las labels del eje x
 	canvaClasRuido.data.labels = labels;
+	//* Cargamos el promedio
+	promedio = [];
+	for (let i = 0; i < datos.length; i++) {
+		promedio.push(suma / datos.length);
+	}
+	canvaClasRuido.data.datasets[0].data = promedio;
+	//* Pintamos el promedio
+	promRep.innerHTML = promedio[0].toFixed(1) + " reportes";
 	//* Actualizamos el gráfico
 	canvaClasRuido.update();
 }
@@ -255,7 +265,15 @@ function mueveChart(a) {
 	//* Pintamos la fecha
 	fechaMain.innerHTML = fechaMainText;
 	//* Cargamos la data a mostrar en el gráfico
-	canvaClasRuido.data.datasets[0].data = datos;
+	canvaClasRuido.data.datasets[1].data = datos;
+	//* Cargamos el promedio
+	promedio = [];
+	for (let i = 0; i < datos.length; i++) {
+		promedio.push(suma / datos.length);
+	}
+	canvaClasRuido.data.datasets[0].data = promedio;
+	//* Pintamos el promedio
+	promRep.innerHTML = promedio[0].toFixed(1) + " reportes";
 	//* Cargamos las labels del eje x
 	canvaClasRuido.data.labels = labels;
 	//* Actualizamos el gráfico
@@ -273,6 +291,17 @@ const options = {
 	data: {
 		labels: labels,
 		datasets: [
+			//* Promedio
+			{
+				type: "line",
+				label: "back",
+				data: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5, 5],
+				borderColor: "#333333",
+				borderWidth: 3,
+				showLine: true,
+				radius: 0,
+				borderDash: [10, 10],
+			},
 			//* Gráfica de área para ruido muy bajo
 			{
 				type: "line",
@@ -284,6 +313,14 @@ const options = {
 				},
 				borderWidth: 0,
 				showLine: false,
+				pointBackgroundColor: "white",
+				pointBorderColor: "black",
+				pointBorderWidth: 2,
+				pointHitRadius: 15,
+				pointHoverRadius: 7.5,
+				pointHoverBorderWidth: 3,
+				pointHoverBackgroundColor: "white",
+				pointRadius: 5,
 			},
 		],
 	},
@@ -342,16 +379,7 @@ const options = {
 			},
 		},
 		elements: {
-			point: {
-				pointBackgroundColor: "white",
-				pointBorderColor: "black",
-				pointBorderWidth: 2,
-				pointHitRadius: 15,
-				pointHoverRadius: 7.5,
-				pointHoverBorderWidth: 3,
-				pointHoverBackgroundColor: "white",
-				pointRadius: 5,
-			},
+			point: {},
 		},
 		scales: {
 			y: {

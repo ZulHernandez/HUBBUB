@@ -16,4 +16,4 @@ var presion = [
 	{ rango: "60_69", color: "#E1A0EA", colorT: "#E1A0EA80", valor:1, data: [62,63,63,65,66,67,68] },
 	{ rango: "70_79", color: "#FE87B8", colorT: "#FE87B880", valor:2, data: [70,72,73,73,73,74,74,74,74,74,74,74,75,77,79] },
 	{ rango: "80_89", color: "#FF7C7C", colorT: "#FF7C7C80", valor:3, data: [83] },
-]; */
+];  */

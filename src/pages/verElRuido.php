@@ -407,11 +407,64 @@
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
-                <p>El siguiene streamgrpah visualiza con mayor prescición la cantidad de reportes, en este caso, se 
+                <p>El siguiene streamgraph visualiza con mayor prescición la cantidad de reportes, en este caso, se 
                     prioriza ver la cantidad de reportes y el comportamiento de estos olvidando rangos y tomando en 
                     cuenta las unidades entre las decenas.</p>
                 <p>De igual forma puedes resaltar aquellos reportes que se encuentran por debajo el promedio de 
                     reportes y también aquellos que se encuentran por debajo del promedio de dBAs.</p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//* Grafica de clasificación de ruidos-->
+        <div class="row" style="padding-top: 30px;">
+            <div class="columna col-2"></div>
+            <!--//* Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
+            <div class="columna col">
+                <iframe id="framePresionCH" src="../pages/frames/verElRuido/presionCh.php" style="width: 100%; height: 700px;"></iframe>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//* Herramientas de accesibilidad-->
+        <div class="row">
+            <div class="columna col-8"></div>
+            <div id="CHparticipacion" class="columna col-2">
+                <!--//* Botón para descargar informacion-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 0 = pinta label de descarga de información-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <img class="iconoAcce" onmouseover="appearLabel(0,3)" onmouseout="hideLabel(2,3)" src="../../assets/vector/accesibilidad/descargar.svg" style="margin-right: 15px; margin-left: 100px;">
+                <span id="descargar3" class="descargar subFooterText hoverLabel">
+                    Descargar<br />informacion
+                </span>
+                <!--//* Botón para descargar imagen de la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 1 = pinta label de guardar la imagen-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion llamaShot(a) Comienza la captura de pantalla de la gráfica-->
+                <!--//param 'CHparticipación' = indica a que objetoDOM tomara captura-->
+                <img class="iconoAcce" onmouseover="appearLabel(1,3)" onmouseout="hideLabel(2,3)" onclick="llamaShot('framePresionCH','CHpresion')" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
+                <span id="imagen3" class="imagen subFooterText hoverLabel">
+                    Guardar<br />imagen
+                </span>
+                <!--//* Botón para citar o embear la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 2 = pinta label para el embed y cita-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion appearMenu() Aparece el submenu de la opción de embed y cita-->
+                <img class="iconoAcce" onmouseover="appearLabel(2,3)" onmouseout="hideLabel(2,3)" onclick="appearMenu(3)" src="../../assets/vector/accesibilidad/compartir.svg">
+                <span id="embedar3" class="embedar subFooterText hoverLabel">
+                    Embedar o<br />referenciar
+                </span>
+                <!--//*Submenu de opciones de embed y cita-->
+                <span id="embedarMenu3" class="embedarMenu subFooterText hoverLabel">
+                    <!--//* Opción para embedar la gráfica-->
+                    <!--//funcion embedSwal() dispara Swal para embedar-->
+                    <text class="menuEmbed" onclick="embedSwal(3)">Embedar &#60;&#47;&#62;</text>
+                    <br />
+                    <!--//* Opción para citar la gráfica-->
+                    <!--//funcion citaSwal() dispara Swal para citar-->
+                    <text class="menuEmbed" onclick="citaSwal(3)">Citar ""</text>
+                </span>
             </div>
             <div class="columna col-2"></div>
         </div>
