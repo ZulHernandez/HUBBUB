@@ -469,6 +469,93 @@
             <div class="columna col-2"></div>
         </div>
     </div>
+    <!--//main Sección de Variables-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//*Título de la sección-->
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="../../assets/vector/subtitles/variables.svg"></span>
+                            <span>Variables</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <!--//*Texto de la sección-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>Los reportes hechos desde la aplicación recogen diferentes variables que ayudan a conocer un poco 
+                    más del cómo los habitantes de la Ciudad de México experimentan el ruido del lugar donde viven. 
+                    También, podemos conocer con que aparato fue hecha la medición lo que nos habla del acercamiento 
+                    a la realidad con lo que fue tomada.</p>
+                <p>Lo siguiente es una matriz de puntos de 20x10 unidades que representan el 100% de los reportes 
+                    totales que muestran las características de estos conociendo el espacio en que fueron tomados 
+                    (exterior o interior), la fuente emisora del ruido, qué nivel de molestia generó en el usuario, 
+                    en qué momento del día hizo el reporte (6:00-9:59 o 10:00-5:59) y el sistema operativo del dispositivo 
+                    desde el que se ejecutó la aplicación.</p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//* Grafica de presión sonora-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <!--//* Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
+            <div class="columna col">
+                <iframe id="frameVar" src="../pages/frames/verElRuido/variables.php" style="width: 100%; height: 1000px;"></iframe>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//* Herramientas de accesibilidad-->
+        <div class="row" style="padding-top: 30px;">
+            <div class="columna col-8"></div>
+            <div id="CHparticipacion" class="columna col-2">
+                <!--//* Botón para descargar informacion-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 0 = pinta label de descarga de información-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <img class="iconoAcce" onmouseover="appearLabel(0,2)" onmouseout="hideLabel(2,2)" src="../../assets/vector/accesibilidad/descargar.svg" style="margin-right: 15px; margin-left: 100px;">
+                <span id="descargar2" class="descargar subFooterText hoverLabel">
+                    Descargar<br />informacion
+                </span>
+                <!--//* Botón para descargar imagen de la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 1 = pinta label de guardar la imagen-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion llamaShot(a) Comienza la captura de pantalla de la gráfica-->
+                <!--//param 'CHparticipación' = indica a que objetoDOM tomara captura-->
+                <img class="iconoAcce" onmouseover="appearLabel(1,2)" onmouseout="hideLabel(2,2)" onclick="llamaShot('framePresion','presionSon')" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
+                <span id="imagen2" class="imagen subFooterText hoverLabel">
+                    Guardar<br />imagen
+                </span>
+                <!--//* Botón para citar o embear la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 2 = pinta label para el embed y cita-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion appearMenu() Aparece el submenu de la opción de embed y cita-->
+                <img class="iconoAcce" onmouseover="appearLabel(2,2)" onmouseout="hideLabel(2,2)" onclick="appearMenu(2)" src="../../assets/vector/accesibilidad/compartir.svg">
+                <span id="embedar2" class="embedar subFooterText hoverLabel">
+                    Embedar o<br />referenciar
+                </span>
+                <!--//*Submenu de opciones de embed y cita-->
+                <span id="embedarMenu2" class="embedarMenu subFooterText hoverLabel">
+                    <!--//* Opción para embedar la gráfica-->
+                    <!--//funcion embedSwal() dispara Swal para embedar-->
+                    <text class="menuEmbed" onclick="embedSwal(2)">Embedar &#60;&#47;&#62;</text>
+                    <br />
+                    <!--//* Opción para citar la gráfica-->
+                    <!--//funcion citaSwal() dispara Swal para citar-->
+                    <text class="menuEmbed" onclick="citaSwal(2)">Citar ""</text>
+                </span>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
     <!--//main Sección completa de foot-->
     <div style="z-index: 11; position: absolute; width: 100%;">
         <!--//main Footer-->

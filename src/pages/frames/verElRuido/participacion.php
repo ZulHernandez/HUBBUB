@@ -26,7 +26,6 @@
 
 <!--//funcion muestra la primer vista del chart-->
 <!--//param 1 = vista anual-->
-
 <body onload="setChart(1)" style="background-image: url(''); background-color: rgba(0,0,0,0);">
     <!--//*Botones para tipo de visualización-->
     <div class="row container-fluid" style="padding-top: 40px;">
