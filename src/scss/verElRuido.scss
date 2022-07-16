@@ -4,6 +4,7 @@ $blackGrey: #333333;
 $blueLink: #0075ff;
 $redWater: #ff7c7c;
 $rose: #ef5da8;
+$purple: #E1A0EA;
 
 //main fonts-------------------------------------------------------------------
 //* Fuente Semi-bold
@@ -249,6 +250,30 @@ $rose: #ef5da8;
 //* Botón Mensual inactivo
 .btnMensualIna {
     @include btnTopGrafica(1, $blueLink);
+}
+.btnMolestiaAct {
+    @include btnTopGrafica(0, $rose);
+}
+.btnMolestiaIna {
+    @include btnTopGrafica(1, $rose);
+}
+.btnEspacioAct {
+    @include btnTopGrafica(0, $blueLink);
+}
+.btnEspacioIna {
+    @include btnTopGrafica(1, $blueLink);
+}
+.btnEmisorAct{
+    @include btnTopGrafica(0, $redWater);
+}
+.btnEmisorIna{
+    @include btnTopGrafica(1, $redWater);
+}
+.btnHorarioAct{
+    @include btnTopGrafica(0, $purple);
+}
+.btnHorarioIna{
+    @include btnTopGrafica(1, $purple);
 }
 
 //main Divs--------------------------------------------------------------------

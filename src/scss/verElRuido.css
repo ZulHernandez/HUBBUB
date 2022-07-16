@@ -229,6 +229,178 @@
   cursor: pointer;
 }
 
+.btnMolestiaAct {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #ef5da8;
+  background-color: transparent;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+}
+
+.btnMolestiaIna {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #ef5da8;
+  background-color: transparent;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+  border-style: none;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.btnEspacioAct {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #0075ff;
+  background-color: transparent;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+}
+
+.btnEspacioIna {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #0075ff;
+  background-color: transparent;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+  border-style: none;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.btnEmisorAct {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #ff7c7c;
+  background-color: transparent;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+}
+
+.btnEmisorIna {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #ff7c7c;
+  background-color: transparent;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+  border-style: none;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.btnHorarioAct {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #E1A0EA;
+  background-color: transparent;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+}
+
+.btnHorarioIna {
+  width: 100%;
+  height: 40px;
+  font-family: Montserrat-M;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+  text-align: center;
+  letter-spacing: normal;
+  color: #E1A0EA;
+  background-color: transparent;
+  border-color: #ef5da8;
+  border-width: 3px;
+  border-style: solid;
+  border-bottom: none;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 5px;
+  cursor: context-menu;
+  border-style: none;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 body {
   background-image: url(../../assets/vector/background.svg);
 }

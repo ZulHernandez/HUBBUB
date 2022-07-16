@@ -30,16 +30,16 @@
     <!--//*Botones para tipo de visualización-->
     <div class="row container-fluid" style="padding-top: 0px;">
         <div class="columna col-2">
-            <div class="btnAnualAct" id="btnAnual">Molestia</div>
+            <div class="btnMolestiaAct" id="btnMolestia" onclick="setChart(0)">Molestia</div>
         </div>
         <div class="columna col-2">
-            <div class="btnMensualIna" id="btnMensual">Espacio</div>
+            <div class="btnEspacioIna" id="btnEspacio" onclick="setChart(1)">Espacio</div>
         </div>
         <div class="columna col-2">
-            <div class="btnAnualIna" id="btnAnual">Emisor</div>
+            <div class="btnEmisorIna" id="btnEmisor" onclick="setChart(2)">Emisor</div>
         </div>
         <div class="columna col-2">
-            <div class="btnMensualIna" id="btnMensual">Horario</div>
+            <div class="btnHorarioIna" id="btnHorario" onclick="setChart(3)">Horario</div>
         </div>
         <div class="columna col-4"></div>
     </div>
@@ -47,20 +47,26 @@
         <div class="col-12" id="bracketParti"></div>
     </div>
     <div id="variables">
-        <!--//* Canva para la gráfica de clasificación de ruidos-->
-        <center>
-            <br />
-            <div id="canvaVar">
-            </div>
-        </center>
-        <!--//*Control de fechas-->
-    </div>
-    <div class="row container-fluid" style="padding-top: 20px;">
-        <div class="columna col-9"></div>
-        <div class="columna col-3" style="text-align: right;">
-            <span id="reportCircle" class="fechaMain">1 reporte = 4 </span>
-            <span><img style="width: 20px; margin-top: -10px; margin-left: 10px;" src="../../../../assets/vector/circle.svg"></span>
+        <div>
+            <!--//* Canva para la gráfica de clasificación de ruidos-->
+            <center>
+                <br />
+                <div id="canvaVar">
+                </div>
+            </center>
+            <!--//*Control de fechas-->
         </div>
+        <div class="row container-fluid" style="padding-top: 20px;">
+            <div class="columna col-6 textCorrido">
+                <span id="totalReportes">Total de 50 reportes</span>
+                <br /><br />
+                <span id="reportCircle">1 reporte = 4 </span>
+                <span><img src="../../../../assets/vector/circles/circle.svg" style="width: 20px; margin-top: -5px; margin-left: 10px;"></span>
+            </div>
+            <div id="leyenda" class="columna col-6 textCita" style="text-align: left;">
+            </div>
+        </div>
+        <br/><br/>
     </div>
 </body>
 <!--//import CHART para la gráfica de clasificación-->

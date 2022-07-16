@@ -3,10 +3,10 @@
 //* Array divide los datos por meses
 var molestia = [25,18,7];
 
-var espacio = [1,1];
+var molestia = [5,18,5];
 
-var emisor = [9,6,4,7,4,3,1,17]
-//var molestia = [1,1,1];
+var espacio = [25,25];
 
+var emisor = [6,6,6,6,6,6,7,7];
 
-//var molestia = [100,50,3];
+var horario = [41,9]
