@@ -3,7 +3,7 @@
 let w = window.innerWidth;
 let h = window.innerHeight;
 //* Variables para imagenes
-let oido, cOE, cOM, cOI
+let oido, cOE, cOM, cOI;
 //*variable para color segun posición
 let colorMouse;
 //*varaibe para fuente
