@@ -293,7 +293,11 @@ body {
   background-size: cover;
   background-size: 80px;
   background-repeat: no-repeat;
-  background-position: 56% 50%;
+  background-position: 55% 50%;
+}
+
+#fArea1 {
+  background-position: 57% 50%;
 }
 
 .titleArea {

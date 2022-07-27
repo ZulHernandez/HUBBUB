@@ -107,6 +107,7 @@ function draw() {
 function mouseClicked() {
 	//* Obtenemos el color de la posición del mouse
 	colorMouse = get(mouseX, mouseY);
+
 	//* Evaluamos el color de la posición del mouse
 	//* Deternminamos la posición del carrusel
 	if (colorMouse[0] == 123 && colorMouse[3] == 129) {
@@ -195,7 +196,7 @@ function mueve() {
 //param text: texto a dibujar
 function drawLabel(x, y, texto) {
 	//* Dibujamos la etiqueta 1px debajo del mouse
-	y++;
+	y--;
 	//* Compensamos la posición del mouse
 	translate(-100, 0);
 	//* Cambiamos modo de fusión

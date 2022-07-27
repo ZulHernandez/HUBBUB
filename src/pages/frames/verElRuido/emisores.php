@@ -28,13 +28,20 @@
 
 <body style="background-image: url(''); background-color: rgba(0,0,0,0);">
     <div id="emisores">
-        <div>
-            <!--//* Canva para la gráfica de word map emisores-->
-            <center>
-                <br />
-                <div id="canvaEmi">
+        <div class="row container-fluid">
+            <div class="columna col-5">
+                <div>
+                    <!--//* Canva para la gráfica de word map emisores-->
+                    <center>
+                        <div id="canvaEmi">
+                        </div>
+                    </center>
                 </div>
-            </center>
+            </div>
+            <div class="columna col-1">
+                <div class="verticalLineEmi"></div>
+            </div>
+            <div class="columna col" style="background-color: blue;"></div>
         </div>
     </div>
 </body>

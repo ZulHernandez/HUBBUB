@@ -75,6 +75,16 @@ html {
   background-color: #333333;
 }
 
+.verticalLineEmi {
+  height: 100%;
+  width: 0px;
+  border-width: 1px;
+  border-radius: 1px;
+  border-style: solid;
+  border-color: #333333;
+  background-color: #333333;
+}
+
 .hrSwal {
   height: 1px;
   width: 225px;

@@ -212,6 +212,10 @@ html {
     @include dibujaLinea(100%, 0px, 1px);
 }
 
+.verticalLineEmi {
+    @include dibujaLinea(100%, 0px, 1px);
+}
+
 //* Línea horizontal del swal para legales
 .hrSwal {
     @include dibujaLinea(1px, 225px, 1px);
