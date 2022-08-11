@@ -441,6 +441,11 @@ html {
     color: white;
 }
 
+//* Subtitulos dentro de las secciones
+.subEmisor {
+    @include text(center, 24px, "SB", 29px, normal);
+}
+
 //* Fecha main en la gráfica de partcipación
 .fechaMain {
     @include text(right, 24px, "SB", 29px, normal);

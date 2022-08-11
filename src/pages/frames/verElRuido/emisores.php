@@ -41,7 +41,48 @@
             <div class="columna col-1">
                 <div class="verticalLineEmi"></div>
             </div>
-            <div class="columna col" style="background-color: blue;"></div>
+            <div class="col-6">
+                <div id="descpEmisor" class="row container-fluid textCorrido" style="padding: 0; margin:0; font-size: 18px;"></div>
+                <div id="descpEmisor" class="row container-fluid" style="padding: 0; margin:0; padding-top: 25px;">
+                    <div class="columna col">
+                        <p class="subEmisor">Molestia</p>
+                        <p id="nivelM" class="textCorrido" style="text-align: center;">Poco</p>
+                        <center>
+                            <img id="nivelMimg" style="width: 50px;" src="../../../../assets/vector/variables/poco.svg">
+                        </center>
+                    </div>
+                    <div class="columna col-1">
+                        <div class="verticalLineEmi"></div>
+                    </div>
+                    <div class="columna col">
+                        <p class="subEmisor">Reportes</p>
+                        <p id="numRep" class="textCorrido" style="text-align: center;">17 reportes</p>
+                        <p id="picoR" class="subtitle" style="text-align: center; line-height: 1; text-transform: none;">74 dBA</p>
+                        <p class="refe" style="text-align: center; line-height: 0;">pico de ruido</p>
+                    </div>
+                </div>
+                <div id="descpEmisor" class="row container-fluid" style="padding: 0; margin:0; padding-top: 50px;">
+                    <div class="columna col">
+                        <p class="subEmisor">Horarios</p>
+                        <p id="horarioText" class="textCorrido" style="text-align: center;">Noche</p>
+                        <center>
+                            <img id="horarioImg" style="width: 45px;" src="../../../../assets/vector/variables/noche.svg">
+                        </center>
+                    </div>
+                    <div class="columna col-1">
+                        <div class="verticalLineEmi"></div>
+                    </div>
+                    <div class="columna col">
+                        <p class="subEmisor">Alcaldía</p>
+                        <p id="nombreAl" class="textCorrido" style="text-align: center;">Miguel Hidalgo</p>
+                        <center>
+                            <svg id="alcaldiaFrame" width="45" height="45" viewBox="0 0 99 154" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path id="alcaldiaImg" d="" fill="#FF7C7C" />
+                            </svg>
+                        </center>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

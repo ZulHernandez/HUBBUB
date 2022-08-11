@@ -519,8 +519,8 @@
                 <!--//funcion appearLabel(a) indica que label pintar-->
                 <!--//param 0 = pinta label de descarga de información-->
                 <!--//funcion hideLabel() Oculta las labels-->
-                <img class="iconoAcce" onmouseover="appearLabel(0,5)" onmouseout="hideLabel(2,5)" src="../../assets/vector/accesibilidad/descargar.svg" style="margin-right: 15px; margin-left: 100px;">
-                <span id="descargar5" class="descargar subFooterText hoverLabel">
+                <img class="iconoAcce" onmouseover="appearLabel(0,4)" onmouseout="hideLabel(2,4)" src="../../assets/vector/accesibilidad/descargar.svg" style="margin-right: 15px; margin-left: 100px;">
+                <span id="descargar4" class="descargar subFooterText hoverLabel">
                     Descargar<br />informacion
                 </span>
                 <!--//* Botón para descargar imagen de la gráfica-->
@@ -529,8 +529,8 @@
                 <!--//funcion hideLabel() Oculta las labels-->
                 <!--//funcion llamaShot(a) Comienza la captura de pantalla de la gráfica-->
                 <!--//param 'CHparticipación' = indica a que objetoDOM tomara captura-->
-                <img class="iconoAcce" onmouseover="appearLabel(1,5)" onmouseout="hideLabel(2,5)" onclick="llamaShot('frameVar','variables')" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
-                <span id="imagen5" class="imagen subFooterText hoverLabel">
+                <img class="iconoAcce" onmouseover="appearLabel(1,4)" onmouseout="hideLabel(2,4)" onclick="llamaShot('frameVar','variables')" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
+                <span id="imagen4" class="imagen subFooterText hoverLabel">
                     Guardar<br />imagen
                 </span>
                 <!--//* Botón para citar o embear la gráfica-->
@@ -538,25 +538,25 @@
                 <!--//param 2 = pinta label para el embed y cita-->
                 <!--//funcion hideLabel() Oculta las labels-->
                 <!--//funcion appearMenu() Aparece el submenu de la opción de embed y cita-->
-                <img class="iconoAcce" onmouseover="appearLabel(2,5)" onmouseout="hideLabel(2,5)" onclick="appearMenu(5)" src="../../assets/vector/accesibilidad/compartir.svg">
-                <span id="embedar5" class="embedar subFooterText hoverLabel">
+                <img class="iconoAcce" onmouseover="appearLabel(2,4)" onmouseout="hideLabel(2,4)" onclick="appearMenu(4)" src="../../assets/vector/accesibilidad/compartir.svg">
+                <span id="embedar4" class="embedar subFooterText hoverLabel">
                     Embedar o<br />referenciar
                 </span>
                 <!--//*Submenu de opciones de embed y cita-->
-                <span id="embedarMenu5" class="embedarMenu subFooterText hoverLabel">
+                <span id="embedarMenu4" class="embedarMenu subFooterText hoverLabel">
                     <!--//* Opción para embedar la gráfica-->
                     <!--//funcion embedSwal() dispara Swal para embedar-->
-                    <text class="menuEmbed" onclick="embedSwal(5)">Embedar &#60;&#47;&#62;</text>
+                    <text class="menuEmbed" onclick="embedSwal(4)">Embedar &#60;&#47;&#62;</text>
                     <br />
                     <!--//* Opción para citar la gráfica-->
                     <!--//funcion citaSwal() dispara Swal para citar-->
-                    <text class="menuEmbed" onclick="citaSwal(5)">Citar ""</text>
+                    <text class="menuEmbed" onclick="citaSwal(4)">Citar ""</text>
                 </span>
             </div>
             <div class="columna col-2"></div>
         </div>
     </div>
-    <!--//main Sección de Variables-->
+    <!--//main Sección de Emisores-->
     <div class="row container-fluid divBody" style="padding-top: 200px;">
         <!--//*Título de la sección-->
         <div class="row">
@@ -592,8 +592,8 @@
         <div class="row" style="padding-top: 100px;">
             <div class="columna col-2"></div>
             <!--//* Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
-            <div class="columna col">
-                <iframe id="frameEmi" src="../pages/frames/verElRuido/emisores.php" style="width: 100%; height: 910px;"></iframe>
+            <div class="columna col-8">
+                <iframe id="frameEmi" src="../pages/frames/verElRuido/emisores.php" style="width: 100%; height: 600px;"></iframe>
             </div>
             <div class="columna col-2"></div>
         </div>
@@ -615,7 +615,7 @@
                 <!--//funcion hideLabel() Oculta las labels-->
                 <!--//funcion llamaShot(a) Comienza la captura de pantalla de la gráfica-->
                 <!--//param 'CHparticipación' = indica a que objetoDOM tomara captura-->
-                <img class="iconoAcce" onmouseover="appearLabel(1,5)" onmouseout="hideLabel(2,5)" onclick="llamaShot('frameVar','variables')" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
+                <img class="iconoAcce" onmouseover="appearLabel(1,5)" onmouseout="hideLabel(2,5)" onclick="llamaShot('frameEmi','emisores')" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
                 <span id="imagen5" class="imagen subFooterText hoverLabel">
                     Guardar<br />imagen
                 </span>
