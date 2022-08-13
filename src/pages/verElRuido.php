@@ -642,6 +642,95 @@
             <div class="columna col-2"></div>
         </div>
     </div>
+    <!--//main Sección de Emisores-->
+    <div class="row container-fluid divBody" style="padding-top: 200px;">
+        <!--//*Título de la sección-->
+        <div class="row">
+            <div class="columna col-1"></div>
+            <div class="columna col subtitle">
+                <center>
+                    <h2 class="linea">
+                        <titulo>
+                            <span><img class="imgSub" src="../../assets/vector/subtitles/alcaldias.svg"></span>
+                            <span>Las alcaldías</span>
+                        </titulo>
+                    </h2>
+                </center>
+            </div>
+            <div class="columna col-1"></div>
+        </div>
+        <!--//*Texto de la sección-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <div class="columna col textCorrido">
+                <p>Ubicar los espacios donde se encuentra la mayor cantidad de ruido puede ser una oportunidad para 
+                    emprender acciones realizadas al cuidado de su contaminación sonora; también nos puede ayudar a 
+                    entender los fenómenos industriales o antropológicos que se dan por zonas y así generar un 
+                    estudio mucho más enriquecido de lo que el ruido es.</p>
+                <p>Este visualizador permite conocer la situación respecto al ruido que cada una de las alcaldías 
+                    reporta desde la aplicación y denotando la cantidad de participación que existe dentro de las 
+                    mismas. El ranking de alcaldías de la zona inferior proporciona una rápida ubicación de las 
+                    alcaldías que realizan más reportes en conjunto con un mapa que muestra su ubicación, la 
+                    cantidad de dBA promedio que se han reportado dentro de la zona adjunto a al nivel de molestia 
+                    más reportado en la zona y una pequeña gráfica de araña que permite conocer en detalle el 
+                    comportamiento por emisor dentro de la alcaldía.</p>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//* Grafica de presión sonora-->
+        <div class="row" style="padding-top: 100px;">
+            <div class="columna col-2"></div>
+            <!--//* Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
+            <div class="columna col-8">
+                <iframe id="frameAlc" src="../pages/frames/verElRuido/alcaldias.php" style="width: 100%; height: 600px;"></iframe>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+        <!--//* Herramientas de accesibilidad-->
+        <div class="row" style="padding-top: 0px;">
+            <div class="columna col-8"></div>
+            <div id="CHparticipacion" class="columna col-2">
+                <!--//* Botón para descargar informacion-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 0 = pinta label de descarga de información-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <img class="iconoAcce" onmouseover="appearLabel(0,5)" onmouseout="hideLabel(2,5)" src="../../assets/vector/accesibilidad/descargar.svg" style="margin-right: 15px; margin-left: 100px;">
+                <span id="descargar5" class="descargar subFooterText hoverLabel">
+                    Descargar<br />informacion
+                </span>
+                <!--//* Botón para descargar imagen de la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 1 = pinta label de guardar la imagen-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion llamaShot(a) Comienza la captura de pantalla de la gráfica-->
+                <!--//param 'CHparticipación' = indica a que objetoDOM tomara captura-->
+                <img class="iconoAcce" onmouseover="appearLabel(1,5)" onmouseout="hideLabel(2,5)" onclick="llamaShot('frameEmi','emisores')" src="../../assets/vector/accesibilidad/screens.svg" style="margin-right: 15px;">
+                <span id="imagen5" class="imagen subFooterText hoverLabel">
+                    Guardar<br />imagen
+                </span>
+                <!--//* Botón para citar o embear la gráfica-->
+                <!--//funcion appearLabel(a) indica que label pintar-->
+                <!--//param 2 = pinta label para el embed y cita-->
+                <!--//funcion hideLabel() Oculta las labels-->
+                <!--//funcion appearMenu() Aparece el submenu de la opción de embed y cita-->
+                <img class="iconoAcce" onmouseover="appearLabel(2,5)" onmouseout="hideLabel(2,5)" onclick="appearMenu(5)" src="../../assets/vector/accesibilidad/compartir.svg">
+                <span id="embedar5" class="embedar subFooterText hoverLabel">
+                    Embedar o<br />referenciar
+                </span>
+                <!--//*Submenu de opciones de embed y cita-->
+                <span id="embedarMenu5" class="embedarMenu subFooterText hoverLabel">
+                    <!--//* Opción para embedar la gráfica-->
+                    <!--//funcion embedSwal() dispara Swal para embedar-->
+                    <text class="menuEmbed" onclick="embedSwal(5)">Embedar &#60;&#47;&#62;</text>
+                    <br />
+                    <!--//* Opción para citar la gráfica-->
+                    <!--//funcion citaSwal() dispara Swal para citar-->
+                    <text class="menuEmbed" onclick="citaSwal(5)">Citar ""</text>
+                </span>
+            </div>
+            <div class="columna col-2"></div>
+        </div>
+    </div>
     <!--//main Sección completa de foot-->
     <div style="z-index: 11; position: absolute; width: 100%;">
         <!--//main Footer-->

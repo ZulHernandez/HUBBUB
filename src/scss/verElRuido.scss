@@ -138,6 +138,59 @@ $purple: #E1A0EA;
 }
 
 //main Imagenes----------------------------------------------------------------
+
+//*Imagenes del mapa DF
+.mapaDF{
+    @include capa(1);
+}
+
+#GusA{
+    @include posicion(0, 0, 157, 0);
+}
+
+#Azc{
+    @include posicion(73, 0, 121, 0);
+}
+
+#MigH{
+    @include posicion(114, 0, 93, 0);
+}
+
+#Cua{
+    @include posicion(117.5, 0, 155, 0);
+}
+
+#VenC{
+    @include posicion(124, 0, 207.5, 0);
+}
+
+#CuaM{
+    @include posicion(175, 0, 0, 0);
+}
+
+#AlvO{
+    @include posicion(175, 0, 26, 0);
+}
+
+#BenJ{
+    @include posicion(173, 0, 149, 0);
+}
+
+#Izt{
+    @include posicion(159, 0, 199, 0);
+}
+
+#Coy{
+    @include posicion(215, 0, 140, 0);
+}  
+
+#Izta{
+    @include posicion(179.5, 0, 195, 0);
+}
+
+
+
+
 //*Imagen que se mueve en el hero
 .logoHero {
     animation-name: logoMove;

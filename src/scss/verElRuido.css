@@ -18,6 +18,66 @@
   font-family: "Montserrat-T";
   src: url(../../assets/fonts/Montserrat-Light.ttf);
 }
+.mapaDF {
+  position: absolute;
+  z-index: 1;
+}
+
+#GusA {
+  margin-top: 0;
+  margin-left: 157;
+}
+
+#Azc {
+  margin-top: 73;
+  margin-left: 121;
+}
+
+#MigH {
+  margin-top: 114;
+  margin-left: 93;
+}
+
+#Cua {
+  margin-top: 117.5;
+  margin-left: 155;
+}
+
+#VenC {
+  margin-top: 124;
+  margin-left: 207.5;
+}
+
+#CuaM {
+  margin-top: 175;
+  margin-left: 0;
+}
+
+#AlvO {
+  margin-top: 175;
+  margin-left: 26;
+}
+
+#BenJ {
+  margin-top: 173;
+  margin-left: 149;
+}
+
+#Izt {
+  margin-top: 159;
+  margin-left: 199;
+}
+
+#Coy {
+  margin-top: 215;
+  margin-left: 140;
+}
+
+#Izta {
+  margin-top: 179.5;
+  margin-left: 195;
+}
+
 .logoHero {
   -webkit-animation-name: logoMove;
           animation-name: logoMove;

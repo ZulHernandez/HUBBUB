@@ -42,8 +42,8 @@
                 <div class="verticalLineEmi"></div>
             </div>
             <div class="col-6">
-                <div id="descpEmisor" class="row container-fluid textCorrido" style="padding: 0; margin:0; font-size: 18px;"></div>
-                <div id="descpEmisor" class="row container-fluid" style="padding: 0; margin:0; padding-top: 25px;">
+                <div id="descpEmisor" class="row container-fluid textCorrido" style="padding: 0; margin:0; font-size: 18px; height: 180px;"></div>
+                <div class="row container-fluid" style="padding: 0; margin:0; padding-top: 25px;">
                     <div class="columna col">
                         <p class="subEmisor">Molestia</p>
                         <p id="nivelM" class="textCorrido" style="text-align: center;">Poco</p>
