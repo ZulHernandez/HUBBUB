@@ -142,13 +142,18 @@ $purple: #E1A0EA;
 //*Imagenes del mapa DF
 .mapaDF{
     @include capa(1);
+    opacity: 0.5;
+    cursor: pointer;
+    &:hover{
+        opacity: 1;
+    }
 }
 
 #GusA{
     @include posicion(0, 0, 157, 0);
 }
 
-#Azc{
+#Azca{
     @include posicion(73, 0, 121, 0);
 }
 
@@ -156,7 +161,7 @@ $purple: #E1A0EA;
     @include posicion(114, 0, 93, 0);
 }
 
-#Cua{
+#Cuau{
     @include posicion(117.5, 0, 155, 0);
 }
 
@@ -176,18 +181,37 @@ $purple: #E1A0EA;
     @include posicion(173, 0, 149, 0);
 }
 
-#Izt{
+#Izta{
     @include posicion(159, 0, 199, 0);
 }
 
-#Coy{
+#Coyo{
     @include posicion(215, 0, 140, 0);
 }  
 
-#Izta{
+#Iztp{
     @include posicion(179.5, 0, 195, 0);
 }
 
+#MagC{
+    @include posicion(239, 0, 33, 0);
+}
+
+#Tlal{
+    @include posicion(262, 0, 41, 0);
+}
+
+#Xoch{
+    @include posicion(258, 0, 182, 0);
+}
+
+#Tlah{
+    @include posicion(243, 0, 261, 0);
+}
+
+#Milp{
+    @include posicion(339, 0, 180, 0);
+}
 
 
 

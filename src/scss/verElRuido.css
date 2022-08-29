@@ -21,6 +21,11 @@
 .mapaDF {
   position: absolute;
   z-index: 1;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.mapaDF:hover {
+  opacity: 1;
 }
 
 #GusA {
@@ -28,7 +33,7 @@
   margin-left: 157;
 }
 
-#Azc {
+#Azca {
   margin-top: 73;
   margin-left: 121;
 }
@@ -38,7 +43,7 @@
   margin-left: 93;
 }
 
-#Cua {
+#Cuau {
   margin-top: 117.5;
   margin-left: 155;
 }
@@ -63,19 +68,44 @@
   margin-left: 149;
 }
 
-#Izt {
+#Izta {
   margin-top: 159;
   margin-left: 199;
 }
 
-#Coy {
+#Coyo {
   margin-top: 215;
   margin-left: 140;
 }
 
-#Izta {
+#Iztp {
   margin-top: 179.5;
   margin-left: 195;
+}
+
+#MagC {
+  margin-top: 239;
+  margin-left: 33;
+}
+
+#Tlal {
+  margin-top: 262;
+  margin-left: 41;
+}
+
+#Xoch {
+  margin-top: 258;
+  margin-left: 182;
+}
+
+#Tlah {
+  margin-top: 243;
+  margin-left: 261;
+}
+
+#Milp {
+  margin-top: 339;
+  margin-left: 180;
 }
 
 .logoHero {
