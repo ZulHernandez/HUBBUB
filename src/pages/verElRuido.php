@@ -25,7 +25,7 @@
     <!--//main Icono de la página-->
     <link rel="icon" href="../../assets/vector/HUBBUByellow.svg" type="image/x-icon">
     <title>
-        HUBBUB | Ver el ruido
+        HUBBUB | Ver el ruido Responsivo
     </title>
 </head>
 
