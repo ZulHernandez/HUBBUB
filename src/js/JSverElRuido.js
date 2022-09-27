@@ -18,7 +18,7 @@ function navIzq(a) {
 	let opcionCuatro = document.getElementById("opcionCuatro");
 	let opcionCinco = document.getElementById("opcionCinco");
 	let opcionSeis = document.getElementById("opcionSeis");
-	let opcionSiete = document.getElementById("opcionSiete");
+	//let opcionSiete = document.getElementById("opcionSiete");
 
 	//* Ponemos el estado desactivado del nav on mouse out
 	if (a == 0) {
@@ -31,7 +31,7 @@ function navIzq(a) {
 			opcionCuatro.className = "textoDivNavIna";
 			opcionCinco.className = "textoDivNavIna";
 			opcionSeis.className = "textoDivNavIna";
-			opcionSiete.className = "textoDivNavIna";
+			//opcionSiete.className = "textoDivNavIna";
 		}
 	}
 
@@ -46,7 +46,7 @@ function navIzq(a) {
 			opcionCuatro.className = "textoDivNavAct";
 			opcionCinco.className = "textoDivNavAct";
 			opcionSeis.className = "textoDivNavAct";
-			opcionSiete.className = "textoDivNavAct";
+			//opcionSiete.className = "textoDivNavAct";
 		}
 	}
 }
@@ -368,4 +368,66 @@ function copyToClipBoard(a) {
 	setTimeout(function () {
 		imgCopy.src = "../../assets/vector/accesibilidad/copiarPortaIna.svg";
 	}, 2000);
+}
+
+//funcion Determinamos la posición del indicador de scroll en el nav izquierdo
+function funcionScroll() {
+    //* Cogemos el indicador de scroll del nav izquierdo
+	let divScroll = document.getElementById("divScroll");
+
+    //* Determinamos la posición del indicador segun la posicion del scroll
+	if (document.body.scrollTop < 895) {
+		divScroll.style.marginTop = 25 + "px";
+	}
+	if (document.body.scrollTop >= 895 && document.body.scrollTop < 1790) {
+		divScroll.style.marginTop = 68 + "px";
+	}
+	if (document.body.scrollTop >= 1790 && document.body.scrollTop < 3231) {
+		divScroll.style.marginTop = 112 + "px";
+	}
+	if (document.body.scrollTop >= 3231 && document.body.scrollTop < 5640) {
+		divScroll.style.marginTop = 156 + "px";
+	}
+	if (document.body.scrollTop >= 5640 && document.body.scrollTop < 7265) {
+		divScroll.style.marginTop = 200 + "px";
+	}
+	if (document.body.scrollTop >= 7265 && document.body.scrollTop < 8501) {
+		divScroll.style.marginTop = 244 + "px";
+	}
+	if (document.body.scrollTop >= 8501) {
+		divScroll.style.marginTop = 288 + "px";
+	}
+	//console.log(document.body.scrollTop);
+}
+
+//funcion Determinamos la posicion en la que se encuentra el scroll según la seccion al ser clickeada en el nav izquierdo
+//param a = sección clickeada
+function scrollMe(a) {
+    //* Evaluamos la seccion clickeada y determinamos la posicion del scroll
+	switch (a) {
+		case 0:
+			document.body.scrollTop = 0;
+			break;
+		case 1:
+			document.body.scrollTop = 895;
+			break;
+		case 2:
+			document.body.scrollTop = 1790;
+			break;
+		case 3:
+			document.body.scrollTop = 3231;
+			break;
+		case 4:
+			document.body.scrollTop = 5640;
+			break;
+		case 5:
+			document.body.scrollTop = 7265;
+			break;
+		case 6:
+			document.body.scrollTop = 8501;
+			break;
+		case 7:
+			document.body.scrollTop = 9376;
+			break;
+		}
 }

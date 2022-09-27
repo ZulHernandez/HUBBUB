@@ -145,7 +145,7 @@ $purple: #E1A0EA;
     opacity: 0.5;
     cursor: pointer;
     &:hover{
-        opacity: 1;
+        opacity: 0.75;
     }
 }
 
@@ -430,4 +430,9 @@ body {
     padding: 20px;
     border-radius: 5px;
     resize: none;
+}
+
+.alcLink:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }

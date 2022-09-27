@@ -36,7 +36,7 @@ var alca = [
 		animal: [],
 		servicios: [],
 		otros: [],
-		tReportes: 0,
+		tReportes: 7,
 	},
 	{
 		alc: "Cuau",

@@ -1,6 +1,5 @@
 const jsonO = sortJSON(alca, "tReportes", "desc");
-let datos = [];
-let datosAmp = [];
+let datos = [, , , , , , ,];
 let indice = 0;
 const degr = [
 	"#EF5DA880",
@@ -12,7 +11,7 @@ const degr = [
 	"#FB748780",
 	"#FD788280",
 	"#DF7B8C80",
-	"#807A9D80",
+	"#be7a9d80",
 	"#9F79AD80",
 	"#8079BE80",
 	"#6078CE80",
@@ -25,9 +24,47 @@ let totalReportes = document.getElementById("totalReportes");
 let alcaldiaName = document.getElementById("alcaldiaName");
 let alcCir = document.getElementById("alcCir");
 
+function mapClick(a) {
+	if (a == jsonO[0].alc) {
+		setChart(0);
+	} else if (a == jsonO[1].alc) {
+		setChart(1);
+	} else if (a == jsonO[2].alc) {
+		setChart(2);
+	} else if (a == jsonO[3].alc) {
+		setChart(3);
+	} else if (a == jsonO[4].alc) {
+		setChart(4);
+	} else if (a == jsonO[5].alc) {
+		setChart(5);
+	} else if (a == jsonO[6].alc) {
+		setChart(6);
+	} else if (a == jsonO[7].alc) {
+		setChart(7);
+	} else if (a == jsonO[8].alc) {
+		setChart(8);
+	} else if (a == jsonO[9].alc) {
+		setChart(9);
+	} else if (a == jsonO[10].alc) {
+		setChart(10);
+	} else if (a == jsonO[11].alc) {
+		setChart(11);
+	} else if (a == jsonO[12].alc) {
+		setChart(12);
+	} else if (a == jsonO[13].alc) {
+		setChart(13);
+	} else if (a == jsonO[14].alc) {
+		setChart(14);
+	} else if (a == jsonO[15].alc) {
+		setChart(15);
+	}
+}
+
 //funcion Seteamos el tipo de visualización del gráfico
 //param a = 1 para anual, 2 para mensual
 function setChart(a) {
+	//datos = [];
+
 	indice = a;
 	//* Declaramos sumador para el total de reportes
 	let suma = 0;
@@ -35,75 +72,100 @@ function setChart(a) {
 	for (let i = 0; i < 8; i++) {
 		switch (i) {
 			case 0:
-				datos.push(jsonO[a].trafico.length);
-				datosAmp[i] = [
-					datos[i],
-					"" + Math.max(...[].concat.apply([], jsonO[a].trafico)),
-				];
+				datos[0] = jsonO[a].trafico.length;
 				break;
 			case 1:
-				datos.push(jsonO[a].aereo.length);
-				datosAmp[i] = [
-					datos[i],
-					"" + Math.max(...[].concat.apply([], jsonO[a].aereo)),
-				];
+				datos[1] = jsonO[a].aereo.length;
 				break;
 			case 2:
-				datos.push(jsonO[a].maquinaria.length);
-				datosAmp[i] = [
-					datos[i],
-					"" + Math.max(...[].concat.apply([], jsonO[a].maquinaria)),
-				];
+				datos[2] = jsonO[a].maquinaria.length;
 				break;
 			case 3:
-				datos.push(jsonO[a].fiesta.length);
-				datosAmp[i] = [
-					datos[i],
-					"" + Math.max(...[].concat.apply([], jsonO[a].fiesta)),
-				];
+				datos[3] = jsonO[a].fiesta.length;
 				break;
 			case 4:
-				datos.push(jsonO[a].bocina.length);
-				datosAmp[i] = [
-					datos[i],
-					"" + Math.max(...[].concat.apply([], jsonO[a].bocina)),
-				];
+				datos[4] = jsonO[a].bocina.length;
 				break;
 			case 5:
-				datos.push(jsonO[a].animal.length);
-				datosAmp[i] = [
-					datos[i],
-					"" + Math.max(...[].concat.apply([], jsonO[a].animal)),
-				];
+				datos[5] = jsonO[a].animal.length;
 				break;
 			case 6:
-				datos.push(jsonO[a].servicios.length);
-				datosAmp[i] = [
-					datos[i],
-					"" + Math.max(...[].concat.apply([], jsonO[a].servicios)),
-				];
+				datos[6] = jsonO[a].servicios.length;
 				break;
 			case 7:
-				datos.push(jsonO[a].otros.length);
-				datosAmp[i] = [
-					datos[i],
-					"" + Math.max(...[].concat.apply([], jsonO[a].otros)),
-				];
+				datos[7] = jsonO[a].otros.length;
 				break;
 		}
 	}
 	console.log(datos);
-	console.log(datosAmp);
 
-	/* for (let i = 0; i < 8; i++) {
-		datosAmp[i] = [datos[i], i];
+	for (let i = 0; i < 16; i++) {
+		document.getElementById("draw" + jsonO[i].alc).style.fill = degr[i].slice(
+			0,
+			-2
+		);
+		document.getElementById("vini" + i).style.fill = degr[i].slice(0, -2);
+		document.getElementById("alc" + i).innerHTML = tradAlc(i);
+		document.getElementById(jsonO[i].alc).style.opacity = "0.5";
+		document.getElementById("parr" + i).style.cursor = "pointer";
+		document.getElementById("parr" + i).classList.add("alcLink");
 	}
- */
+
+	document.getElementById("draw" + jsonO[a].alc).style.fill = degr[a].slice(
+		0,
+		-2
+	);
+	document.getElementById(jsonO[a].alc).style.opacity = "1";
+	document.getElementById("alc" + a).innerHTML = "<b>" + tradAlc(a) + "</b>";
+	document.getElementById("parr" + a).classList.remove("alcLink");
+	document.getElementById("parr" + a).style.cursor = "context-menu";
+	document.getElementById("vini" + a).style.fill = degr[a].slice(0, -2);
+
 	for (let i = 0; i < 8; i++) {
 		suma += datos[i];
 	}
 
-	let alcaldiaN = "";
+	alcCir.style.fill = degr[a].slice(0, -2);
+	//* Seteamos el valor máximo del eje y deacuerdo al mayor valor del array
+	maxY = Math.max(...[].concat.apply([], datos));
+	//* Pintamos los reportes totales de la fecha
+	totalReportes.innerHTML = "Total de " + suma + " reportes";
+	//* Pintamos el nombre de la alcaldía
+	alcaldiaName.innerHTML = "&nbsp;&nbsp;&nbsp;" + tradAlc(a);
+	//* Cargamos la data a mostrar en el gráfico
+	canvaAlcaldia.data.datasets.data = datos;
+	//* Cargamos el valor máximo del eje y
+	canvaAlcaldia.options.scales.r.max = maxY + 1;
+	//* Actualizamos el gráfico
+	canvaAlcaldia.update();
+}
+
+function mueveChart(a) {
+	if (a == 0) {
+		if (indice == 0) {
+			setChart(15);
+		} else {
+			setChart(indice - 1);
+		}
+	} else if (a == 1) {
+		if (indice == 15) {
+			setChart(0);
+		} else {
+			setChart(indice + 1);
+		}
+	}
+}
+
+//* Dibujamos el gráfico
+var ctx = document.getElementById("canvaAlcaldia").getContext("2d");
+
+//* Quitamos el título del los tooltips
+const titleTooltip = (tooltipItems) => {
+	return "";
+};
+
+function tradAlc(a) {
+	var alcaldiaN;
 	switch (jsonO[a].alc) {
 		case "GusA":
 			alcaldiaN = "Gustavo A. Madero";
@@ -154,29 +216,8 @@ function setChart(a) {
 			alcaldiaN = "Milpa Alta";
 			break;
 	}
-
-	alcCir.style.fill = degr[a].slice(0, -2);
-	//* Seteamos el valor máximo del eje y deacuerdo al mayor valor del array
-	maxY = Math.max(...[].concat.apply([], datos));
-	//* Pintamos los reportes totales de la fecha
-	totalReportes.innerHTML = "Total de " + suma + " reportes";
-	//* Pintamos el nombre de la alcaldía
-	alcaldiaName.innerHTML = "&nbsp;&nbsp;&nbsp;" + alcaldiaN;
-	//* Cargamos la data a mostrar en el gráfico
-	canvaAlcaldia.data.datasets.data = datosAmp;
-	//* Cargamos el valor máximo del eje y
-	canvaAlcaldia.options.scales.r.max = maxY + 1;
-	//* Actualizamos el gráfico
-	canvaAlcaldia.update();
+	return alcaldiaN;
 }
-
-//* Dibujamos el gráfico
-var ctx = document.getElementById("canvaAlcaldia").getContext("2d");
-
-//* Quitamos el título del los tooltips
-const titleTooltip = (tooltipItems) => {
-	return "";
-};
 
 //* Opciones para la gráfica
 const options = {
@@ -195,7 +236,7 @@ const options = {
 		datasets: [
 			{
 				type: "radar",
-				data: datosAmp,
+				data: datos,
 				borderWidth: 5,
 				borderColor: degr[indice],
 				backgroundColor: degr[indice],
@@ -207,7 +248,6 @@ const options = {
 					if (context.raw == 0) {
 						return 0;
 					} else {
-						console.log(context);
 						return 7.5;
 					}
 				},
@@ -245,18 +285,12 @@ const options = {
 				callbacks: {
 					//* Quitamos el título del los tooltips
 					title: titleTooltip,
-					//* Número de reportes
-					beforeLabel: (context) => {
-						if (context.raw == 1) {
-							return `${context.raw} reporte`;
-						} else {
-							return `${context.raw} reportes`;
-						}
-					},
 					//* dB promedio del objeto
 					label: (context) => {
 						if (context.raw == 1) {
 							return `${context.raw} reporte`;
+						} else if (context.raw == 0) {
+							return "";
 						} else {
 							return `${context.raw} reportes`;
 						}
