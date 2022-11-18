@@ -10,8 +10,8 @@
         HUBBUB | Esquema Oido
     </title>
 </head>
-
-<body>
+<!-- //funcion changeCh() cambia el tamaño de la imagenes dentro de la gráfica -->
+<body onload="changeCh();" onresize="changeCh();" style="overflow: hidden;">
     <!--//* Canva para la gráfica de clasificación de ruidos-->
     <canvas id="canvaClasRuido"></canvas>
 </body>

@@ -95,9 +95,11 @@ body {
 
 //* Dibujar línea vertical
 .verticalLine {
-    @include dibujaLinea(46.3vh, 0px, 3px);
+    @include dibujaLinea(calc(400px - 0.01vw), 0px, 0.2vw);
     opacity: 0;
-    @include posicion(50vh, 23.15vh, 50%, 0%);
+    position: absolute;
+    top: calc(280px);
+    //@include posicion(500px, 0vw, 50%, 0%);
     animation: appearResume 1s 4500ms forwards ease-out;
 }
 
@@ -160,6 +162,8 @@ body {
 //*Imagen que se mueve en el hero
 .logoHero {
     animation-name: logoMove;
+    width: 12.5vw;
+    height: auto;
 }
 
 //*Imagenes sobre los efectos en la salud en avance

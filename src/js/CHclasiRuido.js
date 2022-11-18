@@ -1,38 +1,50 @@
 //main Variables
-//* Cargamos imagenes por cada punto de la gráfica
-const pointImage1 = new Image(40, 40);
-pointImage1.src = "../../../../assets/vector/puntosClasi/v1.svg";
-const pointImage2 = new Image(40, 40);
-pointImage2.src = "../../../../assets/vector/puntosClasi/v2.svg";
-const pointImage3 = new Image(40, 40);
-pointImage3.src = "../../../../assets/vector/puntosClasi/v3.svg";
-const pointImage4 = new Image(40, 40);
-pointImage4.src = "../../../../assets/vector/puntosClasi/v4.svg";
-const pointImage5 = new Image(40, 40);
-pointImage5.src = "../../../../assets/vector/puntosClasi/v5.svg";
-const pointImage6 = new Image(40, 40);
-pointImage6.src = "../../../../assets/vector/puntosClasi/v6.svg";
-const pointImage7 = new Image(40, 40);
-pointImage7.src = "../../../../assets/vector/puntosClasi/v7.svg";
-const pointImage8 = new Image(40, 40);
-pointImage8.src = "../../../../assets/vector/puntosClasi/v8.svg";
-const pointImage9 = new Image(40, 40);
-pointImage9.src = "../../../../assets/vector/puntosClasi/v9.svg";
-//* Guardamos las imagenes en un array
-const pointImage = [
-	,
-	,
-	,
-	pointImage1,
-	pointImage2,
-	pointImage3,
-	pointImage4,
-	pointImage5,
-	pointImage6,
-	pointImage7,
-	pointImage8,
-	pointImage9,
-];
+//* Obtenemos el alto y ancho de la ventana
+let w, h, pointImage;
+
+function changeCh() {
+	w = window.innerWidth;
+	h = window.innerHeight;
+	//* Cargamos imagenes por cada punto de la gráfica
+	let pointImage1 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+	pointImage1.src = "../../../../assets/vector/puntosClasi/v1.svg";
+	let pointImage2 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+	pointImage2.src = "../../../../assets/vector/puntosClasi/v2.svg";
+	let pointImage3 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+	pointImage3.src = "../../../../assets/vector/puntosClasi/v3.svg";
+	let pointImage4 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+	pointImage4.src = "../../../../assets/vector/puntosClasi/v4.svg";
+	let pointImage5 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+	pointImage5.src = "../../../../assets/vector/puntosClasi/v5.svg";
+	let pointImage6 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+	pointImage6.src = "../../../../assets/vector/puntosClasi/v6.svg";
+	let pointImage7 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+	pointImage7.src = "../../../../assets/vector/puntosClasi/v7.svg";
+	let pointImage8 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+	pointImage8.src = "../../../../assets/vector/puntosClasi/v8.svg";
+	let pointImage9 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+	pointImage9.src = "../../../../assets/vector/puntosClasi/v9.svg";
+
+	//* Guardamos las imagenes en un array
+	pointImage = [
+		,
+		,
+		,
+		pointImage1,
+		pointImage2,
+		pointImage3,
+		pointImage4,
+		pointImage5,
+		pointImage6,
+		pointImage7,
+		pointImage8,
+		pointImage9,
+	];
+	canvaClasRuido.options.elements.point.pointStyle = pointImage;
+	//* Actualizamos el gráfico
+	canvaClasRuido.update();
+}
+
 //* Variable para audio
 var audio = new Audio();
 //* Quitamos el título del los tooltips
@@ -132,6 +144,7 @@ const options = {
 		],
 	},
 	options: {
+		maintainAspectRatio: false,
 		plugins: {
 			//* Ocultamos leyenda
 			legend: {

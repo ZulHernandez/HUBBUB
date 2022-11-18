@@ -97,7 +97,6 @@ function setChart(a) {
 				break;
 		}
 	}
-	console.log(datos);
 
 	for (let i = 0; i < 16; i++) {
 		document.getElementById("draw" + jsonO[i].alc).style.fill = degr[i].slice(

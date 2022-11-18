@@ -10,16 +10,16 @@ body {
 }
 
 .verticalLine {
-  height: 46.3vh;
+  height: calc(400px - 0.01vw);
   width: 0px;
-  border-width: 3px;
-  border-radius: 3px;
+  border-width: 0.2vw;
+  border-radius: 0.2vw;
   border-style: solid;
   border-color: #333333;
   background-color: #333333;
   opacity: 0;
-  margin-top: 26.85vh;
-  margin-left: 50%;
+  position: absolute;
+  top: 280px;
   -webkit-animation: appearResume 1s 4500ms forwards ease-out;
           animation: appearResume 1s 4500ms forwards ease-out;
 }
@@ -87,6 +87,8 @@ body {
 .logoHero {
   -webkit-animation-name: logoMove;
           animation-name: logoMove;
+  width: 12.5vw;
+  height: auto;
 }
 
 .img1 {

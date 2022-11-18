@@ -357,7 +357,7 @@ html {
 
 //* Iconos de los subtitulos
 .imgSub {
-    width: 30px;
+    width: 2vw;
     height: auto;
     margin-right: 15px;
 }
@@ -419,19 +419,19 @@ html {
 
 //* Titulo que aparece en el hero
 .pageTitle {
-    @include text(left, 64px, "B", 78px, normal);
+    @include text(left, 3.4vw, "B", 4vw, normal);
     text-transform: uppercase;
 }
 
 //* Subtitulo en el swal
-.subtitle {
-    @include text(left, 40px, "B", 49px, normal);
+.subtitle, h2 {
+    @include text(left, 2.1vw, "B", 2.7vw, normal);
     text-transform: uppercase;
 }
 
 //* Subtitulos dentro de las secciones
 .subOido {
-    @include text(left, 32px, "SB", 39px, normal);
+    @include text(left, 1.7vw, "SB", 2.3vw, normal);
 }
 
 //* Links del nav derecho activos
@@ -465,12 +465,12 @@ html {
 
 //* Parrafos normales
 .textCorrido {
-    @include text(justify, 20px, "M", 24px, normal);
+    @include text(justify, 1vw, "M", 1.4vw, normal);
 }
 
 //* Links dentro de parrafos
 .link {
-    @include text(left, 20px, "SB", 0, -0.5);
+    @include text(left, 1vw, "SB", 0, -0.5);
     color: $blueLink;
     cursor: pointer;
     &:hover {
@@ -558,6 +558,7 @@ a {
 }
 
 //* Líneas del titulo
+
 h2.linea {
     z-index: 1;
     position: relative;

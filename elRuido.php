@@ -19,7 +19,7 @@
     <link href="src/scss/elRuido.css" rel="stylesheet">
     <!--//import  Js para el manejo del sitio en general-->
     <script src="src/js/JSgeneral.js"></script>
-    <!--//import  Js para el manejo del sitio en general-->
+    <!--//import  Js para el manejo de la página el Ruido-->
     <script src="src/js/JSelRuido.js"></script>
     <!--//import  Js para el esquema del oído-->
     <script type="text/javascript" src="src/js/P5esquemaOido.js"></script>
@@ -31,7 +31,8 @@
 </head>
 
 <!--//funcion Inicia el visualizador de sketchfab al cargar-->
-<body onload="skfbStart();">
+
+<body onload="skfbStart();" onresize="setup();">
     <!--//main Se incluye el navegador lateral izquierdo-->
     <!--//funcion navIzq() Colapasa o expande el navegador lateral izquierdo-->
     <!--//param 0 = navegador colapsado-->
@@ -39,19 +40,19 @@
     <div class="navIzq" onmouseout="navIzq(0)" onmouseover="navIzq(1)">
         <div class="row container-fluid" style="margin: 0; padding: 70px 0px;">
             <div class="columnaCh col-1"></div>
-            <!--//* Indicador de sección-->
+            <!--//* Indicador de sección en scroll-->
             <div class="columnaCh col-1">
                 <div id="divScroll" style="background-color: #FF7C7C; height: 15px; width: 15px; margin-top:25px; border-radius: 50%;"></div>
             </div>
             <div class="columnaCh col-10">
                 <!--//* Icono y texto de Home-->
                 <!--//funcion scrollMe(a) scrollea la página a una posición determinada-->
-                <!--//param a = posiciópn a la cual scrollear-->
+                <!--//param a = posición a la cual scrollear-->
                 <div id="opcionCero" class="textoDivNavIna" onclick="scrollMe(0);">
                     <span><img class="navIzqIcon" src="assets/vector/subtitles/home.svg"></span>
                     <span class="textNavIzq">Inicio</span>
                 </div>
-                <!--//* Icono y texto de El oido-->
+                <!--//* Icono y texto de El oído-->
                 <div id="opcionUno" class="textoDivNavIna" onclick="scrollMe(1);">
                     <span><img class="navIzqIcon" src="assets/vector/subtitles/elOido.svg"></span>
                     <span class="textNavIzq">El oído</span>
@@ -122,7 +123,9 @@
                     <a href="src/pages/verElRuido.php">
                         <p class="linkNavDerIna">Ver el ruido</p>
                     </a>
+                    <!--//funcion nosotros() Dispara el modal de nosotros-->
                     <p class="linkNavDerIna" onclick="nosotros()">Sobre nosotros</p>
+                    <!--//funcion scrollMe() nos dirige a la sección 10, footer de la página-->
                     <p class="linkNavDerIna" onclick="scrollMe(10)">Descarga la app</p>
                 </div>
                 <!--//* Legales del nav derecho-->
@@ -154,7 +157,6 @@
     <!--//main Se incluye el hero Image y resumen de la página-->
     <div class="container-fluid hero">
         <div class="imagenHero">
-            <!--//* Función nosotros dispara Swal de información sobre HUBBUB-->
             <!--//funcion nosotros() dispara el swal sobre la información de HUBBUB-->
             <img class="logoHero" onclick="nosotros();" src="assets/gif/HUBBUBIcon.gif">
         </div>
@@ -185,19 +187,21 @@
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
-                <center>
-                    <h2 class="linea">
+
+                <h2 class="linea">
+                    <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/elOido.svg"></span>
                             <span>El oído</span>
                         </titulo>
-                    </h2>
-                </center>
+                    </center>
+                </h2>
+
             </div>
             <div class="columna col-1"></div>
         </div>
         <!--//*Texto de la sección-->
-        <div class="row" style="padding-top: 100px;">
+        <div class="row" style="padding-top: 5.3vw;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
                 <p>El oído , como sentido, es fundamental para la orientación del individuo, mantenerlo alerta ante
@@ -213,14 +217,14 @@
         </div>
     </div>
     <!--//* Esquema del oído-->
-    <div class="row container-fluid" style="padding-top: 100px;">
+    <div class="row container-fluid" style="padding-top: 5.3vw;">
         <center>
             <!--//*Canva del esquema del oído (P5esquemaOido.js)-->
             <div id="canvaOido"></div>
         </center>
     </div>
     <!--//* Sección texto para el esquema del oído-->
-    <div class="row container-fluid divBody" style="padding-top: 100px;">
+    <div class="row container-fluid divBody" style="padding-top: 5.3vw;">
         <div class="columna col-2"></div>
         <!--//*Botón de retrosceso en el carrusel-->
         <!--//funcion carruOido() navega entre carrussel-->
@@ -233,11 +237,11 @@
         <!--//*Texto del carrusel-->
         <div class="columna col">
             <div id="subOido" class="subOido"><text id="textSubOido" class="textSubOido">Oido externo</text></div>
-            <p id="textOido" class="textCorrido" style="padding-top:40px">Formado por el pabellón auditivo el cual, a manera de embudo, <b>permite
+            <p id="textOido" class="textCorrido" style="padding-top:2.1vw">Formado por el pabellón auditivo el cual, a manera de embudo, <b>permite
                     la recolección de las ondas sonoras del ambiente</b> para, finalmente, <b>dirigirlas al canal auditivo</b>. Este
                 también <b>compensa la presión</b> existente entre el exterior y el interior del oído (la cual es mayor al ser aire
                 comprimido) y termina en el tímpano.</p>
-            <p class="link" style="text-align: right; padding-top: 40px;">
+            <p class="link" style="text-align: right; padding-top: 2.1vw;">
                 <a href="https://www.auralcentrosauditivos.es/perdida-auditiva/como-funciona-el-oido" target="_blank">
                     Puedes ver más acerca del oído en WIDEX
                 </a>
@@ -254,24 +258,24 @@
         <div class="columna col-2"></div>
     </div>
     <!--//main Sección de clasificación del ruido-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div class="row container-fluid divBody" style="padding-top: 10.5vw;">
         <!--//*Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
-                <center>
-                    <h2 class="linea">
+                <h2 class="linea">
+                    <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/clasRuido.svg"></span>
                             <span>Clasificación del ruido</span>
                         </titulo>
-                    </h2>
-                </center>
+                    </center>
+                </h2>
             </div>
             <div class="columna col-1"></div>
         </div>
         <!--//*Texto de la sección-->
-        <div class="row" style="padding-top: 100px;">
+        <div class="row" style="padding-top: 5.3vw;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
                 <p>La Organización Mundial de la Salud define al ruido como: cualquier tipo de onda acústica que se encuentre
@@ -281,7 +285,7 @@
             <div class="columna col-2"></div>
         </div>
         <!--//*Tabla de clasificación del ruido-->
-        <div class="row" style="padding-top: 100px;">
+        <div class="row" style="padding-top: 5.3vw;">
             <div class="columna col-2"></div>
             <!--//*Columna de ruido muy bajo-->
             <div class="columna col textCorrido">
@@ -313,7 +317,7 @@
             <div class="columna col-2"></div>
         </div>
         <!--//*Grafica de clasificación de ruidos-->
-        <div class="row" style="padding-top: 50px;">
+        <div class="row" style="padding-top: 2.6vw;">
             <div class="columna col-2"></div>
             <!--//*Frame de la grafica, clasiRuido.php es la página que aloja la gráfica-->
             <div class="columna col">
@@ -322,7 +326,7 @@
             <div class="columna col-2"></div>
         </div>
         <!--//*Texto final de la sección-->
-        <div class="row" style="padding-top: 100px;">
+        <div class="row" style="padding-top: 2.6vw;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
                 <p>Aún con el límite que la OMS establece para aquello que es un “ruido sano”, la institución advierte que para qué un ruido pueda ser
@@ -337,24 +341,24 @@
         </div>
     </div>
     <!--//main Sección de legislación del ruido-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div class="row container-fluid divBody" style="padding-top: 10.5vw;">
         <!--//* Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
-                <center>
-                    <h2 class="linea">
+                <h2 class="linea">
+                    <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/legRuido.svg"></span>
                             <span>Legislación del ruido</span>
                         </titulo>
-                    </h2>
-                </center>
+                    </center>
+                </h2>
             </div>
             <div class="columna col-1"></div>
         </div>
         <!--//* Texto de la sección-->
-        <div class="row" style="padding-top: 100px;">
+        <div class="row" style="padding-top: 5.3vw;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
                 <p>
@@ -400,24 +404,24 @@
         </div>
     </div>
     <!--//main Sección de Componentes del ruido-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div class="row container-fluid divBody" style="padding-top: 10.5vw;">
         <!--//*Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
             <div class="columna col subtitle">
-                <center>
-                    <h2 class="linea">
+                <h2 class="linea">
+                    <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/compRuido.svg"></span>
                             <span>Componentes del ruido</span>
                         </titulo>
-                    </h2>
-                </center>
+                    </center>
+                </h2>
             </div>
             <div class="columna col-1"></div>
         </div>
         <!--//*Texto de la sección-->
-        <div class="row" style="padding-top: 100px;">
+        <div class="row" style="padding-top: 5.3vw;">
             <div class="columna col-2"></div>
             <div class="columna col textCorrido">
                 <p>
@@ -426,7 +430,7 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <div class="row" style="padding-top: 100px;">
+        <div class="row" style="padding-top: 5.3vw;">
             <div class="columna col-2"></div>
             <!--//*Columna sobre la intensidad-->
             <div class="columna col textCorrido">
@@ -465,7 +469,7 @@
             <div class="columna col-2"></div>
         </div>
         <!--//*Gráfica de onda con sliders-->
-        <div class="row" style="padding-top: 50px;">
+        <div class="row" style="padding-top: 2.6vw;">
             <div class="columna col-2"></div>
             <!--//*Frame de la gráfica, ondaSlides.php posee la gráfica-->
             <div class="col">

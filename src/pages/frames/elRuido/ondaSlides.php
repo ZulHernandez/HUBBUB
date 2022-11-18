@@ -5,14 +5,14 @@
     <script type="module" src="../../../../node_modules\tone\build\Tone.js"></script>
     <!--//import P5.js para animaciones base canva-->
     <script src="../../../dist/p5.js" type="text/javascript"></script>
-    <!--//import  Estilos aplicados al proyecto en general-->
+    <!--//import Estilos aplicados al proyecto en general-->
     <link href="../../../scss/general.css" rel="stylesheet">
     <title>
         HUBBUB | Componentes del ruido
     </title>
 </head>
 
-<body>
+<body onresize="setup();">
     <!--//main Canva para la gráfica de la onda-->
     <div id="canvaOnda"></div>
 </body>
