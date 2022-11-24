@@ -16,7 +16,7 @@ let posY, posX;
 let dibuja = 0;
 //* Etiquetas de los sliders
 let vLabel = 10;
-let hLabel = 6995;
+let hLabel = 6932;
 //* Posición en x y en y del ratón
 let rataX, rataY;
 //* Frecuencia con la que oscila la onda
@@ -27,21 +27,26 @@ let translada;
 let tamanio;
 //* Contador de movimiento
 var i = 50;
-//* e de dibujo para arriba o abajo
+//* Dibujo para arriba o abajo
 var upDown = 0;
-//* le del espacio entre crestas y valles
+//* Espacio entre crestas y valles
 let amplitud = 0;
+//* Determina posición del slider respecto a una unidad de ancho de linea entre 7000
+let despPixel, despPixelvsPosX;
 
-/* function changeWave() {
-	w = window.innerWidth;
-	h = window.innerHeight;
-	vw = w / 100;
-	posIX = vw * -0.1;
-	posIY = vw * -0.1;
-	posY = vw * 4.1;
-	posX = vw * 6.1;
-	translada = vw * 2.4;
-} */
+//funcion Reiniciamos valor de la onda en resize
+function reiniciaPos() {
+	hLabel = 6932;
+}
+
+//funcion Llamamos al reinicio de posición de onda y seteamos una vez más el canvas
+function cambiaTam() {
+	reiniciaPos();
+	setup();
+}
+
+//funcion Llamamos funciones al modificar tamaño de la ventana
+window.onresize = cambiaTam;
 
 //funcion Precargamos fuentes
 function preload() {
@@ -86,10 +91,36 @@ function draw() {
 	//* Obtenemos la posicion del raton y compensamos el desplazamiento
 	rataX = mouseX - translada;
 	rataY = mouseY;
+	//* Calculamos el valor de la amplitud de acuerdo a la posicion del slider en x
+	amplitud = posX - vw * 5.3;
+	//* Dibujamos la onda
+	fill(0, 0, 0, 0);
+	colorMode(HSB, 360, 100, 100);
+	stroke(hLabel / 23.3, 51, 100);
+	strokeWeight(vw * 0.4);
+	curveTightness((vw * 5.3) / posX - 0.25);
+	//* Empezamos la forma de la onda
+	beginShape();
+	//* Dibujamos los primeros dos vertices de la onda
+	curveVertex(vw * 5.3, i);
+	curveVertex(vw * 5.3, i);
+	curveVertex(posX, (i - 650) * -1 + posY);
+	//* Dibujamos los vertices del tercero hasta el penultimo
+	for (var j = 1; j < 99; j++) {
+		if (j % 2 == 0) {
+			curveVertex(posX + amplitud * j, (i - 650) * -1 + posY);
+		} else {
+			curveVertex(posX + amplitud * j, i);
+		}
+	}
+	//* Dibujamos el ultimo vertice
+	curveVertex(posX + amplitud * 99, i);
+	curveVertex(posX + amplitud * 99, i);
+	endShape();
 	//* Modo de color RGB
 	colorMode(RGB, 255, 255, 255);
 	//* Fondo transparente
-	background(255, 0, 0, 0.3);
+	background(255, 0, 0, 0);
 	//* Modo del cursor
 	cursor(ARROW);
 	//* Escribimos el titulo del eje y
@@ -101,7 +132,7 @@ function draw() {
 	rect(vw * 5.3, 670, vw * 81.4, 10, 5);
 	//* Definimos el color de la linea y dibujamos el eje y
 	fill("#0075FF");
-	//* Evaluamos el drag en x
+	//* Evaluamos el drag en y
 	switch (eventoDrag) {
 		//* Estado inicial del slider y
 		//* Dibujamos recta de eje y
@@ -202,12 +233,10 @@ function draw() {
 	rect(vw * 86.7 - tamanio * 300, 750 - 8, 3, 25);
 	rect(vw * 86.7 - tamanio * 214.3, 750 - 8, 3, 25);
 	rect(vw * 86.7 - tamanio * 10.7, 750 - 8, 3, 25);
-	rect(vw * 86.7 - tamanio * 0, 750 - 8, 3, 25);
 	//* Escribimos los valores de cada sección
 	escribe("7000 Hz", vw * 86.7 - tamanio * 300, 730, 1);
 	escribe("5000 Hz", vw * 86.7 - tamanio * 214.3, 730, 1);
 	escribe("250 Hz", vw * 86.7 - tamanio * 10.7, 730, 1);
-	escribe("1 Hz", vw * 86.7 - tamanio * 0, 730, 1);
 	//* Cambiamos modo de color a RGB
 	colorMode(RGB, 255, 255, 255);
 	//* Evaluamos posicion del slider en x para saber el tipo de sonido y pintarlo en la linea arcoíris
@@ -220,34 +249,8 @@ function draw() {
 	if (hLabel <= 251 && hLabel >= 1) {
 		drawLabel(posX, 760, "h", "GRAVE");
 	}
-	//* Calculamos el valor de la amplitud de acuerdo a la posicion del slider en x
-	amplitud = posX - vw * 5.3;
-	//* Dibujamos la onda
-	fill(0, 0, 0, 0);
-	colorMode(HSB, 360, 100, 100);
-	stroke(hLabel / 23.3, 51, 100);
-	strokeWeight(vw * 0.4);
-	curveTightness((vw * 5.3) / posX - 0.25);
-	//* Empezamos la forma de la onda
-	beginShape();
-	//* Dibujamos los primeros dos vertices de la onda
-	curveVertex(vw * 5.3, i);
-	curveVertex(vw * 5.3, i);
-	curveVertex(posX, (i - 650) * -1 + posY);
-	//* Dibujamos los vertices del tercero hasta el penultimo
-	for (var j = 1; j < 99; j++) {
-		if (j % 2 == 0) {
-			curveVertex(posX + amplitud * j, (i - 650) * -1 + posY);
-		} else {
-			curveVertex(posX + amplitud * j, i);
-		}
-	}
-	//* Dibujamos el ultimo vertice
-	curveVertex(posX + amplitud * 99, i);
-	curveVertex(posX + amplitud * 99, i);
-	endShape();
 	//* Dibujamos un rectangulo para ocultar la onda fuera del gráfico
-	fill(black);
+	fill(white);
 	noStroke();
 	rect(vw * 86, 0, 200, 655);
 }
@@ -292,27 +295,31 @@ function mouseDragged() {
 	if (posY < 50) {
 		posY = 50;
 	}
-	//* Regresamoa la posición del slider en x si supera los límites de movimiento
-	if (posX > (vw*85.54)) {
-		posX = (vw*85.54);
+	//* Regresamos la posición del slider en x si supera los límites de movimiento
+	if (posX > vw * 85.54) {
+		posX = vw * 85.54;
 	}
-	if (posX < (vw*6.09)) {
-		posX = (vw*6.09);
+	if (posX < vw * 6.09) {
+		posX = vw * 6.09;
 	}
 	//* Determinamos el valor de la etiqueta en y
 	vLabel = ((posY - 650) / 60) * -1;
 	vLabel = vLabel.toFixed();
 	//* Determinamos el valor de la etiqueta en x
-	hLabel = (7000+(vw*6.09)*7.053)-posX*7.053;
-	//hLabel = ((posX - vw * 6.1)-7000)*-1;
-	hLabel = hLabel.toFixed();
+	//* Encontramos la unidad de movimiento para sumar o restar valores
+	despPixel = (vw * 81.4) / 7000;
+	//* Evaluamos la posición del slider en x para saber el valor de la etiqueta
+	despPixelvsPosX = (posX - vw * 5.3) / despPixel;
+	//* Ajustamos el valor de la etiqueta
+	hLabel = Math.abs(despPixelvsPosX.toFixed() - 7000);
+
 	//* Evitamos el valor 0 en la etiqueta en x
-	if (hLabel < 1) {
-		hLabel = 1;
+	if (hLabel < 120) {
+		hLabel = 120;
 	}
 	//* Evitamos el valor 0 en la etiqueta en x
-	if (hLabel > 6995) {
-		hLabel = 6995;
+	if (hLabel > 6932) {
+		hLabel = 6932;
 	}
 }
 
@@ -335,31 +342,30 @@ function mouseReleased() {
 		posY = 50;
 	}
 	//* Regresamoa la posición del slider en x si supera los límites de movimiento
-	if (posX > (vw*85.54)) {
-		posX = (vw*85.54);
+	if (posX > vw * 85.54) {
+		posX = vw * 85.54;
 	}
-	if (posX < (vw*6.09)) {
-		posX = (vw*6.09);
+	if (posX < vw * 6.09) {
+		posX = vw * 6.09;
 	}
 	//* Determinamos el valor de la etiqueta en y
 	vLabel = ((posY - 650) / 60) * -1;
 	vLabel = vLabel.toFixed();
 	//* Determinamos el valor de la etiqueta en x
-	/* console.log("------------------------------------");
-	console.log("posX: " + posX);
-	console.log(vw * 86.8 - (posX - (vw * 86.8 - 300 * tamanio)) * tamanio);
-	console.log("vw: " + vw);
-	console.log("Pixeles actuales: " + vw*6.09); */
-	hLabel = (7000+(vw*6.09)*7.053)-posX*7.053;
-	hLabel = hLabel.toFixed();
-	console.log("hLabel: " + hLabel);
+	//* Encontramos la unidad de movimiento para sumar o restar valores
+	despPixel = (vw * 81.4) / 7000;
+	//* Evaluamos la posición del slider en x para saber el valor de la etiqueta
+	despPixelvsPosX = (posX - vw * 5.3) / despPixel;
+	//* Ajustamos el valor de la etiqueta
+	hLabel = Math.abs(despPixelvsPosX.toFixed() - 7000);
+
 	//* Evitamos el valor 0 en la etiqueta en x
-	if (hLabel < 1) {
-		hLabel = 1;
+	if (hLabel < 120) {
+		hLabel = 120;
 	}
 	//* Evitamos el valor 0 en la etiqueta en x
-	if (hLabel > 6995) {
-		hLabel = 6995;
+	if (hLabel > 6932) {
+		hLabel = 6932;
 	}
 
 	//funcion Reproducimos el sonido de la onda
@@ -413,24 +419,53 @@ function drawLabel(x, y, o, texto) {
 	//* Evaluamos la orientación
 	//* Orientación horizontal
 	if (o == "h") {
-		//* Dibujamos la etiqueta
-		triangle(x, y, x + 10, y + 10, x - 10, y + 10);
-		rect(x - 38, y + 9.5, 76, 28, 5);
-		fill(white);
-		textAlign(CENTER);
-		textFont(MontserratM);
-		textSize(15);
-		text(texto, x, y + 22.5);
+		if (hLabel < 500) {
+			//* Dibujamos la etiqueta
+			triangle(x, y, x + 10, y + 10, x - 10, y + 10);
+			rect(x - 55, y + 9.5, 76, 28, 5);
+			fill(white);
+			textAlign(CENTER);
+			textFont(MontserratM);
+			textSize(15);
+			text(texto, x-17, y + 22.5);
+		} else {
+			//* Dibujamos la etiqueta
+			triangle(x, y, x + 10, y + 10, x - 10, y + 10);
+			rect(x - 38, y + 9.5, 76, 28, 5);
+			fill(white);
+			textAlign(CENTER);
+			textFont(MontserratM);
+			textSize(15);
+			text(texto, x, y + 22.5);
+		}
 		//* Orientación vertical
 	} else {
-		//* Dibujamos la etiqueta
-		triangle(x, y, x - 10, y - 8, x - 10, y + 8);
-		rect(x - 66, y - 14, 57, 28, 5);
-		fill(white);
-		textAlign(RIGHT, CENTER);
-		textFont(MontserratM);
-		textSize(16);
-		text(texto, x - 15, y - 2);
+		if (w < h) {
+			//* Dibujamos la etiqueta
+			triangle(
+				x + vw * 1.6,
+				y,
+				x + vw * 1.6 + 10,
+				y + 10,
+				x + vw * 1.6 + 10,
+				y - 10
+			);
+			rect(x + vw * 1.6 + 9, y - 14, 57, 28, 5);
+			fill(white);
+			textAlign(LEFT, CENTER);
+			textFont(MontserratM);
+			textSize(16);
+			text(texto, x + vw * 1.6 + 15, y - 2);
+		} else {
+			//* Dibujamos la etiqueta
+			triangle(x, y, x - 10, y - 8, x - 10, y + 8);
+			rect(x - 66, y - 14, 57, 28, 5);
+			fill(white);
+			textAlign(RIGHT, CENTER);
+			textFont(MontserratM);
+			textSize(16);
+			text(texto, x - 15, y - 2);
+		}
 	}
 }
 

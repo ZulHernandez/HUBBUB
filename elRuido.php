@@ -32,7 +32,7 @@
 
 <!--//funcion Inicia el visualizador de sketchfab al cargar-->
 
-<body onload="skfbStart();" onresize="setup();">
+<body onload="skfbStart();" onresize="setup()">
     <!--//main Se incluye el navegador lateral izquierdo-->
     <!--//funcion navIzq() Colapasa o expande el navegador lateral izquierdo-->
     <!--//param 0 = navegador colapsado-->
