@@ -84,17 +84,31 @@ body {
   height: 645px;
 }
 
+.gifPasos {
+  width: 80%;
+  height: auto;
+  margin-top: 0px;
+}
+
 .logoHero {
   -webkit-animation-name: logoMove;
           animation-name: logoMove;
   width: 12.5vw;
   height: auto;
 }
+@media (orientation: portrait) {
+  .logoHero {
+    -webkit-animation-name: no;
+            animation-name: no;
+    width: 25vw;
+    height: auto;
+  }
+}
 
 .img1 {
-  width: 100px;
+  width: 5.3vw;
   height: auto;
-  margin-top: 75px;
+  margin-top: 3.9vw;
   z-index: 1;
   position: absolute;
   -webkit-animation-duration: 500ms;
@@ -108,9 +122,9 @@ body {
 }
 
 .img2 {
-  width: 100px;
+  width: 5.3vw;
   height: auto;
-  margin-top: 75px;
+  margin-top: 3.9vw;
   z-index: 2;
   position: absolute;
   -webkit-animation-duration: 500ms;
@@ -119,15 +133,15 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  margin-left: 142.5px;
+  margin-left: 7.6vw;
   -webkit-animation-name: mueve2a1;
           animation-name: mueve2a1;
 }
 
 .img3 {
-  width: 250px;
+  width: 13.2vw;
   height: auto;
-  margin-top: 75px;
+  margin-top: 3.9vw;
   z-index: 3;
   position: absolute;
   -webkit-animation-duration: 500ms;
@@ -136,13 +150,13 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  margin-left: 285px;
+  margin-left: 15.1vw;
   -webkit-animation-name: mueve3a2;
           animation-name: mueve3a2;
 }
 
 .img4 {
-  width: 100px;
+  width: 5.3vw;
   height: auto;
   margin-top: 0px;
   z-index: 4;
@@ -153,13 +167,13 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  margin-left: 577.5px;
+  margin-left: 30.6vw;
   -webkit-animation-name: mueve4a3;
           animation-name: mueve4a3;
 }
 
 .img5 {
-  width: 100px;
+  width: 5.3vw;
   height: auto;
   margin-top: 0px;
   z-index: 5;
@@ -170,15 +184,15 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  margin-left: 720px;
+  margin-left: 38.2vw;
   -webkit-animation-name: mueve5a4;
           animation-name: mueve5a4;
 }
 
 .img1b {
-  width: 100px;
+  width: 5.3vw;
   height: auto;
-  margin-top: 75px;
+  margin-top: 3.9vw;
   z-index: 1;
   position: absolute;
   -webkit-animation-duration: 500ms;
@@ -192,9 +206,9 @@ body {
 }
 
 .img2b {
-  width: 100px;
+  width: 5.3vw;
   height: auto;
-  margin-top: 75px;
+  margin-top: 3.9vw;
   z-index: 2;
   position: absolute;
   -webkit-animation-duration: 500ms;
@@ -203,13 +217,13 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  margin-left: 142.5px;
+  margin-left: 7.6vw;
   -webkit-animation-name: mueve1a2;
           animation-name: mueve1a2;
 }
 
 .img3b {
-  width: 250px;
+  width: 13.2vw;
   height: auto;
   margin-top: 0px;
   z-index: 3;
@@ -220,13 +234,13 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  margin-left: 285px;
+  margin-left: 15.1vw;
   -webkit-animation-name: mueve2a3;
           animation-name: mueve2a3;
 }
 
 .img4b {
-  width: 100px;
+  width: 5.3vw;
   height: auto;
   margin-top: 0px;
   z-index: 4;
@@ -237,15 +251,15 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  margin-left: 577.5px;
+  margin-left: 30.6vw;
   -webkit-animation-name: mueve3a4;
           animation-name: mueve3a4;
 }
 
 .img5b {
-  width: 100px;
+  width: 5.3vw;
   height: auto;
-  margin-top: 75px;
+  margin-top: 3.9vw;
   z-index: 5;
   position: absolute;
   -webkit-animation-duration: 500ms;
@@ -254,7 +268,7 @@ body {
           animation-fill-mode: forwards;
   -webkit-animation-timing-function: ease-out;
           animation-timing-function: ease-out;
-  margin-left: 720px;
+  margin-left: 38.2vw;
   -webkit-animation-name: mueve4a5;
           animation-name: mueve4a5;
 }
@@ -293,7 +307,7 @@ body {
 
 .imagenArea {
   background-size: cover;
-  background-size: 80px;
+  background-size: 4.2vw;
   background-repeat: no-repeat;
   background-position: 55% 50%;
 }
@@ -303,10 +317,10 @@ body {
 }
 
 .titleArea {
-  width: 100px;
-  height: 100px;
+  width: 4.9vw;
+  height: 4.9vw;
   border-radius: 50%;
-  border-width: 5px;
+  border-width: 0.5vw;
   border-style: solid;
   cursor: pointer;
   transition: 0.25s;
@@ -325,10 +339,10 @@ body {
 }
 
 .titleAreaAct {
-  width: 100px;
-  height: 100px;
+  width: 4.9vw;
+  height: 4.9vw;
   border-radius: 50%;
-  border-width: 5px;
+  border-width: 0.5vw;
   border-style: solid;
   cursor: context-menu;
   border-color: #ff7c7c;
@@ -353,233 +367,233 @@ body {
 }
 @-webkit-keyframes mueve1a5 {
   from {
-    margin-top: 75px;
-    margin-left: 0px;
+    margin-top: 3.9vw;
+    margin-left: 0vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 720px;
+    margin-top: 3.9vw;
+    margin-left: 38.2vw;
   }
 }
 @keyframes mueve1a5 {
   from {
-    margin-top: 75px;
-    margin-left: 0px;
+    margin-top: 3.9vw;
+    margin-left: 0vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 720px;
+    margin-top: 3.9vw;
+    margin-left: 38.2vw;
   }
 }
 @-webkit-keyframes mueve2a1 {
   from {
-    margin-top: 75px;
-    margin-left: 142.5px;
+    margin-top: 3.9vw;
+    margin-left: 7.6vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 0px;
+    margin-top: 3.9vw;
+    margin-left: 0vw;
   }
 }
 @keyframes mueve2a1 {
   from {
-    margin-top: 75px;
-    margin-left: 142.5px;
+    margin-top: 3.9vw;
+    margin-left: 7.6vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 0px;
+    margin-top: 3.9vw;
+    margin-left: 0vw;
   }
 }
 @-webkit-keyframes mueve3a2 {
   from {
-    margin-top: 0px;
-    margin-left: 285px;
-    width: 250px;
+    margin-top: 0vw;
+    margin-left: 15.1vw;
+    width: 13.2vw;
     height: auto;
   }
   to {
-    margin-top: 75px;
-    margin-left: 142.5px;
-    width: 100px;
+    margin-top: 3.9vw;
+    margin-left: 7.6vw;
+    width: 5.3vw;
     height: auto;
   }
 }
 @keyframes mueve3a2 {
   from {
-    margin-top: 0px;
-    margin-left: 285px;
-    width: 250px;
+    margin-top: 0vw;
+    margin-left: 15.1vw;
+    width: 13.2vw;
     height: auto;
   }
   to {
-    margin-top: 75px;
-    margin-left: 142.5px;
-    width: 100px;
+    margin-top: 3.9vw;
+    margin-left: 7.6vw;
+    width: 5.3vw;
     height: auto;
   }
 }
 @-webkit-keyframes mueve4a3 {
   from {
-    margin-top: 75px;
-    margin-left: 577.5px;
-    width: 100px;
+    margin-top: 3.9vw;
+    margin-left: 30.6vw;
+    width: 5.3vw;
     height: auto;
   }
   to {
-    margin-top: 0px;
-    margin-left: 285px;
-    width: 250px;
+    margin-top: 0vw;
+    margin-left: 15.1vw;
+    width: 13.2vw;
     height: auto;
   }
 }
 @keyframes mueve4a3 {
   from {
-    margin-top: 75px;
-    margin-left: 577.5px;
-    width: 100px;
+    margin-top: 3.9vw;
+    margin-left: 30.6vw;
+    width: 5.3vw;
     height: auto;
   }
   to {
-    margin-top: 0px;
-    margin-left: 285px;
-    width: 250px;
+    margin-top: 0vw;
+    margin-left: 15.1vw;
+    width: 13.2vw;
     height: auto;
   }
 }
 @-webkit-keyframes mueve5a4 {
   from {
-    margin-top: 75px;
-    margin-left: 720px;
+    margin-top: 3.9vw;
+    margin-left: 38.2vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 577.5px;
+    margin-top: 3.9vw;
+    margin-left: 30.6vw;
   }
 }
 @keyframes mueve5a4 {
   from {
-    margin-top: 75px;
-    margin-left: 720px;
+    margin-top: 3.9vw;
+    margin-left: 38.2vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 577.5px;
+    margin-top: 3.9vw;
+    margin-left: 30.6vw;
   }
 }
 @-webkit-keyframes mueve5a1 {
   from {
-    margin-top: 75px;
-    margin-left: 720px;
+    margin-top: 3.9vw;
+    margin-left: 38.2vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 0px;
+    margin-top: 3.9vw;
+    margin-left: 0vw;
   }
 }
 @keyframes mueve5a1 {
   from {
-    margin-top: 75px;
-    margin-left: 720px;
+    margin-top: 3.9vw;
+    margin-left: 38.2vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 0px;
+    margin-top: 3.9vw;
+    margin-left: 0vw;
   }
 }
 @-webkit-keyframes mueve1a2 {
   from {
-    margin-top: 75px;
-    margin-left: 0px;
+    margin-top: 3.9vw;
+    margin-left: 0vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 142.5px;
+    margin-top: 3.9vw;
+    margin-left: 7.6vw;
   }
 }
 @keyframes mueve1a2 {
   from {
-    margin-top: 75px;
-    margin-left: 0px;
+    margin-top: 3.9vw;
+    margin-left: 0vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 142.5px;
+    margin-top: 3.9vw;
+    margin-left: 7.6vw;
   }
 }
 @-webkit-keyframes mueve2a3 {
   from {
-    margin-top: 75px;
-    margin-left: 142.5px;
-    width: 100px;
+    margin-top: 3.9vw;
+    margin-left: 7.6vw;
+    width: 5.3vw;
     height: auto;
   }
   to {
-    margin-top: 0px;
-    margin-left: 285px;
-    width: 250px;
+    margin-top: 0vw;
+    margin-left: 15.1vw;
+    width: 13.2vw;
     height: auto;
   }
 }
 @keyframes mueve2a3 {
   from {
-    margin-top: 75px;
-    margin-left: 142.5px;
-    width: 100px;
+    margin-top: 3.9vw;
+    margin-left: 7.6vw;
+    width: 5.3vw;
     height: auto;
   }
   to {
-    margin-top: 0px;
-    margin-left: 285px;
-    width: 250px;
+    margin-top: 0vw;
+    margin-left: 15.1vw;
+    width: 13.2vw;
     height: auto;
   }
 }
 @-webkit-keyframes mueve3a4 {
   from {
-    margin-top: 0px;
-    margin-left: 285px;
-    width: 250px;
+    margin-top: 0vw;
+    margin-left: 15.1vw;
+    width: 13.2vw;
     height: auto;
   }
   to {
-    margin-top: 75px;
-    margin-left: 577.5px;
-    width: 100px;
+    margin-top: 3.9vw;
+    margin-left: 30.6vw;
+    width: 5.3vw;
     height: auto;
   }
 }
 @keyframes mueve3a4 {
   from {
-    margin-top: 0px;
-    margin-left: 285px;
-    width: 250px;
+    margin-top: 0vw;
+    margin-left: 15.1vw;
+    width: 13.2vw;
     height: auto;
   }
   to {
-    margin-top: 75px;
-    margin-left: 577.5px;
-    width: 100px;
+    margin-top: 3.9vw;
+    margin-left: 30.6vw;
+    width: 5.3vw;
     height: auto;
   }
 }
 @-webkit-keyframes mueve4a5 {
   from {
-    margin-top: 75px;
-    margin-left: 577.5px;
+    margin-top: 3.9vw;
+    margin-left: 30.6vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 720px;
+    margin-top: 3.9vw;
+    margin-left: 38.2vw;
   }
 }
 @keyframes mueve4a5 {
   from {
-    margin-top: 75px;
-    margin-left: 577.5px;
+    margin-top: 3.9vw;
+    margin-left: 30.6vw;
   }
   to {
-    margin-top: 75px;
-    margin-left: 720px;
+    margin-top: 3.9vw;
+    margin-left: 38.2vw;
   }
 }/*# sourceMappingURL=elRuido.css.map */

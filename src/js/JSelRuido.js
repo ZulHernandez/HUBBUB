@@ -8,6 +8,39 @@ let contSalud = 1;
 //* Posición del carruselPasos
 let contPasos = 1;
 
+let opcCero,
+	opcUno,
+	opcDos,
+	opcTres,
+	opcCuatro,
+	opcCinco,
+	opcSeis,
+	opcSiete,
+	opcOcho,
+	opcNueve;
+
+let textOpcCero,
+	textOpcUno,
+	textOpcDos,
+	textOpcTres,
+	textOpcCuatro,
+	textOpcCinco,
+	textOpcSeis,
+	textOpcSiete,
+	textOpcOcho,
+	textOpcNueve;
+
+let tituloCero,
+	tituloUno,
+	tituloDos,
+	tituloTres,
+	tituloCuatro,
+	tituloCinco,
+	tituloSeis,
+	tituloSiete,
+	tituloOcho,
+	tituloNueve;
+
 //funcion Movemos el carruselSalud
 //param a = posición dada por flechas
 function carruSalud(a) {
@@ -292,7 +325,7 @@ function carruPasos(a, b) {
 			boton7.className = "inaButton";
 			boton8.className = "inaButton";
 			boton9.className = "inaButton";
-			barraCrece.style.width = "66.5px";
+			barraCrece.style.width = "3.5vw";
 			subMide.innerHTML = "<center>Paso 2: Zonas</center>";
 			textoCarruMide.innerHTML =
 				'Dividir la zona general en <b style="color: #ff7c7c;">zonas ' +
@@ -310,7 +343,7 @@ function carruPasos(a, b) {
 			boton7.className = "inaButton";
 			boton8.className = "inaButton";
 			boton9.className = "inaButton";
-			barraCrece.style.width = "133px";
+			barraCrece.style.width = "7vw";
 			subMide.innerHTML = "<center>Paso 3: Centros</center>";
 			textoCarruMide.innerHTML =
 				'Ubicar los <b style="color: #0176ff;">centros acústicos</b> dentro de las zonas antes trazadas.';
@@ -327,7 +360,7 @@ function carruPasos(a, b) {
 			boton7.className = "inaButton";
 			boton8.className = "inaButton";
 			boton9.className = "inaButton";
-			barraCrece.style.width = "199.5px";
+			barraCrece.style.width = "10.5vw";
 			subMide.innerHTML = "<center>Paso 4: Periodos</center>";
 			textoCarruMide.innerHTML =
 				"Elegir los periodos de integración de medición también establecidos dent" +
@@ -346,7 +379,7 @@ function carruPasos(a, b) {
 			boton7.className = "inaButton";
 			boton8.className = "inaButton";
 			boton9.className = "inaButton";
-			barraCrece.style.width = "266px";
+			barraCrece.style.width = "14vw";
 			subMide.innerHTML = "<center>Paso 5: Lapsos</center>";
 			textoCarruMide.innerHTML =
 				'Dividir el periodo de integración en <b style="color: #0176ff;">lapsos ig' +
@@ -364,7 +397,7 @@ function carruPasos(a, b) {
 			boton7.className = "inaButton";
 			boton8.className = "inaButton";
 			boton9.className = "inaButton";
-			barraCrece.style.width = "332.5px";
+			barraCrece.style.width = "17.5vw";
 			subMide.innerHTML = "<center>Paso 6: Medición</center>";
 			textoCarruMide.innerHTML =
 				'Decidir entre hacer una medición <b style="color: #ff7c7c;">continua</b>' +
@@ -382,7 +415,7 @@ function carruPasos(a, b) {
 			boton7.className = "actButton";
 			boton8.className = "inaButton";
 			boton9.className = "inaButton";
-			barraCrece.style.width = "399px";
+			barraCrece.style.width = "21vw";
 			subMide.innerHTML = "<center>Paso 7: Micrófono</center>";
 			textoCarruMide.innerHTML =
 				"Se coloca un <b>micrófono</b> en el centro acústico a no " +
@@ -402,7 +435,7 @@ function carruPasos(a, b) {
 			boton7.className = "inaButton";
 			boton8.className = "actButton";
 			boton9.className = "inaButton";
-			barraCrece.style.width = "466.5px";
+			barraCrece.style.width = "24.5vw";
 			subMide.innerHTML = "<center>Paso 8: Ponderación</center>";
 			textoCarruMide.innerHTML =
 				"Ajustar el sonómetro en <b>ponderación A o C</b> según el caso y en integración lenta.";
@@ -419,7 +452,7 @@ function carruPasos(a, b) {
 			boton7.className = "inaButton";
 			boton8.className = "inaButton";
 			boton9.className = "actButton";
-			barraCrece.style.width = "532px";
+			barraCrece.style.width = "28vw";
 			subMide.innerHTML = "<center>Paso 9: Notas</center>";
 			textoCarruMide.innerHTML =
 				"De acuerdo al tipo de medición los pasos pueden cambiar, pero, de forma general, esto " +
@@ -594,57 +627,6 @@ function areaEstudio(a) {
 	}
 }
 
-//funcion Activar o desactivar navegador izquierdo
-//param a = over o out
-function navIzq(a) {
-	//* Obtenemos elementos del HTML
-	let textNavIzq = document.getElementsByClassName("textNavIzq");
-	let opcionCero = document.getElementById("opcionCero");
-	let opcionUno = document.getElementById("opcionUno");
-	let opcionDos = document.getElementById("opcionDos");
-	let opcionTres = document.getElementById("opcionTres");
-	let opcionCuatro = document.getElementById("opcionCuatro");
-	let opcionCinco = document.getElementById("opcionCinco");
-	let opcionSeis = document.getElementById("opcionSeis");
-	let opcionSiete = document.getElementById("opcionSiete");
-	let opcionOcho = document.getElementById("opcionOcho");
-	let opcionNueve = document.getElementById("opcionNueve");
-
-	//* Ponemos el estado desactivado del nav on mouse out
-	if (a == 0) {
-		for (let i = 0; i < textNavIzq.length; i++) {
-			textNavIzq[i].style.opacity = "0";
-			opcionCero.className = "textoDivNavIna";
-			opcionUno.className = "textoDivNavIna";
-			opcionDos.className = "textoDivNavIna";
-			opcionTres.className = "textoDivNavIna";
-			opcionCuatro.className = "textoDivNavIna";
-			opcionCinco.className = "textoDivNavIna";
-			opcionSeis.className = "textoDivNavIna";
-			opcionSiete.className = "textoDivNavIna";
-			opcionOcho.className = "textoDivNavIna";
-			opcionNueve.className = "textoDivNavIna";
-		}
-	}
-
-	//* Ponemos el estado activado del nav on mouse over
-	if (a == 1) {
-		for (let i = 0; i < textNavIzq.length; i++) {
-			textNavIzq[i].style.opacity = "1";
-			opcionCero.className = "textoDivNavAct";
-			opcionUno.className = "textoDivNavAct";
-			opcionDos.className = "textoDivNavAct";
-			opcionTres.className = "textoDivNavAct";
-			opcionCuatro.className = "textoDivNavAct";
-			opcionCinco.className = "textoDivNavAct";
-			opcionSeis.className = "textoDivNavAct";
-			opcionSiete.className = "textoDivNavAct";
-			opcionOcho.className = "textoDivNavAct";
-			opcionNueve.className = "textoDivNavAct";
-		}
-	}
-}
-
 //funcion Escuchamos el scroll de la ventana
 window.onscroll = function () {
 	funcionScroll();
@@ -652,80 +634,498 @@ window.onscroll = function () {
 
 //funcion Determinamos la posición del indicador de scroll en el nav izquierdo
 function funcionScroll() {
-    //* Cogemos el indicador de scroll del nav izquierdo
-	let divScroll = document.getElementById("divScroll");
+	console.log("scroll");
+	//tituloCero = document.getElementById("tituloCero").getBoundingClientRect().top;
+	tituloUno = document.getElementById("tituloUno").getBoundingClientRect().top;
+	tituloDos = document.getElementById("tituloDos").getBoundingClientRect().top;
+	tituloTres = document
+		.getElementById("tituloTres")
+		.getBoundingClientRect().top;
+	tituloCuatro = document
+		.getElementById("tituloCuatro")
+		.getBoundingClientRect().top;
+	tituloCinco = document
+		.getElementById("tituloCinco")
+		.getBoundingClientRect().top;
+	tituloSeis = document
+		.getElementById("tituloSeis")
+		.getBoundingClientRect().top;
+	tituloSiete = document
+		.getElementById("tituloSiete")
+		.getBoundingClientRect().top;
+	tituloOcho = document
+		.getElementById("tituloOcho")
+		.getBoundingClientRect().top;
+	tituloNueve = document
+		.getElementById("tituloNueve")
+		.getBoundingClientRect().top;
 
-    //* Determinamos la posición del indicador segun la posicion del scroll
-	if (document.body.scrollTop < 969) {
-		divScroll.style.marginTop = 25 + "px";
+	textOpcCero = document.getElementById("textOpcCero");
+	textOpcUno = document.getElementById("textOpcUno");
+	textOpcDos = document.getElementById("textOpcDos");
+	textOpcTres = document.getElementById("textOpcTres");
+	textOpcCuatro = document.getElementById("textOpcCuatro");
+	textOpcCinco = document.getElementById("textOpcCinco");
+	textOpcSeis = document.getElementById("textOpcSeis");
+	textOpcSiete = document.getElementById("textOpcSiete");
+	textOpcOcho = document.getElementById("textOpcOcho");
+	textOpcNueve = document.getElementById("textOpcNueve");
+
+	opcCero = document.getElementById("opcionCero");
+	opcUno = document.getElementById("opcionUno");
+	opcDos = document.getElementById("opcionDos");
+	opcTres = document.getElementById("opcionTres");
+	opcCuatro = document.getElementById("opcionCuatro");
+	opcCinco = document.getElementById("opcionCinco");
+	opcSeis = document.getElementById("opcionSeis");
+	opcSiete = document.getElementById("opcionSiete");
+	opcOcho = document.getElementById("opcionOcho");
+	opcNueve = document.getElementById("opcionNueve");
+
+	if (tituloNueve <= 100) {
+		iconCero.style.fill = "#333333";
+		textOpcCero.style.color = "#333333";
+		iconUno.style.fill = "#333333";
+		textOpcUno.style.color = "#333333";
+		iconDos.style.stroke = "#333333";
+		textOpcDos.style.color = "#333333";
+		iconTres.style.fill = "#333333";
+		textOpcTres.style.color = "#333333";
+		iconCuatro.style.fill = "#333333";
+		textOpcCuatro.style.color = "#333333";
+		iconCinco.style.stroke = "#333333";
+		textOpcCinco.style.color = "#333333";
+		iconSeis.style.fill = "#333333";
+		textOpcSeis.style.color = "#333333";
+		iconSiete.style.stroke = "#333333";
+		textOpcSiete.style.color = "#333333";
+		iconOcho.style.fill = "#333333";
+		textOpcOcho.style.color = "#333333";
+		iconNueve.style.stroke = "#ff7c7c";
+		textOpcNueve.style.color = "#ff7c7c";
+		opcCero.style.opacity = "0.5";
+		opcUno.style.opacity = "0.5";
+		opcDos.style.opacity = "0.5";
+		opcTres.style.opacity = "0.5";
+		opcCuatro.style.opacity = "0.5";
+		opcCinco.style.opacity = "0.5";
+		opcSeis.style.opacity = "0.5";
+		opcSiete.style.opacity = "0.5";
+		opcOcho.style.opacity = "0.5";
+		opcNueve.style.opacity = "1";
+	} else if (tituloOcho <= 100) {
+		iconCero.style.fill = "#333333";
+		textOpcCero.style.color = "#333333";
+		iconUno.style.fill = "#333333";
+		textOpcUno.style.color = "#333333";
+		iconDos.style.stroke = "#333333";
+		textOpcDos.style.color = "#333333";
+		iconTres.style.fill = "#333333";
+		textOpcTres.style.color = "#333333";
+		iconCuatro.style.fill = "#333333";
+		textOpcCuatro.style.color = "#333333";
+		iconCinco.style.stroke = "#333333";
+		textOpcCinco.style.color = "#333333";
+		iconSeis.style.fill = "#333333";
+		textOpcSeis.style.color = "#333333";
+		iconSiete.style.stroke = "#333333";
+		textOpcSiete.style.color = "#333333";
+		iconOcho.style.fill = "#ff7c7c";
+		textOpcOcho.style.color = "#ff7c7c";
+		iconNueve.style.stroke = "#333333";
+		textOpcNueve.style.color = "#333333";
+		opcCero.style.opacity = "0.5";
+		opcUno.style.opacity = "0.5";
+		opcDos.style.opacity = "0.5";
+		opcTres.style.opacity = "0.5";
+		opcCuatro.style.opacity = "0.5";
+		opcCinco.style.opacity = "0.5";
+		opcSeis.style.opacity = "0.5";
+		opcSiete.style.opacity = "0.5";
+		opcOcho.style.opacity = "1";
+		opcNueve.style.opacity = "0.5";
+	} else if (tituloSiete <= 100) {
+		iconCero.style.fill = "#333333";
+		textOpcCero.style.color = "#333333";
+		iconUno.style.fill = "#333333";
+		textOpcUno.style.color = "#333333";
+		iconDos.style.stroke = "#333333";
+		textOpcDos.style.color = "#333333";
+		iconTres.style.fill = "#333333";
+		textOpcTres.style.color = "#333333";
+		iconCuatro.style.fill = "#333333";
+		textOpcCuatro.style.color = "#333333";
+		iconCinco.style.stroke = "#333333";
+		textOpcCinco.style.color = "#333333";
+		iconSeis.style.fill = "#333333";
+		textOpcSeis.style.color = "#333333";
+		iconSiete.style.stroke = "#ff7c7c";
+		textOpcSiete.style.color = "#ff7c7c";
+		iconOcho.style.fill = "#333333";
+		textOpcOcho.style.color = "#333333";
+		iconNueve.style.stroke = "#333333";
+		textOpcNueve.style.color = "#333333";
+		opcCero.style.opacity = "0.5";
+		opcUno.style.opacity = "0.5";
+		opcDos.style.opacity = "0.5";
+		opcTres.style.opacity = "0.5";
+		opcCuatro.style.opacity = "0.5";
+		opcCinco.style.opacity = "0.5";
+		opcSeis.style.opacity = "0.5";
+		opcSiete.style.opacity = "1";
+		opcOcho.style.opacity = "0.5";
+		opcNueve.style.opacity = "0.5";
+	} else if (tituloSeis <= 100) {
+		iconCero.style.fill = "#333333";
+		textOpcCero.style.color = "#333333";
+		iconUno.style.fill = "#333333";
+		textOpcUno.style.color = "#333333";
+		iconDos.style.stroke = "#333333";
+		textOpcDos.style.color = "#333333";
+		iconTres.style.fill = "#333333";
+		textOpcTres.style.color = "#333333";
+		iconCuatro.style.fill = "#333333";
+		textOpcCuatro.style.color = "#333333";
+		iconCinco.style.stroke = "#333333";
+		textOpcCinco.style.color = "#333333";
+		iconSeis.style.fill = "#ff7c7c";
+		textOpcSeis.style.color = "#ff7c7c";
+		iconSiete.style.stroke = "#333333";
+		textOpcSiete.style.color = "#333333";
+		iconOcho.style.fill = "#333333";
+		textOpcOcho.style.color = "#333333";
+		iconNueve.style.stroke = "#333333";
+		textOpcNueve.style.color = "#333333";
+		opcCero.style.opacity = "0.5";
+		opcUno.style.opacity = "0.5";
+		opcDos.style.opacity = "0.5";
+		opcTres.style.opacity = "0.5";
+		opcCuatro.style.opacity = "0.5";
+		opcCinco.style.opacity = "0.5";
+		opcSeis.style.opacity = "1";
+		opcSiete.style.opacity = "0.5";
+		opcOcho.style.opacity = "0.5";
+		opcNueve.style.opacity = "0.5";
+	} else if (tituloCinco <= 100) {
+		iconCero.style.fill = "#333333";
+		textOpcCero.style.color = "#333333";
+		iconUno.style.fill = "#333333";
+		textOpcUno.style.color = "#333333";
+		iconDos.style.stroke = "#333333";
+		textOpcDos.style.color = "#333333";
+		iconTres.style.fill = "#333333";
+		textOpcTres.style.color = "#333333";
+		iconCuatro.style.fill = "#333333";
+		textOpcCuatro.style.color = "#333333";
+		iconCinco.style.stroke = "#ff7c7c";
+		textOpcCinco.style.color = "#ff7c7c";
+		iconSeis.style.fill = "#333333";
+		textOpcSeis.style.color = "#333333";
+		iconSiete.style.stroke = "#333333";
+		textOpcSiete.style.color = "#333333";
+		iconOcho.style.fill = "#333333";
+		textOpcOcho.style.color = "#333333";
+		iconNueve.style.stroke = "#333333";
+		textOpcNueve.style.color = "#333333";
+		opcCero.style.opacity = "0.5";
+		opcUno.style.opacity = "0.5";
+		opcDos.style.opacity = "0.5";
+		opcTres.style.opacity = "0.5";
+		opcCuatro.style.opacity = "0.5";
+		opcCinco.style.opacity = "1";
+		opcSeis.style.opacity = "0.5";
+		opcSiete.style.opacity = "0.5";
+		opcOcho.style.opacity = "0.5";
+		opcNueve.style.opacity = "0.5";
+	} else if (tituloCuatro <= 100) {
+		iconCero.style.fill = "#333333";
+		textOpcCero.style.color = "#333333";
+		iconUno.style.fill = "#333333";
+		textOpcUno.style.color = "#333333";
+		iconDos.style.stroke = "#333333";
+		textOpcDos.style.color = "#333333";
+		iconTres.style.fill = "#333333";
+		textOpcTres.style.color = "#333333";
+		iconCuatro.style.fill = "#ff7c7c";
+		textOpcCuatro.style.color = "#ff7c7c";
+		iconCinco.style.stroke = "#333333";
+		textOpcCinco.style.color = "#333333";
+		iconSeis.style.fill = "#333333";
+		textOpcSeis.style.color = "#333333";
+		iconSiete.style.stroke = "#333333";
+		textOpcSiete.style.color = "#333333";
+		iconOcho.style.fill = "#333333";
+		textOpcOcho.style.color = "#333333";
+		iconNueve.style.stroke = "#333333";
+		textOpcNueve.style.color = "#333333";
+		opcCero.style.opacity = "0.5";
+		opcUno.style.opacity = "0.5";
+		opcDos.style.opacity = "0.5";
+		opcTres.style.opacity = "0.5";
+		opcCuatro.style.opacity = "1";
+		opcCinco.style.opacity = "0.5";
+		opcSeis.style.opacity = "0.5";
+		opcSiete.style.opacity = "0.5";
+		opcOcho.style.opacity = "0.5";
+		opcNueve.style.opacity = "0.5";
+	} else if (tituloTres <= 100) {
+		iconCero.style.fill = "#333333";
+		textOpcCero.style.color = "#333333";
+		iconUno.style.fill = "#333333";
+		textOpcUno.style.color = "#333333";
+		iconDos.style.stroke = "#333333";
+		textOpcDos.style.color = "#333333";
+		iconTres.style.fill = "#ff7c7c";
+		textOpcTres.style.color = "#ff7c7c";
+		iconCuatro.style.fill = "#333333";
+		textOpcCuatro.style.color = "#333333";
+		iconCinco.style.stroke = "#333333";
+		textOpcCinco.style.color = "#333333";
+		iconSeis.style.fill = "#333333";
+		textOpcSeis.style.color = "#333333";
+		iconSiete.style.stroke = "#333333";
+		textOpcSiete.style.color = "#333333";
+		iconOcho.style.fill = "#333333";
+		textOpcOcho.style.color = "#333333";
+		iconNueve.style.stroke = "#333333";
+		textOpcNueve.style.color = "#333333";
+		opcCero.style.opacity = "0.5";
+		opcUno.style.opacity = "0.5";
+		opcDos.style.opacity = "0.5";
+		opcTres.style.opacity = "1";
+		opcCuatro.style.opacity = "0.5";
+		opcCinco.style.opacity = "0.5";
+		opcSeis.style.opacity = "0.5";
+		opcSiete.style.opacity = "0.5";
+		opcOcho.style.opacity = "0.5";
+		opcNueve.style.opacity = "0.5";
+	} else if (tituloDos <= 100) {
+		iconCero.style.fill = "#333333";
+		textOpcCero.style.color = "#333333";
+		iconUno.style.fill = "#333333";
+		textOpcUno.style.color = "#333333";
+		iconDos.style.stroke = "#ff7c7c";
+		textOpcDos.style.color = "#ff7c7c";
+		iconTres.style.fill = "#333333";
+		textOpcTres.style.color = "#333333";
+		iconCuatro.style.fill = "#333333";
+		textOpcCuatro.style.color = "#333333";
+		iconCinco.style.stroke = "#333333";
+		textOpcCinco.style.color = "#333333";
+		iconSeis.style.fill = "#333333";
+		textOpcSeis.style.color = "#333333";
+		iconSiete.style.stroke = "#333333";
+		textOpcSiete.style.color = "#333333";
+		iconOcho.style.fill = "#333333";
+		textOpcOcho.style.color = "#333333";
+		iconNueve.style.stroke = "#333333";
+		textOpcNueve.style.color = "#333333";
+		opcCero.style.opacity = "0.5";
+		opcUno.style.opacity = "0.5";
+		opcDos.style.opacity = "1";
+		opcTres.style.opacity = "0.5";
+		opcCuatro.style.opacity = "0.5";
+		opcCinco.style.opacity = "0.5";
+		opcSeis.style.opacity = "0.5";
+		opcSiete.style.opacity = "0.5";
+		opcOcho.style.opacity = "0.5";
+		opcNueve.style.opacity = "0.5";
+	} else if (tituloUno <= 100) {
+		iconCero.style.fill = "#333333";
+		textOpcCero.style.color = "#333333";
+		iconUno.style.fill = "#ff7c7c";
+		textOpcUno.style.color = "#ff7c7c";
+		iconDos.style.stroke = "#333333";
+		textOpcDos.style.color = "#333333";
+		iconTres.style.fill = "#333333";
+		textOpcTres.style.color = "#333333";
+		iconCuatro.style.fill = "#333333";
+		textOpcCuatro.style.color = "#333333";
+		iconCinco.style.stroke = "#333333";
+		textOpcCinco.style.color = "#333333";
+		iconSeis.style.fill = "#333333";
+		textOpcSeis.style.color = "#333333";
+		iconSiete.style.stroke = "#333333";
+		textOpcSiete.style.color = "#333333";
+		iconOcho.style.fill = "#333333";
+		textOpcOcho.style.color = "#333333";
+		iconNueve.style.stroke = "#333333";
+		textOpcNueve.style.color = "#333333";
+		opcCero.style.opacity = "0.5";
+		opcUno.style.opacity = "1";
+		opcDos.style.opacity = "0.5";
+		opcTres.style.opacity = "0.5";
+		opcCuatro.style.opacity = "0.5";
+		opcCinco.style.opacity = "0.5";
+		opcSeis.style.opacity = "0.5";
+		opcSiete.style.opacity = "0.5";
+		opcOcho.style.opacity = "0.5";
+		opcNueve.style.opacity = "0.5";
+	} else {
+		iconCero.style.fill = "#ff7c7c";
+		textOpcCero.style.color = "#ff7c7c";
+		iconUno.style.fill = "#333333";
+		textOpcUno.style.color = "#333333";
+		iconDos.style.stroke = "#333333";
+		textOpcDos.style.color = "#333333";
+		iconTres.style.fill = "#333333";
+		textOpcTres.style.color = "#333333";
+		iconCuatro.style.fill = "#333333";
+		textOpcCuatro.style.color = "#333333";
+		iconCinco.style.stroke = "#333333";
+		textOpcCinco.style.color = "#333333";
+		iconSeis.style.fill = "#333333";
+		textOpcSeis.style.color = "#333333";
+		iconSiete.style.stroke = "#333333";
+		textOpcSiete.style.color = "#333333";
+		iconOcho.style.fill = "#333333";
+		textOpcOcho.style.color = "#333333";
+		iconNueve.style.stroke = "#333333";
+		textOpcNueve.style.color = "#333333";
+		opcCero.style.opacity = "1";
+		opcUno.style.opacity = "0.5";
+		opcDos.style.opacity = "0.5";
+		opcTres.style.opacity = "0.5";
+		opcCuatro.style.opacity = "0.5";
+		opcCinco.style.opacity = "0.5";
+		opcSeis.style.opacity = "0.5";
+		opcSiete.style.opacity = "0.5";
+		opcOcho.style.opacity = "0.5";
+		opcNueve.style.opacity = "0.5";
 	}
-	if (document.body.scrollTop >= 969 && document.body.scrollTop < 2424) {
-		divScroll.style.marginTop = 68 + "px";
-	}
-	if (document.body.scrollTop >= 2424 && document.body.scrollTop < 4085) {
-		divScroll.style.marginTop = 112 + "px";
-	}
-	if (document.body.scrollTop >= 4085 && document.body.scrollTop < 5084) {
-		divScroll.style.marginTop = 156 + "px";
-	}
-	if (document.body.scrollTop >= 5084 && document.body.scrollTop < 6941) {
-		divScroll.style.marginTop = 200 + "px";
-	}
-	if (document.body.scrollTop >= 6941 && document.body.scrollTop < 8396) {
-		divScroll.style.marginTop = 244 + "px";
-	}
-	if (document.body.scrollTop >= 8396 && document.body.scrollTop < 9823) {
-		divScroll.style.marginTop = 288 + "px";
-	}
-	if (document.body.scrollTop >= 9823 && document.body.scrollTop < 11721) {
-		divScroll.style.marginTop = 332 + "px";
-	}
-	if (document.body.scrollTop >= 11721 && document.body.scrollTop < 12428) {
-		divScroll.style.marginTop = 376 + "px";
-	}
-	if (document.body.scrollTop >= 12428){
-		divScroll.style.marginTop = 420 + "px";
-	}
-	//console.log(document.body.scrollTop);
 }
 
 //funcion Determinamos la posicion en la que se encuentra el scroll según la seccion al ser clickeada en el nav izquierdo
 //param a = sección clickeada
 function scrollMe(a) {
-    //* Evaluamos la seccion clickeada y determinamos la posicion del scroll
+	//* Evaluamos la seccion clickeada y determinamos la posicion del scroll
 	switch (a) {
 		case 0:
-			document.body.scrollTop = 0;
+			window.scrollTo(0, 0);
 			break;
 		case 1:
-			document.body.scrollTop = 969;
+			document
+				.getElementById("tituloUno")
+				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
 			break;
 		case 2:
-			document.body.scrollTop = 2424;
+			document
+				.getElementById("tituloDos")
+				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
 			break;
 		case 3:
-			document.body.scrollTop = 4085;
+			document
+				.getElementById("tituloTres")
+				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
 			break;
 		case 4:
-			document.body.scrollTop = 5084;
+			document
+				.getElementById("tituloCuatro")
+				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
 			break;
 		case 5:
-			document.body.scrollTop = 6941;
+			document
+				.getElementById("tituloCinco")
+				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
 			break;
 		case 6:
-			document.body.scrollTop = 8396;
+			document
+				.getElementById("tituloSeis")
+				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
 			break;
 		case 7:
-			document.body.scrollTop = 9823;
+			document
+				.getElementById("tituloSiete")
+				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
 			break;
 		case 8:
-			document.body.scrollTop = 11721;
+			document
+				.getElementById("tituloOcho")
+				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
 			break;
 		case 9:
-			document.body.scrollTop = 12428;
+			document
+				.getElementById("tituloNueve")
+				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
 			break;
-		case 10:
-			document.body.scrollTop = 12905;
+	}
+	setTimeout(function () {
+		window.scrollBy(0, -50);
+	}, 750);
+
+	funcionScroll();
+}
+
+function navIzqOpa(a, b) {
+	var cambia, cambiaText;
+
+	switch (a) {
+		case 0:
+			cambia = opcCero;
+			cambiaText = textOpcCero;
 			break;
-		}
+		case 1:
+			cambia = opcUno;
+			cambiaText = textOpcUno;
+			break;
+		case 2:
+			cambia = opcDos;
+			cambiaText = textOpcDos;
+			break;
+		case 3:
+			cambia = opcTres;
+			cambiaText = textOpcTres;
+			break;
+		case 4:
+			cambia = opcCuatro;
+			cambiaText = textOpcCuatro;
+			break;
+		case 5:
+			cambia = opcCinco;
+			cambiaText = textOpcCinco;
+			break;
+		case 6:
+			cambia = opcSeis;
+			cambiaText = textOpcSeis;
+			break;
+		case 7:
+			cambia = opcSiete;
+			cambiaText = textOpcSiete;
+			break;
+		case 8:
+			cambia = opcOcho;
+			cambiaText = textOpcOcho;
+			break;
+		case 9:
+			cambia = opcNueve;
+			cambiaText = textOpcNueve;
+			break;
+	}
+
+	if (b == 0) {
+		cambia.style.opacity = "50%";
+		cambiaText.style.opacity = "0%";
+	} else {
+		cambia.style.opacity = "100%";
+		cambiaText.style.opacity = "100%";
+	}
+
+	funcionScroll();
+}
+
+function checaPos() {
+	console.log("checaPos");
+	funcionScroll();
+	skfbStart();
+	if	(window.innerWidth > window.innerHeight) {
+		hideShow("tituloCero",1);
+		hideShow("tituloCeroCh",0);
+		hideShow("clasi",2);
+		hideShow("clasiCh",0);
+	}else{
+		hideShow("tituloCero",0);
+		hideShow("tituloCeroCh",1);
+		hideShow("clasi",0);
+		hideShow("clasiCh",1);
+	}
 }

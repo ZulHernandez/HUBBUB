@@ -1,3 +1,5 @@
+@use "sass:math";
+
 //main Variable----------------------------------------------------------------
 //* Variable de color
 $blackGrey: #333333;
@@ -98,11 +100,6 @@ $white: #ffffff;
     }
 }
 
-//funcion Determina el padding de elementos a 12 columnas abiertas
-@mixin paddingGeneral() {
-    padding: 0px 85px;
-}
-
 //funcion Estilo para elemento en profundidad z
 //param $z: profundidad z
 @mixin capa($z) {
@@ -127,7 +124,7 @@ $white: #ffffff;
 //funcion Mostramos u ocultamos el nav izquierdo
 //param $opa: opacidad del nav
 @mixin divIzq($opa) {
-    padding-top: 20px;
+    padding-top: 15px;
     opacity: $opa;
     cursor: pointer;
 }
@@ -156,6 +153,27 @@ $white: #ffffff;
     animation-duration: 0.25s;
     animation-fill-mode: forwards;
     animation-timing-function: ease-out;
+}
+
+@mixin port {
+    @media (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin land {
+    @media (orientation: landscape) {
+        @content;
+    }
+}
+
+//funcion Determina el padding de elementos a 12 columnas abiertas
+@mixin paddingGeneral() {
+    padding: 0px 85px;
+
+    @include port() {
+        padding: 0px 50px;
+    }
 }
 
 //main Scroll-bar--------------------------------------------------------------
@@ -195,11 +213,12 @@ body,
 html {
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 //* Formato de medianil estandar
 .columna {
-    padding: 0px 25px;
+    padding: 0px 1.3vw;
 }
 
 //* Formato de medianil para columnas angostas
@@ -263,7 +282,7 @@ html {
 
 //* Formato del footer
 .footer {
-    padding: 85px 0px;
+    padding: 4.5vw 0px;
     background-color: $grey;
     background-image: url(../../assets/vector/background.svg);
     @include posicion(200px, 0px, 0px, 0px);
@@ -280,15 +299,25 @@ html {
 
 //* Formato del navegador izquierdo
 .navIzq {
-    z-index: 10;
+    z-index: 7;
+    margin-top: 95vh;
+    height: 5vh;
+    //padding: 5vh;
     position: fixed;
-    width: 280px;
-    height: 100vh;
-    backdrop-filter: blur(0px);
-    transition-duration: 250ms;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    transition: all 0.2s;
     &:hover {
-        backdrop-filter: blur(10px);
+        margin-top: 92.5vh;
+        height: 7.5vh;
+        background: rgba(255, 255, 255, 1);
     }
+}
+
+.navIcon {
+    text-align: center;
+    padding-top: 0px;
 }
 
 //* Formato para el navegador izquierdo abierto
@@ -303,7 +332,7 @@ html {
 
 //* Formato para el navegador izquierdo colapsado
 .textoDivNavIna {
-    @include divIzq(100%);
+    @include divIzq(50%);
 }
 
 //* Formato del navegador derecho
@@ -312,7 +341,7 @@ html {
     position: fixed;
     margin-left: calc(100vw - 250px);
     width: 250px;
-    height: 100vh;
+    height: 5vh;
     background-color: transparent;
     background-image: url(../);
     background-position: center top;
@@ -331,15 +360,21 @@ html {
 
 //* Imagen del logo en el hero
 .logoHero {
-    height: 23.06vh;
-    width: auto;
-    position: relative;
-    @include posicion(50vh, 11.53vh, 50vw, 6.51vw);
-    animation-delay: 4s;
-    animation-duration: 500ms;
-    animation-fill-mode: forwards;
-    animation-timing-function: ease-out;
     @include hoverSize();
+
+    @include land() {
+        @include posicion(50vh, 11.5vh, 50vw, 6.51vw);
+        position: relative;
+        animation-delay: 4s;
+        animation-duration: 500ms;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-out;
+    }
+
+    @include port() {
+        @include posicion(50vh, 24vh,0,0);
+        @include hoverSize();
+    }
 }
 
 //* Imagen del logo en el swal
@@ -360,6 +395,9 @@ html {
     width: 2vw;
     height: auto;
     margin-right: 15px;
+    @include port() {
+        width: 4vw;
+    }
 }
 
 //* Flechas para los carruseles
@@ -375,7 +413,6 @@ html {
 .navIzqIcon {
     width: 20px;
     height: 20px;
-    margin: -6px 15px 0px 10px;
 }
 
 //* Iconos del navegador derecho
@@ -421,17 +458,28 @@ html {
 .pageTitle {
     @include text(left, 3.4vw, "B", 4vw, normal);
     text-transform: uppercase;
+    @include port() {
+        @include text(center, 5vw, "B", 7.5vw, normal);
+    }
 }
 
 //* Subtitulo en el swal
-.subtitle, h2 {
+.subtitle,
+h2 {
     @include text(left, 2.1vw, "B", 2.7vw, normal);
     text-transform: uppercase;
+    @include port() {
+        @include text(left, 3.5vw, "B", 5vw, normal);
+    }
 }
 
 //* Subtitulos dentro de las secciones
 .subOido {
     @include text(left, 1.7vw, "SB", 2.3vw, normal);
+
+    @include port() {
+        @include text(left, 3vw, "SB", 4.5vw, normal);
+    }
 }
 
 //* Links del nav derecho activos
@@ -451,7 +499,6 @@ html {
     @include text(right, 24px, "SB", 29px, normal);
 }
 
-
 //* Links del nav derecho inactivos
 .linkNavDerIna {
     @include text(center, 20px, "R", 24px, normal);
@@ -466,6 +513,10 @@ html {
 //* Parrafos normales
 .textCorrido {
     @include text(justify, 1vw, "M", 1.4vw, normal);
+
+    @include port() {
+        @include text(justify, 2vw, "M", 2.5vw, normal);
+    }
 }
 
 //* Links dentro de parrafos
@@ -476,6 +527,11 @@ html {
     &:hover {
         text-decoration: underline;
     }
+
+    @include port() {
+        @include text(left, 2vw, "SB", 2.5vw, -0.5);
+    }
+
 }
 
 //* Titulo de las secciones del footer
@@ -515,7 +571,7 @@ html {
 
 //* Textos del nav izquierdo
 .textNavIzq {
-    @include text(center, 14px, "M", 16px, normal);
+    @include text(center, 14px, "B", 16px, normal);
     opacity: 0;
 }
 
@@ -555,6 +611,12 @@ a {
 .textClasf {
     padding-top: 30px;
     text-align-last: center;
+
+    @include port() {
+        padding-top: 15px;
+        padding-bottom: 30px;
+        text-align-last: left;
+    }
 }
 
 //* Líneas del titulo

@@ -26,7 +26,7 @@ function setup() {
 	//* Obtenemos el alto y ancho de la ventana
 	w = window.innerWidth;
 	h = window.innerHeight;
-	myCanva = createCanvas((w / 100) * 39.3, (w / 100) * 23.2);
+	w > h ? myCanva = createCanvas((w / 100) * 39.3, (w / 100) * 23.2) : myCanva = createCanvas((w / 100) * 49.3, (w / 100) * 33.2);
 	//* Indicamos posición en el HTML
 	myCanva.parent("canvaOido");
 	//* Framerate
@@ -40,6 +40,8 @@ function setup() {
 	cOE = loadImage("../../assets/imgs/cOE.png");
 	cOM = loadImage("../../assets/imgs/cOM.png");
 	cOI = loadImage("../../assets/imgs/cOI.png");
+
+	checaPos();
 }
 
 //funcion Para dibujar el esquema
@@ -54,34 +56,59 @@ function draw() {
 	switch (posOido) {
 		//* Posición en el oído externo
 		case 0:
-			tint(255, 255, 255, 1);
-			image(cOE, w /100 * 0.1, 0,w /100 * 17.3,w /100 * 20.5);
-			tint(255, 255, 255, 0.01);
-			image(cOM, w /100 * 14.2, w /100 * 5.8,w /100 * 7.6,w /100 * 10.5);
-			image(cOI, w /100 * 16.2, w /100 * 2.6,w /100 * 12.8,w /100 * 20.5);
+			if (w > h) {
+				tint(255, 255, 255, 1);
+				image(cOE, w /100 * 0.1, 0,w /100 * 17.3,w /100 * 20.5);
+				tint(255, 255, 255, 0.01);
+				image(cOM, w /100 * 14.2, w /100 * 5.8,w /100 * 7.6,w /100 * 10.5);
+				image(cOI, w /100 * 16.2, w /100 * 2.6,w /100 * 12.8,w /100 * 20.5);
+			}else{
+				tint(255, 255, 255, 1);
+				image(cOE, w /100 * 0.1, 0,w /100 * 23.5,w /100 * 29.3);
+				tint(255, 255, 255, 0.01);
+				image(cOM, w /100 * 19, w /100 * 8.2,w /100 * 10.6,w /100 * 15);
+				image(cOI, w /100 * 21.7, w /100 * 4.2,w /100 * 17.2,w /100 * 28.5);
+			}
+			
 			break;
 		//* Posición en el oído medio
 		case 1:
-			tint(255, 255, 255, 0.01);
-			image(cOE, w /100 * 0.1, 0,w /100 * 17.3,w /100 * 20.5);
-			image(cOI, w /100 * 16.2, w /100 * 2.6,w /100 * 12.8,w /100 * 20.5);
-			tint(255, 255, 255, 1);
-			image(cOM, w /100 * 14.2, w /100 * 5.8,w /100 * 7.6,w /100 * 10.5);
+			if (w > h) {
+				tint(255, 255, 255, 0.01);
+				image(cOE, w /100 * 0.1, 0,w /100 * 17.3,w /100 * 20.5);
+				image(cOI, w /100 * 16.2, w /100 * 2.6,w /100 * 12.8,w /100 * 20.5);
+				tint(255, 255, 255, 1);
+				image(cOM, w /100 * 14.2, w /100 * 5.8,w /100 * 7.6,w /100 * 10.5);
+			}else{
+				tint(255, 255, 255, 0.01);
+				image(cOE, w /100 * 0.1, 0,w /100 * 23.5,w /100 * 29.3);
+				image(cOI, w /100 * 21.7, w /100 * 4.2,w /100 * 17.2,w /100 * 28.5);
+				tint(255, 255, 255, 1);
+				image(cOM, w /100 * 19, w /100 * 8.2,w /100 * 10.6,w /100 * 15);
+			}
 			break;
 		//* Posición en el oído interno
 		case 2:
-			tint(255, 255, 255, 0.01);
-			image(cOE, w /100 * 0.1, 0,w /100 * 17.3,w /100 * 20.5);
-			image(cOM, w /100 * 14.2, w /100 * 5.8,w /100 * 7.6,w /100 * 10.5);
-			tint(255, 255, 255, 1);
-			image(cOI, w /100 * 16.2, w /100 * 2.6,w /100 * 12.8,w /100 * 20.5);
+			if (w > h) {
+				tint(255, 255, 255, 0.01);
+				image(cOM, w /100 * 14.2, w /100 * 5.8,w /100 * 7.6,w /100 * 10.5);
+				image(cOE, w /100 * 0.1, 0,w /100 * 17.3,w /100 * 20.5);
+				tint(255, 255, 255, 1);
+				image(cOI, w /100 * 16.2, w /100 * 2.6,w /100 * 12.8,w /100 * 20.5);
+			}else{
+				tint(255, 255, 255, 0.01);
+				image(cOM, w /100 * 19, w /100 * 8.2,w /100 * 10.6,w /100 * 15);
+				image(cOE, w /100 * 0.1, 0,w /100 * 23.5,w /100 * 29.3);
+				tint(255, 255, 255, 1);
+				image(cOI, w /100 * 21.7, w /100 * 4.2,w /100 * 17.2,w /100 * 28.5);
+			}
 			break;
 	}
 	//* Obtenemos el color de la posición del mouse
 	colorMouse = get(mouseX, mouseY);
 	//* Dibujamos esquema de oído
 	tint(255, 255, 255, 1);
-	image(oido, 0, 0,w /100 * 29,w /100 * 23.2);
+	w>h ? image(oido, 0, 0,w /100 * 29,w /100 * 23.2): image(oido, 0, 0,w /100 * 39,w /100 * 33.2);
 	//* Cambiamos modo de fusión para las áreas del oído
 	blendMode(MULTIPLY);
 	//* Evaluamos color de la posición del mouse
@@ -89,17 +116,17 @@ function draw() {
 	//* Dibujamos etiqueta de acuerdo a posición del mouse
 	if (colorMouse[0] == 85 && colorMouse[2] == 255) {
 		tint(255, 255, 255, 0.5);
-		image(cOE, w /100 * 0.1, 0,w /100 * 17.3,w /100 * 20.5);
+		w>h ? image(cOE, w /100 * 0.1, 0,w /100 * 17.3,w /100 * 20.5) : image(cOE, w /100 * 0.1, 0,w /100 * 23.5,w /100 * 29.3);
 		drawLabel(mouseX, mouseY, "Oído externo");
 	}
 	if (colorMouse[0] == 170 && colorMouse[2] == 170) {
 		tint(255, 255, 255, 0.5);
-		image(cOM, w /100 * 14.2, w /100 * 5.8,w /100 * 7.6,w /100 * 10.5);
+		w>h ? image(cOM, w /100 * 14.2, w /100 * 5.8,w /100 * 7.6,w /100 * 10.5) : image(cOM, w /100 * 19, w /100 * 8.2,w /100 * 10.6,w /100 * 15);
 		drawLabel(mouseX, mouseY, "Oído medio");
 	}
 	if (colorMouse[0] == 170 && colorMouse[2] == 85) {
 		tint(255, 255, 255, 0.5);
-		image(cOI, w /100 * 16.2, w /100 * 2.6,w /100 * 12.8,w /100 * 20.5);
+		w>h ? image(cOI, w /100 * 16.2, w /100 * 2.6,w /100 * 12.8,w /100 * 20.5) : image(cOI, w /100 * 21.7, w /100 * 4.2,w /100 * 17.2,w /100 * 28.5);
 		drawLabel(mouseX, mouseY, "Oído interno");
 	}
 	cursor("pointer");
@@ -203,7 +230,7 @@ function drawLabel(x, y, texto) {
 	//* Dibujamos la etiqueta 1px debajo del mouse
 	y--;
 	//* Compensamos la posición del mouse
-	translate(-100, 0);
+	translate(-(w / 100) * 5.3, 0);
 	//* Cambiamos modo de fusión
 	blendMode(BLEND);
 	//* Dibujamos la etiqueta

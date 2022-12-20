@@ -36,6 +36,7 @@ function navDer() {
 		botLine.className.baseVal = "botLineAct";
 		navDer.style.backgroundColor = "#666666";
 		navDer.style.backgroundImage = "url(../../assets/vector/background.svg)";
+		navDer.style.height = "100vh";
 		linksNav.style.display = "block";
 		legNav.style.display = "block";
 	} else {
@@ -45,10 +46,25 @@ function navDer() {
 		botLine.className.baseVal = "botLineIna";
 		navDer.style.backgroundColor = "transparent";
 		navDer.style.backgroundImage = "url(../)";
+		navDer.style.height = "50vh";
 		linksNav.style.display = "none";
 		legNav.style.display = "none";
 	}
 
 	//* Aumentamos el contador de clicks
 	contNav++;
+}
+
+function hideShow(aidi, a) {
+	switch (a) {
+		case 0:
+			document.getElementById(aidi).style.display = "none";
+			break;
+		case 1:
+			document.getElementById(aidi).style.display = "block";
+			break;
+		case 2:
+			document.getElementById(aidi).style.display = "flex";
+			break;
+	}
 }

@@ -55,10 +55,11 @@ body,
 html {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .columna {
-  padding: 0px 25px;
+  padding: 0px 1.3vw;
 }
 
 .columnaCh {
@@ -125,6 +126,11 @@ html {
 .divBody {
   padding: 0px 85px;
 }
+@media (orientation: portrait) {
+  .divBody {
+    padding: 0px 50px;
+  }
+}
 
 .imagenHero {
   position: absolute;
@@ -137,9 +143,14 @@ html {
   z-index: 1;
   padding: 0px 85px;
 }
+@media (orientation: portrait) {
+  .divHero {
+    padding: 0px 50px;
+  }
+}
 
 .footer {
-  padding: 85px 0px;
+  padding: 4.5vw 0px;
   background-color: #666666;
   background-image: url(../../assets/vector/background.svg);
   margin-top: 200px;
@@ -156,21 +167,29 @@ html {
 }
 
 .navIzq {
-  z-index: 10;
+  z-index: 7;
+  margin-top: 95vh;
+  height: 5vh;
   position: fixed;
-  width: 280px;
-  height: 100vh;
-  -webkit-backdrop-filter: blur(0px);
-          backdrop-filter: blur(0px);
-  transition-duration: 250ms;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  transition: all 0.2s;
 }
 .navIzq:hover {
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  margin-top: 92.5vh;
+  height: 7.5vh;
+  background: rgb(255, 255, 255);
+}
+
+.navIcon {
+  text-align: center;
+  padding-top: 0px;
 }
 
 .textoDivNavAct {
-  padding-top: 20px;
+  padding-top: 15px;
   opacity: 50%;
   cursor: pointer;
 }
@@ -181,8 +200,8 @@ html {
 }
 
 .textoDivNavIna {
-  padding-top: 20px;
-  opacity: 100%;
+  padding-top: 15px;
+  opacity: 50%;
   cursor: pointer;
 }
 
@@ -191,7 +210,7 @@ html {
   position: fixed;
   margin-left: calc(100vw - 250px);
   width: 250px;
-  height: 100vh;
+  height: 5vh;
   background-color: transparent;
   background-image: url(../);
   background-position: center top;
@@ -205,24 +224,37 @@ html {
 }
 
 .logoHero {
-  height: 23.06vh;
-  width: auto;
-  position: relative;
-  margin-top: 38.47vh;
-  margin-left: 43.49vw;
-  -webkit-animation-delay: 4s;
-          animation-delay: 4s;
-  -webkit-animation-duration: 500ms;
-          animation-duration: 500ms;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-timing-function: ease-out;
-          animation-timing-function: ease-out;
   transition: transform 150ms;
   cursor: pointer;
 }
 .logoHero:hover {
   transform: scale(1.25);
+}
+@media (orientation: landscape) {
+  .logoHero {
+    margin-top: 38.5vh;
+    margin-left: 43.49vw;
+    position: relative;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s;
+    -webkit-animation-duration: 500ms;
+            animation-duration: 500ms;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+}
+@media (orientation: portrait) {
+  .logoHero {
+    margin-top: 26vh;
+    margin-left: 0;
+    transition: transform 150ms;
+    cursor: pointer;
+  }
+  .logoHero:hover {
+    transform: scale(1.25);
+  }
 }
 
 .logoHUBBUB {
@@ -245,6 +277,11 @@ html {
   height: auto;
   margin-right: 15px;
 }
+@media (orientation: portrait) {
+  .imgSub {
+    width: 4vw;
+  }
+}
 
 .flechaOido {
   cursor: pointer;
@@ -257,7 +294,6 @@ html {
 .navIzqIcon {
   width: 20px;
   height: 20px;
-  margin: -6px 15px 0px 10px;
 }
 
 .topLineAct {
@@ -354,8 +390,19 @@ html {
   letter-spacing: normal;
   text-transform: uppercase;
 }
+@media (orientation: portrait) {
+  .pageTitle {
+    font-family: Montserrat-B;
+    font-size: 5vw;
+    line-height: 7.5vw;
+    color: #333333;
+    text-align: center;
+    letter-spacing: normal;
+  }
+}
 
-.subtitle, h2 {
+.subtitle,
+h2 {
   font-family: Montserrat-B;
   font-size: 2.1vw;
   line-height: 2.7vw;
@@ -363,6 +410,17 @@ html {
   text-align: left;
   letter-spacing: normal;
   text-transform: uppercase;
+}
+@media (orientation: portrait) {
+  .subtitle,
+h2 {
+    font-family: Montserrat-B;
+    font-size: 3.5vw;
+    line-height: 5vw;
+    color: #333333;
+    text-align: left;
+    letter-spacing: normal;
+  }
 }
 
 .subOido {
@@ -372,6 +430,16 @@ html {
   color: #333333;
   text-align: left;
   letter-spacing: normal;
+}
+@media (orientation: portrait) {
+  .subOido {
+    font-family: Montserrat-SB;
+    font-size: 3vw;
+    line-height: 4.5vw;
+    color: #333333;
+    text-align: left;
+    letter-spacing: normal;
+  }
 }
 
 .linkNavDerAct {
@@ -426,6 +494,16 @@ html {
   text-align: justify;
   letter-spacing: normal;
 }
+@media (orientation: portrait) {
+  .textCorrido {
+    font-family: Montserrat-M;
+    font-size: 2vw;
+    line-height: 2.5vw;
+    color: #333333;
+    text-align: justify;
+    letter-spacing: normal;
+  }
+}
 
 .link {
   font-family: Montserrat-SB;
@@ -439,6 +517,16 @@ html {
 }
 .link:hover {
   text-decoration: underline;
+}
+@media (orientation: portrait) {
+  .link {
+    font-family: Montserrat-SB;
+    font-size: 2vw;
+    line-height: 2.5vw;
+    color: #333333;
+    text-align: left;
+    letter-spacing: -0.5;
+  }
 }
 
 .tituloFooter {
@@ -497,7 +585,7 @@ html {
 }
 
 .textNavIzq {
-  font-family: Montserrat-M;
+  font-family: Montserrat-B;
   font-size: 14px;
   line-height: 16px;
   color: #333333;
@@ -552,6 +640,14 @@ a:focus {
   padding-top: 30px;
   -moz-text-align-last: center;
        text-align-last: center;
+}
+@media (orientation: portrait) {
+  .textClasf {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    -moz-text-align-last: left;
+         text-align-last: left;
+  }
 }
 
 h2.linea {

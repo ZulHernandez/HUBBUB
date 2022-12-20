@@ -50,10 +50,10 @@ $redWater: #ff7c7c;
 
 //*Estilo para imagenes de areas de estudio activas e inactivas
 @mixin imagenArea() {
-    width: 100px;
-    height: 100px;
+    width: 4.9vw;
+    height: 4.9vw;
     border-radius: 50%;
-    border-width: 5px;
+    border-width: 0.5vw;
     border-style: solid;
 }
 
@@ -79,6 +79,18 @@ $redWater: #ff7c7c;
     border-style: solid;
     border-color: $blackGrey;
     background-color: $blackGrey;
+}
+
+@mixin port {
+    @media (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin land {
+    @media (orientation: landscape) {
+        @content;
+    }
 }
 
 //main Divs -------------------------------------------------------------------
@@ -159,70 +171,83 @@ body {
 }
 
 //main Imagenes----------------------------------------------------------------
+
+.gifPasos {
+    width: 80%;
+    height: auto;
+    margin-top: 0px;
+}
+
 //*Imagen que se mueve en el hero
 .logoHero {
     animation-name: logoMove;
     width: 12.5vw;
     height: auto;
+
+    @include port {
+        animation-name: no;
+        width: 25vw;
+        height: auto;
+    }
 }
 
 //*Imagenes sobre los efectos en la salud en avance
 .img1 {
-    @include imagenSalud(100px, 75px, 1);
+    @include imagenSalud(5.3vw, 3.9vw, 1);
     animation-name: mueve1a5;
 }
 
 .img2 {
-    @include imagenSalud(100px, 75px, 2);
-    margin-left: 142.5px;
+    @include imagenSalud(5.3vw, 3.9vw, 2);
+    margin-left: 7.6vw;
     animation-name: mueve2a1;
 }
 
 .img3 {
-    @include imagenSalud(250px, 75px, 3);
-    margin-left: 285px;
+    @include imagenSalud(13.2vw, 3.9vw, 3);
+    margin-left: 15.1vw;
     animation-name: mueve3a2;
 }
 
 .img4 {
-    @include imagenSalud(100px, 0px, 4);
-    margin-left: 577.5px;
+    @include imagenSalud(5.3vw, 0px, 4);
+    margin-left: 30.6vw;
     animation-name: mueve4a3;
 }
 
 .img5 {
-    @include imagenSalud(100px, 0px, 5);
-    margin-left: 720px;
+    @include imagenSalud(5.3vw, 0px, 5);
+    margin-left: 38.2vw;
     animation-name: mueve5a4;
 }
 
 //*Imagenes sobre los efectos en la salud en retroceso
 .img1b {
-    @include imagenSalud(100px, 75px, 1);
+    @include imagenSalud(5.3vw, 3.9vw, 1);
     animation-name: mueve5a1;
 }
 
 .img2b {
-    @include imagenSalud(100px, 75px, 2);
-    margin-left: 142.5px;
+    @include imagenSalud(5.3vw, 3.9vw, 2);
+    margin-left: 7.6vw;
     animation-name: mueve1a2;
 }
 
 .img3b {
-    @include imagenSalud(250px, 0px, 3);
-    margin-left: 285px;
+    @include imagenSalud(13.2vw, 0px, 3);
+    margin-left: 15.1vw;
     animation-name: mueve2a3;
 }
 
 .img4b {
-    @include imagenSalud(100px, 0px, 4);
-    margin-left: 577.5px;
+    @include imagenSalud(5.3vw, 0px, 4);
+    margin-left: 30.6vw;
     animation-name: mueve3a4;
 }
 
 .img5b {
-    @include imagenSalud(100px, 75px, 5);
-    margin-left: 720px;
+    @include imagenSalud(5.3vw, 3.9vw, 5);
+    margin-left: 38.2vw;
     animation-name: mueve4a5;
 }
 
@@ -262,7 +287,7 @@ body {
 //*Estilo de todas la imagenes de areas de estudio
 .imagenArea {
     background-size: cover;
-    background-size: 80px;
+    background-size: 4.2vw;
     background-repeat: no-repeat;
     background-position: 55% 50%;
 }
@@ -308,107 +333,107 @@ body {
 //*Animaciones para las imagenes de la salud en avance
 @keyframes mueve1a5 {
     from {
-        @include posicion(75px, 0px, 0px, 0px);
+        @include posicion(3.9vw, 0vw, 0vw, 0vw);
     }
     to {
-        @include posicion(75px, 0px, 720px, 0px);
+        @include posicion(3.9vw, 0vw, 38.2vw, 0vw);
     }
 }
 
 @keyframes mueve2a1 {
     from {
-        @include posicion(75px, 0px, 142.5px, 0px);
+        @include posicion(3.9vw, 0vw, 7.6vw, 0vw);
     }
     to {
-        @include posicion(75px, 0px, 0px, 0px);
+        @include posicion(3.9vw, 0vw, 0vw, 0vw);
     }
 }
 
 @keyframes mueve3a2 {
     from {
-        @include posicion(0px, 0px, 285px, 0px);
-        width: 250px;
+        @include posicion(0vw, 0vw, 15.1vw, 0vw);
+        width: 13.2vw;
         height: auto;
     }
     to {
-        @include posicion(75px, 0px, 142.5px, 0px);
-        width: 100px;
+        @include posicion(3.9vw, 0vw, 7.6vw, 0vw);
+        width: 5.3vw;
         height: auto;
     }
 }
 
 @keyframes mueve4a3 {
     from {
-        @include posicion(75px, 0px, 577.5px, 0px);
-        width: 100px;
+        @include posicion(3.9vw, 0vw, 30.6vw, 0vw);
+        width: 5.3vw;
         height: auto;
     }
     to {
-        @include posicion(0px, 0px, 285px, 0px);
-        width: 250px;
+        @include posicion(0vw, 0vw, 15.1vw, 0vw);
+        width: 13.2vw;
         height: auto;
     }
 }
 
 @keyframes mueve5a4 {
     from {
-        @include posicion(75px, 0px, 720px, 0px);
+        @include posicion(3.9vw, 0vw, 38.2vw, 0vw);
     }
     to {
-        @include posicion(75px, 0px, 577.5px, 0px);
+        @include posicion(3.9vw, 0vw, 30.6vw, 0vw);
     }
 }
 
 //*Animaciones para las imagenes de la salud en retroceso
 @keyframes mueve5a1 {
     from {
-        @include posicion(75px, 0px, 720px, 0px);
+        @include posicion(3.9vw, 0vw, 38.2vw, 0vw);
     }
     to {
-        @include posicion(75px, 0px, 0px, 0px);
+        @include posicion(3.9vw, 0vw, 0vw, 0vw);
     }
 }
 
 @keyframes mueve1a2 {
     from {
-        @include posicion(75px, 0px, 0px, 0px);
+        @include posicion(3.9vw, 0vw, 0vw, 0vw);
     }
     to {
-        @include posicion(75px, 0px, 142.5px, 0px);
+        @include posicion(3.9vw, 0vw, 7.6vw, 0vw);
     }
 }
 
 @keyframes mueve2a3 {
     from {
-        @include posicion(75px, 0px, 142.5px, 0px);
-        width: 100px;
+        @include posicion(3.9vw, 0vw, 7.6vw, 0vw);
+        width: 5.3vw;
         height: auto;
     }
     to {
-        @include posicion(0px, 0px, 285px, 0px);
-        width: 250px;
+        @include posicion(0vw, 0vw, 15.1vw, 0vw);
+        width: 13.2vw;
         height: auto;
     }
 }
 
 @keyframes mueve3a4 {
     from {
-        @include posicion(0px, 0px, 285px, 0px);
-        width: 250px;
+        @include posicion(0vw, 0vw, 15.1vw, 0vw);
+        width: 13.2vw;
         height: auto;
     }
     to {
-        @include posicion(75px, 0px, 577.5px, 0px);
-        width: 100px;
+        @include posicion(3.9vw, 0vw, 30.6vw, 0vw);
+        width: 5.3vw;
         height: auto;
     }
 }
 
 @keyframes mueve4a5 {
     from {
-        @include posicion(75px, 0px, 577.5px, 0px);
+        @include posicion(3.9vw, 0vw, 30.6vw, 0vw);
     }
     to {
-        @include posicion(75px, 0px, 720px, 0px);
+        @include posicion(3.9vw, 0vw, 38.2vw, 0vw);
     }
 }
