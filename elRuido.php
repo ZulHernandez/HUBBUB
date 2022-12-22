@@ -182,7 +182,7 @@
                         <p class="linkNavDerIna">Ver el ruido</p>
                     </a>
                     <!--//funcion nosotros() Dispara el modal de nosotros-->
-                    <p class="linkNavDerIna" onclick="nosotros()">Sobre nosotros</p>
+                    <p class="linkNavDerIna" onclick="nosotros(true)">Sobre nosotros</p>
                     <!--//funcion scrollMe() nos dirige a la sección 10, footer de la página-->
                     <p class="linkNavDerIna" onclick="scrollMe(10)">Descarga la app</p>
                 </div>
@@ -215,8 +215,8 @@
     <!--//main Se incluye el hero Image y resumen de la página-->
     <div class="container-fluid hero" id="tituloCero">
         <div class="imagenHero">
-            <!--//funcion nosotros() dispara el swal sobre la información de HUBBUB-->
-            <img class="logoHero" onclick="nosotros();" src="assets/gif/HUBBUBIcon.gif">
+            <!--//funcion nosotros(true) dispara el swal sobre la información de HUBBUB-->
+            <img class="logoHero" onclick="nosotros(true);" src="assets/gif/HUBBUBIcon.gif">
         </div>
         <div class="row container-fluid divHero paddingNormal">
             <div class="columna col-4"></div>
@@ -243,8 +243,8 @@
         <div class="row">
             <div class="columna col-12">
                 <center>
-                    <!--//funcion nosotros() dispara el swal sobre la información de HUBBUB-->
-                    <img class="logoHero" onclick="nosotros();" src="assets/gif/HUBBUBIcon.gif">
+                    <!--//funcion nosotros(true) dispara el swal sobre la información de HUBBUB-->
+                    <img class="logoHero" onclick="nosotros(true);" src="assets/gif/HUBBUBIcon.gif">
                 </center>
             </div>
         </div>
@@ -474,7 +474,7 @@
                     <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/legRuido.svg"></span>
-                            <span>Legislación del ruido</span>
+                            <span>Legislación</span>
                         </titulo>
                     </center>
                 </h2>
@@ -537,7 +537,7 @@
                     <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/compRuido.svg"></span>
-                            <span>Componentes del ruido</span>
+                            <span>Componentes</span>
                         </titulo>
                     </center>
                 </h2>
@@ -554,7 +554,7 @@
             </div>
             <div class="columna col-2"></div>
         </div>
-        <div class="row" style="padding-top: 5.3vw;">
+        <div id="compo" class="row" style="padding-top: 5.3vw;">
             <div class="columna col-2"></div>
             <!--//*Columna sobre la intensidad-->
             <div class="columna col textCorrido">
@@ -592,6 +592,54 @@
             </div>
             <div class="columna col-2"></div>
         </div>
+        <div id="compoCh" class="row" style="padding-top: 5.3vw;">
+            <div class="row">
+                <div class="columna col-2"></div>
+                <!--//*Columna sobre la intensidad-->
+                <div class="columna col-8 textCorrido">
+                    <div style="text-align: left;">
+                        <span class="subOido">
+                            Intensidad
+                        </span>
+                    </div>
+                    <p class="textClasf">
+                        Determinada por el nivel de presión sonora y se mide en decibeles (dB). El decibelio puede medir otras magnitudes físicas,
+                        pero coloquialmente se le dice así a una unidad más específica llamada decibelio del nivel de presión sonora (dB SPL).</p>
+                </div>
+                <div class="columna col-2"></div>
+            </div>
+            <div class="row">
+                <div class="columna col-2"></div>
+                <!--//*Columna sobre el tono-->
+                <div class="columna col-8 textCorrido">
+                    <div style="text-align: left;">
+                        <span class="subOido">
+                            Tono
+                        </span>
+                    </div>
+                    <p class="textClasf">
+                        Se mide a través de la frecuencia en hercios (Hz) determinando los <letter style="color: #fe7cff;">agudos</letter> arriba de
+                        5kHz, <letter style="color: #7db7ff;">medios</letter> entre 250 Hz y 5kHz, y <letter style="color: #ff937d;">graves</letter>
+                        debajo de 250 Hz. Sonidos entre 2-4kHz son más molestos debido al notorio cambio de nivel. La voz se encuentra en 250hz y 4kHz.</p>
+                </div>
+                <div class="columna col-2"></div>
+            </div>
+            <div class="row">
+                <div class="columna col-2"></div>
+                <!--//*Columna sobre el tiempo-->
+                <div class="columna col-8 textCorrido" style="letter-spacing: -1">
+                    <div style="text-align: left;">
+                        <span class="subOido">
+                            Tiempo
+                        </span>
+                    </div>
+                    <p class="textClasf">
+                        Este último elemento se mide en segundos, minutos u horas. Es importante puesto que la exposición prolongada a sonidos que no
+                        necesariamente sean considerados peligrosos por su intensidad pueden tornarse como un problema.</p>
+                </div>
+                <div class="columna col-2"></div>
+            </div>
+        </div>
         <!--//*Gráfica de onda con sliders-->
         <div class="row" style="padding-top: 2.6vw;">
             <div class="columna col-2"></div>
@@ -618,7 +666,7 @@
         </div>
     </div>
     <!--//main Sección de efectos en la salud-->
-    <div class="row container-fluid divBody" style="padding-top: 200px;">
+    <div class="row container-fluid divBody" style="padding-top: 10.5vw;">
         <!--//*Título de la sección-->
         <div class="row">
             <div class="columna col-1"></div>
@@ -627,7 +675,7 @@
                     <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/efectSalud.svg"></span>
-                            <span>Efectos en la salud</span>
+                            <span>Efectos</span>
                         </titulo>
                     </center>
                 </h2>
@@ -742,7 +790,7 @@
                     <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/comoMide.svg"></span>
-                            <span>Como se mide el ruido</span>
+                            <span>Medición</span>
                         </titulo>
                     </center>
                 </h2>
@@ -825,7 +873,7 @@
         <div class="columna col-4"></div>
     </div>
     <!--//* Texto del carrusel-->
-    <div class="row container-fluid divBody" style="padding-top: 2.6vw;">
+    <div class="row container-fluid divBody" style="padding-top: 5.3vw;">
         <div class="columna col-3"></div>
         <!--//* Título del carrusel-->
         <div class="columna col">
@@ -842,7 +890,7 @@
         <div class="columna col-3"></div>
     </div>
     <!--//* Texto final de la sección-->
-    <div class="row container-fluid divBody" style="padding-top: 2.6vw;">
+    <div class="row container-fluid divBody" style="padding-top: 5.3vw;">
         <div class="columna col-2"></div>
         <!--Texto del carrusel-->
         <div class="columna col textCorrido">
@@ -862,7 +910,7 @@
                     <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/areaEstudio.svg"></span>
-                            <span>Áreas de estudio</span>
+                            <span>Estudio</span>
                         </titulo>
                     </center>
                 </h2>
@@ -889,7 +937,7 @@
             <div class="columna col-2"></div>
         </div>
         <!--//* Línea de imagenes-->
-        <div class="row" style="padding-top: 2.6vw;">
+        <div id="estudio" class="row" style="padding-top: 2.6vw;">
             <div class="columna col-2"></div>
             <!--//funcion areaEstudio(a) pinta la información del área-->
             <!--//param a indica que información pintar-->
@@ -934,6 +982,59 @@
                 </center>
             </div>
             <div class="columna col-2"></div>
+        </div>
+        <!--//* Línea de imagenes-->
+        <div id="estudioCh">
+            <div class="row" style="padding-top: 2.6vw;">
+                <div class="columna col-2"></div>
+                <!--//funcion areaEstudio(a) pinta la información del área-->
+                <!--//param a indica que información pintar-->
+                <div id="fArea1" class="columna col-2 imagenArea" onclick="areaEstudio(1)">
+                    <center>
+                        <div id="area1Ch" class="titleAreaAct"></div>
+                    </center>
+                </div>
+                <di id="fArea2" class="columna col-2 imagenArea" onclick="areaEstudio(2)">
+                    <center>
+                        <div id="area2Ch" class="titleArea"></div>
+                    </center>
+                </di>
+                <div id="fArea3" class="columna col-2 imagenArea" onclick="areaEstudio(3)">
+                    <center>
+                        <div id="area3Ch" class="titleArea"></div>
+                    </center>
+                </div>
+                <div id="fArea4" class="columna col-2 imagenArea" onclick="areaEstudio(4)">
+                    <center>
+                        <div id="area4Ch" class="titleArea"></div>
+                    </center>
+                </div>
+                <div class="columna col-2"></div>
+            </div>
+            <div class="row" style="padding-top: 2.6vw;">
+                <div class="columna col-2"></div>
+                <div id="fArea5" class="columna col-2 imagenArea" onclick="areaEstudio(5)">
+                    <center>
+                        <div id="area5Ch" class="titleArea"></div>
+                    </center>
+                </div>
+                <div id="fArea6" class="columna col-2 imagenArea" onclick="areaEstudio(6)">
+                    <center>
+                        <div id="area6Ch" class="titleArea"></div>
+                    </center>
+                </div>
+                <div id="fArea7" class="columna col-2 imagenArea" onclick="areaEstudio(7)">
+                    <center>
+                        <div id="area7Ch" class="titleArea"></div>
+                    </center>
+                </div>
+                <div id="fArea8" class="columna col-2 imagenArea" onclick="areaEstudio(8)">
+                    <center>
+                        <div id="area8Ch" class="titleArea"></div>
+                    </center>
+                </div>
+                <div class="columna col-2"></div>
+            </div>
         </div>
         <!--//* Texto de la sección-->
         <div class="row" style="padding-top: 2.6vw;">
@@ -997,7 +1098,7 @@
                     <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/artHubbub.svg"></span>
-                            <span>Articulos HUBBUB</span>
+                            <span>Articulos</span>
                         </titulo>
                     </center>
                 </h2>
@@ -1078,7 +1179,7 @@
                     <center>
                         <titulo>
                             <span><img class="imgSub" src="assets/vector/subtitles/artRef.svg"></span>
-                            <span>Referencias y artículos</span>
+                            <span>Referencias</span>
                         </titulo>
                     </center>
                 </h2>
@@ -1229,7 +1330,7 @@
                 <div onclick="scrollMe(0)" class="columna col-1">
                     <img class="logoFoot" src="assets/vector/HUBBUBIconWhite.svg">
                 </div>
-                <div class="columna col-3"></div>
+                <div class="columna col"></div>
                 <!--//* Columna de descargas-->
                 <div class="columna col">
                     <p class="tituloFooter">Descargas</p>
@@ -1246,8 +1347,8 @@
                     <a href="src/pages/verElRuido.php">
                         <p class="linkFooter">Ver el ruido</p>
                     </a>
-                    <!--//funcion nosotros() abre una ventana con la información de nosotros-->
-                    <p class="linkFooter" onclick="nosotros();">Sobre nosotros</p>
+                    <!--//funcion nosotros(true) abre una ventana con la información de nosotros-->
+                    <p class="linkFooter" onclick="nosotros(true);">Sobre nosotros</p>
                 </div>
                 <!--//* Columna de contacto-->
                 <div class="columna col">
@@ -1329,6 +1430,52 @@
                 <div class="columna col-7">
                     <div class="divDerNos" style="text-align: justify;">
                         <p class="subtitle" style="text-transform: none">Sobre nosotros</p><br />
+                        <p class="textSobreN">HUBBUB Alerta ruido es una iniciativa de la Mtra. Verónica Arroyo Pedroza de la Universidad Autónoma Metropolitana, CyAD Azcapotzalco, a partir del trabajo conjunto con el Laboratorio de Análisis y Diseño Acústico (LADAc) de la misma Universidad. Dicho laboratorio desarrolla el primer mapa de ruido de la Ciudad de México por medio de equipamiento de medición especializado, siendo su información y uso para fines académicos y de divulgación científica.</p>
+                        <p class="textSobreN">Siendo la ciudadanía la principal afectada por el tema se planea, diseña y desarrolla una aplicación móvil que promueve la participación ciudadana en el tema de la contaminación ambiental por ruido, con el fin de mapear las áreas con más molestias y determinar las fuentes más comunes que generan dicha molestia.</p>
+                        <p class="textSobreN">El objetivo de la aplicación HUBBUB® Alerta ruido, es concientizar y promover un medio ambiente más respetuoso en zonas urbanas, monitoreando por medio de la colaboración ciudadana las zonas caóticas contaminadas por ruido.</p>
+                        <p class="textSobreN">Se plantea el análisis integral del ruido ambiental en la ciudad a partir de sistemas de colaboración abierta en las que el usuario comparta sus experiencia de molestia por ruido y consolide una base de datos.</p>
+                        <p class="textSobreN">Los datos recabados por este monitoreo se emplean para desarrollar mapas de las zonas de mayor impacto por ruido que se visualizan tanto en la aplicación como en una página web en desarrollo.</p>
+                        <p class="textSobreN">Lograr conciencia ciudadana sobre el tema del ruido y con ello impacto en las autoridades para generar legislación al respecto.</p>
+                        <p class="textSobreN">Entendemos que el problema de ruido no se detendrá por el uso de una aplicación, pero sí con los productos que esta genere. A través de Hubbub podemos intermediar a que la ciudadanía canalice sus alertas y logremos un mapeo ciudadano por molestia de ruido que ayude a promover, ante las autoridades competentes, medidas legislativas que promuevan la prevención de este contaminante que tanto afecta la salud.</p>
+                        <p class="textSobreN">En Latinoamérica México es uno de los países que cuenta con los peores niveles de participación ciudadana, por lo mismo no cuenta con una base social organizada ni una conciencia social sólida, según comenta Mauricio Merino Huerta investigador del CIDE y participante de la organización civil Nosotrxs, “La conciencia significa estar advertidos del lugar en que vivimos” cita.</p>
+                        <p class="textSobreN">Esta advertencia estimula al equipo HUBBUB para seguir promoviendo nuestra aplicación. A la fecha somos ya un gran equipo de especialistas en el tema del ruido, desarrolladores, programadores y diseñadores que trabajamos en conjunto para actualizar constantemente nuestra aplicación y cada vez brindar más elementos a la ciudadanía para entender el gran problema que el RUIDO significa.</p>
+                    </div>
+                </div>
+            </div>
+        </swal-html>
+    </template>
+    <template id="nosotrosSwalCh">
+        <swal-html>
+            <div class="row" style="width: 100%;">
+                <!--//* Imagen y legales del Swal-->
+                <div class="columna col-12">
+                    <img class="logoHUBBUB" src="assets/vector/HUBBUBLogo.svg">
+                    <br />
+                    <a href="https://www.facebook.com/HUBBUBALERTA/" target="_blank">
+                        <img class="iconNosotros" src="assets/vector/redes/facebook.svg">
+                    </a>
+                    <a href="https://www.facebook.com/messages/t/194832804678795" target="_blank">
+                        <img class="iconNosotros" src="assets/vector/redes/messenger.svg">
+                    </a>
+                    <a href="https://twitter.com/AlertaRuido?fbclid=IwAR1o5xnyzozS5nXn8jPbySq0Tjvoh5iggQhPWgzvESj-PUYkhOp-7qQ-RgM" target="_blank">
+                        <img class="iconNosotros" src="assets/vector/redes/twitter.svg">
+                    </a>
+                    <a href="mailto:hubbub@azc.uam.mx" target="_blank">
+                        <img class="iconNosotros" src="assets/vector/redes/mail.svg">
+                    </a>
+                    <center>
+                        <hr class="hrSwal" />
+                        <p class="textCorrido" style="text-align: center;">HUBBUB&copy;</p>
+                        <p class="textAvisoN">Aviso de privacidad</p>
+                        <p class="textDerechosN">Todos los derechos reservados</p>
+                    </center>
+                </div>
+            </div>
+            <div class="row" style="width: 100%;">
+                <!--//* Texto del Swal-->
+                <div class="columna col">
+                    <div class="divDerNos" style="text-align: justify;">
+                        <p class="subtitle" style="text-transform: none; text-align: center;">Sobre nosotros</p><br />
                         <p class="textSobreN">HUBBUB Alerta ruido es una iniciativa de la Mtra. Verónica Arroyo Pedroza de la Universidad Autónoma Metropolitana, CyAD Azcapotzalco, a partir del trabajo conjunto con el Laboratorio de Análisis y Diseño Acústico (LADAc) de la misma Universidad. Dicho laboratorio desarrolla el primer mapa de ruido de la Ciudad de México por medio de equipamiento de medición especializado, siendo su información y uso para fines académicos y de divulgación científica.</p>
                         <p class="textSobreN">Siendo la ciudadanía la principal afectada por el tema se planea, diseña y desarrolla una aplicación móvil que promueve la participación ciudadana en el tema de la contaminación ambiental por ruido, con el fin de mapear las áreas con más molestias y determinar las fuentes más comunes que generan dicha molestia.</p>
                         <p class="textSobreN">El objetivo de la aplicación HUBBUB® Alerta ruido, es concientizar y promover un medio ambiente más respetuoso en zonas urbanas, monitoreando por medio de la colaboración ciudadana las zonas caóticas contaminadas por ruido.</p>

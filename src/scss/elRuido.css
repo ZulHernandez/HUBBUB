@@ -61,6 +61,13 @@ body {
 .inaButton:hover {
   border-width: 3;
 }
+@media (orientation: portrait) {
+  .inaButton {
+    width: 15px;
+    height: 15px;
+    margin-top: -3px;
+  }
+}
 
 .actButton {
   position: absolute;
@@ -69,7 +76,7 @@ body {
   height: 20px;
   background-color: white;
   border-radius: 50%;
-  border: 3px solid;
+  border: 2px solid;
   border-color: #333333;
   margin-top: -5px;
   filter: drop-shadow(0px 0px 1px #000);
@@ -77,6 +84,13 @@ body {
 }
 .actButton:hover {
   cursor: context-menu;
+}
+@media (orientation: portrait) {
+  .actButton {
+    width: 15px;
+    height: 15px;
+    margin-top: -3px;
+  }
 }
 
 .canvaClasRuido {
@@ -311,9 +325,20 @@ body {
   background-repeat: no-repeat;
   background-position: 55% 50%;
 }
+@media (orientation: portrait) {
+  .imagenArea {
+    background-size: 9vw;
+    background-position: 50% 50%;
+  }
+}
 
 #fArea1 {
   background-position: 57% 50%;
+}
+@media (orientation: portrait) {
+  #fArea1 {
+    background-position: 50% 50%;
+  }
 }
 
 .titleArea {
@@ -331,6 +356,13 @@ body {
   -webkit-backdrop-filter: grayscale(100%);
           backdrop-filter: grayscale(100%);
 }
+@media (orientation: portrait) {
+  .titleArea {
+    width: 10vw;
+    height: 10vw;
+    border-width: 0.75vw;
+  }
+}
 .titleArea:hover {
   opacity: 0.75;
   border-color: #333333;
@@ -346,6 +378,13 @@ body {
   border-style: solid;
   cursor: context-menu;
   border-color: #ff7c7c;
+}
+@media (orientation: portrait) {
+  .titleAreaAct {
+    width: 10vw;
+    height: 10vw;
+    border-width: 0.75vw;
+  }
 }
 
 @-webkit-keyframes logoMove {

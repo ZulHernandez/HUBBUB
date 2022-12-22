@@ -1,21 +1,51 @@
 //main Variables
 //* Contador de clicks en el nav derecho
 let contNav = 0;
+let contSwal = 1;
+
+function swalRez() {
+	if (contSwal % 2 == 0) {
+		nosotros(false);
+	}
+}
 
 //funcion Disparar del Swal
-function nosotros() {
+function nosotros(a) {
 	//* Disparamos Swal
-	Swal.fire({
-		//* Determinamos template
-		template: "#nosotrosSwal",
-		//* Seteamos estilo del Swal
-		width: "81.46vw",
-		customClass: "swal-height",
-		padding: "100px 82px",
-		showConfirmButton: false,
-		showCloseButton: false,
-		backdrop: "rgba(51,51,51,0.5)",
-	});
+	if (window.innerWidth > window.innerHeight) {
+		Swal.fire({
+			//* Determinamos template
+			template: "#nosotrosSwal",
+			//* Seteamos estilo del Swal
+			width: "81.46vw",
+			customClass: "swal-height",
+			padding: "100px 82px",
+			showConfirmButton: false,
+			showCloseButton: false,
+			backdrop: "rgba(51,51,51,0.5)",
+			willClose: () => {
+				contSwal++;
+			},
+		});
+	} else {
+		Swal.fire({
+			//* Determinamos template
+			template: "#nosotrosSwalCh",
+			//* Seteamos estilo del Swal
+			width: "81.46vw",
+			customClass: "swal-height",
+			padding: "25px 0px 25px 20px",
+			showConfirmButton: false,
+			showCloseButton: false,
+			backdrop: "rgba(51,51,51,0.5)",
+			willClose: () => {
+				contSwal++;
+			},
+		});
+	}
+	if (a) {
+		contSwal++;
+	}
 }
 
 //funcion Expandimos o colapsamos el nav derecho

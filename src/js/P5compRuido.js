@@ -66,7 +66,7 @@ function setup() {
 	translada = vw * 2.4;
 	tamanio = (vw * 81.4) / 300;
 	//* Calculamos la frecuencia de la onda de acuerdo a la posicion del slider x
-	frecuencia = (posX / 300) * 100;
+	frecuencia = (posX / 300) * 300;
 	//* Seteamos el canvas y su alto y ancho
 	var myCanva;
 	myCanva = createCanvas(vw * 92.8, 800);

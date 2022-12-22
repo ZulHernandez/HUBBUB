@@ -1,45 +1,94 @@
 //main Variables
 //* Obtenemos el alto y ancho de la ventana
 let w, h, pointImage;
+let pointImage1,
+	pointImage2,
+	pointImage3,
+	pointImage4,
+	pointImage5,
+	pointImage6,
+	pointImage7,
+	pointImage8,
+	pointImage9;
 
 function changeCh() {
 	w = window.innerWidth;
 	h = window.innerHeight;
-	//* Cargamos imagenes por cada punto de la gráfica
-	let pointImage1 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
-	pointImage1.src = "../../../../assets/vector/puntosClasi/v1.svg";
-	let pointImage2 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
-	pointImage2.src = "../../../../assets/vector/puntosClasi/v2.svg";
-	let pointImage3 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
-	pointImage3.src = "../../../../assets/vector/puntosClasi/v3.svg";
-	let pointImage4 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
-	pointImage4.src = "../../../../assets/vector/puntosClasi/v4.svg";
-	let pointImage5 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
-	pointImage5.src = "../../../../assets/vector/puntosClasi/v5.svg";
-	let pointImage6 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
-	pointImage6.src = "../../../../assets/vector/puntosClasi/v6.svg";
-	let pointImage7 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
-	pointImage7.src = "../../../../assets/vector/puntosClasi/v7.svg";
-	let pointImage8 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
-	pointImage8.src = "../../../../assets/vector/puntosClasi/v8.svg";
-	let pointImage9 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
-	pointImage9.src = "../../../../assets/vector/puntosClasi/v9.svg";
 
-	//* Guardamos las imagenes en un array
-	pointImage = [
-		,
-		,
-		,
-		pointImage1,
-		pointImage2,
-		pointImage3,
-		pointImage4,
-		pointImage5,
-		pointImage6,
-		pointImage7,
-		pointImage8,
-		pointImage9,
-	];
+	if (w > h) {
+		//* Cargamos imagenes por cada punto de la gráfica
+		pointImage1 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+		pointImage1.src = "../../../../assets/vector/puntosClasi/v1.svg";
+		pointImage2 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+		pointImage2.src = "../../../../assets/vector/puntosClasi/v2.svg";
+		pointImage3 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+		pointImage3.src = "../../../../assets/vector/puntosClasi/v3.svg";
+		pointImage4 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+		pointImage4.src = "../../../../assets/vector/puntosClasi/v4.svg";
+		pointImage5 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+		pointImage5.src = "../../../../assets/vector/puntosClasi/v5.svg";
+		pointImage6 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+		pointImage6.src = "../../../../assets/vector/puntosClasi/v6.svg";
+		pointImage7 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+		pointImage7.src = "../../../../assets/vector/puntosClasi/v7.svg";
+		pointImage8 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+		pointImage8.src = "../../../../assets/vector/puntosClasi/v8.svg";
+		pointImage9 = new Image((w / 100) * 3.7, (w / 100) * 3.7);
+		pointImage9.src = "../../../../assets/vector/puntosClasi/v9.svg";
+
+		//* Guardamos las imagenes en un array
+		pointImage = [
+			,
+			,
+			,
+			pointImage1,
+			pointImage2,
+			pointImage3,
+			pointImage4,
+			pointImage5,
+			pointImage6,
+			pointImage7,
+			pointImage8,
+			pointImage9,
+		];
+	} else {
+		//* Cargamos imagenes por cada punto de la gráfica
+		pointImage1 = new Image((w / 100) * 6.5, (w / 100) * 6.5);
+		pointImage1.src = "../../../../assets/vector/puntosClasi/v1.svg";
+		pointImage2 = new Image((w / 100) * 6.5, (w / 100) * 6.5);
+		pointImage2.src = "../../../../assets/vector/puntosClasi/v2.svg";
+		pointImage3 = new Image((w / 100) * 6.5, (w / 100) * 6.5);
+		pointImage3.src = "../../../../assets/vector/puntosClasi/v3.svg";
+		pointImage4 = new Image((w / 100) * 6.5, (w / 100) * 6.5);
+		pointImage4.src = "../../../../assets/vector/puntosClasi/v4.svg";
+		pointImage5 = new Image((w / 100) * 6.5, (w / 100) * 6.5);
+		pointImage5.src = "../../../../assets/vector/puntosClasi/v5.svg";
+		pointImage6 = new Image((w / 100) * 6.5, (w / 100) * 6.5);
+		pointImage6.src = "../../../../assets/vector/puntosClasi/v6.svg";
+		pointImage7 = new Image((w / 100) * 6.5, (w / 100) * 6.5);
+		pointImage7.src = "../../../../assets/vector/puntosClasi/v7.svg";
+		pointImage8 = new Image((w / 100) * 6.5, (w / 100) * 6.5);
+		pointImage8.src = "../../../../assets/vector/puntosClasi/v8.svg";
+		pointImage9 = new Image((w / 100) * 6.5, (w / 100) * 6.5);
+		pointImage9.src = "../../../../assets/vector/puntosClasi/v9.svg";
+
+		//* Guardamos las imagenes en un array
+		pointImage = [
+			,
+			,
+			,
+			pointImage1,
+			pointImage2,
+			pointImage3,
+			pointImage4,
+			pointImage5,
+			pointImage6,
+			pointImage7,
+			pointImage8,
+			pointImage9,
+		];
+	}
+
 	canvaClasRuido.options.elements.point.pointStyle = pointImage;
 	//* Actualizamos el gráfico
 	canvaClasRuido.update();

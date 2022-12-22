@@ -261,6 +261,9 @@ html {
 //* Sección derecha del swal nosotros
 .divDerNos {
     @include posicion(5vh, 0vh, 0px, 10px);
+    @include port() {
+        @include posicion(5vh, 0vh, 10px, 0px);
+    }
 }
 
 //* Padding para el cuerpo
@@ -282,16 +285,16 @@ html {
 
 //* Formato del footer
 .footer {
-    padding: 4.5vw 0px;
+    padding: 30px 0px;
     background-color: $grey;
     background-image: url(../../assets/vector/background.svg);
-    @include posicion(200px, 0px, 0px, 0px);
+    @include posicion(10.6vw, 0vw, 0px, 0px);
     position: absolute;
     z-index: 9;
 }
 
 .subFooter {
-    margin-top: 480px;
+    margin-top: 375px;
     margin-left: 0px;
     position: absolute;
     z-index: 9;
@@ -382,6 +385,10 @@ html {
     width: 280px;
     height: auto;
     padding-bottom: 71px;
+    @include port() {
+        width: 180px;
+        padding-bottom: 20px;
+    }
 }
 
 //* Iconos de redes dentro del swal
@@ -543,7 +550,7 @@ h2 {
 
 //* Links dentro del footer
 .linkFooter {
-    @include text(left, 16px, "T", 10px, normal);
+    @include text(left, 16px, "T", 18px, normal);
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -566,7 +573,7 @@ h2 {
 
 //* Textos del subfooter
 .subFooterText {
-    @include text(left, 15px, "T", 5px, normal);
+    @include text(left, 15px, "T", 17px, normal);
 }
 
 //* Textos del nav izquierdo

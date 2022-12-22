@@ -55,6 +55,11 @@ $redWater: #ff7c7c;
     border-radius: 50%;
     border-width: 0.5vw;
     border-style: solid;
+    @include port {
+        width: 10vw;
+        height: 10vw;
+        border-width: 0.75vw;
+    }
 }
 
 //funcion Determina el formato para elementos hover
@@ -140,9 +145,13 @@ body {
     margin-top: -5px;
     filter: drop-shadow(0px 0px 1px $blackGrey);
     @include hoverSize();
-
     &:hover {
         border-width: 3;
+    }
+    @include port {
+        width: 15px;
+        height: 15px;
+        margin-top: -3px;
     }
 }
 
@@ -153,13 +162,18 @@ body {
     height: 20px;
     background-color: white;
     border-radius: 50%;
-    border: 3px solid;
+    border: 2px solid;
     border-color: rgba($blackGrey, 1);
     margin-top: -5px;
     filter: drop-shadow(0px 0px 1px #000);
     transform: scale(1.25);
     &:hover {
         cursor: context-menu;
+    }
+    @include port {
+        width: 15px;
+        height: 15px;
+        margin-top: -3px;
     }
 }
 
@@ -290,10 +304,17 @@ body {
     background-size: 4.2vw;
     background-repeat: no-repeat;
     background-position: 55% 50%;
+    @include port {
+        background-size: 9vw;
+        background-position: 50% 50%;
+    }
 }
 
 #fArea1 {
     background-position: 57% 50%;
+    @include port {
+        background-position: 50% 50%;
+    }
 }
 
 //*Estilo para imagenes de areas de estudio activas

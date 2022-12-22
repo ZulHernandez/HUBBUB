@@ -474,21 +474,181 @@ function areaEstudio(a) {
 	let area6 = document.getElementById("area6");
 	let area7 = document.getElementById("area7");
 	let area8 = document.getElementById("area8");
+
+	let area1Ch = document.getElementById("area1Ch");
+	let area2Ch = document.getElementById("area2Ch");
+	let area3Ch = document.getElementById("area3Ch");
+	let area4Ch = document.getElementById("area4Ch");
+	let area5Ch = document.getElementById("area5Ch");
+	let area6Ch = document.getElementById("area6Ch");
+	let area7Ch = document.getElementById("area7Ch");
+	let area8Ch = document.getElementById("area8Ch");
+
 	let subArea = document.getElementById("subArea");
 	let textoArea = document.getElementById("textoArea");
 
-	//*Evaluamos el área seleccionada
+	if (window.innerWidth > window.innerHeight) {
+		//*Evaluamos el área seleccionada
+		switch (a) {
+			//* Salud
+			case 1:
+				area1.className = "titleAreaAct";
+				area2.className = "titleArea";
+				area3.className = "titleArea";
+				area4.className = "titleArea";
+				area5.className = "titleArea";
+				area6.className = "titleArea";
+				area7.className = "titleArea";
+				area8.className = "titleArea";
+				subArea.innerHTML = "Salud";
+				textoArea.innerHTML =
+					"Médicos, psiquiatras y psicólogos cuyas preocupaciones van más enfocadas" +
+					" al entendimiento de las repercusiones que tiene el ruido en la salud fisiológica, psíquica y " +
+					"psiquiátrica del sujeto. Los datos sobre ruido ayudan a estas disciplinasa identificar puntos " +
+					"de estrés para los órganos y para la psique de las personas para, de esta forma, atenderlos de" +
+					" manera adecuada y en el mejor de los casos, prevenir que los sujetos interaccionen con estos " +
+					"ruidos nocivos para la salud.";
+				break;
+			//* Logística
+			case 2:
+				area1.className = "titleArea";
+				area2.className = "titleAreaAct";
+				area3.className = "titleArea";
+				area4.className = "titleArea";
+				area5.className = "titleArea";
+				area6.className = "titleArea";
+				area7.className = "titleArea";
+				area8.className = "titleArea";
+				subArea.innerHTML = "Logística";
+				textoArea.innerHTML =
+					"Administradores, ingenieros industriales, recursos humanos y otras áreas" +
+					" dedicadas a la logística pueden estar interesadas en la identificación de puntos de ruido que" +
+					" puedan afectar el rendimientode sus trabajadores con el fin de mejorar la productividad de es" +
+					"tos y que se vea reflejada en la mejora de procesos y producción de la misma empresa por tanto" +
+					" puede ser un tema de interés para las empresas el identificar donde sus trabajadores no se ve" +
+					"rán expuestos a este estrés.";
+				break;
+			//* Pedagogía
+			case 3:
+				area1.className = "titleArea";
+				area2.className = "titleArea";
+				area3.className = "titleAreaAct";
+				area4.className = "titleArea";
+				area5.className = "titleArea";
+				area6.className = "titleArea";
+				area7.className = "titleArea";
+				area8.className = "titleArea";
+				subArea.innerHTML = "Pedagogía";
+				textoArea.innerHTML =
+					"Ciencias como la pedagogía también pueden verse interesadas en el entend" +
+					"imiento del ruido como factor de distracción o impedidor del proceso educativo en una població" +
+					"n determinada como se puede ver en el trabajo de Yerko Damián donde, además de buscar una solu" +
+					"ción a través de la implementación de fractales en los muros, nos habla de las consecuencias d" +
+					"el ruido en la educación.";
+				break;
+			//* Acústica
+			case 4:
+				area1.className = "titleArea";
+				area2.className = "titleArea";
+				area3.className = "titleArea";
+				area4.className = "titleAreaAct";
+				area5.className = "titleArea";
+				area6.className = "titleArea";
+				area7.className = "titleArea";
+				area8.className = "titleArea";
+				subArea.innerHTML = "Acústica";
+				textoArea.innerHTML =
+					"La ingeniería acústica está íntimamente relacionada con su hermana cientí" +
+					"fica la acústica, sin embargo, sus objetivos están más orientados a la aplicación de dichos con" +
+					"ocimientos para el “[…] desarrollo y control de todos los procesos que emiten, transmiten o rec" +
+					"iben ondas sonoras” (MX, 2018) por lo que los estudios de ruido a nivel cuantitativo o cualitat" +
+					"ivo son de suma importancia para identificar los problemas y posteriormente contenerlos.";
+				break;
+			//* Arquitectura
+			case 5:
+				area1.className = "titleArea";
+				area2.className = "titleArea";
+				area3.className = "titleArea";
+				area4.className = "titleArea";
+				area5.className = "titleAreaAct";
+				area6.className = "titleArea";
+				area7.className = "titleArea";
+				area8.className = "titleArea";
+				subArea.innerHTML = "Arquitectura";
+				textoArea.innerHTML =
+					"En la arquitectura y el diseño de interiores existe una clara correlación" +
+					" entre la manipulación y el diseño del espacio como respuesta no solo a las necesidades del hab" +
+					"itante sino, también, como adaptación al entorno en el que se hayan. Así, gracias a los mapas d" +
+					"e ruido, se puede seleccionar una gama de materiales y herramientas que puedan ser útiles para " +
+					"dar respuesta a esto, desde aspecto como la supresión del ruido, así como el aprovechamiento de este.";
+				break;
+			//* Arte
+			case 6:
+				area1.className = "titleArea";
+				area2.className = "titleArea";
+				area3.className = "titleArea";
+				area4.className = "titleArea";
+				area5.className = "titleArea";
+				area6.className = "titleAreaAct";
+				area7.className = "titleArea";
+				area8.className = "titleArea";
+				subArea.innerHTML = "Arte";
+				textoArea.innerHTML =
+					"Las artes encuentran en los “espacios ruidosos” lugares prometedores para " +
+					"su expansión o, en otros casos, zonas donde propuestas artísticas relacionadas con el silencio p" +
+					"ueden ser formas espectaculares de protesta e intervención. El ruido también puede ser interesan" +
+					"te para el silencio y trabajos artísticos se vuelven clave para su demostración.";
+				break;
+			//* Socialogía
+			case 7:
+				area1.className = "titleArea";
+				area2.className = "titleArea";
+				area3.className = "titleArea";
+				area4.className = "titleArea";
+				area5.className = "titleArea";
+				area6.className = "titleArea";
+				area7.className = "titleAreaAct";
+				area8.className = "titleArea";
+				subArea.innerHTML = "Sociología";
+				textoArea.innerHTML =
+					"La sociología muestra un interés particular en el ruido como agente de cam" +
+					"bio dentro de una sociedad además de dejar impreso el avance tecnológico humano. El trabajo real" +
+					"izado en la Semana del Sonido (Montano Rodríguez & Pascal, 2014) nos habla de la relación existe" +
+					"nte entre el ruido y el proceso de modernidad aplicando como ejemplo la expansión de la mancha d" +
+					"e ruido que ya no solo se contiene dentro de la ciudad, sino que, ahora, se ve amplificada a los" +
+					" espacios periurbanos.";
+				break;
+			//* Ergonomía
+			case 8:
+				area1.className = "titleArea";
+				area2.className = "titleArea";
+				area3.className = "titleArea";
+				area4.className = "titleArea";
+				area5.className = "titleArea";
+				area6.className = "titleArea";
+				area7.className = "titleArea";
+				area8.className = "titleAreaAct";
+				subArea.innerHTML = "Ergonomía";
+				textoArea.innerHTML =
+					"Se encarga de analizar la forma en que las personas se adaptan en los entor" +
+					"nos en los que está dispuesto. Esta trabaja en conjunto con las áreas medicas pues su fin último " +
+					"es evitar daños a la salud y la incomodidad de los sujetos. El ruido es uno de estos recursos que" +
+					" puede ser diseñado y dispuesto de diferentes formas y la ergonomía se encarga de disponerlo.";
+				break;
+		}
+	}else{
+		//*Evaluamos el área seleccionada
 	switch (a) {
 		//* Salud
 		case 1:
-			area1.className = "titleAreaAct";
-			area2.className = "titleArea";
-			area3.className = "titleArea";
-			area4.className = "titleArea";
-			area5.className = "titleArea";
-			area6.className = "titleArea";
-			area7.className = "titleArea";
-			area8.className = "titleArea";
+			area1Ch.className = "titleAreaAct";
+			area2Ch.className = "titleArea";
+			area3Ch.className = "titleArea";
+			area4Ch.className = "titleArea";
+			area5Ch.className = "titleArea";
+			area6Ch.className = "titleArea";
+			area7Ch.className = "titleArea";
+			area8Ch.className = "titleArea";
 			subArea.innerHTML = "Salud";
 			textoArea.innerHTML =
 				"Médicos, psiquiatras y psicólogos cuyas preocupaciones van más enfocadas" +
@@ -500,14 +660,14 @@ function areaEstudio(a) {
 			break;
 		//* Logística
 		case 2:
-			area1.className = "titleArea";
-			area2.className = "titleAreaAct";
-			area3.className = "titleArea";
-			area4.className = "titleArea";
-			area5.className = "titleArea";
-			area6.className = "titleArea";
-			area7.className = "titleArea";
-			area8.className = "titleArea";
+			area1Ch.className = "titleArea";
+			area2Ch.className = "titleAreaAct";
+			area3Ch.className = "titleArea";
+			area4Ch.className = "titleArea";
+			area5Ch.className = "titleArea";
+			area6Ch.className = "titleArea";
+			area7Ch.className = "titleArea";
+			area8Ch.className = "titleArea";
 			subArea.innerHTML = "Logística";
 			textoArea.innerHTML =
 				"Administradores, ingenieros industriales, recursos humanos y otras áreas" +
@@ -519,14 +679,14 @@ function areaEstudio(a) {
 			break;
 		//* Pedagogía
 		case 3:
-			area1.className = "titleArea";
-			area2.className = "titleArea";
-			area3.className = "titleAreaAct";
-			area4.className = "titleArea";
-			area5.className = "titleArea";
-			area6.className = "titleArea";
-			area7.className = "titleArea";
-			area8.className = "titleArea";
+			area1Ch.className = "titleArea";
+			area2Ch.className = "titleArea";
+			area3Ch.className = "titleAreaAct";
+			area4Ch.className = "titleArea";
+			area5Ch.className = "titleArea";
+			area6Ch.className = "titleArea";
+			area7Ch.className = "titleArea";
+			area8Ch.className = "titleArea";
 			subArea.innerHTML = "Pedagogía";
 			textoArea.innerHTML =
 				"Ciencias como la pedagogía también pueden verse interesadas en el entend" +
@@ -537,14 +697,14 @@ function areaEstudio(a) {
 			break;
 		//* Acústica
 		case 4:
-			area1.className = "titleArea";
-			area2.className = "titleArea";
-			area3.className = "titleArea";
-			area4.className = "titleAreaAct";
-			area5.className = "titleArea";
-			area6.className = "titleArea";
-			area7.className = "titleArea";
-			area8.className = "titleArea";
+			area1Ch.className = "titleArea";
+			area2Ch.className = "titleArea";
+			area3Ch.className = "titleArea";
+			area4Ch.className = "titleAreaAct";
+			area5Ch.className = "titleArea";
+			area6Ch.className = "titleArea";
+			area7Ch.className = "titleArea";
+			area8Ch.className = "titleArea";
 			subArea.innerHTML = "Acústica";
 			textoArea.innerHTML =
 				"La ingeniería acústica está íntimamente relacionada con su hermana cientí" +
@@ -555,14 +715,14 @@ function areaEstudio(a) {
 			break;
 		//* Arquitectura
 		case 5:
-			area1.className = "titleArea";
-			area2.className = "titleArea";
-			area3.className = "titleArea";
-			area4.className = "titleArea";
-			area5.className = "titleAreaAct";
-			area6.className = "titleArea";
-			area7.className = "titleArea";
-			area8.className = "titleArea";
+			area1Ch.className = "titleArea";
+			area2Ch.className = "titleArea";
+			area3Ch.className = "titleArea";
+			area4Ch.className = "titleArea";
+			area5Ch.className = "titleAreaAct";
+			area6Ch.className = "titleArea";
+			area7Ch.className = "titleArea";
+			area8Ch.className = "titleArea";
 			subArea.innerHTML = "Arquitectura";
 			textoArea.innerHTML =
 				"En la arquitectura y el diseño de interiores existe una clara correlación" +
@@ -573,14 +733,14 @@ function areaEstudio(a) {
 			break;
 		//* Arte
 		case 6:
-			area1.className = "titleArea";
-			area2.className = "titleArea";
-			area3.className = "titleArea";
-			area4.className = "titleArea";
-			area5.className = "titleArea";
-			area6.className = "titleAreaAct";
-			area7.className = "titleArea";
-			area8.className = "titleArea";
+			area1Ch.className = "titleArea";
+			area2Ch.className = "titleArea";
+			area3Ch.className = "titleArea";
+			area4Ch.className = "titleArea";
+			area5Ch.className = "titleArea";
+			area6Ch.className = "titleAreaAct";
+			area7Ch.className = "titleArea";
+			area8Ch.className = "titleArea";
 			subArea.innerHTML = "Arte";
 			textoArea.innerHTML =
 				"Las artes encuentran en los “espacios ruidosos” lugares prometedores para " +
@@ -590,14 +750,14 @@ function areaEstudio(a) {
 			break;
 		//* Socialogía
 		case 7:
-			area1.className = "titleArea";
-			area2.className = "titleArea";
-			area3.className = "titleArea";
-			area4.className = "titleArea";
-			area5.className = "titleArea";
-			area6.className = "titleArea";
-			area7.className = "titleAreaAct";
-			area8.className = "titleArea";
+			area1Ch.className = "titleArea";
+			area2Ch.className = "titleArea";
+			area3Ch.className = "titleArea";
+			area4Ch.className = "titleArea";
+			area5Ch.className = "titleArea";
+			area6Ch.className = "titleArea";
+			area7Ch.className = "titleAreaAct";
+			area8Ch.className = "titleArea";
 			subArea.innerHTML = "Sociología";
 			textoArea.innerHTML =
 				"La sociología muestra un interés particular en el ruido como agente de cam" +
@@ -609,14 +769,14 @@ function areaEstudio(a) {
 			break;
 		//* Ergonomía
 		case 8:
-			area1.className = "titleArea";
-			area2.className = "titleArea";
-			area3.className = "titleArea";
-			area4.className = "titleArea";
-			area5.className = "titleArea";
-			area6.className = "titleArea";
-			area7.className = "titleArea";
-			area8.className = "titleAreaAct";
+			area1Ch.className = "titleArea";
+			area2Ch.className = "titleArea";
+			area3Ch.className = "titleArea";
+			area4Ch.className = "titleArea";
+			area5Ch.className = "titleArea";
+			area6Ch.className = "titleArea";
+			area7Ch.className = "titleArea";
+			area8Ch.className = "titleAreaAct";
 			subArea.innerHTML = "Ergonomía";
 			textoArea.innerHTML =
 				"Se encarga de analizar la forma en que las personas se adaptan en los entor" +
@@ -624,6 +784,7 @@ function areaEstudio(a) {
 				"es evitar daños a la salud y la incomodidad de los sujetos. El ruido es uno de estos recursos que" +
 				" puede ser diseñado y dispuesto de diferentes formas y la ergonomía se encarga de disponerlo.";
 			break;
+	}
 	}
 }
 
@@ -634,8 +795,6 @@ window.onscroll = function () {
 
 //funcion Determinamos la posición del indicador de scroll en el nav izquierdo
 function funcionScroll() {
-	console.log("scroll");
-	//tituloCero = document.getElementById("tituloCero").getBoundingClientRect().top;
 	tituloUno = document.getElementById("tituloUno").getBoundingClientRect().top;
 	tituloDos = document.getElementById("tituloDos").getBoundingClientRect().top;
 	tituloTres = document
@@ -1114,18 +1273,25 @@ function navIzqOpa(a, b) {
 }
 
 function checaPos() {
-	console.log("checaPos");
 	funcionScroll();
 	skfbStart();
-	if	(window.innerWidth > window.innerHeight) {
-		hideShow("tituloCero",1);
-		hideShow("tituloCeroCh",0);
-		hideShow("clasi",2);
-		hideShow("clasiCh",0);
-	}else{
-		hideShow("tituloCero",0);
-		hideShow("tituloCeroCh",1);
-		hideShow("clasi",0);
-		hideShow("clasiCh",1);
+	if (window.innerWidth > window.innerHeight) {
+		hideShow("tituloCero", 1);
+		hideShow("tituloCeroCh", 0);
+		hideShow("clasi", 2);
+		hideShow("clasiCh", 0);
+		hideShow("compo", 2);
+		hideShow("compoCh", 0);
+		hideShow("estudio", 2);
+		hideShow("estudioCh", 0);
+	} else {
+		hideShow("tituloCero", 0);
+		hideShow("tituloCeroCh", 1);
+		hideShow("clasi", 0);
+		hideShow("clasiCh", 1);
+		hideShow("compo", 0);
+		hideShow("compoCh", 1);
+		hideShow("estudio", 0);
+		hideShow("estudioCh", 1);
 	}
 }

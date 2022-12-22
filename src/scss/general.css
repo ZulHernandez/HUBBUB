@@ -122,6 +122,12 @@ html {
   margin-top: 5vh;
   margin-left: -10px;
 }
+@media (orientation: portrait) {
+  .divDerNos {
+    margin-top: 5vh;
+    margin-left: 10px;
+  }
+}
 
 .divBody {
   padding: 0px 85px;
@@ -150,17 +156,17 @@ html {
 }
 
 .footer {
-  padding: 4.5vw 0px;
+  padding: 30px 0px;
   background-color: #666666;
   background-image: url(../../assets/vector/background.svg);
-  margin-top: 200px;
+  margin-top: 10.6vw;
   margin-left: 0px;
   position: absolute;
   z-index: 9;
 }
 
 .subFooter {
-  margin-top: 480px;
+  margin-top: 375px;
   margin-left: 0px;
   position: absolute;
   z-index: 9;
@@ -261,6 +267,12 @@ html {
   width: 280px;
   height: auto;
   padding-bottom: 71px;
+}
+@media (orientation: portrait) {
+  .logoHUBBUB {
+    width: 180px;
+    padding-bottom: 20px;
+  }
 }
 
 .iconNosotros {
@@ -543,7 +555,7 @@ h2 {
 .linkFooter {
   font-family: Montserrat-T;
   font-size: 16px;
-  line-height: 10px;
+  line-height: 18px;
   color: #333333;
   text-align: left;
   letter-spacing: normal;
@@ -578,7 +590,7 @@ h2 {
 .subFooterText {
   font-family: Montserrat-T;
   font-size: 15px;
-  line-height: 5px;
+  line-height: 17px;
   color: #333333;
   text-align: left;
   letter-spacing: normal;

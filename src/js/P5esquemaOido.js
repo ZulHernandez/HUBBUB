@@ -42,6 +42,7 @@ function setup() {
 	cOI = loadImage("../../assets/imgs/cOI.png");
 
 	checaPos();
+	swalRez();
 }
 
 //funcion Para dibujar el esquema
