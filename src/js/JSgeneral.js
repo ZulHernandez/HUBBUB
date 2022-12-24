@@ -3,15 +3,21 @@
 let contNav = 0;
 let contSwal = 1;
 
+//funcion Nos aseguramos si el swal esta abierto o cerrado en el resize
 function swalRez() {
+	//param contSwal par cerrado
+	//param contSwal impar abierto
 	if (contSwal % 2 == 0) {
+		//* Llamamos a la funcion Disparar del Swal
 		nosotros(false);
 	}
 }
 
 //funcion Disparar del Swal
+//param a true para actualizar estado
 function nosotros(a) {
-	//* Disparamos Swal
+	//* Evaluamos la orientacion de la pantalla
+	//* Si es horizontal
 	if (window.innerWidth > window.innerHeight) {
 		Swal.fire({
 			//* Determinamos template
@@ -27,6 +33,7 @@ function nosotros(a) {
 				contSwal++;
 			},
 		});
+		//* Si es vertical
 	} else {
 		Swal.fire({
 			//* Determinamos template
@@ -43,6 +50,7 @@ function nosotros(a) {
 			},
 		});
 	}
+	//* Evaluamos si se actualiza el estado
 	if (a) {
 		contSwal++;
 	}
@@ -85,16 +93,10 @@ function navDer() {
 	contNav++;
 }
 
+//funcion Mostramos u ocultamos elementos de la página
+//param aidi = id del elemento a mostrar u ocultar
+//param a modo de display
 function hideShow(aidi, a) {
-	switch (a) {
-		case 0:
-			document.getElementById(aidi).style.display = "none";
-			break;
-		case 1:
-			document.getElementById(aidi).style.display = "block";
-			break;
-		case 2:
-			document.getElementById(aidi).style.display = "flex";
-			break;
-	}
+	let modoDis = ["none", "block", "flex"];
+	document.getElementById(aidi).style.display = modoDis[a];
 }

@@ -1,151 +1,135 @@
 //main Variables
-//* Imagenes de carrusel avanzando
-let img1, img2, img3, img4, img5;
-//* Imagenes de carrusel retrocediendo
-let img1b, img2b, img3b, img4b, img5b;
+//* Imagenes del carrusel de salud
+let imgs = [];
 //* Posición del carruselSalud
 let contSalud = 1;
 //* Posición del carruselPasos
 let contPasos = 1;
-
-let opcCero,
-	opcUno,
-	opcDos,
-	opcTres,
-	opcCuatro,
-	opcCinco,
-	opcSeis,
-	opcSiete,
-	opcOcho,
-	opcNueve;
-
-let textOpcCero,
-	textOpcUno,
-	textOpcDos,
-	textOpcTres,
-	textOpcCuatro,
-	textOpcCinco,
-	textOpcSeis,
-	textOpcSiete,
-	textOpcOcho,
-	textOpcNueve;
-
-let tituloCero,
-	tituloUno,
-	tituloDos,
-	tituloTres,
-	tituloCuatro,
-	tituloCinco,
-	tituloSeis,
-	tituloSiete,
-	tituloOcho,
-	tituloNueve;
+//* Botones del carruselPasos
+let botons = [];
+//* Imagenes de las areas de opciones
+let areas = [];
+//* Imagenes de las areas de opciones en portrait
+let areasCh = [];
+//* Opciones del nav inferior
+let opcs = [];
+//* Texto de las opciones del nav inferior
+let textOpcs = [];
+//* Tiulos que serviran como anclas para la página
+let titulos = [];
+//* Iconos de las opciones del nav inferior
+let icons = [];
+//* Contador para el easteregg
+let cuenta = true;
 
 //funcion Movemos el carruselSalud
 //param a = posición dada por flechas
 function carruSalud(a) {
-	//* Obtenemos los elementos del HTML
-	img1 = document.getElementById("img1");
-	img2 = document.getElementById("img2");
-	img3 = document.getElementById("img3");
-	img4 = document.getElementById("img4");
-	img5 = document.getElementById("img5");
+	//* Obtenemos las imagenes del carrusel
+	for (let i = 0; i < 5; i++) {
+		imgs[i] = document.getElementById("img" + (i + 1));
+	}
+	//* Obtenemos el titulo y texto a presentar
 	let text = document.getElementById("textoCarruSalud");
 	let title = document.getElementById("subSalud");
 
 	//* Evaluamos si avanzamos o retrocedemos
+	//param a = 1 avanzamos
 	if (a == 1) {
 		contSalud++;
 	}
+	//param a = 0 retrocedemos
 	if (a == 0) {
 		contSalud--;
 	}
 
 	//* Evaluamos si llegamos al final o al inicio
+	//param Llegamos al final y regresamos al inicio
 	if (contSalud > 5) {
 		contSalud = 1;
 	}
+	//param Llegamos al inicio y regresamos al final
 	if (contSalud < 1) {
 		contSalud = 5;
 	}
 
 	//* Seteamos clases para animación de los elementos para avanzar
+	//param a = 1 avanzamos
 	if (a == 1) {
+		//* Evaluamos la posición del carrusel para setear las clases (posición)
 		switch (contSalud) {
 			case 1:
-				img1.className = "img1";
-				img2.className = "img2";
-				img3.className = "img3";
-				img4.className = "img4";
-				img5.className = "img5";
+				for (let i = 0; i < 5; i++) {
+					imgs[i].className = "img" + (i + 1);
+				}
 				break;
 			case 2:
-				img1.className = "img5";
-				img2.className = "img1";
-				img3.className = "img2";
-				img4.className = "img3";
-				img5.className = "img4";
+				imgs[0].className = "img5";
+				for (let i = 1; i < 5; i++) {
+					imgs[i].className = "img" + i;
+				}
 				break;
 			case 3:
-				img1.className = "img4";
-				img2.className = "img5";
-				img3.className = "img1";
-				img4.className = "img2";
-				img5.className = "img3";
+				for (let i = 0; i < 2; i++) {
+					imgs[i].className = "img" + (i + 4);
+				}
+				for (let i = 2; i < 5; i++) {
+					imgs[i].className = "img" + (i - 1);
+				}
 				break;
 			case 4:
-				img1.className = "img3";
-				img2.className = "img4";
-				img3.className = "img5";
-				img4.className = "img1";
-				img5.className = "img2";
+				for (let i = 0; i < 3; i++) {
+					imgs[i].className = "img" + (i + 3);
+				}
+				for (let i = 3; i < 5; i++) {
+					imgs[i].className = "img" + (i - 2);
+				}
 				break;
 			case 5:
-				img1.className = "img2";
-				img2.className = "img3";
-				img3.className = "img4";
-				img4.className = "img5";
-				img5.className = "img1";
+				for (let i = 0; i < 4; i++) {
+					imgs[i].className = "img" + (i + 2);
+				}
+				imgs[4].className = "img1";
 				break;
 		}
 	}
 	//* Seteamos clases para animación de los elementos para retroceder
+	//param a = 0 retrocedemos
 	if (a == 0) {
+		//* Evaluamos la posición del carrusel para setear las clases (posición)
 		switch (contSalud) {
 			case 1:
-				img1.className = "img5b";
-				img2.className = "img1b";
-				img3.className = "img2b";
-				img4.className = "img3b";
-				img5.className = "img4b";
+				imgs[0].className = "img5b";
+				for (let i = 1; i < 5; i++) {
+					imgs[i].className = "img" + i + "b";
+				}
 				break;
 			case 2:
-				img1.className = "img4b";
-				img2.className = "img5b";
-				img3.className = "img1b";
-				img4.className = "img2b";
-				img5.className = "img3b";
+				for (let i = 0; i < 2; i++) {
+					imgs[i].className = "img" + (i + 4) + "b";
+				}
+				for (let i = 2; i < 6; i++) {
+					imgs[i].className = "img" + (i - 1) + "b";
+				}
 				break;
 			case 3:
-				img1.className = "img3b";
-				img2.className = "img4b";
-				img3.className = "img5b";
-				img4.className = "img1b";
-				img5.className = "img2b";
+				for (let i = 0; i < 3; i++) {
+					imgs[i].className = "img" + (i + 3) + "b";
+				}
+				for (let i = 3; i < 6; i++) {
+					imgs[i].className = "img" + (i - 2) + "b";
+				}
 				break;
 			case 4:
-				img1.className = "img2b";
-				img2.className = "img3b";
-				img3.className = "img4b";
-				img4.className = "img5b";
-				img5.className = "img1b";
+				for (let i = 0; i < 4; i++) {
+					imgs[i].className = "img" + (i + 2) + "b";
+				}
+				imgs[4].className = "img1b";
 				break;
 			case 5:
-				img1.className = "img1b";
-				img2.className = "img2b";
-				img3.className = "img3b";
-				img4.className = "img4b";
-				img5.className = "img5b";
+				for (let i = 0; i < 5; i++) {
+					imgs[i].className = "img" + (i + 1) + "b";
+				}
 				break;
 		}
 	}
@@ -257,111 +241,60 @@ function carruSalud(a) {
 //param a = posicion dada por las flechas
 //param b = posicion dada por el botón
 function carruPasos(a, b) {
-	//*obtenemos los elementos del HTML
+	//* Obtenemos el gif a mostrar
 	gifPaso = document.getElementById("gifPaso");
-	boton1 = document.getElementById("paso1");
-	boton2 = document.getElementById("paso2");
-	boton3 = document.getElementById("paso3");
-	boton4 = document.getElementById("paso4");
-	boton5 = document.getElementById("paso5");
-	boton6 = document.getElementById("paso6");
-	boton7 = document.getElementById("paso7");
-	boton8 = document.getElementById("paso8");
-	boton9 = document.getElementById("paso9");
+	//* Obtenemos lso botones circulares del carrusel
+	for (var i = 0; i < 9; i++) {
+		botons[i] = document.getElementById("paso" + (i + 1));
+	}
+	//* Obtenemos la barra de color indicadora
 	barraCrece = document.getElementById("barraCrece");
+	//* Obtenemos el titulo y texto del carrusel
 	subMide = document.getElementById("subMide");
 	textoCarruMide = document.getElementById("textoCarruMide");
-
 	//*evaluamos si avanzamos o retrocedemos
+	//param a = 1 avanzamos
 	if (a == 1) {
 		contPasos++;
 	}
+	//param a = 0 retrocedemos
 	if (a == 0) {
 		contPasos--;
 	}
-
-	//*evaluamos si estamos en el primer paso
+	//*evaluamos el valor de movimiento
+	//param lleagamos al final volvemos al inicio
 	if (contPasos > 9) {
 		contPasos = 1;
 	}
-	//*evaluamos si estamos en el último paso
+	//param llegamos al inicio volvemos al final
 	if (contPasos < 1) {
 		contPasos = 9;
 	}
-	//*evaluamos si se dio click en la barra
+	//param a = 2 nos movemos al paso del boton clickeado
 	if (a == 2) {
 		contPasos = b;
 	}
-
-	//*se cambia el texto del carrusel
+	//* Se cambia el texto del carrusel
 	switch (contPasos) {
 		//* Paso 1
 		case 1:
-			gifPaso.src = "../../assets/gif/pasos/Paso1.gif";
-			boton1.className = "actButton";
-			boton2.className = "inaButton";
-			boton3.className = "inaButton";
-			boton4.className = "inaButton";
-			boton5.className = "inaButton";
-			boton6.className = "inaButton";
-			boton7.className = "inaButton";
-			boton8.className = "inaButton";
-			boton9.className = "inaButton";
-			barraCrece.style.width = "0px";
-			subMide.innerHTML = "<center>Paso 1: Croquis</center>";
 			textoCarruMide.innerHTML =
 				"Levantar un croquis de la zona de forma tal que se pueda conocer el terreno" +
 				" donde se realiza la medición, así como sus particularidades.";
 			break;
 		//* Paso 2
 		case 2:
-			gifPaso.src = "../../assets/gif/pasos/Paso2.gif";
-			boton1.className = "inaButton";
-			boton2.className = "actButton";
-			boton3.className = "inaButton";
-			boton4.className = "inaButton";
-			boton5.className = "inaButton";
-			boton6.className = "inaButton";
-			boton7.className = "inaButton";
-			boton8.className = "inaButton";
-			boton9.className = "inaButton";
-			barraCrece.style.width = "3.5vw";
-			subMide.innerHTML = "<center>Paso 2: Zonas</center>";
 			textoCarruMide.innerHTML =
 				'Dividir la zona general en <b style="color: #ff7c7c;">zonas ' +
 				"unitarias</b> con tal de identificar ubicación de elementos y emisores de ruido.";
 			break;
 		//* Paso 3
 		case 3:
-			gifPaso.src = "../../assets/gif/pasos/Paso3.gif";
-			boton1.className = "inaButton";
-			boton2.className = "inaButton";
-			boton3.className = "actButton";
-			boton4.className = "inaButton";
-			boton5.className = "inaButton";
-			boton6.className = "inaButton";
-			boton7.className = "inaButton";
-			boton8.className = "inaButton";
-			boton9.className = "inaButton";
-			barraCrece.style.width = "7vw";
-			subMide.innerHTML = "<center>Paso 3: Centros</center>";
 			textoCarruMide.innerHTML =
 				'Ubicar los <b style="color: #0176ff;">centros acústicos</b> dentro de las zonas antes trazadas.';
 			break;
 		//* Paso 4
 		case 4:
-			gifPaso.src = "../../assets/gif/pasos/Paso4.gif";
-			boton1.className = "inaButton";
-			boton2.className = "inaButton";
-			boton3.className = "inaButton";
-			boton4.className = "actButton";
-			boton5.className = "inaButton";
-			boton6.className = "inaButton";
-			boton7.className = "inaButton";
-			boton8.className = "inaButton";
-			boton9.className = "inaButton";
-			barraCrece.style.width = "10.5vw";
-			subMide.innerHTML = "<center>Paso 4: Periodos</center>";
 			textoCarruMide.innerHTML =
 				"Elegir los periodos de integración de medición también establecidos dent" +
 				'ro de la norma (hacen referencia a la <b style="color: #ff7c7c;">cantidad de tiempo</b> en que ' +
@@ -369,54 +302,18 @@ function carruPasos(a, b) {
 			break;
 		//* Paso 5
 		case 5:
-			gifPaso.src = "../../assets/gif/pasos/Paso5.gif";
-			boton1.className = "inaButton";
-			boton2.className = "inaButton";
-			boton3.className = "inaButton";
-			boton4.className = "inaButton";
-			boton5.className = "actButton";
-			boton6.className = "inaButton";
-			boton7.className = "inaButton";
-			boton8.className = "inaButton";
-			boton9.className = "inaButton";
-			barraCrece.style.width = "14vw";
-			subMide.innerHTML = "<center>Paso 5: Lapsos</center>";
 			textoCarruMide.innerHTML =
 				'Dividir el periodo de integración en <b style="color: #0176ff;">lapsos ig' +
 				"uales</b> para cada centro acústico.";
 			break;
 		//* Paso 6
 		case 6:
-			gifPaso.src = "../../assets/gif/pasos/Paso6.gif";
-			boton1.className = "inaButton";
-			boton2.className = "inaButton";
-			boton3.className = "inaButton";
-			boton4.className = "inaButton";
-			boton5.className = "inaButton";
-			boton6.className = "actButton";
-			boton7.className = "inaButton";
-			boton8.className = "inaButton";
-			boton9.className = "inaButton";
-			barraCrece.style.width = "17.5vw";
-			subMide.innerHTML = "<center>Paso 6: Medición</center>";
 			textoCarruMide.innerHTML =
 				'Decidir entre hacer una medición <b style="color: #ff7c7c;">continua</b>' +
 				' o <b style="color: #0176ff;">semicontinua</b>, con sus implicaciones.';
 			break;
 		//* Paso 7
 		case 7:
-			gifPaso.src = "../../assets/gif/pasos/Paso7.gif";
-			boton1.className = "inaButton";
-			boton2.className = "inaButton";
-			boton3.className = "inaButton";
-			boton4.className = "inaButton";
-			boton5.className = "inaButton";
-			boton6.className = "inaButton";
-			boton7.className = "actButton";
-			boton8.className = "inaButton";
-			boton9.className = "inaButton";
-			barraCrece.style.width = "21vw";
-			subMide.innerHTML = "<center>Paso 7: Micrófono</center>";
 			textoCarruMide.innerHTML =
 				"Se coloca un <b>micrófono</b> en el centro acústico a no " +
 				"<b style='color: #0176ff;'>menos de un metro</b> del piso" +
@@ -425,65 +322,54 @@ function carruPasos(a, b) {
 			break;
 		//* Paso 8
 		case 8:
-			gifPaso.src = "../../assets/gif/pasos/Paso8.gif";
-			boton1.className = "inaButton";
-			boton2.className = "inaButton";
-			boton3.className = "inaButton";
-			boton4.className = "inaButton";
-			boton5.className = "inaButton";
-			boton6.className = "inaButton";
-			boton7.className = "inaButton";
-			boton8.className = "actButton";
-			boton9.className = "inaButton";
-			barraCrece.style.width = "24.5vw";
-			subMide.innerHTML = "<center>Paso 8: Ponderación</center>";
 			textoCarruMide.innerHTML =
 				"Ajustar el sonómetro en <b>ponderación A o C</b> según el caso y en integración lenta.";
 			break;
 		//* Paso 9
 		case 9:
-			gifPaso.src = "../../assets/gif/pasos/Paso9.gif";
-			boton1.className = "inaButton";
-			boton2.className = "inaButton";
-			boton3.className = "inaButton";
-			boton4.className = "inaButton";
-			boton5.className = "inaButton";
-			boton6.className = "inaButton";
-			boton7.className = "inaButton";
-			boton8.className = "inaButton";
-			boton9.className = "actButton";
-			barraCrece.style.width = "28vw";
-			subMide.innerHTML = "<center>Paso 9: Notas</center>";
 			textoCarruMide.innerHTML =
 				"De acuerdo al tipo de medición los pasos pueden cambiar, pero, de forma general, esto " +
 				"cambiara la calibración de los instrumentos, los periodos en que operaran y el constante mantenimiento de los mis" +
 				"mo en relación con los periféricos que los acompañen.";
 			break;
 	}
+	//* Titulos de los pasos
+	let titulo = [
+		"Croquis",
+		"Zonas",
+		"Centros",
+		"Periodos",
+		"Lapsos",
+		"Medición",
+		"Micrófono",
+		"Ponderación",
+		"Notas",
+	];
+	//* Cambiamos el gif
+	gifPaso.src = "../../assets/gif/pasos/Paso" + contPasos + ".gif";
+	//* Hacemos crecer la barra de progreso
+	barraCrece.style.width = 3.5 * (contPasos - 1) + "vw";
+	//* Cambiamos el titulo del paso
+	subMide.innerHTML =
+		"<center>Paso " + contPasos + ": " + titulo[contPasos - 1] + "</center>";
+	//* Desactivamos todos los botones
+	for (var i = 0; i < 9; i++) {
+		botons[i].className = "inaButton";
+	}
+	//* Activamos el boton del paso actual
+	botons[contPasos - 1].className = "actButton";
 }
 
 //funcion Cambiamos información del área de estudio
 //param a = área clickada
 function areaEstudio(a) {
 	//*Obtenemos los elementos del HTML
-	let area1 = document.getElementById("area1");
-	let area2 = document.getElementById("area2");
-	let area3 = document.getElementById("area3");
-	let area4 = document.getElementById("area4");
-	let area5 = document.getElementById("area5");
-	let area6 = document.getElementById("area6");
-	let area7 = document.getElementById("area7");
-	let area8 = document.getElementById("area8");
-
-	let area1Ch = document.getElementById("area1Ch");
-	let area2Ch = document.getElementById("area2Ch");
-	let area3Ch = document.getElementById("area3Ch");
-	let area4Ch = document.getElementById("area4Ch");
-	let area5Ch = document.getElementById("area5Ch");
-	let area6Ch = document.getElementById("area6Ch");
-	let area7Ch = document.getElementById("area7Ch");
-	let area8Ch = document.getElementById("area8Ch");
-
+	for (var i = 0; i < 8; i++) {
+		areas[i] = document.getElementById("area" + (i + 1));
+	}
+	for (var i = 0; i < 8; i++) {
+		areasCh[i] = document.getElementById("area" + (i + 1) + "Ch");
+	}
 	let subArea = document.getElementById("subArea");
 	let textoArea = document.getElementById("textoArea");
 
@@ -492,14 +378,10 @@ function areaEstudio(a) {
 		switch (a) {
 			//* Salud
 			case 1:
-				area1.className = "titleAreaAct";
-				area2.className = "titleArea";
-				area3.className = "titleArea";
-				area4.className = "titleArea";
-				area5.className = "titleArea";
-				area6.className = "titleArea";
-				area7.className = "titleArea";
-				area8.className = "titleArea";
+				areas[0].className = "titleAreaAct";
+				for (var i = 1; i < 8; i++) {
+					areas[i].className = "titleArea";
+				}
 				subArea.innerHTML = "Salud";
 				textoArea.innerHTML =
 					"Médicos, psiquiatras y psicólogos cuyas preocupaciones van más enfocadas" +
@@ -511,14 +393,11 @@ function areaEstudio(a) {
 				break;
 			//* Logística
 			case 2:
-				area1.className = "titleArea";
-				area2.className = "titleAreaAct";
-				area3.className = "titleArea";
-				area4.className = "titleArea";
-				area5.className = "titleArea";
-				area6.className = "titleArea";
-				area7.className = "titleArea";
-				area8.className = "titleArea";
+				areas[0].className = "titleArea";
+				areas[1].className = "titleAreaAct";
+				for (var i = 2; i < 8; i++) {
+					areas[i].className = "titleArea";
+				}
 				subArea.innerHTML = "Logística";
 				textoArea.innerHTML =
 					"Administradores, ingenieros industriales, recursos humanos y otras áreas" +
@@ -530,14 +409,13 @@ function areaEstudio(a) {
 				break;
 			//* Pedagogía
 			case 3:
-				area1.className = "titleArea";
-				area2.className = "titleArea";
-				area3.className = "titleAreaAct";
-				area4.className = "titleArea";
-				area5.className = "titleArea";
-				area6.className = "titleArea";
-				area7.className = "titleArea";
-				area8.className = "titleArea";
+				for (var i = 0; i < 2; i++) {
+					areas[i].className = "titleArea";
+				}
+				areas[2].className = "titleAreaAct";
+				for (var i = 3; i < 8; i++) {
+					areas[i].className = "titleArea";
+				}
 				subArea.innerHTML = "Pedagogía";
 				textoArea.innerHTML =
 					"Ciencias como la pedagogía también pueden verse interesadas en el entend" +
@@ -548,14 +426,13 @@ function areaEstudio(a) {
 				break;
 			//* Acústica
 			case 4:
-				area1.className = "titleArea";
-				area2.className = "titleArea";
-				area3.className = "titleArea";
-				area4.className = "titleAreaAct";
-				area5.className = "titleArea";
-				area6.className = "titleArea";
-				area7.className = "titleArea";
-				area8.className = "titleArea";
+				for (var i = 0; i < 3; i++) {
+					areas[i].className = "titleArea";
+				}
+				areas[3].className = "titleAreaAct";
+				for (var i = 4; i < 8; i++) {
+					areas[i].className = "titleArea";
+				}
 				subArea.innerHTML = "Acústica";
 				textoArea.innerHTML =
 					"La ingeniería acústica está íntimamente relacionada con su hermana cientí" +
@@ -566,14 +443,13 @@ function areaEstudio(a) {
 				break;
 			//* Arquitectura
 			case 5:
-				area1.className = "titleArea";
-				area2.className = "titleArea";
-				area3.className = "titleArea";
-				area4.className = "titleArea";
-				area5.className = "titleAreaAct";
-				area6.className = "titleArea";
-				area7.className = "titleArea";
-				area8.className = "titleArea";
+				for (var i = 0; i < 4; i++) {
+					areas[i].className = "titleArea";
+				}
+				areas[4].className = "titleAreaAct";
+				for (var i = 5; i < 8; i++) {
+					areas[i].className = "titleArea";
+				}
 				subArea.innerHTML = "Arquitectura";
 				textoArea.innerHTML =
 					"En la arquitectura y el diseño de interiores existe una clara correlación" +
@@ -584,14 +460,13 @@ function areaEstudio(a) {
 				break;
 			//* Arte
 			case 6:
-				area1.className = "titleArea";
-				area2.className = "titleArea";
-				area3.className = "titleArea";
-				area4.className = "titleArea";
-				area5.className = "titleArea";
-				area6.className = "titleAreaAct";
-				area7.className = "titleArea";
-				area8.className = "titleArea";
+				for (var i = 0; i < 5; i++) {
+					areas[i].className = "titleArea";
+				}
+				areas[5].className = "titleAreaAct";
+				for (var i = 6; i < 8; i++) {
+					areas[i].className = "titleArea";
+				}
 				subArea.innerHTML = "Arte";
 				textoArea.innerHTML =
 					"Las artes encuentran en los “espacios ruidosos” lugares prometedores para " +
@@ -601,14 +476,11 @@ function areaEstudio(a) {
 				break;
 			//* Socialogía
 			case 7:
-				area1.className = "titleArea";
-				area2.className = "titleArea";
-				area3.className = "titleArea";
-				area4.className = "titleArea";
-				area5.className = "titleArea";
-				area6.className = "titleArea";
-				area7.className = "titleAreaAct";
-				area8.className = "titleArea";
+				for (var i = 0; i < 6; i++) {
+					areas[i].className = "titleArea";
+				}
+				areas[6].className = "titleAreaAct";
+				areas[7].className = "titleArea";
 				subArea.innerHTML = "Sociología";
 				textoArea.innerHTML =
 					"La sociología muestra un interés particular en el ruido como agente de cam" +
@@ -620,14 +492,10 @@ function areaEstudio(a) {
 				break;
 			//* Ergonomía
 			case 8:
-				area1.className = "titleArea";
-				area2.className = "titleArea";
-				area3.className = "titleArea";
-				area4.className = "titleArea";
-				area5.className = "titleArea";
-				area6.className = "titleArea";
-				area7.className = "titleArea";
-				area8.className = "titleAreaAct";
+				for (var i = 0; i < 7; i++) {
+					areas[i].className = "titleArea";
+				}
+				areas[7].className = "titleAreaAct";
 				subArea.innerHTML = "Ergonomía";
 				textoArea.innerHTML =
 					"Se encarga de analizar la forma en que las personas se adaptan en los entor" +
@@ -636,648 +504,245 @@ function areaEstudio(a) {
 					" puede ser diseñado y dispuesto de diferentes formas y la ergonomía se encarga de disponerlo.";
 				break;
 		}
-	}else{
+	} else {
 		//*Evaluamos el área seleccionada
-	switch (a) {
-		//* Salud
-		case 1:
-			area1Ch.className = "titleAreaAct";
-			area2Ch.className = "titleArea";
-			area3Ch.className = "titleArea";
-			area4Ch.className = "titleArea";
-			area5Ch.className = "titleArea";
-			area6Ch.className = "titleArea";
-			area7Ch.className = "titleArea";
-			area8Ch.className = "titleArea";
-			subArea.innerHTML = "Salud";
-			textoArea.innerHTML =
-				"Médicos, psiquiatras y psicólogos cuyas preocupaciones van más enfocadas" +
-				" al entendimiento de las repercusiones que tiene el ruido en la salud fisiológica, psíquica y " +
-				"psiquiátrica del sujeto. Los datos sobre ruido ayudan a estas disciplinasa identificar puntos " +
-				"de estrés para los órganos y para la psique de las personas para, de esta forma, atenderlos de" +
-				" manera adecuada y en el mejor de los casos, prevenir que los sujetos interaccionen con estos " +
-				"ruidos nocivos para la salud.";
-			break;
-		//* Logística
-		case 2:
-			area1Ch.className = "titleArea";
-			area2Ch.className = "titleAreaAct";
-			area3Ch.className = "titleArea";
-			area4Ch.className = "titleArea";
-			area5Ch.className = "titleArea";
-			area6Ch.className = "titleArea";
-			area7Ch.className = "titleArea";
-			area8Ch.className = "titleArea";
-			subArea.innerHTML = "Logística";
-			textoArea.innerHTML =
-				"Administradores, ingenieros industriales, recursos humanos y otras áreas" +
-				" dedicadas a la logística pueden estar interesadas en la identificación de puntos de ruido que" +
-				" puedan afectar el rendimientode sus trabajadores con el fin de mejorar la productividad de es" +
-				"tos y que se vea reflejada en la mejora de procesos y producción de la misma empresa por tanto" +
-				" puede ser un tema de interés para las empresas el identificar donde sus trabajadores no se ve" +
-				"rán expuestos a este estrés.";
-			break;
-		//* Pedagogía
-		case 3:
-			area1Ch.className = "titleArea";
-			area2Ch.className = "titleArea";
-			area3Ch.className = "titleAreaAct";
-			area4Ch.className = "titleArea";
-			area5Ch.className = "titleArea";
-			area6Ch.className = "titleArea";
-			area7Ch.className = "titleArea";
-			area8Ch.className = "titleArea";
-			subArea.innerHTML = "Pedagogía";
-			textoArea.innerHTML =
-				"Ciencias como la pedagogía también pueden verse interesadas en el entend" +
-				"imiento del ruido como factor de distracción o impedidor del proceso educativo en una població" +
-				"n determinada como se puede ver en el trabajo de Yerko Damián donde, además de buscar una solu" +
-				"ción a través de la implementación de fractales en los muros, nos habla de las consecuencias d" +
-				"el ruido en la educación.";
-			break;
-		//* Acústica
-		case 4:
-			area1Ch.className = "titleArea";
-			area2Ch.className = "titleArea";
-			area3Ch.className = "titleArea";
-			area4Ch.className = "titleAreaAct";
-			area5Ch.className = "titleArea";
-			area6Ch.className = "titleArea";
-			area7Ch.className = "titleArea";
-			area8Ch.className = "titleArea";
-			subArea.innerHTML = "Acústica";
-			textoArea.innerHTML =
-				"La ingeniería acústica está íntimamente relacionada con su hermana cientí" +
-				"fica la acústica, sin embargo, sus objetivos están más orientados a la aplicación de dichos con" +
-				"ocimientos para el “[…] desarrollo y control de todos los procesos que emiten, transmiten o rec" +
-				"iben ondas sonoras” (MX, 2018) por lo que los estudios de ruido a nivel cuantitativo o cualitat" +
-				"ivo son de suma importancia para identificar los problemas y posteriormente contenerlos.";
-			break;
-		//* Arquitectura
-		case 5:
-			area1Ch.className = "titleArea";
-			area2Ch.className = "titleArea";
-			area3Ch.className = "titleArea";
-			area4Ch.className = "titleArea";
-			area5Ch.className = "titleAreaAct";
-			area6Ch.className = "titleArea";
-			area7Ch.className = "titleArea";
-			area8Ch.className = "titleArea";
-			subArea.innerHTML = "Arquitectura";
-			textoArea.innerHTML =
-				"En la arquitectura y el diseño de interiores existe una clara correlación" +
-				" entre la manipulación y el diseño del espacio como respuesta no solo a las necesidades del hab" +
-				"itante sino, también, como adaptación al entorno en el que se hayan. Así, gracias a los mapas d" +
-				"e ruido, se puede seleccionar una gama de materiales y herramientas que puedan ser útiles para " +
-				"dar respuesta a esto, desde aspecto como la supresión del ruido, así como el aprovechamiento de este.";
-			break;
-		//* Arte
-		case 6:
-			area1Ch.className = "titleArea";
-			area2Ch.className = "titleArea";
-			area3Ch.className = "titleArea";
-			area4Ch.className = "titleArea";
-			area5Ch.className = "titleArea";
-			area6Ch.className = "titleAreaAct";
-			area7Ch.className = "titleArea";
-			area8Ch.className = "titleArea";
-			subArea.innerHTML = "Arte";
-			textoArea.innerHTML =
-				"Las artes encuentran en los “espacios ruidosos” lugares prometedores para " +
-				"su expansión o, en otros casos, zonas donde propuestas artísticas relacionadas con el silencio p" +
-				"ueden ser formas espectaculares de protesta e intervención. El ruido también puede ser interesan" +
-				"te para el silencio y trabajos artísticos se vuelven clave para su demostración.";
-			break;
-		//* Socialogía
-		case 7:
-			area1Ch.className = "titleArea";
-			area2Ch.className = "titleArea";
-			area3Ch.className = "titleArea";
-			area4Ch.className = "titleArea";
-			area5Ch.className = "titleArea";
-			area6Ch.className = "titleArea";
-			area7Ch.className = "titleAreaAct";
-			area8Ch.className = "titleArea";
-			subArea.innerHTML = "Sociología";
-			textoArea.innerHTML =
-				"La sociología muestra un interés particular en el ruido como agente de cam" +
-				"bio dentro de una sociedad además de dejar impreso el avance tecnológico humano. El trabajo real" +
-				"izado en la Semana del Sonido (Montano Rodríguez & Pascal, 2014) nos habla de la relación existe" +
-				"nte entre el ruido y el proceso de modernidad aplicando como ejemplo la expansión de la mancha d" +
-				"e ruido que ya no solo se contiene dentro de la ciudad, sino que, ahora, se ve amplificada a los" +
-				" espacios periurbanos.";
-			break;
-		//* Ergonomía
-		case 8:
-			area1Ch.className = "titleArea";
-			area2Ch.className = "titleArea";
-			area3Ch.className = "titleArea";
-			area4Ch.className = "titleArea";
-			area5Ch.className = "titleArea";
-			area6Ch.className = "titleArea";
-			area7Ch.className = "titleArea";
-			area8Ch.className = "titleAreaAct";
-			subArea.innerHTML = "Ergonomía";
-			textoArea.innerHTML =
-				"Se encarga de analizar la forma en que las personas se adaptan en los entor" +
-				"nos en los que está dispuesto. Esta trabaja en conjunto con las áreas medicas pues su fin último " +
-				"es evitar daños a la salud y la incomodidad de los sujetos. El ruido es uno de estos recursos que" +
-				" puede ser diseñado y dispuesto de diferentes formas y la ergonomía se encarga de disponerlo.";
-			break;
-	}
+		switch (a) {
+			//* Salud
+			case 1:
+				areasCh[0].className = "titleAreaAct";
+				for (var i = 1; i < 8; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				subArea.innerHTML = "Salud";
+				textoArea.innerHTML =
+					"Médicos, psiquiatras y psicólogos cuyas preocupaciones van más enfocadas" +
+					" al entendimiento de las repercusiones que tiene el ruido en la salud fisiológica, psíquica y " +
+					"psiquiátrica del sujeto. Los datos sobre ruido ayudan a estas disciplinasa identificar puntos " +
+					"de estrés para los órganos y para la psique de las personas para, de esta forma, atenderlos de" +
+					" manera adecuada y en el mejor de los casos, prevenir que los sujetos interaccionen con estos " +
+					"ruidos nocivos para la salud.";
+				break;
+			//* Logística
+			case 2:
+				areasCh[0].className = "titleArea";
+				areasCh[1].className = "titleAreaAct";
+				for (var i = 2; i < 8; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				subArea.innerHTML = "Logística";
+				textoArea.innerHTML =
+					"Administradores, ingenieros industriales, recursos humanos y otras áreas" +
+					" dedicadas a la logística pueden estar interesadas en la identificación de puntos de ruido que" +
+					" puedan afectar el rendimientode sus trabajadores con el fin de mejorar la productividad de es" +
+					"tos y que se vea reflejada en la mejora de procesos y producción de la misma empresa por tanto" +
+					" puede ser un tema de interés para las empresas el identificar donde sus trabajadores no se ve" +
+					"rán expuestos a este estrés.";
+				break;
+			//* Pedagogía
+			case 3:
+				for (var i = 0; i < 2; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				areasCh[2].className = "titleAreaAct";
+				for (var i = 3; i < 8; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				subArea.innerHTML = "Pedagogía";
+				textoArea.innerHTML =
+					"Ciencias como la pedagogía también pueden verse interesadas en el entend" +
+					"imiento del ruido como factor de distracción o impedidor del proceso educativo en una població" +
+					"n determinada como se puede ver en el trabajo de Yerko Damián donde, además de buscar una solu" +
+					"ción a través de la implementación de fractales en los muros, nos habla de las consecuencias d" +
+					"el ruido en la educación.";
+				break;
+			//* Acústica
+			case 4:
+				for (var i = 0; i < 3; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				areasCh[3].className = "titleAreaAct";
+				for (var i = 4; i < 8; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				subArea.innerHTML = "Acústica";
+				textoArea.innerHTML =
+					"La ingeniería acústica está íntimamente relacionada con su hermana cientí" +
+					"fica la acústica, sin embargo, sus objetivos están más orientados a la aplicación de dichos con" +
+					"ocimientos para el “[…] desarrollo y control de todos los procesos que emiten, transmiten o rec" +
+					"iben ondas sonoras” (MX, 2018) por lo que los estudios de ruido a nivel cuantitativo o cualitat" +
+					"ivo son de suma importancia para identificar los problemas y posteriormente contenerlos.";
+				break;
+			//* Arquitectura
+			case 5:
+				for (var i = 0; i < 4; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				areasCh[4].className = "titleAreaAct";
+				for (var i = 5; i < 8; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				subArea.innerHTML = "Arquitectura";
+				textoArea.innerHTML =
+					"En la arquitectura y el diseño de interiores existe una clara correlación" +
+					" entre la manipulación y el diseño del espacio como respuesta no solo a las necesidades del hab" +
+					"itante sino, también, como adaptación al entorno en el que se hayan. Así, gracias a los mapas d" +
+					"e ruido, se puede seleccionar una gama de materiales y herramientas que puedan ser útiles para " +
+					"dar respuesta a esto, desde aspecto como la supresión del ruido, así como el aprovechamiento de este.";
+				break;
+			//* Arte
+			case 6:
+				for (var i = 0; i < 5; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				areasCh[5].className = "titleAreaAct";
+				for (var i = 6; i < 8; i++) {
+					areasCh[i].className = "titleArea";
+				}
+
+				subArea.innerHTML = "Arte";
+				textoArea.innerHTML =
+					"Las artes encuentran en los “espacios ruidosos” lugares prometedores para " +
+					"su expansión o, en otros casos, zonas donde propuestas artísticas relacionadas con el silencio p" +
+					"ueden ser formas espectaculares de protesta e intervención. El ruido también puede ser interesan" +
+					"te para el silencio y trabajos artísticos se vuelven clave para su demostración.";
+				break;
+			//* Socialogía
+			case 7:
+				for (var i = 0; i < 6; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				areasCh[6].className = "titleAreaAct";
+				areasCh[7].className = "titleArea";
+				subArea.innerHTML = "Sociología";
+				textoArea.innerHTML =
+					"La sociología muestra un interés particular en el ruido como agente de cam" +
+					"bio dentro de una sociedad además de dejar impreso el avance tecnológico humano. El trabajo real" +
+					"izado en la Semana del Sonido (Montano Rodríguez & Pascal, 2014) nos habla de la relación existe" +
+					"nte entre el ruido y el proceso de modernidad aplicando como ejemplo la expansión de la mancha d" +
+					"e ruido que ya no solo se contiene dentro de la ciudad, sino que, ahora, se ve amplificada a los" +
+					" espacios periurbanos.";
+				break;
+			//* Ergonomía
+			case 8:
+				for (var i = 0; i < 7; i++) {
+					areasCh[i].className = "titleArea";
+				}
+				areasCh[7].className = "titleAreaAct";
+				subArea.innerHTML = "Ergonomía";
+				textoArea.innerHTML =
+					"Se encarga de analizar la forma en que las personas se adaptan en los entor" +
+					"nos en los que está dispuesto. Esta trabaja en conjunto con las áreas medicas pues su fin último " +
+					"es evitar daños a la salud y la incomodidad de los sujetos. El ruido es uno de estos recursos que" +
+					" puede ser diseñado y dispuesto de diferentes formas y la ergonomía se encarga de disponerlo.";
+				break;
+		}
 	}
 }
 
 //funcion Escuchamos el scroll de la ventana
 window.onscroll = function () {
+	//* Llamamos a la funcion que determina la posición del indicador de scroll en el nav inferior
 	funcionScroll();
 };
 
-//funcion Determinamos la posición del indicador de scroll en el nav izquierdo
+//funcion Determinamos la posición del indicador de scroll en el nav inferior
 function funcionScroll() {
-	tituloUno = document.getElementById("tituloUno").getBoundingClientRect().top;
-	tituloDos = document.getElementById("tituloDos").getBoundingClientRect().top;
-	tituloTres = document
-		.getElementById("tituloTres")
-		.getBoundingClientRect().top;
-	tituloCuatro = document
-		.getElementById("tituloCuatro")
-		.getBoundingClientRect().top;
-	tituloCinco = document
-		.getElementById("tituloCinco")
-		.getBoundingClientRect().top;
-	tituloSeis = document
-		.getElementById("tituloSeis")
-		.getBoundingClientRect().top;
-	tituloSiete = document
-		.getElementById("tituloSiete")
-		.getBoundingClientRect().top;
-	tituloOcho = document
-		.getElementById("tituloOcho")
-		.getBoundingClientRect().top;
-	tituloNueve = document
-		.getElementById("tituloNueve")
-		.getBoundingClientRect().top;
-
-	textOpcCero = document.getElementById("textOpcCero");
-	textOpcUno = document.getElementById("textOpcUno");
-	textOpcDos = document.getElementById("textOpcDos");
-	textOpcTres = document.getElementById("textOpcTres");
-	textOpcCuatro = document.getElementById("textOpcCuatro");
-	textOpcCinco = document.getElementById("textOpcCinco");
-	textOpcSeis = document.getElementById("textOpcSeis");
-	textOpcSiete = document.getElementById("textOpcSiete");
-	textOpcOcho = document.getElementById("textOpcOcho");
-	textOpcNueve = document.getElementById("textOpcNueve");
-
-	opcCero = document.getElementById("opcionCero");
-	opcUno = document.getElementById("opcionUno");
-	opcDos = document.getElementById("opcionDos");
-	opcTres = document.getElementById("opcionTres");
-	opcCuatro = document.getElementById("opcionCuatro");
-	opcCinco = document.getElementById("opcionCinco");
-	opcSeis = document.getElementById("opcionSeis");
-	opcSiete = document.getElementById("opcionSiete");
-	opcOcho = document.getElementById("opcionOcho");
-	opcNueve = document.getElementById("opcionNueve");
-
-	if (tituloNueve <= 100) {
-		iconCero.style.fill = "#333333";
-		textOpcCero.style.color = "#333333";
-		iconUno.style.fill = "#333333";
-		textOpcUno.style.color = "#333333";
-		iconDos.style.stroke = "#333333";
-		textOpcDos.style.color = "#333333";
-		iconTres.style.fill = "#333333";
-		textOpcTres.style.color = "#333333";
-		iconCuatro.style.fill = "#333333";
-		textOpcCuatro.style.color = "#333333";
-		iconCinco.style.stroke = "#333333";
-		textOpcCinco.style.color = "#333333";
-		iconSeis.style.fill = "#333333";
-		textOpcSeis.style.color = "#333333";
-		iconSiete.style.stroke = "#333333";
-		textOpcSiete.style.color = "#333333";
-		iconOcho.style.fill = "#333333";
-		textOpcOcho.style.color = "#333333";
-		iconNueve.style.stroke = "#ff7c7c";
-		textOpcNueve.style.color = "#ff7c7c";
-		opcCero.style.opacity = "0.5";
-		opcUno.style.opacity = "0.5";
-		opcDos.style.opacity = "0.5";
-		opcTres.style.opacity = "0.5";
-		opcCuatro.style.opacity = "0.5";
-		opcCinco.style.opacity = "0.5";
-		opcSeis.style.opacity = "0.5";
-		opcSiete.style.opacity = "0.5";
-		opcOcho.style.opacity = "0.5";
-		opcNueve.style.opacity = "1";
-	} else if (tituloOcho <= 100) {
-		iconCero.style.fill = "#333333";
-		textOpcCero.style.color = "#333333";
-		iconUno.style.fill = "#333333";
-		textOpcUno.style.color = "#333333";
-		iconDos.style.stroke = "#333333";
-		textOpcDos.style.color = "#333333";
-		iconTres.style.fill = "#333333";
-		textOpcTres.style.color = "#333333";
-		iconCuatro.style.fill = "#333333";
-		textOpcCuatro.style.color = "#333333";
-		iconCinco.style.stroke = "#333333";
-		textOpcCinco.style.color = "#333333";
-		iconSeis.style.fill = "#333333";
-		textOpcSeis.style.color = "#333333";
-		iconSiete.style.stroke = "#333333";
-		textOpcSiete.style.color = "#333333";
-		iconOcho.style.fill = "#ff7c7c";
-		textOpcOcho.style.color = "#ff7c7c";
-		iconNueve.style.stroke = "#333333";
-		textOpcNueve.style.color = "#333333";
-		opcCero.style.opacity = "0.5";
-		opcUno.style.opacity = "0.5";
-		opcDos.style.opacity = "0.5";
-		opcTres.style.opacity = "0.5";
-		opcCuatro.style.opacity = "0.5";
-		opcCinco.style.opacity = "0.5";
-		opcSeis.style.opacity = "0.5";
-		opcSiete.style.opacity = "0.5";
-		opcOcho.style.opacity = "1";
-		opcNueve.style.opacity = "0.5";
-	} else if (tituloSiete <= 100) {
-		iconCero.style.fill = "#333333";
-		textOpcCero.style.color = "#333333";
-		iconUno.style.fill = "#333333";
-		textOpcUno.style.color = "#333333";
-		iconDos.style.stroke = "#333333";
-		textOpcDos.style.color = "#333333";
-		iconTres.style.fill = "#333333";
-		textOpcTres.style.color = "#333333";
-		iconCuatro.style.fill = "#333333";
-		textOpcCuatro.style.color = "#333333";
-		iconCinco.style.stroke = "#333333";
-		textOpcCinco.style.color = "#333333";
-		iconSeis.style.fill = "#333333";
-		textOpcSeis.style.color = "#333333";
-		iconSiete.style.stroke = "#ff7c7c";
-		textOpcSiete.style.color = "#ff7c7c";
-		iconOcho.style.fill = "#333333";
-		textOpcOcho.style.color = "#333333";
-		iconNueve.style.stroke = "#333333";
-		textOpcNueve.style.color = "#333333";
-		opcCero.style.opacity = "0.5";
-		opcUno.style.opacity = "0.5";
-		opcDos.style.opacity = "0.5";
-		opcTres.style.opacity = "0.5";
-		opcCuatro.style.opacity = "0.5";
-		opcCinco.style.opacity = "0.5";
-		opcSeis.style.opacity = "0.5";
-		opcSiete.style.opacity = "1";
-		opcOcho.style.opacity = "0.5";
-		opcNueve.style.opacity = "0.5";
-	} else if (tituloSeis <= 100) {
-		iconCero.style.fill = "#333333";
-		textOpcCero.style.color = "#333333";
-		iconUno.style.fill = "#333333";
-		textOpcUno.style.color = "#333333";
-		iconDos.style.stroke = "#333333";
-		textOpcDos.style.color = "#333333";
-		iconTres.style.fill = "#333333";
-		textOpcTres.style.color = "#333333";
-		iconCuatro.style.fill = "#333333";
-		textOpcCuatro.style.color = "#333333";
-		iconCinco.style.stroke = "#333333";
-		textOpcCinco.style.color = "#333333";
-		iconSeis.style.fill = "#ff7c7c";
-		textOpcSeis.style.color = "#ff7c7c";
-		iconSiete.style.stroke = "#333333";
-		textOpcSiete.style.color = "#333333";
-		iconOcho.style.fill = "#333333";
-		textOpcOcho.style.color = "#333333";
-		iconNueve.style.stroke = "#333333";
-		textOpcNueve.style.color = "#333333";
-		opcCero.style.opacity = "0.5";
-		opcUno.style.opacity = "0.5";
-		opcDos.style.opacity = "0.5";
-		opcTres.style.opacity = "0.5";
-		opcCuatro.style.opacity = "0.5";
-		opcCinco.style.opacity = "0.5";
-		opcSeis.style.opacity = "1";
-		opcSiete.style.opacity = "0.5";
-		opcOcho.style.opacity = "0.5";
-		opcNueve.style.opacity = "0.5";
-	} else if (tituloCinco <= 100) {
-		iconCero.style.fill = "#333333";
-		textOpcCero.style.color = "#333333";
-		iconUno.style.fill = "#333333";
-		textOpcUno.style.color = "#333333";
-		iconDos.style.stroke = "#333333";
-		textOpcDos.style.color = "#333333";
-		iconTres.style.fill = "#333333";
-		textOpcTres.style.color = "#333333";
-		iconCuatro.style.fill = "#333333";
-		textOpcCuatro.style.color = "#333333";
-		iconCinco.style.stroke = "#ff7c7c";
-		textOpcCinco.style.color = "#ff7c7c";
-		iconSeis.style.fill = "#333333";
-		textOpcSeis.style.color = "#333333";
-		iconSiete.style.stroke = "#333333";
-		textOpcSiete.style.color = "#333333";
-		iconOcho.style.fill = "#333333";
-		textOpcOcho.style.color = "#333333";
-		iconNueve.style.stroke = "#333333";
-		textOpcNueve.style.color = "#333333";
-		opcCero.style.opacity = "0.5";
-		opcUno.style.opacity = "0.5";
-		opcDos.style.opacity = "0.5";
-		opcTres.style.opacity = "0.5";
-		opcCuatro.style.opacity = "0.5";
-		opcCinco.style.opacity = "1";
-		opcSeis.style.opacity = "0.5";
-		opcSiete.style.opacity = "0.5";
-		opcOcho.style.opacity = "0.5";
-		opcNueve.style.opacity = "0.5";
-	} else if (tituloCuatro <= 100) {
-		iconCero.style.fill = "#333333";
-		textOpcCero.style.color = "#333333";
-		iconUno.style.fill = "#333333";
-		textOpcUno.style.color = "#333333";
-		iconDos.style.stroke = "#333333";
-		textOpcDos.style.color = "#333333";
-		iconTres.style.fill = "#333333";
-		textOpcTres.style.color = "#333333";
-		iconCuatro.style.fill = "#ff7c7c";
-		textOpcCuatro.style.color = "#ff7c7c";
-		iconCinco.style.stroke = "#333333";
-		textOpcCinco.style.color = "#333333";
-		iconSeis.style.fill = "#333333";
-		textOpcSeis.style.color = "#333333";
-		iconSiete.style.stroke = "#333333";
-		textOpcSiete.style.color = "#333333";
-		iconOcho.style.fill = "#333333";
-		textOpcOcho.style.color = "#333333";
-		iconNueve.style.stroke = "#333333";
-		textOpcNueve.style.color = "#333333";
-		opcCero.style.opacity = "0.5";
-		opcUno.style.opacity = "0.5";
-		opcDos.style.opacity = "0.5";
-		opcTres.style.opacity = "0.5";
-		opcCuatro.style.opacity = "1";
-		opcCinco.style.opacity = "0.5";
-		opcSeis.style.opacity = "0.5";
-		opcSiete.style.opacity = "0.5";
-		opcOcho.style.opacity = "0.5";
-		opcNueve.style.opacity = "0.5";
-	} else if (tituloTres <= 100) {
-		iconCero.style.fill = "#333333";
-		textOpcCero.style.color = "#333333";
-		iconUno.style.fill = "#333333";
-		textOpcUno.style.color = "#333333";
-		iconDos.style.stroke = "#333333";
-		textOpcDos.style.color = "#333333";
-		iconTres.style.fill = "#ff7c7c";
-		textOpcTres.style.color = "#ff7c7c";
-		iconCuatro.style.fill = "#333333";
-		textOpcCuatro.style.color = "#333333";
-		iconCinco.style.stroke = "#333333";
-		textOpcCinco.style.color = "#333333";
-		iconSeis.style.fill = "#333333";
-		textOpcSeis.style.color = "#333333";
-		iconSiete.style.stroke = "#333333";
-		textOpcSiete.style.color = "#333333";
-		iconOcho.style.fill = "#333333";
-		textOpcOcho.style.color = "#333333";
-		iconNueve.style.stroke = "#333333";
-		textOpcNueve.style.color = "#333333";
-		opcCero.style.opacity = "0.5";
-		opcUno.style.opacity = "0.5";
-		opcDos.style.opacity = "0.5";
-		opcTres.style.opacity = "1";
-		opcCuatro.style.opacity = "0.5";
-		opcCinco.style.opacity = "0.5";
-		opcSeis.style.opacity = "0.5";
-		opcSiete.style.opacity = "0.5";
-		opcOcho.style.opacity = "0.5";
-		opcNueve.style.opacity = "0.5";
-	} else if (tituloDos <= 100) {
-		iconCero.style.fill = "#333333";
-		textOpcCero.style.color = "#333333";
-		iconUno.style.fill = "#333333";
-		textOpcUno.style.color = "#333333";
-		iconDos.style.stroke = "#ff7c7c";
-		textOpcDos.style.color = "#ff7c7c";
-		iconTres.style.fill = "#333333";
-		textOpcTres.style.color = "#333333";
-		iconCuatro.style.fill = "#333333";
-		textOpcCuatro.style.color = "#333333";
-		iconCinco.style.stroke = "#333333";
-		textOpcCinco.style.color = "#333333";
-		iconSeis.style.fill = "#333333";
-		textOpcSeis.style.color = "#333333";
-		iconSiete.style.stroke = "#333333";
-		textOpcSiete.style.color = "#333333";
-		iconOcho.style.fill = "#333333";
-		textOpcOcho.style.color = "#333333";
-		iconNueve.style.stroke = "#333333";
-		textOpcNueve.style.color = "#333333";
-		opcCero.style.opacity = "0.5";
-		opcUno.style.opacity = "0.5";
-		opcDos.style.opacity = "1";
-		opcTres.style.opacity = "0.5";
-		opcCuatro.style.opacity = "0.5";
-		opcCinco.style.opacity = "0.5";
-		opcSeis.style.opacity = "0.5";
-		opcSiete.style.opacity = "0.5";
-		opcOcho.style.opacity = "0.5";
-		opcNueve.style.opacity = "0.5";
-	} else if (tituloUno <= 100) {
-		iconCero.style.fill = "#333333";
-		textOpcCero.style.color = "#333333";
-		iconUno.style.fill = "#ff7c7c";
-		textOpcUno.style.color = "#ff7c7c";
-		iconDos.style.stroke = "#333333";
-		textOpcDos.style.color = "#333333";
-		iconTres.style.fill = "#333333";
-		textOpcTres.style.color = "#333333";
-		iconCuatro.style.fill = "#333333";
-		textOpcCuatro.style.color = "#333333";
-		iconCinco.style.stroke = "#333333";
-		textOpcCinco.style.color = "#333333";
-		iconSeis.style.fill = "#333333";
-		textOpcSeis.style.color = "#333333";
-		iconSiete.style.stroke = "#333333";
-		textOpcSiete.style.color = "#333333";
-		iconOcho.style.fill = "#333333";
-		textOpcOcho.style.color = "#333333";
-		iconNueve.style.stroke = "#333333";
-		textOpcNueve.style.color = "#333333";
-		opcCero.style.opacity = "0.5";
-		opcUno.style.opacity = "1";
-		opcDos.style.opacity = "0.5";
-		opcTres.style.opacity = "0.5";
-		opcCuatro.style.opacity = "0.5";
-		opcCinco.style.opacity = "0.5";
-		opcSeis.style.opacity = "0.5";
-		opcSiete.style.opacity = "0.5";
-		opcOcho.style.opacity = "0.5";
-		opcNueve.style.opacity = "0.5";
-	} else {
-		iconCero.style.fill = "#ff7c7c";
-		textOpcCero.style.color = "#ff7c7c";
-		iconUno.style.fill = "#333333";
-		textOpcUno.style.color = "#333333";
-		iconDos.style.stroke = "#333333";
-		textOpcDos.style.color = "#333333";
-		iconTres.style.fill = "#333333";
-		textOpcTres.style.color = "#333333";
-		iconCuatro.style.fill = "#333333";
-		textOpcCuatro.style.color = "#333333";
-		iconCinco.style.stroke = "#333333";
-		textOpcCinco.style.color = "#333333";
-		iconSeis.style.fill = "#333333";
-		textOpcSeis.style.color = "#333333";
-		iconSiete.style.stroke = "#333333";
-		textOpcSiete.style.color = "#333333";
-		iconOcho.style.fill = "#333333";
-		textOpcOcho.style.color = "#333333";
-		iconNueve.style.stroke = "#333333";
-		textOpcNueve.style.color = "#333333";
-		opcCero.style.opacity = "1";
-		opcUno.style.opacity = "0.5";
-		opcDos.style.opacity = "0.5";
-		opcTres.style.opacity = "0.5";
-		opcCuatro.style.opacity = "0.5";
-		opcCinco.style.opacity = "0.5";
-		opcSeis.style.opacity = "0.5";
-		opcSiete.style.opacity = "0.5";
-		opcOcho.style.opacity = "0.5";
-		opcNueve.style.opacity = "0.5";
+	//* Obtenemos los elementos de el nav
+	for (var i = 0; i < 10; i++) {
+		titulos[i] = document
+			.getElementById("titulo" + i)
+			.getBoundingClientRect().top;
+		textOpcs[i] = document.getElementById("textOpc" + i).style;
+		opcs[i] = document.getElementById("opcion" + i).style;
+		icons[i] = document.getElementById("icon" + i).style;
 	}
+	//* Colocamos todas las opciones en su estado inicial
+	for (var i = 0; i < 10; i++) {
+		icons[i].fill = "#333333";
+		textOpcs[i].color = "#333333";
+		opcs[i].opacity = "0.5";
+	}
+	//* Posición del scroll
+	let posi;
+	//* Evaluamos la posición en la pagina de acuerdo al titulo de cada sección
+	if (titulos[9] <= 100) {
+		posi = 9;
+	} else if (titulos[8] <= 100) {
+		posi = 8;
+	} else if (titulos[7] <= 100) {
+		posi = 7;
+	} else if (titulos[6] <= 100) {
+		posi = 6;
+	} else if (titulos[5] <= 100) {
+		posi = 5;
+	} else if (titulos[4] <= 100) {
+		posi = 4;
+	} else if (titulos[3] <= 100) {
+		posi = 3;
+	} else if (titulos[2] <= 100) {
+		posi = 2;
+	} else if (titulos[1] <= 100) {
+		posi = 1;
+	} else {
+		posi = 0;
+	}
+	//* Colocamos la opción correspondiente en su estado activo
+	icons[posi].fill = "#ff7c7c";
+	textOpcs[posi].color = "#ff7c7c";
+	opcs[posi].opacity = "1";
 }
 
 //funcion Determinamos la posicion en la que se encuentra el scroll según la seccion al ser clickeada en el nav izquierdo
 //param a = sección clickeada
 function scrollMe(a) {
-	//* Evaluamos la seccion clickeada y determinamos la posicion del scroll
-	switch (a) {
-		case 0:
-			window.scrollTo(0, 0);
-			break;
-		case 1:
-			document
-				.getElementById("tituloUno")
+	//* Evaluamos la sección clickeada
+	//param a = 0 regresa al inicio de la página
+	a == 0
+		? window.scrollTo(0, 0)
+		//param a = 1-9 nos lleva a la sección correspondiente
+		: document
+				.getElementById("titulo" + a)
 				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-			break;
-		case 2:
-			document
-				.getElementById("tituloDos")
-				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-			break;
-		case 3:
-			document
-				.getElementById("tituloTres")
-				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-			break;
-		case 4:
-			document
-				.getElementById("tituloCuatro")
-				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-			break;
-		case 5:
-			document
-				.getElementById("tituloCinco")
-				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-			break;
-		case 6:
-			document
-				.getElementById("tituloSeis")
-				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-			break;
-		case 7:
-			document
-				.getElementById("tituloSiete")
-				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-			break;
-		case 8:
-			document
-				.getElementById("tituloOcho")
-				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-			break;
-		case 9:
-			document
-				.getElementById("tituloNueve")
-				.scrollIntoView({ behavior: "smooth", inline: "nearest" });
-			break;
-	}
+	//* Esperamos 3/4 de segundo para que el scroll se complete
 	setTimeout(function () {
 		window.scrollBy(0, -50);
 	}, 750);
-
+	//* Llamamos a la funcion que determina la posición del indicador de scroll en el nav inferior
 	funcionScroll();
 }
 
+//funcion Ocultamos o mostramos titulos y secciones del nav inferior
+//param a = sección a ocultar o mostrar
+//param b = mostramos u opacamos la sección
 function navIzqOpa(a, b) {
-	var cambia, cambiaText;
-
-	switch (a) {
-		case 0:
-			cambia = opcCero;
-			cambiaText = textOpcCero;
-			break;
-		case 1:
-			cambia = opcUno;
-			cambiaText = textOpcUno;
-			break;
-		case 2:
-			cambia = opcDos;
-			cambiaText = textOpcDos;
-			break;
-		case 3:
-			cambia = opcTres;
-			cambiaText = textOpcTres;
-			break;
-		case 4:
-			cambia = opcCuatro;
-			cambiaText = textOpcCuatro;
-			break;
-		case 5:
-			cambia = opcCinco;
-			cambiaText = textOpcCinco;
-			break;
-		case 6:
-			cambia = opcSeis;
-			cambiaText = textOpcSeis;
-			break;
-		case 7:
-			cambia = opcSiete;
-			cambiaText = textOpcSiete;
-			break;
-		case 8:
-			cambia = opcOcho;
-			cambiaText = textOpcOcho;
-			break;
-		case 9:
-			cambia = opcNueve;
-			cambiaText = textOpcNueve;
-			break;
-	}
-
+	//* Seleccionamos la opción a cambiar
+	let cambia = opcs[a];
+	//* Seleccionamos el texto a cambiar
+	let cambiaText = textOpcs[a];
+	//* Evaluamos si mostramos u opacamos la sección
+	//param b = 0 opacamos la sección
 	if (b == 0) {
-		cambia.style.opacity = "50%";
-		cambiaText.style.opacity = "0%";
+		cambia = "50%";
+		cambiaText.opacity = "0%";
+	//param b = 1 mostramos la sección
 	} else {
-		cambia.style.opacity = "100%";
-		cambiaText.style.opacity = "100%";
+		cambia = "100%";
+		cambiaText.opacity = "100%";
 	}
-
+	//* Llamamos a la funcion que determina la posición del indicador de scroll en el nav inferior
 	funcionScroll();
 }
 
+//funcion finción que se llama al cargar la página
 function checaPos() {
+	//* Llamamos a la funcion que determina la posición del indicador de scroll en el nav inferior
 	funcionScroll();
+	//* Iniciamos el visualizador de 3D
 	skfbStart();
+	//* Evaluamos la orientación de la pantalla y mostramos y ocultamos partes de la página
 	if (window.innerWidth > window.innerHeight) {
-		hideShow("tituloCero", 1);
-		hideShow("tituloCeroCh", 0);
+		hideShow("titulo0", 1);
+		hideShow("titulo0Ch", 0);
 		hideShow("clasi", 2);
 		hideShow("clasiCh", 0);
 		hideShow("compo", 2);
@@ -1285,8 +750,8 @@ function checaPos() {
 		hideShow("estudio", 2);
 		hideShow("estudioCh", 0);
 	} else {
-		hideShow("tituloCero", 0);
-		hideShow("tituloCeroCh", 1);
+		hideShow("titulo0", 0);
+		hideShow("titulo0Ch", 1);
 		hideShow("clasi", 0);
 		hideShow("clasiCh", 1);
 		hideShow("compo", 0);
@@ -1294,4 +759,51 @@ function checaPos() {
 		hideShow("estudio", 0);
 		hideShow("estudioCh", 1);
 	}
+	//* Nos aseguramos de imprimir solo una vez el easteregg
+	if (cuenta) {
+		console.log(
+			"                                                                           .&&&#                    \n" +
+				"                                                                   &&&&&&&&&&&&&&&&&&&&             \n" +
+				"                                                                %&&&&&&&&&*      .&&&&&&&&&/        \n" +
+				"                                                              &&&&&&&                  &&&&&&&      \n" +
+				"                                                            &&&&&&         %&&&&&*        &&&&&%    \n" +
+				"                                                           &&&&&*      &&&&&&&&&&&&&&.     #&&&&&   \n" +
+				"                                                          &&&&&      &&&&&&      &&&&&&      &&&&%  \n" +
+				"                                                          &&&&&     &&&&&          %&&&&     &&&&&  \n" +
+				"                                          &&              &&&&     &&&&&            &&&&&    .&&&&  \n" +
+				"                                         &&&              &&&&&    &&&&&           (&&&&/    &&&&&  \n" +
+				"                                         &&&&              &&&      &&&&&         &&&&&&     &&&&&  \n" +
+				"                                         &&&&/                      &&&&&          &&&      &&&&&   \n" +
+				"                                 &&&    &&&/&&                      &&&&&                 &&&&&&    \n" +
+				"                          &&    &&&&(   &&  &&&   %&&#             &&&&&&              %&&&&&&      \n" +
+				"                        &&&&&  &&&.&&  .&&   &&  %&&&&,            ,&&&&             &&&&&&&        \n" +
+				"               &&&&&&&&&&% &&&&&&  &&& &&%   &&&&&&  &&  %&&&&&&#                  &&&&&&           \n" +
+				"                            &&&&    && &&     &&&&    &&&&&                       &&&&&             \n" +
+				"                             &&     &&&&&     &&&      &&                        &&&&&              \n" +
+				"                                     &&&%                                        &&&&&              \n" +
+				"                                     &&&                       &&&&              #&&&&              \n" +
+				"                                      &.                       &&&&&             &&&&&              \n" +
+				"                                                                &&&&&#         &&&&&&               \n" +
+				"                                                                 %&&&&&&&&&&&&&&&&&                 \n" +
+				"                                                                     &&&&&&&&&&%                    \n" +
+				"          																				             \n" +
+				"  	  																				                 \n" +
+				"  	  																				                 \n" +
+				" 	  																				                 \n" +
+				"&&&&&*    &&&&&.  *&&&&     &&&&&   &&&&&&&&&&&&&    #&&&&&&&&&&&&   ,&&&&     &&&&&  &&&&&&&&&&&&& \n" +
+				"&&&&&*    &&&&&.  *&&&&     &&&&&   &&&&&    &&&&&   #&&&&    #&&&&  ,&&&&     &&&&&  &&&&&    %&&&&\n" +
+				"&&&&&*    &&&&&.  *&&&&     &&&&&   &&&&&     &&&&   #&&&&     &&&&  ,&&&&     &&&&&  &&&&&     &&&&\n" +
+				"&&&&&*    &&&&&.  *&&&&     &&&&&   &&&&&    &&&&    #&&&&    &&&&#  ,&&&&     &&&&&  &&&&&    &&&&*\n" +
+				"&&&&&&&&&&&&&&&.  *&&&&     &&&&&   &&&&&&&&&&&&     #&&&&&&&&&&&    ,&&&&     &&&&&  &&&&&&&&&&&&  \n" +
+				"&&&&&*    &&&&&.  *&&&&     &&&&&   &&&&&     &&&&   #&&&&     &&&&  ,&&&&     &&&&&  &&&&&     &&&&\n" +
+				"&&&&&*    &&&&&.   &&&&     &&&&&   &&&&&     &&&&.  #&&&&     &&&&&  &&&&     &&&&&  &&&&&     &&&&\n" +
+				"&&&&&*    &&&&&.   &&&&&    &&&&.   &&&&&    &&&&&   #&&&&    %&&&&   &&&&&    &&&&.  &&&&&    &&&&&\n" +
+				"&&&&&*    &&&&&     &&&&&&&&&&&     &&&&&&&&&&&&&    #&&&&&&&&&&&&     &&&&&&&&&&&    &&&&&&&&&&&&& \n" +
+				"  	  																				                 \n" +
+				"  	  																				                 \n" +
+				" 																								     "
+		);
+	}
+	//* Evitamos que se imprima más de una vez
+	cuenta = false;
 }
