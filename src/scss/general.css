@@ -195,7 +195,7 @@ html {
 }
 
 .textoDivNavAct {
-  padding-top: 15px;
+  padding-top: 0.8vw;
   opacity: 50%;
   cursor: pointer;
 }
@@ -206,7 +206,7 @@ html {
 }
 
 .textoDivNavIna {
-  padding-top: 15px;
+  padding-top: 0.8vw;
   opacity: 50%;
   cursor: pointer;
 }
@@ -304,8 +304,8 @@ html {
 }
 
 .navIzqIcon {
-  width: 20px;
-  height: 20px;
+  width: 1vw;
+  height: 1vw;
 }
 
 .topLineAct {

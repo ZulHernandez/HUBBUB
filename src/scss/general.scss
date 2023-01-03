@@ -124,7 +124,7 @@ $white: #ffffff;
 //funcion Mostramos u ocultamos el nav izquierdo
 //param $opa: opacidad del nav
 @mixin divIzq($opa) {
-    padding-top: 15px;
+    padding-top: 0.8vw;
     opacity: $opa;
     cursor: pointer;
 }
@@ -418,8 +418,8 @@ html {
 
 //* Iconos para el navegardor izquierdo
 .navIzqIcon {
-    width: 20px;
-    height: 20px;
+    width: 1vw;
+    height: 1vw;
 }
 
 //* Iconos del navegador derecho
