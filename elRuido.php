@@ -25,30 +25,29 @@
     <script type="text/javascript" src="src/js/P5esquemaOido.js"></script>
     <!--//main Icono de la página-->
     <link rel="icon" href="assets/vector/HUBBUByellow.svg" type="image/x-icon">
+    <!--//* Título de la página-->
     <title>
         HUBBUB | El ruido
     </title>
 </head>
 
-<!--//funcion Inicia el visualizador de sketchfab al cargar-->
-
-<!-- <body onload="skfbStart();" onresize="setup();"> -->
-
+<!--//funcion checaPos() = revisa la posición en la página y pinta el nav inferior-->
+<!--//funcion setup() = vuelve a dibujar el esquema del oído-->
 <body onload="checaPos();" onresize="setup();">
-    <!--//main Se incluye el navegador lateral izquierdo-->
-    <!--//funcion navIzq() Colapasa o expande el navegador lateral izquierdo-->
+    <!--//main Se incluye el navegador inferior-->
+    <!--//funcion navIzq() Colapasa o expande el navegador inferior-->
     <!--//param 0 = navegador colapsado-->
     <!--//param 1 = navegador expandido-->
-    <div class="navIzq">
+    <div class="navIzq"> 
         <div class="row container-fluid" style="margin: 0;">
             <div class=" col-1"></div>
-            <!--//* Indicador de sección en scroll-->
-            <!-- <div class="columnaCh col-1">
-                <div id="divScroll" style="background-color: #FF7C7C; height: 15px; width: 15px; margin-top:25px; border-radius: 50%;"></div>
-            </div> -->
             <!--//funcion scrollMe(a) scrollea la página a una posición determinada-->
-            <!--//param a = posición a la cual scrollear-->
+            <!--//param Posición a la cual scrollear-->
             <div class="col-1" onclick="scrollMe(0);">
+                <!--//* Icono y texto de Home-->
+                <!--//funcion navIzqOpa(a, b) cambia la opacidad del icono y texto-->
+                <!--//param a = Sección a ocultar o mostrar-->
+                <!--//param b = Opacidad a la cual cambiar-->
                 <!--//* Icono y texto de Home-->
                 <div id="opcion0" class="textoDivNavIna navIcon" onmouseover="navIzqOpa(0, 1);" onmouseleave="navIzqOpa(0, 0);">
                     <svg class="navIzqIcon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -231,7 +230,9 @@
                         </a>
                         <hr class="hrNavDer">
                         <p class="textCorrido" style="text-align: center; color: white;">HUBBUB<sup style="font-size: 12px;">&copy;</sup></p>
+                        <!-- //TODO Aviso de privacidad -->
                         <p class="textAvisoN" style="color: white;">Aviso de privacidad</p>
+                        <!-- //TODO Copyright -->
                         <p class="textDerechosN" style="color: white;">Todos los derechos reservados</p>
                     </center>
                 </div>
@@ -241,6 +242,7 @@
     </div>
     </div>
     <!--//main Se incluye el hero Image y resumen de la página-->
+    <!--//* Hero div para orientación horizontal de la pantalla-->
     <div class="container-fluid hero" id="titulo0">
         <div class="imagenHero">
             <!--//funcion nosotros(true) dispara el swal sobre la información de HUBBUB-->
@@ -267,6 +269,7 @@
             <div class="columna col-2"></div>
         </div>
     </div>
+    <!--//* Hero div para orientación vertical de la pantalla-->
     <div class="container-fluid hero" id="titulo0Ch">
         <div class="row">
             <div class="columna col-12">
@@ -276,6 +279,7 @@
                 </center>
             </div>
         </div>
+        <!--//* Resumen de la página-->
         <div class="row container-fluid divHero paddingNormal">
             <div class="columna col-2"></div>
             <div class="columna col-8">

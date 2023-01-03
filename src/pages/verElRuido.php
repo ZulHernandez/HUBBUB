@@ -143,11 +143,11 @@
     </div>
     </div>
     <!--//main Se incluye el hero Image y resumen de la página-->
-    <div id="screenParticiapcion" class="container-fluid hero">
+    <div class="container-fluid hero">
         <div class="imagenHero">
             <!--//* Función nosotros dispara Swal de información sobre HUBBUB-->
             <!--//funcion nosotros() dispara el swal sobre la información de HUBBUB-->
-            <img class="logoHero" onclick="nosotros();" src="../../assets/gif/HUBBUBIcon.gif">
+            <img class="logoHero" onclick="nosotros(true);" src="../../assets/gif/HUBBUBIcon.gif">
         </div>
         <div class="row container-fluid divHero">
             <div class="columna col-2"></div>
@@ -168,6 +168,33 @@
                 <div id="elOido"></div>
             </div>
             <div class="columna col-4"></div>
+        </div>
+    </div>
+    <!--//* Hero div para orientación vertical de la pantalla-->
+    <div class="container-fluid hero" id="titulo0Ch">
+        <div class="row">
+            <div class="columna col-12">
+                <center>
+                    <!--//funcion nosotros(true) dispara el swal sobre la información de HUBBUB-->
+                    <img class="logoHero" onclick="nosotros(true);" src="../../assets/gif/HUBBUBIcon.gif">
+                </center>
+            </div>
+        </div>
+        <!--//* Resumen de la página-->
+        <div class="row container-fluid divHero paddingNormal">
+            <div class="columna col-2"></div>
+            <div class="columna col-8">
+                <br />
+                <hr />
+                <h1 class="pageTitle" style="text-align: right;">Ver el ruido</h1>
+                <br />
+                <p class="textCorrido" style="text-align: right;">HUBBUB es una aplicación móvil que permite generar alertas por molestias de ruido
+                        que afectan a las personas en su día a día. Cada uno de los reportes ciudadanos creados a través de
+                        HUBBUB es usado para generar mapas que evidencian las zonas ruidosas y la fuente de ruido que las genera,
+                        así como, si este ruido se produce durante el día o la noche. De esta manera se hace palpable un estudio
+                        práctico y colaborativo del fenómeno del ruido en la Ciudad de México.</p>
+            </div>
+            <div class="columna col-2"></div>
         </div>
     </div>
     <!--//main Sección de introducción-->
