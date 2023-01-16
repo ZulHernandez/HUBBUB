@@ -251,7 +251,7 @@
         <div class="row container-fluid divHero paddingNormal">
             <div class="columna col-4"></div>
             <div class="columna col-1">
-                <div class="verticalLine"></div>
+                <!-- <div class="verticalLine"></div> -->
                 <div id="elOido"></div>
             </div>
             <!--//* Resumen de la página-->

@@ -1,10 +1,24 @@
 //main Datos por tipo de visualización
+//param ESTRUCTURA DE DATOS:
+	//*Año = Año, se debe agregar un año nuevo cada año
+		//*VALORES: número de reportes totales por meses. Siempre son 12 valores
+		//param Si no hay reportes en ese mes, se debe poner un 0
 //* Array divide los datos por años
 var anual = {
 	2022: [14, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0],
 	2021: [0, 0, 0, 0, 0, 0, 0, 0, 11, 11, 0, 13],
 };
 
+//param ESTRUCTURA DE DATOS:
+	//*Mes_Año = Mes y año, se debe agregar un mes nuevo cada mes y año
+		//*VALORES: número de reportes totales por periodo de días
+			//*Periodos por posición:  [0] = 01-05
+									//*[1] = 06-10
+									//*[2] = 11-15
+									//*[3] = 16-20
+									//*[4] = 21-25
+									//*[5] = 26-31
+		//param Si no hay reportes en ese periodo, se debe poner un 0
 //* Array divide los datos por meses
 var mensual = {
 	Septiembre_2021: [0, 2, 1, 3, 5, 0],
